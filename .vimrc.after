@@ -1,0 +1,88 @@
+" Fonts
+set gfn=Menlo\ Regular:h14
+color molokai
+syntax on
+
+" Handle long lines appropriately
+set formatoptions=qrn1
+set textwidth=79
+
+" Show whitespace characters for tabs and spaces
+set list
+set listchars=tab:▸\ ,trail:·
+
+" C, C++, and Java files have 4 spaces per tab
+for ext in ["c", "cpp", "java"]
+  execute 'au FileType ' . ext . ' set expandtab'
+  execute 'au FileType ' . ext . ' set shiftwidth=4'
+  execute 'au FileType ' . ext . ' set softtabstop=4'
+  execute 'au FileType ' . ext . ' set tabstop=4'
+endfor
+
+" Allow NERDTree to expand directories and open files with a single click
+let NERDTreeMouseMode = 3
+
+" Show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
+imap <M-o> <Esc>o
+nnoremap ; :
+
+" Destroy the F1 key. Who needs help?
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Command-D and Command-Shift-D for split/vsplit
+nnoremap <D-d> <C-w>v<C-w>l
+nnoremap <D-D> <C-w>s<C-w>j
+
+" Command-Option-Arrows for switching between splits
+map <D-M-Down> <C-w>j
+map <D-M-Up> <C-w>k
+map <D-M-Right> <C-w>l
+map <D-M-Left> <C-w>h
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" Clear search highlighting
+nmap <silent> ,/ :nohlsearch<CR>
+
+" Clear out search
+nnoremap <Leader><space> :noh<cr>
+
+" Execute Jekyll in the current directory to rebuild a site
+nnoremap <Leader>j :silent !jekyll<cr>
+
+" Open the current file in Marked with Leader-m
+nnoremap <Leader>m :silent !open -a Marked.app '%:p'<cr>
+
+" Sort CSS properties
+nnoremap <Leader>s ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+" Remove trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+set autoindent
+set colorcolumn=80
+set cursorline
+set gdefault
+set hidden
+set history=1000
+set nobackup
+set noerrorbells
+set scrolloff=3
+set showcmd
+set showmatch
+set showmode
+set spell
+set term=builtin_ansi
+set ttyfast
+set undolevels=1000
+set vb t_vb=
+set visualbell
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmenu
+set wildmode=list:longest
