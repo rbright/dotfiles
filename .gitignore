@@ -1,2 +1,5 @@
 # vim undo files
 *.un~
+
+# development files
+.zshdev
