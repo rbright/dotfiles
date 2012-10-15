@@ -155,6 +155,10 @@ nnoremap <leader>rt :TagbarToggle<cr><C-w>200l
 " Vroom
 nnoremap <leader>R :VroomRunTestFile<cr>
 
+" Commentary
+nmap <D-/> <Plug>CommentaryLine
+vmap <D-/> <Plug>Commentary
+
 " Open the current file in Marked with Leader-m
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 

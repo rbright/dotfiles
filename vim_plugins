@@ -3,7 +3,6 @@ ctrlp.vim
 delimitMate
 gist-vim
 molokai
-nerdcommenter
 snipmate-snippets
 sparkup
 supertab
@@ -12,6 +11,7 @@ tagbar
 tlib_vim
 vim-addon-mw-utils
 vim-coffee-script
+vim-commentary
 vim-endwise
 vim-markdown
 vim-rails
