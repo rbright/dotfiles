@@ -2,15 +2,6 @@
   name = Ryan Bright
   email = ryan@rbright.net
 [alias]
-  cl = clone
-  st = status
-  co = checkout
-  cm = commit
-  pom = push origin master
-  pod = push origin develop
-  pl = pull
-  ft = fetch
-  rb = rebase
   amend = commit --amend
   unstage = reset HEAD --
   last = log -1 HEAD

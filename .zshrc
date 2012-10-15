@@ -26,6 +26,8 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias bu="bundle update"
 alias git="hub"
+alias gcl="git clone"
+alias grb="git rebase"
 alias watch="watchr ~/.watchr/rails.rb"
 alias z="zeus"
 
