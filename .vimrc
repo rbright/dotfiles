@@ -146,6 +146,9 @@ let g:use_zen_complete_tag = 1
 " SparkUp
 let g:sparkupNextMapping = '<leader>e'
 
+" Tagbar
+nnoremap <leader>rt :TagbarToggle<cr><C-w>200l
+
 " Open the current file in Marked with Leader-m
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
