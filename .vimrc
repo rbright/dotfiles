@@ -69,6 +69,9 @@ nnoremap <leader>f :Ack<space>
 " Leader-W to Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
+" Use Q for executing the recorded macro
+nmap Q @q
+
 " Use Z for formatting the current paragraph (or selection)
 vmap Z gq
 nmap Z gqap
