@@ -149,6 +149,9 @@ let g:sparkupNextMapping = '<leader>e'
 " Tagbar
 nnoremap <leader>rt :TagbarToggle<cr><C-w>200l
 
+" Vroom
+nnoremap <leader>R :VroomRunTestFile<cr>
+
 " Open the current file in Marked with Leader-m
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
