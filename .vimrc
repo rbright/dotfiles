@@ -134,7 +134,6 @@ nnoremap <leader>rm :Rmodel<space>
 nnoremap <leader>rc :Rcontroller<space>
 nnoremap <leader>rv :Rview<space>
 nnoremap <leader>rg :Rgenerate<space>
-nnoremap <leader>rp :'<,'>Rextract<space>
 
 " Setup indent guides
 let g:indent_guides_start_level=2
