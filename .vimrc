@@ -69,9 +69,9 @@ nnoremap <leader>f :Ack<space>
 " Leader-W to Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
-" Use Q for formatting the current paragraph (or selection)
-vmap Q gq
-nmap Q gqap
+" Use Z for formatting the current paragraph (or selection)
+vmap Z gq
+nmap Z gqap
 
 " Use Leader-ft to fold an HTML tag
 nnoremap <leader>ft Vatzf
