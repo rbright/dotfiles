@@ -160,6 +160,10 @@ nnoremap <leader>R :VroomRunTestFile<cr>
 nmap <D-/> <Plug>CommentaryLine
 vmap <D-/> <Plug>Commentary
 
+" Reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
 " Open the current file in Marked with Leader-m
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
