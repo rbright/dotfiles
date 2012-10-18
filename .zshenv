@@ -1,3 +1,4 @@
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 export RUBY_HEAP_FREE_MIN=100000
