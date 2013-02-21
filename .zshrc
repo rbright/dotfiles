@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(brew cake gem git github heroku node npm osx rails3 rbenv vagrant zeus)
+plugins=(brew bundler cake capistrano coffee gem git github heroku node npm osx rails3 rbenv vagrant vundle zeus)
 
 export EDITOR="vim"
 
@@ -23,9 +23,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$NPM_PATH:$H
 # Aliases
 #
 
-alias be="bundle exec"
-alias bi="bundle install"
-alias bu="bundle update"
 alias git="hub"
 alias gcl="git clone"
 alias gpl="g pl"
@@ -33,10 +30,10 @@ alias ggpl="ggpull"
 alias gpsh="g push"
 alias ggpsh="ggpush"
 alias grb="git rebase"
-alias gpr="git difftool origin/master...origin/$(current_branch)"
+alias gdpr="git difftool origin/master...origin/$(current_branch)"
 alias gt="gittower"
 alias gts="gittower --status"
-alias r="rails"
+alias hgpr="g pull-request"
 alias watch="watchr ~/.watchr/rails.rb"
 alias z="zeus"
 
