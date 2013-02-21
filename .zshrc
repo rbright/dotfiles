@@ -25,9 +25,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$NPM_PATH:$H
 
 alias git="hub"
 alias gcl="git clone"
-alias gpl="g pl"
 alias ggpl="ggpull"
-alias gpsh="g push"
 alias ggpsh="ggpush"
 alias grb="git rebase"
 alias gdpr="git difftool origin/master...origin/$(current_branch)"
