@@ -1,6 +1,17 @@
 " Start without scrollbars.
 set guioptions=aAce
 
+" Load NERDTree and Tagbar at startup and move the cursor to the main window
+autocmd VimEnter * NERDTree
+autocmd VimEnter * TagbarOpen
+autocmd VimEnter * wincmd l"
+
+" Allow NERDTree to expand directories and open files with a single click
+let NERDTreeMouseMode = 3
+
+" Show hidden files in NERDTree
+let NERDTreeShowHidden = 1
+
 " Command-D and Command-d for split/vsplit
 nnoremap <D-D> :split<cr>
 nnoremap <D-d> :vsplit<cr>
