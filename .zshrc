@@ -2,11 +2,12 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(brew bundler capistrano coffee gem git osx rails3 rbenv vundle)
+plugins=(git rails3)
 
 export EDITOR="vim"
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zshdev
 
 #
 # Paths
@@ -23,6 +24,12 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$NPM_PATH:$H
 # Aliases
 #
 
+alias brews='brew list -1'
+alias be="bundle exec"
+alias bi="bundle install"
+alias bl="bundle list"
+alias bp="bundle package"
+alias bu="bundle update"
 alias git="hub"
 alias gcl="git clone"
 alias ggpl="ggpull"
@@ -39,11 +46,12 @@ alias z="zeus"
 # Functions
 #
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function vundle-update () {
+  vim -c "execute \"BundleInstall!\" | q | q"
+}
 
 #
 # tmux
 #
 export TERM="xterm-256color"
 alias tmux="tmux -2"
-
-source $HOME/.zshdev
