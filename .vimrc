@@ -1,9 +1,36 @@
 let mapleader = ","
 
-" Pathogen
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin on
+" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle Bundles
+Bundle "gmarik/vundle"
+Bundle "mileszs/ack.vim"
+Bundle "kien/ctrlp.vim"
+Bundle "Raimondi/delimitMate"
+Bundle "mattn/gist-vim"
+Bundle "tomasr/molokai"
+Bundle "scrooloose/nerdtree"
+Bundle "honza/snipmate-snippets"
+Bundle "ervandew/supertab"
+Bundle "scrooloose/syntastic"
+Bundle "majutsushi/tagbar"
+Bundle "tomtom/tlib_vim"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "kchmck/vim-coffee-script"
+Bundle "tpope/vim-commentary"
+Bundle "tpope/vim-endwise"
+Bundle "wgibbs/vim-irblack"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-repeat"
+Bundle "garbas/vim-snipmate"
+Bundle "tpope/vim-surround"
+Bundle "mattn/webapi-vim"
+Bundle "mattn/zencoding-vim"
 filetype plugin indent on
 
 " Fonts
@@ -97,7 +124,6 @@ set incsearch
 set laststatus=2
 set modelines=0
 set nobackup
-set nocompatible
 set noerrorbells
 set noswapfile
 set nowrap
