@@ -46,8 +46,21 @@ alias z="zeus"
 # Functions
 #
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function rbenv-update () {
+  for directory in `find $HOME/.rbenv/plugins -maxdepth 1 -type d`
+  do
+    pushd $directory
+      git pull origin master
+    popd
+  done
+}
 function vundle-update () {
   vim -c "execute \"BundleInstall!\" | q | q"
+}
+function zsh-update () {
+  pushd "$HOME/.oh-my-zsh"
+    git pull origin master
+  popd
 }
 
 #
