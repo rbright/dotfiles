@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(brew bundler cake capistrano coffee gem git github heroku node npm osx rails3 rbenv vagrant vundle zeus)
+plugins=(brew bundler capistrano coffee gem git osx rails3 rbenv vundle)
 
 export EDITOR="vim"
 
