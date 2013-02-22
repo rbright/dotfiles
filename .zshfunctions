@@ -1,0 +1,82 @@
+# Count the total number of lines in files containing the given extension
+# $1 - File extension
+function countlines () {
+  find . -name "*.$1" | xargs wc -l;
+}
+
+# Flush the DNS cache in Mac OS X
+function flushdns () {
+  if [[ `uname` == 'Darwin' ]]; then
+    dscacheutil -flushcache;
+  fi
+}
+
+# Set the level of font smoothing in Mac OS X
+# $1 - Integer representing the level of font smoothing (0-3)
+function fontsmoothing () {
+  if [[ `uname` == 'Darwin' ]]; then
+    defaults -currentHost write -globalDomain AppleFontSmoothing -int $1;
+  fi
+}
+
+# Fetch all contents from the specified website
+# $1 - URL for the specified website
+function getsite () {
+  wget --recursive --page-requisites --convert-links -U 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20070802 SeaMonkey/1.1.4' $1;
+  if [[ `uname` == 'Darwin' ]]; then
+    terminal-notifier -message "Download of $1 completed successfully" -title "Site Downloaded";
+  fi
+}
+
+# Kill all processes using the given directory
+# $1 - String representing the directory
+function killdir () {
+  lsof | grep $1 | awk '{print $2}' | xargs kill;
+}
+
+# Make a directory and change to it
+function mkdircd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
+
+# Update all rbenv plugins
+function rbenv-update () {
+  for directory in `find $HOME/.rbenv/plugins -maxdepth 1 -type d`
+  do
+    pushd $directory
+      git pull origin master;
+    popd
+  done
+}
+
+# Remove vim undo files from the current directory
+function rmundo () {
+  find . -name "*.un~" -exec rm -f {} \;
+}
+
+# Show/hide hidden files in Mac OS X
+# $1 - Boolean for showing (true) or hiding (false) hidden files
+function showhiddenfiles () {
+  if [[ `uname` == 'Darwin' ]]; then
+    defaults write com.apple.finder AppleShowAllFiles $1;
+    killall Finder;
+  fi
+}
+
+# Monitor the TCP traffic on the specified port
+# $1 - Integer representing the TCP port to be monitored
+function tcpmonitor () {
+  sudo /usr/sbin/tcpdump -ln -A -s1024 -i en1 tcp port $1;
+}
+
+# Update all vim plugins
+function vim-update () {
+  vim -c "execute \"BundleInstall!\" | q | q";
+}
+
+# Update oh-my-zsh
+function zsh-update () {
+  pushd "$HOME/.oh-my-zsh"
+    git pull origin master
+  popd
+}
