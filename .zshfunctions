@@ -1,3 +1,8 @@
+# Perform an ls -la after switching directories, because I'm going to do it.
+function cd {
+  builtin cd "$@" && ll;
+}
+
 # Count the total number of lines in files containing the given extension
 # $1 - File extension
 function countlines () {
