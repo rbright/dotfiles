@@ -2,6 +2,12 @@
 function cd {
   builtin cd "$@" && ls -la;
 }
+# Clear duplicates from the "Open With" menu in OS X.
+function openwithdups() {
+  if [[ `uname` == 'Darwin' ]]; then
+    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+  fi
+}
 
 # Count the total number of lines in files containing the given extension
 # $1 - File extension
