@@ -45,6 +45,13 @@ function killdir () {
   lsof | grep $1 | awk '{print $2}' | xargs kill;
 }
 
+# Display man pages in vim for syntax highlighting.
+function man() {
+  /usr/bin/man $* | \
+      col -b | \
+        vim -R -c 'set ft=man nomod nolist' -
+}
+
 # Make a directory and change to it
 function mkdircd () {
   mkdir -p "$@" && eval cd "\"\$$#\"";
