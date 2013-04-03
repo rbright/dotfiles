@@ -14,11 +14,14 @@ Bundle "Raimondi/delimitMate"
 Bundle "mattn/gist-vim"
 Bundle "tomasr/molokai"
 Bundle "scrooloose/nerdtree"
+Bundle "ervandew/screen.git"
 Bundle "honza/snipmate-snippets"
 Bundle "ervandew/supertab"
 Bundle "scrooloose/syntastic"
 Bundle "majutsushi/tagbar"
 Bundle "tomtom/tlib_vim"
+Bundle "vim-scripts/VimClojure"
+Bundle "vim-scripts/Vim-R-plugin"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-commentary"
@@ -27,6 +30,7 @@ Bundle "wgibbs/vim-irblack"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
+Bundle "derekwyatt/vim-scala"
 Bundle "garbas/vim-snipmate"
 Bundle "tpope/vim-surround"
 Bundle "mattn/webapi-vim"
@@ -157,6 +161,10 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" Clojure
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
 
 " rails.vim shortcuts
 nnoremap <leader>rm :Rmodel<space>
