@@ -2,6 +2,7 @@
 function cd {
   builtin cd "$@" && ls -la;
 }
+
 # Clear duplicates from the "Open With" menu in OS X.
 function openwithdups() {
   if [[ `uname` == 'Darwin' ]]; then
