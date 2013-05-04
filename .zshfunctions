@@ -22,6 +22,11 @@ function flushdns () {
   fi
 }
 
+# Flush everything in memcached
+function flushmemcached() {
+  echo "flush_all" | nc 127.0.0.1 11211
+}
+
 # Set the level of font smoothing in Mac OS X
 # $1 - Integer representing the level of font smoothing (0-3)
 function fontsmoothing () {
