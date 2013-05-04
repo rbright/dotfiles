@@ -16,7 +16,6 @@ Bundle "JuliaLang/julia-vim"
 Bundle "tomasr/molokai"
 Bundle "scrooloose/nerdtree"
 Bundle "ervandew/screen.git"
-Bundle "honza/snipmate-snippets"
 Bundle "ervandew/supertab"
 Bundle "scrooloose/syntastic"
 Bundle "majutsushi/tagbar"
@@ -31,8 +30,8 @@ Bundle "wgibbs/vim-irblack"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
-Bundle "derekwyatt/vim-scala"
 Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 Bundle "tpope/vim-surround"
 Bundle "mattn/webapi-vim"
 Bundle "mattn/zencoding-vim"
@@ -51,7 +50,7 @@ set expandtab
 
 " Handle long lines appropriately
 set formatoptions=qrn1
-"set textwidth=79
+set textwidth=79
 
 " Show whitespace characters for tabs and spaces
 set list
