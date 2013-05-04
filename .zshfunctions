@@ -16,6 +16,13 @@ function countlines () {
   find . -name "*.$1" | xargs wc -l;
 }
 
+# Disable "Downloaded from Internet warnings" in Mac OS X
+function downloadwarnings() {
+  if [[ `uname` == 'Darwin' ]]; then
+    defaults write com.apple.LaunchServices LSQuarantine -bool NO
+  fi
+}
+
 # Flush the DNS cache in Mac OS X
 function flushdns () {
   if [[ `uname` == 'Darwin' ]]; then
