@@ -96,6 +96,7 @@ nnoremap <leader>t :CtrlP<cr>
 
 " Leader-f to search files with Ack
 nnoremap <leader>f :Ack<space>
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Leader-W to Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
