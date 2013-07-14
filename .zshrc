@@ -5,6 +5,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git rails3)
 
 export EDITOR="vim"
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export TERM="xterm-256color" # for tmux
 
 source $ZSH/oh-my-zsh.sh
