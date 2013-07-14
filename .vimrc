@@ -36,7 +36,7 @@ Bundle "mattn/zencoding-vim"
 filetype plugin indent on
 
 " Fonts
-set gfn=Menlo\ Regular:h16
+set gfn=Menlo\ Regular:h15
 color molokai
 syntax on
 
