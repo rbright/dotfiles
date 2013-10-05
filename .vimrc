@@ -75,8 +75,10 @@ map <C-h> <C-W>h<C-W>_
 " Leader-tn to Toggle relative numbering.
 function ToggleNumbering()
   if (&number)
+    set nonumber
     set relativenumber
   else
+    set norelativenumber
     set number
   endif
 endfunction
