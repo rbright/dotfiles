@@ -47,14 +47,20 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " Gist
 let g:gist_detect_filetype = 1
 
-" rails.vim
-nnoremap <leader>rm :Rmodel<space>
-nnoremap <leader>rc :Rcontroller<space>
-nnoremap <leader>rv :Rview<space>
+" Rails
+" Leader-rm to edit the specified model
+" Leader-rc to edit the specified controller
+" Leader-rv to edit the specified view
+" Leader-rg to run the specified generator
+" Leader-rp to extract the selected snippet into the specified partial
+" Leader-rk to run the specified Rake task
+nnoremap <leader>rm :Emodel<space>
+nnoremap <leader>rc :Econtroller<space>
+nnoremap <leader>rv :Eview<space>
 nnoremap <leader>rg :Rgenerate<space>
 vnoremap <leader>rp :Rextract<space>
 nnoremap <leader>rk :Rake<space>
 
 " Tagbar
 " Leader-rt to toggle the sidebar
-nnoremap <leader>rt :TagbarToggle<cr><C-w>200l
+nnoremap <leader>rt :TagbarToggle<cr><C-w>
