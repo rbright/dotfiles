@@ -3,13 +3,6 @@ function cd {
   builtin cd "$@" && ls -la;
 }
 
-# Clear duplicates from the "Open With" menu in OS X.
-function openwithdups() {
-  if [[ `uname` == 'Darwin' ]]; then
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-  fi
-}
-
 # Count the total number of lines in files containing the given extension
 # $1 - File extension
 function countlines () {
@@ -76,6 +69,20 @@ function man() {
 # Make a directory and change to it
 function mkdircd () {
   mkdir -p "$@" && eval cd "\"\$$#\"";
+}
+
+# Open the specified gem in MacVim
+function opengem() {
+  pushd `bundle show $1`
+  mvim
+  popd
+}
+
+# Clear duplicates from the "Open With" menu in OS X.
+function openwithdups() {
+  if [[ `uname` == 'Darwin' ]]; then
+    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+  fi
 }
 
 # Update all rbenv plugins
