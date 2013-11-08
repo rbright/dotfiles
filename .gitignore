@@ -4,4 +4,5 @@
 # development files
 .gist-vim
 .powrc
-.zshdev
+.zsh/blueapron
+.zsh/development

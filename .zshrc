@@ -12,9 +12,9 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export TERM="xterm-256color" # for tmux
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zshdev
-source $HOME/.zshaliases
-source $HOME/.zshfunctions
+source $HOME/.zsh/development
+source $HOME/.zsh/aliases
+source $HOME/.zsh/functions
 
 export HEROKU_PATH=/usr/local/heroku/bin
 export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
