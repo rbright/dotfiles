@@ -41,9 +41,6 @@ function ToggleNumbering()
 endfunction
 nnoremap <leader>tn :call ToggleNumbering()<cr><cr>
 
-" Leader-w to open the current file in iA Writer
-nnoremap <leader>w :silent !open -a iA\ Writer.app '%:p'<cr>
-
 " Leader-W to remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
