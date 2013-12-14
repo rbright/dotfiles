@@ -38,6 +38,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 set autoindent
+set autowrite
 set backspace=indent,eol,start
 set copyindent
 set colorcolumn=80
@@ -52,6 +53,7 @@ set incsearch
 set laststatus=2
 set modelines=0
 set nobackup
+set nocompatible
 set noerrorbells
 set noswapfile
 set nowrap
@@ -62,6 +64,8 @@ set showcmd
 set showmatch
 set showmode
 set smartcase
+set splitbelow
+set splitright
 set ttyfast
 set undofile
 set undolevels=1000
