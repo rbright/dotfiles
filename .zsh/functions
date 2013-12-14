@@ -17,14 +17,14 @@ function downloadwarnings() {
 }
 
 # Flush the DNS cache in Mac OS X
-function flushdns () {
+function fd () {
   if [[ `uname` == 'Darwin' ]]; then
     dscacheutil -flushcache;
   fi
 }
 
 # Flush everything in memcached
-function flushmemcached() {
+function fm() {
   echo "flush_all" | nc 127.0.0.1 11211
 }
 
@@ -67,12 +67,12 @@ function man() {
 }
 
 # Make a directory and change to it
-function mkdircd () {
+function mcd () {
   mkdir -p "$@" && eval cd "\"\$$#\"";
 }
 
 # Open the specified gem in MacVim
-function opengem() {
+function og() {
   pushd `bundle show $1`
   mvim
   popd
