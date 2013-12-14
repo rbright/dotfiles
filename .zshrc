@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(git rails3)
+plugins=(git github heroku rails)
 
 export EDITOR="vim"
 export LANGUAGE=en_US.UTF
