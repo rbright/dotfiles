@@ -59,6 +59,10 @@ let g:gist_detect_filetype = 1
 nnoremap <leader>rm :Emodel<space>
 nnoremap <leader>rc :Econtroller<space>
 nnoremap <leader>rv :Eview<space>
+nnoremap <leader>rs :Espec<space>
+nnoremap <leader>rsm :Espec models/
+nnoremap <leader>rsc :Espec controllers/
+nnoremap <leader>rsr :Espec requests/
 nnoremap <leader>rg :Rgenerate<space>
 vnoremap <leader>rp :Rextract<space>
 nnoremap <leader>rk :Rake<space>
