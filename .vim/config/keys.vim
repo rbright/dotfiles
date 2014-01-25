@@ -26,6 +26,9 @@ nnoremap <leader>ft Vatzf
 " Leader-m to open the current file in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
+" Leader-rh to transition from the old Ruby hash syntax to the new one
+map <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
+
 " Leader-S to sort CSS properties
 nnoremap <leader>S ?{<cr>jV/^\s*\}?$<cr>k:sort<cr>:noh<cr>
 
