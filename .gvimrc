@@ -1,5 +1,6 @@
 " Start without scrollbars.
 set guioptions=aAce
+set transparency=10
 
 " Load NERDTree and Tagbar at startup and move the cursor to the main window
 autocmd VimEnter * NERDTree
