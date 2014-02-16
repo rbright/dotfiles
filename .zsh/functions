@@ -71,6 +71,11 @@ function mcd () {
   mkdir -p "$@" && eval cd "\"\$$#\"";
 }
 
+# Notify the UI
+function notify() {
+  terminal-notifier -message "$1" -title "Terminal Notifier"
+}
+
 # Open the specified gem in MacVim
 function og() {
   pushd `bundle show $1`
