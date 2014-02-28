@@ -51,22 +51,23 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:gist_detect_filetype = 1
 
 " Rails
-" Leader-rm to edit the specified model
-" Leader-rc to edit the specified controller
-" Leader-rv to edit the specified view
-" Leader-rg to run the specified generator
-" Leader-rp to extract the selected snippet into the specified partial
-" Leader-rk to run the specified Rake task
 nnoremap <leader>rm :Emodel<space>
 nnoremap <leader>rc :Econtroller<space>
+nnoremap <leader>rs :Eserializer<space>
+nnoremap <leader>rt :Espec<space>
 nnoremap <leader>rv :Eview<space>
-nnoremap <leader>rs :Espec<space>
-nnoremap <leader>rsm :Espec models/
-nnoremap <leader>rsc :Espec controllers/
-nnoremap <leader>rsr :Espec requests/
 nnoremap <leader>rg :Rgenerate<space>
 vnoremap <leader>rp :Rextract<space>
 nnoremap <leader>rk :Rake<space>
+
+" Ember.js
+nnoremap <leader>em :Eemmodel<space>
+nnoremap <leader>ec :Eemcontroller<space>
+nnoremap <leader>er :Eemroute<space>
+nnoremap <leader>err :Eemrouter<space>
+nnoremap <leader>es :Eemspec<space>
+nnoremap <leader>et :Eemtemplate<space>
+nnoremap <leader>ev :Eemview<space>
 
 " Tagbar
 " Leader-rt to toggle the sidebar
