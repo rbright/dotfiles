@@ -16,10 +16,6 @@ map <C-h> <C-W>h<C-W>_
 " Leader-/ to clear the search buffer
 nmap <silent> <leader>/ :nohlsearch<cr>
 
-" Leader-ev / Leader-sv to edit or save the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<cr>
-nmap <silent> <leader>sv :so $MYVIMRC<cr>
-
 " Leader-ft to fold an HTML tag
 nnoremap <leader>ft Vatzf
 
