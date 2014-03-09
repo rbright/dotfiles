@@ -120,8 +120,15 @@ function tcpmonitor () {
   sudo /usr/sbin/tcpdump -ln -A -s1024 -i en1 tcp port $1;
 }
 
-# Update all vim plugins
+# Remove vim plugins not included in vimrc
+function vim-clean () {
+  vundle-init
+  vim -c "execute \"BundleClean!\" | q | q"
+}
+
+# Update vim plugins
 function vim-update () {
+  vundle-init
   vim -c "execute \"BundleInstall!\" | q | q";
 }
 
