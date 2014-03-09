@@ -4,6 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "gmarik/vundle"
+Bundle "tpope/vim-fugitive"
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
