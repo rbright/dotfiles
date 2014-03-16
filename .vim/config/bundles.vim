@@ -13,7 +13,6 @@ Bundle "scrooloose/nerdtree"
 Bundle "ervandew/supertab"
 Bundle "scrooloose/syntastic"
 Bundle "tomtom/tlib_vim"
-Bundle "jgdavey/tslime.vim"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-commentary"
@@ -27,6 +26,7 @@ Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
 Bundle "thoughtbot/vim-rspec"
+Bundle "ngmy/vim-rubocop"
 Bundle "vim-ruby/vim-ruby"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
@@ -80,8 +80,12 @@ autocmd VimEnter * wincmd l"
 let NERDTreeShowHidden = 1
 
 " RSpec
-let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
 map <Leader>c :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" Rubocop
+let g:vimrubocop_keymap = 0
+nmap <Leader>rz :RuboCop<cr>

@@ -4,5 +4,6 @@
 # development files
 .gist-vim
 .powrc
+.tmuxinator/blueapron.yml
 .zsh/blueapron
 .zsh/development
