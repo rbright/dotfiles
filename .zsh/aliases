@@ -21,10 +21,10 @@ alias rb="ruby"
 alias rk="bundle exec rake"
 alias gi="gem install"
 alias giv="gem install -v"
-alias s="spring rspec"
-alias rps="bundle exec rake parallel:spec"
-alias rtest="bundle exec ruby -Itest"
-alias t="rtest"
+alias s="spring rspec && testscomplete"
+alias rps="bundle exec rake parallel:spec && testscomplete"
+alias rtest="bundle exec ruby -Itest && testscomplete"
+alias t="rtest && testscomplete"
 alias f="foreman start"
 
 # Rails
@@ -53,3 +53,7 @@ alias hrl="heroku releases --app"
 alias hlogs="heroku logs --tail --app"
 alias hcache="heroku pg:cache_hit --app"
 alias hindex="heroku pg:index_usage --app"
+
+# PostgreSQL
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop -m fast"

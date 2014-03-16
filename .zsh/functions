@@ -53,6 +53,10 @@ function hidespotlight () {
   fi
 }
 
+function testscomplete() {
+  terminal-notifier -message "Your tests are done!" -title "Party Time!" -activate "com.googlecode.iterm2" -sender "com.googlecode.iterm2"
+}
+
 # Kill all processes using the given directory
 # $1 - String representing the directory
 function killdir () {
