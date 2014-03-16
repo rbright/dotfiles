@@ -80,13 +80,8 @@ autocmd VimEnter * wincmd l"
 let NERDTreeShowHidden = 1
 
 " RSpec
-"let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
 let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 map <Leader>c :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-" Tagbar
-" Leader-rt to toggle the sidebar
-nnoremap <leader>b :TagbarToggle<cr><C-w>
