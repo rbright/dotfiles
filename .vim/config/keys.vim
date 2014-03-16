@@ -7,17 +7,14 @@ vnoremap <F1> <ESC>
 nnoremap <C-d> :split<cr>
 nnoremap <C-a> :vsplit<cr>
 
-" Ctrl-hjkl to switch between splits
-map <C-j> <C-W>j<C-W>_
-map <C-k> <C-W>k<C-W>_
-map <C-l> <C-W>l<C-W>_
-map <C-h> <C-W>h<C-W>_
+" Leader-w to save
+map <leader>w :w!<cr>
+
+" Leader-q to quit
+map <leader>q :q<cr>
 
 " Leader-/ to clear the search buffer
 nmap <silent> <leader>/ :nohlsearch<cr>
-
-" Leader-ft to fold an HTML tag
-nnoremap <leader>ft Vatzf
 
 " Leader-m to open the current file in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
@@ -28,7 +25,7 @@ map <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 " Leader-S to sort CSS properties
 nnoremap <leader>S ?{<cr>jV/^\s*\}?$<cr>k:sort<cr>:noh<cr>
 
-" Leader-tn to toggle relative numbering
+" Leader-y to toggle relative numbering
 function ToggleNumbering()
   if (&number)
     set nonumber
@@ -38,7 +35,7 @@ function ToggleNumbering()
     set number
   endif
 endfunction
-nnoremap <leader>tn :call ToggleNumbering()<cr><cr>
+nnoremap <leader>y :call ToggleNumbering()<cr><cr>
 
 " Leader-W to remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>

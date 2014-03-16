@@ -3,6 +3,8 @@ set gfn=Menlo\ Regular:h15
 color molokai
 syntax on
 
+set shellpipe=>
+
 " Convert tabs to spaces
 set tabstop=2
 set shiftwidth=2
