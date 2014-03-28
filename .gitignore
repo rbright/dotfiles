@@ -3,7 +3,9 @@
 
 # development files
 .gist-vim
+.irssi
+.pgpass
 .powrc
-.tmuxinator/blueapron.yml
+.tmuxinator
 .zsh/blueapron
 .zsh/development
