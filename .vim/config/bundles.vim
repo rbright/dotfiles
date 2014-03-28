@@ -40,11 +40,6 @@ filetype plugin indent on
 nnoremap <leader>f :Ack<space>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Commentary
-" Command-/ to comment a line or block
-nmap <C-/> <Plug>CommentaryLine
-vmap <C-/> <Plug>Commentary
-
 " CtrlP
 " Leader-t to search file names
 map <leader>t :CtrlP<cr>
