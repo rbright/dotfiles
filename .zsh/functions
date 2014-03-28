@@ -83,7 +83,7 @@ function notify() {
 # Open the specified gem in MacVim
 function og() {
   pushd `bundle show $1`
-  mvim
+  vim
   popd
 }
 
