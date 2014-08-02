@@ -53,6 +53,7 @@ alias hrl="heroku releases --app"
 alias hlogs="heroku logs --tail --app"
 alias hcache="heroku pg:cache_hit --app"
 alias hindex="heroku pg:index_usage --app"
+alias undeployed="heroku releases -a blueapron | sed -n 2p | cut -d' ' -f4 | xargs -J % git log --oneline --decorate --color --graph master --not %"
 
 # PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
