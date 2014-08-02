@@ -16,7 +16,11 @@ source $HOME/.zsh/development
 source $HOME/.zsh/aliases
 source $HOME/.zsh/functions
 
-export HEROKU_PATH=/usr/local/heroku/bin
-export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-export NPM_PATH=/usr/local/share/npm/bin
+HEROKU_PATH=/usr/local/heroku/bin
+JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+NPM_PATH=/usr/local/share/npm/bin
+RBENV_PATH=/usr/local/opt/rbenv
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$NPM_PATH:$HEROKU_PATH:$JAVA_HOME:$PATH
+
+export PATH="$RBENV_PATH/bin:$RBENV_PATH/shims:$PATH"
+eval "$(rbenv init -)"
