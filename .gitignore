@@ -2,10 +2,13 @@
 *.un~
 
 # development files
+.berkshelf
+.chef
 .gist-vim
 .irssi
 .pgpass
 .powrc
+.ssh
 .tmuxinator
 .zsh/blueapron
 .zsh/development
