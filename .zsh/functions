@@ -84,7 +84,6 @@ function notify() {
 function og() {
   pushd `bundle show $1`
   vim
-  popd
 }
 
 # Clear duplicates from the "Open With" menu in OS X.
@@ -121,7 +120,7 @@ function showhiddenfiles () {
 # Monitor the TCP traffic on the specified port
 # $1 - Integer representing the TCP port to be monitored
 function tcpmonitor () {
-  sudo /usr/sbin/tcpdump -ln -A -s1024 -i en1 tcp port $1;
+  sudo /usr/sbin/tcpdump -ln -A -s1024 -i $1 tcp port $2;
 }
 
 # Remove vim plugins not included in vimrc
