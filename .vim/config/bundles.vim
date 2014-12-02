@@ -1,9 +1,9 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle "gmarik/vundle"
+Bundle 'gmarik/Vundle.vim'
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
@@ -24,17 +24,19 @@ Bundle "nono/vim-handlebars"
 Bundle "wgibbs/vim-irblack"
 Bundle "rbright/vim-javascript"
 Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
 Bundle "thoughtbot/vim-rspec"
-Bundle "ngmy/vim-rubocop"
 Bundle "vim-ruby/vim-ruby"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle "tpope/vim-surround"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "mattn/webapi-vim"
-filetype plugin indent on
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Ack
 " Leader-f to search within files
