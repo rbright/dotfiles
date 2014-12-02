@@ -16,6 +16,11 @@ alias bl="bundle list"
 alias bp="bundle package"
 alias bu="bundle update"
 
+# Ember
+alias eb="ember build"
+alias es="ember server"
+alias et="ember test && testscomplete"
+
 # Ruby
 alias rb="ruby"
 alias rk="bundle exec rake"
@@ -29,7 +34,7 @@ alias f="foreman start"
 
 # Rails
 alias rc="bundle exec rails console"
-alias rdm="bundle exec rake db:migrate db:test:clone"
+alias rdm="bundle exec rake db:migrate"
 alias rdr="bundle exec rake db:rollback STEP="
 alias rg="bundle exec rails generate"
 alias ap="bundle exec rake assets:precompile RAILS_ENV=production"
