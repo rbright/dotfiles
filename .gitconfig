@@ -25,4 +25,6 @@
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
 [push]
-	default = matching
+	default = current
+[core]
+	excludesfile = ~/.gitignore
