@@ -19,14 +19,6 @@ set textwidth=79
 set list
 set listchars=tab:▸\ ,trail:·
 
-" C, C++, and Java files have 4 spaces per tab
-for ext in ["c", "cpp", "java"]
-  execute 'au FileType ' . ext . ' set expandtab'
-  execute 'au FileType ' . ext . ' set shiftwidth=4'
-  execute 'au FileType ' . ext . ' set softtabstop=4'
-  execute 'au FileType ' . ext . ' set tabstop=4'
-endfor
-
 " Setup indent guides
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -44,6 +36,7 @@ set autowrite
 set backspace=indent,eol,start
 set copyindent
 set colorcolumn=80
+set complete-=i
 set cursorline
 set encoding=utf-8
 set gdefault
@@ -62,12 +55,16 @@ set nowrap
 set relativenumber
 set ruler
 set scrolloff=3
+set shell=/usr/local/bin/zsh
 set showcmd
 set showmatch
 set showmode
 set smartcase
+set smarttab
 set splitbelow
 set splitright
+set ttimeout
+set ttimeoutlen=100
 set ttyfast
 set undofile
 set undolevels=1000
