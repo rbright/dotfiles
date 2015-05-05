@@ -3,21 +3,22 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'gmarik/Vundle.vim'
+Bundle "gmarik/Vundle.vim"
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
-Bundle "mattn/gist-vim"
 Bundle "tomasr/molokai"
 Bundle "scrooloose/nerdtree"
+Bundle "klen/python-mode"
 Bundle "ervandew/supertab"
 Bundle "scrooloose/syntastic"
+Bundle "majutsushi/tagbar"
 Bundle "tomtom/tlib_vim"
+Bundle "SirVer/ultisnips.git"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-dispatch"
-Bundle "heartsentwined/vim-emblem.git"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-fugitive"
 Bundle "nono/vim-handlebars"
@@ -29,7 +30,6 @@ Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
 Bundle "thoughtbot/vim-rspec"
 Bundle "vim-ruby/vim-ruby"
-Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle "tpope/vim-surround"
 Bundle "christoomey/vim-tmux-navigator"
@@ -70,8 +70,9 @@ nnoremap <leader>es :Eemspec<space>
 nnoremap <leader>et :Eemtemplate<space>
 nnoremap <leader>ev :Eemview<space>
 
-" Load NERDTree at startup and move the cursor to the main window
+" Load NERDTree and Tagbar at startup and move the cursor to the main window
 autocmd VimEnter * NERDTree
+autocmd VimEnter * TagbarOpen
 autocmd VimEnter * wincmd l"
 
 " Show hidden files in NERDTree
@@ -84,6 +85,5 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-" Rubocop
-let g:vimrubocop_keymap = 0
-nmap <Leader>rz :RuboCop<cr>
+" Tagbar
+nmap <Leader>b :TagbarToggle<CR>
