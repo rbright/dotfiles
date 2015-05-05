@@ -1,0 +1,56 @@
+"*":
+  editor:
+    invisibles: {}
+    fontFamily: "Menlo"
+    fontSize: 14
+  core:
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+    disabledPackages: [
+      "language-php"
+      "language-toml"
+      "metrics"
+      "styleguide"
+      "welcome"
+      "language-perl"
+      "language-csharp"
+      "language-clojure"
+      "language-c"
+      "language-go"
+      "language-xml"
+      "feedback"
+      "language-mustache"
+      "symbol-gen"
+      "autocomplete-html"
+      "release-notes"
+      "package-generator"
+      "open-on-github"
+      "language-objective-c"
+      "autocomplete"
+      "language-less"
+      "language-java"
+      "symbols-view"
+      "language-typescript"
+    ]
+    audioBeep: false
+  "exception-reporting":
+    userId: "98a488d3-a6a8-b1d4-8ef1-827a93bfd9f7"
+  welcome:
+    showOnStartup: false
+  linter: {}
+  react: {}
+  "atom-rspec":
+    command: "bundle exec rspec"
+  "git-blame": {}
+  "atom-ctags":
+    cmdArgs: "--exclude=spec --exclude=test --exclude=vendor"
+    autoBuildTagsWhenActive: true
+  "autocomplete-plus":
+    enableAutoActivation: false
+  "symbols-tree-view":
+    autoToggle: true
+  "ember-cli-helper": {}
+  "atom-beautify": {}
+  "atom-typescript": {}
