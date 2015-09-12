@@ -46,30 +46,28 @@ alias rdbm="bundle exec rake db:migrate"
 alias rdbr="bundle exec rake db:rollback STEP="
 alias ap="bundle exec rake assets:precompile RAILS_ENV=production"
 
-# Python
-alias p="python"
-alias pi="pip install -r requirements.txt"
-alias pf="pip freeze > requirements.txt"
-alias pv="virtualenv env"
-
-# Django
-alias djc="python manage.py shell"
-alias djs="python manage.py runserver"
-alias djdbc="python manage.py syncdb"
-alias djdbm="python manage.py migrate"
-
 # Ember
 alias eb="ember build"
 alias es="ember server"
 alias et="ember test && testscomplete"
 
-# Heroku
-alias hrc="heroku run rails console --app"
-alias hrk="heroku rake"
-alias hrl="heroku releases --app"
-alias hlogs="heroku logs --tail --app"
-alias hcache="heroku pg:cache_hit --app"
-alias hindex="heroku pg:index_usage --app"
+# Python
+alias p="python"
+alias py="pypy"
+alias p3="python3"
+alias pi="pip install -r requirements.txt"
+alias pf="pip freeze > requirements.txt"
+alias pv="virtualenv env"
+alias pva="source ./env/bin/activate"
+alias pvd="deactivate"
+
+# Django
+alias djp="django-admin.py startproject"
+alias dja="python manage.py startapp"
+alias djs="python manage.py runserver"
+alias djc="python manage.py shell"
+alias djdbc="python manage.py makemigrations"
+alias djdbm="python manage.py migrate"
 
 # PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

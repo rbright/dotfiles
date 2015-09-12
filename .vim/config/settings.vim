@@ -55,7 +55,7 @@ set nowrap
 set relativenumber
 set ruler
 set scrolloff=3
-set shell=/usr/local/bin/zsh
+set shell=/bin/zsh
 set showcmd
 set showmatch
 set showmode

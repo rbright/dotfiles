@@ -1,14 +1,14 @@
 # vim undo files
 *.un~
 
-# development files
-.berkshelf
-.chef
+# private files
+.aws
+.boto
 .gist-vim
-.irssi
 .pgpass
-.powrc
 .ssh
 .tmuxinator
-.zsh/blueapron
+.virtualenvs
+.vim/bundle
 .zsh/development
+.zsh/canary
