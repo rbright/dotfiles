@@ -4,10 +4,12 @@
 # private files
 .aws
 .boto
+.docker
 .gist-vim
 .pgpass
 .ssh
 .tmuxinator
+.vault-token
 .virtualenvs
 .vim/bundle
 .zsh/development

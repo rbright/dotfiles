@@ -9,6 +9,12 @@ function countlines () {
   find . -name "*.$1" | xargs wc -l;
 }
 
+# Remove Docker images in the "dangling" state
+function dockerclean () {
+  docker rm `docker ps --no-trunc -aq`
+  docker images -q --filter "dangling=true" | xargs docker rmi
+}
+
 # Disable "Downloaded from Internet warnings" in Mac OS X
 function downloadwarnings() {
   if [[ `uname` == 'Darwin' ]]; then
