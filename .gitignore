@@ -2,10 +2,12 @@
 *.un~
 
 # private files
+.ansible-vault.*
 .aws
 .boto
 .docker
 .gist-vim
+.irssi
 .pgpass
 .ssh
 .tmuxinator

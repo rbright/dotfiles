@@ -51,14 +51,6 @@ function getsite () {
   fi
 }
 
-# Hide Spotlight in the OS X menu bar
-function hidespotlight () {
-  if [[ `uname` == 'Darwin' ]]; then
-    sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-    killall SystemUIServer
-  fi
-}
-
 # Kill all processes using the given directory
 # $1 - String representing the directory
 function killdir () {

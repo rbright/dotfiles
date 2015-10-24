@@ -14,7 +14,9 @@ alias gcl="git clone"
 alias ggpl="ggpull"
 alias ggpsh="ggpush"
 alias gm="git merge"
+alias gom="git merge --no-ff --no-edit"
 alias grb="git rebase"
+alias gbd="git branch -D"
 alias gpr="git pull-request"
 alias gdpr="git difftool origin/master...origin/$(current_branch)"
 alias gt="gittower"
@@ -68,6 +70,9 @@ alias djs="python manage.py runserver"
 alias djc="python manage.py shell"
 alias djdbc="python manage.py makemigrations"
 alias djdbm="python manage.py migrate"
+
+# Elixir
+alias e="elixir"
 
 # PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
