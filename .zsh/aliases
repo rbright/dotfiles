@@ -22,6 +22,18 @@ alias gdpr="git difftool origin/master...origin/$(current_branch)"
 alias gt="gittower"
 alias gts="gittower --status"
 
+# Docker
+alias di="docker images"
+alias db="docker build"
+alias dr="docker run -it --rm"
+alias dt="docker tag"
+alias dp="docker push"
+alias dm="docker-machine"
+alias dmc="docker-machine create"
+alias dcb="docker-compose build"
+alias dcu="docker-compose up -d"
+alias dcr="docker-compose run --rm"
+
 # Ruby
 alias rb="ruby"
 alias rk="bundle exec rake"
@@ -73,6 +85,22 @@ alias djdbm="python manage.py migrate"
 
 # Elixir
 alias e="elixir"
+
+# Mix
+alias m="mix"
+alias mi="mix deps.get"
+alias mt="mix test"
+
+# Phoenix
+alias pxn="mix phoenix.new"
+alias pxdbc="mix ecto.create"
+alias pxdbm="mix ecto.migrate"
+alias pxgj="mix phoenix.gen.json"
+alias pxgm="mix phoenix.gen.model"
+alias pxgc="mix phoenix.gen.channel"
+alias pxs="mix phoenix.server"
+alias pxsi="iex -S mix phoenix.server"
+alias pxr="mix phoenix.routes"
 
 # PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

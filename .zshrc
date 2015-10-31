@@ -21,4 +21,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$NPM_PATH:$P
 RBENV_PATH=/usr/local/opt/rbenv
 export PATH="$RBENV_PATH/bin:$RBENV_PATH/shims:$PATH"
 
+export GOPATH="$HOME/Dropbox/projects/go"
+export PATH="$PATH:$GOPATH/bin"
+
 eval "$(rbenv init -)"

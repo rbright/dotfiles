@@ -11,7 +11,7 @@
 [merge]
 	tool = Kaleidoscope
 [mergetool]
-	keepBackup = true
+	keepBackup = false
 	prompt = false
 [github]
   user = rbright
