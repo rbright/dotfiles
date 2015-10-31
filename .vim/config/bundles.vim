@@ -85,3 +85,9 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Syntastic
 let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Syntastic Checkers
+let g:syntastic_enable_elixir_checker = 1
+let g:syntastic_elixir_checkers = ['elixir']
+let g:syntastic_python_checkers = ['flake8']
