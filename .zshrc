@@ -18,9 +18,6 @@ source $HOME/.zsh/functions
 NPM_PATH=/usr/local/share/npm/bin
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin:$NPM_PATH:$PATH
 
-RBENV_PATH=/usr/local/opt/rbenv
-export PATH="$RBENV_PATH/bin:$RBENV_PATH/shims:$PATH"
-
 export GOPATH="$HOME/Dropbox/projects/go"
 export PATH="$PATH:$GOPATH/bin"
 
