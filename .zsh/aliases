@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 alias brews='brew list -1'
 alias csvcols="cut -d, -f"
 alias ln="ln -v"

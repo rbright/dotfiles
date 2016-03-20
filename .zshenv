@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 eval "$(rbenv init -)"
 
 export RUBY_HEAP_FREE_MIN=100000
