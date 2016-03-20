@@ -3,7 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle "gmarik/Vundle.vim"
+Bundle "VundleVim/Vundle.vim"
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
@@ -24,6 +24,7 @@ Bundle "wgibbs/vim-irblack"
 Bundle "rbright/vim-javascript"
 Bundle "tpope/vim-markdown"
 Bundle "sickill/vim-monokai"
+Bundle "avdgaag/vim-phoenix"
 Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
