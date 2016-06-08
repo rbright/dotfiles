@@ -20,6 +20,7 @@ Bundle "tpope/vim-dispatch"
 Bundle 'elixir-lang/vim-elixir'
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-fugitive"
+Bundle "fatih/vim-go"
 Bundle "wgibbs/vim-irblack"
 Bundle "rbright/vim-javascript"
 Bundle "tpope/vim-markdown"
