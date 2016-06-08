@@ -1,6 +1,3 @@
-#!/usr/bin/env zsh
-eval "$(rbenv init -)"
-
 export RUBY_HEAP_FREE_MIN=100000
 export RUBY_GC_HEAP_INIT_SLOTS=600000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
