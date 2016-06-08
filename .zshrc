@@ -25,3 +25,5 @@ RBENV_PATH="$HOME/.rbenv/bin"
 export PATH="$HOME/bin:$RBENV_PATH:$NPM_PATH:$PATH:$GOPATH/bin:$GOROOT/bin"
 
 eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

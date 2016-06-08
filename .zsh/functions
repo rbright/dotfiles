@@ -118,10 +118,6 @@ function tcpmonitor () {
   sudo /usr/sbin/tcpdump -ln -A -s1024 -i $1 tcp port $2;
 }
 
-function testscomplete() {
-  terminal-notifier -message "Your tests are done!" -title "Party Time!" -activate "com.googlecode.iterm2" -sender "com.googlecode.iterm2"
-}
-
 # Remove vim plugins not included in vimrc
 function vim-clean () {
   vim -c "execute \"BundleClean!\" | q | q"
