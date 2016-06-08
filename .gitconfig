@@ -1,6 +1,6 @@
 [user]
-	name = Ryan Bright
-	email = ryan@rbright.net
+  name = Ryan Bright
+  email = ryan@ryanbright.me
 [alias]
   amend = commit --amend
   unstage = reset HEAD --
@@ -8,23 +8,30 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
   ui = auto
-[merge]
-	tool = Kaleidoscope
-[mergetool]
-	keepBackup = false
-	prompt = false
+[commit]
+  gpgsign = true
+[core]
+  excludesfile = ~/.gitignore
+[diff]
+  tool = Kaleidoscope
+[difftool]
+  prompt = false
+  trustExitCode = true
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [github]
   user = rbright
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-	tool = Kaleidoscope
-[difftool]
-	prompt = false
+[gpg]
+  program = /usr/local/bin/gpg_wrap
+[merge]
+  tool = Kaleidoscope
+[mergetool]
+  keepBackup = false
+  prompt = false
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 [push]
-	default = current
-[core]
-	excludesfile = ~/.gitignore
+  default = current
+[rerere]
+  enabled = true
+  autoupdate = true
