@@ -54,6 +54,32 @@ alias djc="python manage.py shell"
 alias djdbc="python manage.py makemigrations"
 alias djdbm="python manage.py migrate"
 
+# Ruby
+alias rb="ruby"
+alias rk="bundle exec rake"
+alias gi="gem install"
+alias giv="gem install -v"
+alias s="spring rspec && testscomplete"
+alias rps="bundle exec rake parallel:spec && testscomplete"
+alias rtest="bundle exec ruby -Itest && testscomplete"
+alias t="rtest && testscomplete"
+alias f="foreman start"
+
+# Bundler
+alias b="bundle"
+alias be="bundle exec"
+alias bi="bundle install"
+alias bl="bundle list"
+alias bp="bundle package"
+alias bu="bundle update"
+
+# Rails
+alias rc="bundle exec rails console"
+alias rg="bundle exec rails generate"
+alias rdbm="bundle exec rake db:migrate"
+alias rdbr="bundle exec rake db:rollback STEP="
+alias ap="bundle exec rake assets:precompile RAILS_ENV=production"
+
 # Elixir
 alias e="elixir"
 

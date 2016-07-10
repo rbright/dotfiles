@@ -31,6 +31,8 @@ Bundle "avdgaag/vim-phoenix"
 Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
+Bundle "thoughtbot/vim-rspec"
+Bundle "vim-ruby/vim-ruby"
 Bundle "honza/vim-snippets"
 Bundle "tpope/vim-surround"
 Bundle "christoomey/vim-tmux-navigator"
@@ -66,6 +68,23 @@ autocmd VimEnter * wincmd l"
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden = 1
+
+" Rails
+nnoremap <leader>rm :Emodel<space>
+nnoremap <leader>rc :Econtroller<space>
+nnoremap <leader>rs :Eserializer<space>
+nnoremap <leader>rt :Espec<space>
+nnoremap <leader>rv :Eview<space>
+nnoremap <leader>rg :Rgenerate<space>
+vnoremap <leader>rp :Rextract<space>
+nnoremap <leader>rk :Rake<space>
+
+" RSpec
+let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
+map <Leader>c :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Syntastic
 let g:syntastic_check_on_open = 1
