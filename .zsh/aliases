@@ -4,10 +4,12 @@ alias csvcols="cut -d, -f"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias psgrep="ps -ax | grep"
-alias py="python"
 alias r="/usr/bin/r"
 alias rd="rm -rf"
 alias tmux="tmux -2"
+alias strace="dtruss"
+
+alias extest="py.test -x --ff --pep8"
 
 # Git
 alias git="hub"
@@ -36,9 +38,8 @@ alias dcu="docker-compose up -d"
 alias dcr="docker-compose run --rm"
 
 # Python
-alias p="python"
-alias py="pypy"
-alias p3="python3"
+alias py="python"
+alias py3="python3"
 alias pi="pip install -r requirements.txt"
 alias pf="pip freeze > requirements.txt"
 alias pv="virtualenv env"

@@ -99,6 +99,11 @@ function rbenv-update () {
 }
 
 # Remove vim undo files from the current directory
+function rmpyc () {
+  find . -name "*.pyc" -exec rm -f {} \;
+}
+
+# Remove vim undo files from the current directory
 function rmundo () {
   find . -name "*.un~" -exec rm -f {} \;
 }

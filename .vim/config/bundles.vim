@@ -6,8 +6,10 @@ call vundle#begin()
 Bundle "VundleVim/Vundle.vim"
 Bundle "mileszs/ack.vim"
 Bundle "kien/ctrlp.vim"
+Bundle "rizzatti/dash.vim"
 Bundle "Raimondi/delimitMate"
 Bundle "ekalinin/Dockerfile.vim"
+Bundle "davidhalter/jedi-vim"
 Bundle "tomasr/molokai"
 Bundle "scrooloose/nerdtree"
 Bundle "ervandew/supertab"
@@ -47,8 +49,16 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 map <leader>t :CtrlP<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
+" Dash
+nmap <silent> <leader>d <Plug>DashSearch
+
 " Gist
 let g:gist_detect_filetype = 1
+
+" Jedi
+"let g:jedi#completions_enabled = 0
+let g:jedi#goto_command = ""
+let g:jedi#goto_definitions_command = "<leader>g"
 
 " Load NERDTree at startup and move the cursor to the main window
 autocmd VimEnter * NERDTree
