@@ -2,6 +2,7 @@
 *.un~
 
 # private files
+*.dashsync
 .ansible-vault.*
 .aws
 .boto
