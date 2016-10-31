@@ -55,8 +55,11 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " CtrlP
 " Leader-t to search file names
-map <leader>t :CtrlP<cr>
+map <leader>p :CtrlP<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_max_depth=40
+let g:ctrlp_max_files=0
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
