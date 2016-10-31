@@ -1,9 +1,9 @@
 let mapleader = ","
 nnoremap ; :
 
-"=================================
+"================================================================
 " PLUGINS
-"=================================
+"================================================================
 
 call plug#begin('~/.vim/plugged')
 
@@ -54,16 +54,19 @@ Plug 'mattn/webapi-vim'
 
 call plug#end()
 
-"=================================
+""================================================================
 " PLUGIN SETTINGS
-"=================================
+""================================================================
 
+"================
 " Ack
-" Leader-f to search within files
+"================
 nnoremap <leader>f :Ack<space>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+"================
 " Autocompletion
+"================
 if has('nvim')
   let g:deoplete#enable_at_startup = 1
 else
@@ -72,21 +75,28 @@ else
   let g:completor_disable_buffer = 1
 endif
 
+"================
 " CtrlP
-" Leader-t to search file names
+"================
 map <leader>p :CtrlP<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=0
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+"================
 " Dash
+"================
 nmap <silent> <leader>d <Plug>DashSearch
 
+"================
 " Gist
+"================
 let g:gist_detect_filetype = 1
 
+"================
 " Golang
+"================
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -101,19 +111,27 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
 
+"================
 " Jedi
+"================
 "let g:jedi#completions_enabled = 0
 let g:jedi#goto_command = ""
 let g:jedi#goto_definitions_command = "<leader>g"
 
+"================
 " JSX
+"================
 let g:jsx_ext_required = 0
 
+"================
 " netrw
+"================
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_liststyle = 3
 
+"================
 " Rails
+"================
 nnoremap <leader>rm :Emodel<space>
 nnoremap <leader>rc :Econtroller<space>
 nnoremap <leader>rs :Eserializer<space>
@@ -123,7 +141,9 @@ nnoremap <leader>rg :Rgenerate<space>
 vnoremap <leader>rp :Rextract<space>
 nnoremap <leader>rk :Rake<space>
 
+"================
 " RSpec
+"================
 let g:rspec_command = "Dispatch rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
 map <Leader>c :call RunCurrentSpecFile()<CR>
@@ -131,11 +151,11 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+"================
 " Syntastic
+"================
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" Syntastic Checkers
 let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_elixir_checkers = ['elixir']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -143,13 +163,16 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
 
+"================
 " Tagbar
+"================
+let g:tagbar_compact = 1
 autocmd VimEnter * TagbarOpen
 
 
-"=================================
+"================================================================
 " SETTINGS
-"=================================
+"================================================================
 
 " Fonts
 set gfn=Menlo\ Regular:h15
@@ -233,9 +256,9 @@ if has('gui_running')
 endif
 
 
-"=================================
+"================================================================
 " MAPPINGS
-"=================================
+"================================================================
 
 " Ignore F1
 inoremap <F1> <ESC>
