@@ -72,9 +72,9 @@ let g:gist_detect_filetype = 1
 let g:jedi#goto_command = ""
 let g:jedi#goto_definitions_command = "<leader>g"
 
-" Load NERDTree at startup and move the cursor to the main window
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd l"
+" JSX
+let g:jsx_ext_required = 0
+
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden = 1
@@ -103,4 +103,5 @@ let g:syntastic_check_on_wq = 0
 " Syntastic Checkers
 let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_elixir_checkers = ['elixir']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
