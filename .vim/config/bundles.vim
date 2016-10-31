@@ -5,14 +5,17 @@ call vundle#begin()
 
 Bundle "VundleVim/Vundle.vim"
 Bundle "mileszs/ack.vim"
+Bundle "maralla/completor.vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle "rizzatti/dash.vim"
 Bundle "Raimondi/delimitMate"
+Bundle "Shougo/deoplete.nvim"
+Bundle "zchee/deoplete-go", { 'do': 'make'}
+Bundle "zchee/deoplete-jedi"
 Bundle "ekalinin/Dockerfile.vim"
 Bundle "mattn/emmet-vim"
 Bundle "davidhalter/jedi-vim"
 Bundle "tomasr/molokai"
-Bundle "Shougo/neocomplete.vim"
 Bundle "vim-scripts/netrw.vim"
 Bundle "scrooloose/syntastic"
 Bundle "majutsushi/tagbar"
@@ -89,7 +92,6 @@ let g:jedi#goto_definitions_command = "<leader>g"
 
 " JSX
 let g:jsx_ext_required = 0
-
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
