@@ -91,8 +91,9 @@ let g:jedi#goto_definitions_command = "<leader>g"
 let g:jsx_ext_required = 0
 
 
-" Show hidden files in NERDTree
-let NERDTreeShowHidden = 1
+" netrw
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_liststyle = 3
 
 " Rails
 nnoremap <leader>rm :Emodel<space>
