@@ -24,6 +24,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-scripts/netrw.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tlib_vim'
@@ -377,11 +378,14 @@ autocmd VimEnter * TagbarOpen
 " SETTINGS
 "================================================================
 
-" Fonts
-set gfn=Menlo\ Regular:h15
-color molokai
+" Colors
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
 syntax on
 
+" Fonts
+set gfn=Menlo\ Regular:h15
 set shellpipe=>
 
 " Convert tabs to spaces
