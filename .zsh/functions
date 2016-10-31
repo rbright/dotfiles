@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 # Perform an ls -la after switching directories, because I'm going to do it.
 function cd {
   builtin cd "$@" && ls -la;
@@ -33,23 +34,6 @@ function fd () {
 # Flush everything in memcached
 function fm() {
   echo "flush_all" | nc 127.0.0.1 11211
-}
-
-# Set the level of font smoothing in Mac OS X
-# $1 - Integer representing the level of font smoothing (0-3)
-function fontsmoothing () {
-  if [[ `uname` == 'Darwin' ]]; then
-    defaults -currentHost write -globalDomain AppleFontSmoothing -int $1;
-  fi
-}
-
-# Fetch all contents from the specified website
-# $1 - URL for the specified website
-function getsite () {
-  wget --recursive --page-requisites --convert-links -U 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20070802 SeaMonkey/1.1.4' $1;
-  if [[ `uname` == 'Darwin' ]]; then
-    terminal-notifier -message "Download of $1 completed successfully" -title "Site Downloaded";
-  fi
 }
 
 # Kill all processes using the given directory
@@ -125,7 +109,7 @@ function tcpmonitor () {
 
 # Remove vim plugins not included in vimrc
 function vim-clean () {
-  vim -c "execute \"BundleClean!\" | q | q"
+  vim -c "execute \"PlugClean!\" | q | q"
 }
 
 # Update vim plugins

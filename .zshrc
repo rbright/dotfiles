@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(docker git go httpie npm)
+plugins=(bundler django docker docker-compose git golang pip)
 
 export EDITOR="vim"
 export LANGUAGE=en_US.UTF
