@@ -16,6 +16,7 @@
 .tmuxinator
 .vault-token
 .virtualenvs
+.vim/.netrwhist
 .vim/bundle
 .zsh/development
 Sublime Text 3/
