@@ -6,6 +6,8 @@ alias mkdir="mkdir -p"
 alias psgrep="ps -ax | grep"
 alias tmux="tmux -2"
 alias strace="dtruss"
+alias vi="nvim"
+alias vim="nvim"
 
 alias extest="py.test -x --ff --pep8"
 
