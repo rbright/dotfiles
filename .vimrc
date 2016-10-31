@@ -16,6 +16,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mattn/gist-vim'
+Plug 'junegunn/goyo.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
@@ -153,6 +154,11 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+
+"================
+" Goyo
+"================
+au FileType markdown nmap <leader>w :Goyo<CR>
 
 "================
 " JSX
