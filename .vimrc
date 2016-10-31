@@ -227,6 +227,11 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu
 set wildmode=list:longest
 
+if has('gui_running')
+  " Start without scrollbars.
+  set guioptions=aAce
+endif
+
 
 "=================================
 " MAPPINGS
@@ -277,3 +282,18 @@ nmap Z gqap
 
 " w!! to save a file with sudo
 cmap w!! w !sudo tee % >/dev/null
+
+if has('gui_running')
+  " Command-D and Command-d for split/vsplit
+  nnoremap <D-D> :split<cr>
+  nnoremap <D-d> :vsplit<cr>
+
+  " Command-Option-Arrows for switching between splits
+  map <D-M-Down> <C-W>j
+  map <D-M-Up> <C-W>k
+  map <D-M-Right> <C-W>l
+  map <D-M-Left> <C-W>h
+
+  " Command-W to close a buffer
+  nnoremap <D-w> :q!<cr>
+endif
