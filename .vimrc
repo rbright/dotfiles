@@ -70,10 +70,17 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 "================
 if has('nvim')
   let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_smart_case = 1
   let g:deoplete#ignore_sources = {}
-  let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file', 'neosnippet']
+  let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file']
   let g:deoplete#sources#go#sort_class = ['func', 'type', 'var', 'const']
   let g:deoplete#sources#go#align_class = 1
+
+  " Close popup and save indent
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+  endfunction
 else
   let g:acp_enableAtStartup = 0
   let g:neocomplete#enable_at_startup = 1
@@ -89,9 +96,6 @@ else
   function! s:my_cr_function()
     return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   endfunction
-
-  " TAB completion
-  "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
   " Close popup and delete backword character
   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
@@ -313,8 +317,14 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" TAB should trigger neosnippet when available
+imap <expr><TAB>
+\ pumvisible() ? "\<C-n>" :
+\ neosnippet#expandable_or_jumpable() ?
+\    neosnippet#mappings#expand_or_jump_impl() : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+\    neosnippet#mappings#expand_or_jump_impl() : "\<TAB>"V
 
 "================
 " netrw
