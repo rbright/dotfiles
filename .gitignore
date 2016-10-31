@@ -9,6 +9,7 @@
 .docker
 .exercism.json
 .gist-vim
+.google_authenticator
 .irssi
 .pgpass
 .ssh

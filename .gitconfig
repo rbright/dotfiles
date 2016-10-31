@@ -32,6 +32,3 @@
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 [push]
   default = current
-[rerere]
-  enabled = true
-  autoupdate = true
