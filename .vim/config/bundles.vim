@@ -106,7 +106,8 @@ vnoremap <leader>rp :Rextract<space>
 nnoremap <leader>rk :Rake<space>
 
 " RSpec
-let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_runner = "os_x_iterm2"
 map <Leader>c :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
