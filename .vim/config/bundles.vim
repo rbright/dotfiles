@@ -67,6 +67,21 @@ nmap <silent> <leader>d <Plug>DashSearch
 " Gist
 let g:gist_detect_filetype = 1
 
+" Golang
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
+
 " Jedi
 "let g:jedi#completions_enabled = 0
 let g:jedi#goto_command = ""
@@ -103,5 +118,7 @@ let g:syntastic_check_on_wq = 0
 " Syntastic Checkers
 let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_elixir_checkers = ['elixir']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
