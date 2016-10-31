@@ -4,8 +4,6 @@ alias csvcols="cut -d, -f"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias psgrep="ps -ax | grep"
-alias r="/usr/bin/r"
-alias rd="rm -rf"
 alias tmux="tmux -2"
 alias strace="dtruss"
 

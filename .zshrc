@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(brew docker git httpie npm)
+plugins=(brew docker git go httpie npm)
 
 export EDITOR="vim"
 export LANGUAGE=en_US.UTF
@@ -11,18 +11,16 @@ export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color" # for tmux
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zsh/development
 source $HOME/.zsh/aliases
 source $HOME/.zsh/functions
+source $HOME/.zsh/development
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/go"
 export GOROOT="/usr/local/opt/go/libexec"
-
-NPM_PATH="/usr/local/share/npm/bin"
-RBENV_PATH="$HOME/.rbenv/bin"
-
-export PATH="$HOME/bin:$RBENV_PATH:$NPM_PATH:$PATH:$GOPATH/bin:$GOROOT/bin"
+export NPM_PATH="/usr/local/share/npm/bin"
+export RBENV_PATH="$HOME/.rbenv/bin"
+export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$RBENV_PATH:$PATH"
 
 eval "$(rbenv init -)"
 
