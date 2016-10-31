@@ -17,6 +17,7 @@
 .vault-token
 .virtualenvs
 .vim/.netrwhist
-.vim/bundle
+.vim/autoload
+.vim/plugged
 .zsh/development
 Sublime Text 3/

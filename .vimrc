@@ -5,58 +5,54 @@ nnoremap ; :
 " PLUGINS
 "=================================
 
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Bundle "VundleVim/Vundle.vim"
-Bundle "mileszs/ack.vim"
-Bundle "maralla/completor.vim"
-Bundle "ctrlpvim/ctrlp.vim"
-Bundle "rizzatti/dash.vim"
-Bundle "Raimondi/delimitMate"
-Bundle "Shougo/deoplete.nvim"
-Bundle "zchee/deoplete-go", { 'do': 'make'}
-Bundle "zchee/deoplete-jedi"
-Bundle "ekalinin/Dockerfile.vim"
-Bundle "mattn/emmet-vim"
-Bundle "davidhalter/jedi-vim"
-Bundle "tomasr/molokai"
-Bundle "vim-scripts/netrw.vim"
-Bundle "scrooloose/syntastic"
-Bundle "majutsushi/tagbar"
-Bundle "tomtom/tlib_vim"
-Bundle "SirVer/ultisnips.git"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-dispatch"
-Bundle 'elixir-lang/vim-elixir'
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-fugitive"
-Bundle "airblade/vim-gitgutter"
-Bundle "fatih/vim-go"
-Bundle "wgibbs/vim-irblack"
-Bundle "rbright/vim-javascript"
-Bundle "mxw/vim-jsx"
-Bundle "tpope/vim-markdown"
-Bundle "sickill/vim-monokai"
-Bundle "avdgaag/vim-phoenix"
-Bundle "tpope/vim-projectionist"
-Bundle "tpope/vim-rails"
-Bundle "justinj/vim-react-snippets"
-Bundle "tpope/vim-repeat"
-Bundle "thoughtbot/vim-rspec"
-Bundle "ngmy/vim-rubocop"
-Bundle "vim-ruby/vim-ruby"
-Bundle "honza/vim-snippets"
-Bundle "tpope/vim-surround"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "tpope/vim-vinegar"
-Bundle "mattn/webapi-vim"
+Plug 'VundleVim/Vundle.vim'
+Plug 'mileszs/ack.vim'
+Plug 'maralla/completor.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'mattn/emmet-vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'tomasr/molokai'
+Plug 'vim-scripts/netrw.vim'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'tomtom/tlib_vim'
+Plug 'SirVer/ultisnips'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'wgibbs/vim-irblack'
+Plug 'rbright/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-markdown'
+Plug 'sickill/vim-monokai'
+Plug 'avdgaag/vim-phoenix'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'justinj/vim-react-snippets'
+Plug 'tpope/vim-repeat'
+Plug 'thoughtbot/vim-rspec'
+Plug 'ngmy/vim-rubocop'
+Plug 'vim-ruby/vim-ruby'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-vinegar'
+Plug 'mattn/webapi-vim'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 "=================================
 " PLUGIN SETTINGS

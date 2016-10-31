@@ -130,7 +130,7 @@ function vim-clean () {
 
 # Update vim plugins
 function vim-update () {
-  vim -c "execute \"BundleInstall!\" | q | q";
+  vim -c "execute \"PlugUpdate!\" | q | q";
 }
 
 # Update oh-my-zsh
