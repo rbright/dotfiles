@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(brew docker git go httpie npm)
+plugins=(docker git go httpie npm)
 
 export EDITOR="vim"
 export LANGUAGE=en_US.UTF
