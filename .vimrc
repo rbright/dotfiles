@@ -7,52 +7,52 @@ nnoremap ; :
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
+"================
+" General
+"================
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'zchee/deoplete-jedi'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'mattn/emmet-vim'
-Plug 'davidhalter/jedi-vim'
+Plug 'mattn/gist-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'vim-scripts/netrw.vim'
+Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
+Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
-Plug 'wgibbs/vim-irblack'
-Plug 'rbright/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'tpope/vim-markdown'
 Plug 'sickill/vim-monokai'
-Plug 'avdgaag/vim-phoenix'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'justinj/vim-react-snippets'
 Plug 'tpope/vim-repeat'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ngmy/vim-rubocop'
-Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-vinegar'
 Plug 'mattn/webapi-vim'
+
+"================
+" Languages
+"================
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
+Plug 'zchee/deoplete-jedi', { 'for': ['python', 'python3'] }
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'mattn/emmet-vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-markdown'
+Plug 'rbright/vim-javascript'
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'justinj/vim-react-snippets', { 'for': 'javascript' }
+Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 
@@ -82,32 +82,6 @@ if has('nvim')
   function! s:my_cr_function()
     return pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
   endfunction
-else
-  let g:acp_enableAtStartup = 0
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
-  let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-  inoremap <expr><C-g>     neocomplete#undo_completion()
-  inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-  " Close popup and save indent
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  function! s:my_cr_function()
-    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  endfunction
-
-  " Close popup and delete backword character
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-  " Omnicompletion
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
 "================
@@ -151,13 +125,14 @@ let g:gist_detect_filetype = 1
 " Golang
 "================
 let g:go_async_run = 1
-let g:go_auto_type_info = 0
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
 let g:go_autodetect_gopath = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 0
+let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -166,18 +141,18 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_types = 1
 let g:go_list_type = "quickfix"
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
-
-"================
-" Jedi
-"================
-"let g:jedi#completions_enabled = 0
-let g:jedi#goto_command = ""
-let g:jedi#goto_definitions_command = "<leader>g"
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 
 "================
 " JSX
@@ -307,7 +282,12 @@ function! CtrlPStatusFunc_2(str)
 endfunction
 
 "================
-" Neovim
+" Markdown
+"================
+au FileType markdown nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
+
+"================
+" neovim
 "================
 let g:python_host_prog = "/usr/local/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3"
@@ -336,24 +316,23 @@ let g:netrw_liststyle = 3
 "================
 " Rails
 "================
-nnoremap <leader>rm :Emodel<space>
-nnoremap <leader>rc :Econtroller<space>
-nnoremap <leader>rs :Eserializer<space>
-nnoremap <leader>rt :Espec<space>
-nnoremap <leader>rv :Eview<space>
-nnoremap <leader>rg :Rgenerate<space>
-vnoremap <leader>rp :Rextract<space>
-nnoremap <leader>rk :Rake<space>
+au FileType ruby nnoremap <leader>m :Emodel<space>
+au FileType ruby nnoremap <leader>c :Econtroller<space>
+au FileType ruby nnoremap <leader>sr :Eserializer<space>
+au FileType ruby nnoremap <leader>sp :Espec<space>
+au FileType ruby nnoremap <leader>v :Eview<space>
+au FileType ruby nnoremap <leader>g :Rgenerate<space>
+au FileType ruby nnoremap <leader>k :Rake<space>
 
 "================
 " RSpec
 "================
 let g:rspec_command = "Dispatch rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
-map <Leader>c :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+au FileType ruby map <Leader>t :call RunCurrentSpecFile()<CR>
+au FileType ruby map <Leader>tn :call RunNearestSpec()<CR>
+au FileType ruby map <Leader>tl :call RunLastSpec()<CR>
+au FileType ruby map <Leader>ta :call RunAllSpecs()<CR>
 
 "================
 " Syntastic
@@ -451,6 +430,7 @@ set ttimeoutlen=100
 set ttyfast
 set undofile
 set undolevels=1000
+set updatetime=100
 set vb t_vb=
 set visualbell
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -458,7 +438,6 @@ set wildmenu
 set wildmode=list:longest
 
 if has('gui_running')
-  " Start without scrollbars.
   set guioptions=aAce
 endif
 
@@ -484,9 +463,6 @@ map <leader>q :q<cr>
 
 " Leader-/ to clear the search buffer
 nmap <silent> <leader>/ :nohlsearch<cr>
-
-" Leader-m to open the current file in Marked
-nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
 " Leader-y to toggle relative numbering
 function ToggleNumbering()
