@@ -19,8 +19,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/go"
 export GOROOT="/usr/local/opt/go/libexec"
 export NPM_PATH="/usr/local/share/npm/bin"
+export YARN_PATH="$HOME/.yarn/bin"
 export RBENV_PATH="$HOME/.rbenv/bin"
-export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$RBENV_PATH:$PATH"
+export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$YARN_PATH:$RBENV_PATH:$PATH"
 
 eval "$(rbenv init -)"
 

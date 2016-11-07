@@ -78,6 +78,11 @@ alias rdbm="bundle exec rake db:migrate"
 alias rdbr="bundle exec rake db:rollback STEP="
 alias ap="bundle exec rake assets:precompile RAILS_ENV=production"
 
+# React Native
+alias rn="react-native"
+alias rnios="react-native run-ios"
+alias rnand="react-native run-android"
+
 # Elixir
 alias e="elixir"
 
