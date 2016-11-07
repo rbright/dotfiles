@@ -29,7 +29,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -47,10 +46,12 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-markdown'
 Plug 'rbright/vim-javascript'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'heavenshell/vim-jsdoc'
+Plug 'elzr/vim-json'
+Plug 'mxw/vim-jsx'
 Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'justinj/vim-react-snippets', { 'for': 'javascript' }
+Plug 'justinj/vim-react-snippets'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby'
@@ -64,7 +65,8 @@ call plug#end()
 "================
 " Ack
 "================
-nnoremap <leader>f :Ack<space>
+cnoreabbrev Ack Ack!
+nnoremap <leader>f :Ack!<space>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "================
@@ -158,7 +160,7 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 "================
 " Goyo
 "================
-au FileType markdown nmap <leader>w :Goyo<CR>
+au FileType markdown nmap <leader>e :Goyo<CR>
 
 "================
 " JSX
@@ -322,13 +324,12 @@ let g:netrw_liststyle = 3
 "================
 " Rails
 "================
+au FileType ruby map <leader>r :!ruby %<cr>
 au FileType ruby nnoremap <leader>m :Emodel<space>
 au FileType ruby nnoremap <leader>c :Econtroller<space>
 au FileType ruby nnoremap <leader>sr :Eserializer<space>
 au FileType ruby nnoremap <leader>sp :Espec<space>
 au FileType ruby nnoremap <leader>v :Eview<space>
-au FileType ruby nnoremap <leader>g :Rgenerate<space>
-au FileType ruby nnoremap <leader>k :Rake<space>
 
 "================
 " RSpec
