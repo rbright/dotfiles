@@ -42,6 +42,7 @@ Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': ['python', 'python3'] }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mattn/emmet-vim'
+Plug 'kchmck/vim-coffee-script'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-markdown'
@@ -91,11 +92,12 @@ endif
 " CtrlP
 "================
 map <leader>p :CtrlP<cr>
+map <F5> :call :CtrlPClearAllCaches<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=0
 let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
@@ -492,6 +494,11 @@ nmap Q @q
 " Z to format the current paragraph or selection
 vmap Z gq
 nmap Z gqap
+
+" Ctrl-h does not work in neovim
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
 
 " w!! to save a file with sudo
 cmap w!! w !sudo tee % >/dev/null
