@@ -1,5 +1,6 @@
 .DS_Store
 .projections.json
+.pry_history
 *.sublime-project
 *.sublime-workspace
 *.un~
