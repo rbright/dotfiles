@@ -51,10 +51,10 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rails'
 Plug 'justinj/vim-react-snippets'
-Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
-Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec'
+Plug 'ngmy/vim-rubocop'
 Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
@@ -74,7 +74,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Autocompletion
 "================
 if has('nvim')
-  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_at_startup = 0
   let g:deoplete#enable_smart_case = 1
   let g:deoplete#ignore_sources = {}
   let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file']
@@ -99,7 +99,7 @@ let g:ctrlp_max_files=0
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|mysql-data\|DS_Store\|git'
 
 "================
 " Dash
@@ -326,12 +326,12 @@ let g:netrw_liststyle = 3
 "================
 " Rails
 "================
-au FileType ruby map <leader>r :!ruby %<cr>
-au FileType ruby nnoremap <leader>m :Emodel<space>
-au FileType ruby nnoremap <leader>c :Econtroller<space>
-au FileType ruby nnoremap <leader>sr :Eserializer<space>
-au FileType ruby nnoremap <leader>sp :Espec<space>
-au FileType ruby nnoremap <leader>v :Eview<space>
+map <leader>r :!ruby %<cr>
+nnoremap <leader>m :Emodel<space>
+nnoremap <leader>c :Econtroller<space>
+nnoremap <leader>sr :Eserializer<space>
+nnoremap <leader>sp :Espec<space>
+nnoremap <leader>v :Eview<space>
 
 "================
 " RSpec
