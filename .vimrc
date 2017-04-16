@@ -455,6 +455,9 @@ endif
 " MAPPINGS
 "================================================================
 
+" Remap ESC to jj
+imap jj <ESC>
+
 " Ignore F1
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
