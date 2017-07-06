@@ -42,15 +42,12 @@ Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': ['python', 'python3'] }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mattn/emmet-vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-markdown'
 Plug 'rbright/vim-javascript'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
-Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
 Plug 'tpope/vim-rails'
 Plug 'justinj/vim-react-snippets'
 Plug 'thoughtbot/vim-rspec'
@@ -349,7 +346,6 @@ au FileType ruby map <Leader>ta :call RunAllSpecs()<CR>
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_elixir_checker = 1
-let g:syntastic_elixir_checkers = ['elixir']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_javascript_checkers = ['eslint']
@@ -360,7 +356,6 @@ let g:syntastic_python_checkers = ['flake8']
 "================
 let g:tagbar_compact = 1
 autocmd VimEnter * TagbarOpen
-
 
 "================================================================
 " SETTINGS
