@@ -17,7 +17,8 @@ export GOROOT="/usr/local/opt/go/libexec"
 export NPM_PATH="/usr/local/share/npm/bin"
 export YARN_PATH="$HOME/.yarn/bin"
 export RBENV_PATH="$HOME/.rbenv/bin"
-export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$YARN_PATH:$RBENV_PATH:$PATH"
+export PYTHON_PATH="$HOME/Library/Python/2.7/bin"
+export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$YARN_PATH:$PYTHON_PATH:$RBENV_PATH:$PATH"
 
 # Homebrew Security Options
 export HOMEBREW_NO_ANALYTICS=1
