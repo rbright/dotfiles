@@ -71,18 +71,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Autocompletion
 "================
 if has('nvim')
-  let g:deoplete#enable_at_startup = 0
+  let g:deoplete#enable_at_startup = 1
   let g:deoplete#enable_smart_case = 1
   let g:deoplete#ignore_sources = {}
   let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file']
   let g:deoplete#sources#go#sort_class = ['func', 'type', 'var', 'const']
   let g:deoplete#sources#go#align_class = 1
-
-  " Close popup and save indent
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  function! s:my_cr_function()
-    return pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
-  endfunction
 endif
 
 "================
