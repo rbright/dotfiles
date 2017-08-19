@@ -6,6 +6,7 @@ alias mkdir="mkdir -p"
 alias psgrep="ps -ax | grep"
 alias strace="dtruss"
 alias tmux="tmux -2"
+alias mux="tmuxinator"
 alias vi="nvim"
 alias vim="nvim"
 
@@ -44,14 +45,6 @@ alias pv="virtualenv env"
 alias pva="source ./env/bin/activate"
 alias pvd="deactivate"
 
-# Django
-alias djp="django-admin.py startproject"
-alias dja="python manage.py startapp"
-alias djs="python manage.py runserver"
-alias djc="python manage.py shell"
-alias djdbc="python manage.py makemigrations"
-alias djdbm="python manage.py migrate"
-
 # Ruby
 alias rb="ruby"
 alias rk="bundle exec rake"
@@ -77,30 +70,6 @@ alias rg="bundle exec rails generate"
 alias rdbm="bundle exec rake db:migrate"
 alias rdbr="bundle exec rake db:rollback STEP="
 alias ap="bundle exec rake assets:precompile RAILS_ENV=production"
-
-# React Native
-alias rn="react-native"
-alias rnios="react-native run-ios"
-alias rnand="react-native run-android"
-
-# Elixir
-alias e="elixir"
-
-# Mix
-alias m="mix"
-alias mi="mix deps.get"
-alias mt="mix test"
-
-# Phoenix
-alias pxn="mix phoenix.new"
-alias pxdbc="mix ecto.create"
-alias pxdbm="mix ecto.migrate"
-alias pxgj="mix phoenix.gen.json"
-alias pxgm="mix phoenix.gen.model"
-alias pxgc="mix phoenix.gen.channel"
-alias pxs="mix phoenix.server"
-alias pxsi="iex -S mix phoenix.server"
-alias pxr="mix phoenix.routes"
 
 # PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
