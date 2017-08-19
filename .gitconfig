@@ -24,7 +24,7 @@
 [gpg]
   program = /usr/local/bin/gpg_wrap
 [merge]
-  tool = Kaleidoscope
+  tool = code
 [mergetool]
   keepBackup = false
   prompt = false

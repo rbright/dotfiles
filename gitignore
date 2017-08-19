@@ -4,3 +4,6 @@
 *.sublime-project
 *.sublime-workspace
 *.un~
+jsconfig.json
+launch.json
+.vscode
