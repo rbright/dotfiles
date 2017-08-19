@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="rbright"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(bundler docker docker-compose git pip)
+plugins=(bundler docker docker-compose git rails react-native redis-cli)
 
 export EDITOR="vim"
 export LANGUAGE=en_US.UTF
@@ -15,10 +15,14 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export GOPATH="$HOME/go"
 export GOROOT="/usr/local/opt/go/libexec"
 export NPM_PATH="/usr/local/share/npm/bin"
+export NVM_DIR="$HOME/.nvm"
 export YARN_PATH="$HOME/.yarn/bin"
-export RBENV_PATH="$HOME/.rbenv/bin"
 export PYTHON_PATH="$HOME/Library/Python/2.7/bin"
-export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$YARN_PATH:$PYTHON_PATH:$RBENV_PATH:$PATH"
+export RBENV_PATH="$HOME/.rbenv/bin"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export FASTLANE_PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$HOME/bin:$GOPATH/bin:$GOROOT/bin:$NPM_PATH:$NVM_PATH:$YARN_PATH:$PYTHON_PATH:$RBENV_PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$FASTLANE_PATH:$PATH"
+
 
 # Homebrew Security Options
 export HOMEBREW_NO_ANALYTICS=1
