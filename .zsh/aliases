@@ -9,6 +9,8 @@ alias tmux="tmux -2"
 alias mux="tmuxinator"
 alias vi="nvim"
 alias vim="nvim"
+alias startwork="mux work"
+alias stopwork="tmux kill-session -t work"
 
 # Git
 alias git="hub"
