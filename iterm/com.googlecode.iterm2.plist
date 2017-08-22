@@ -280,11 +280,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>469 168 918 495 0 0 1440 877 </string>
+	<string>469 192 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 14 1432 863 0 0 1440 877 </string>
+	<string>0 25 1432 852 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 383 730 477 0 0 1440 877 </string>
+	<string>0 41 1432 836 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_1717ADE7-FC8A-43CA-89C5-47893943614F</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_1717ADE7-FC8A-43CA-89C5-47893943614F_selection</key>
@@ -942,6 +942,8 @@
 	<real>477588155.71195602</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>486331988.2403</real>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -995,6 +997,12 @@
 	<date>2017-08-19T00:16:25Z</date>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
+	<key>SwitchPaneModifier</key>
+	<integer>9</integer>
+	<key>SwitchTabModifier</key>
+	<integer>9</integer>
+	<key>SwitchWindowModifier</key>
+	<integer>9</integer>
 	<key>WordCharacters</key>
 	<string>psuppl</string>
 	<key>findIgnoreCase_iTerm</key>
