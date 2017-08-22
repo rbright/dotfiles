@@ -1,0 +1,11 @@
+[
+    { "key": "cmd+ctrl+j",  "command": "extension.dash.specific" },
+    { "key": "ctrl+a",      "command": "workbench.action.splitEditor" },
+    { "key": "ctrl+q",      "command": "workbench.action.closeActiveEditor" },
+    { "key": "ctrl+h",      "command": "workbench.action.focusPreviousGroup" },
+    { "key": "ctrl+l",      "command": "workbench.action.focusNextGroup" },
+    { "key": "cmd+`",       "command": "workbench.action.terminal.toggleTerminal" }
+    { "key": "shift+cmd+d", "command": "workbench.view.debug" },
+    { "key": "shift+cmd+m", "command": "workbench.actions.view.problems" },
+    { "key": "shift+cmd+y", "command": "workbench.debug.action.toggleRepl" }
+]

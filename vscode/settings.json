@@ -1,0 +1,88 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.parameterHints": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80],
+  "extensions.ignoreRecommendations": false,
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 10000,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.serverless": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/coverage": true,
+    "**/node_modules": true
+  },
+  "gitlens.blame.line.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "materialTheme.cache.workbench.settings": {
+    "themeColours": "Palenight"
+  },
+  "prettier.eslintIntegration": true,
+  "python.linting.lintOnTextChange": false,
+  "ruby.lint": {
+    "reek": true,
+    "rubocop": true,
+    "ruby": true
+  },
+  "search.exclude": {
+    "**/android": true,
+    "**/coverage": true,
+    "**/ios": true,
+    "**/node_modules": true,
+    "**/bower_components": true
+  },
+  "vim.disableAnnoyingNeovimMessage": true,
+  "vim.easymotion": true,
+  "vim.enableNeovim": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": ",",
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": [":"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.showCommands",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Material Theme",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": true
+}
