@@ -12,13 +12,6 @@
   gpgsign = true
 [core]
   excludesfile = ~/.gitignore
-[diff]
-  tool = Kaleidoscope
-[difftool]
-  prompt = false
-  trustExitCode = true
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [github]
   user = rbright
 [gpg]
@@ -28,7 +21,5 @@
 [mergetool]
   keepBackup = false
   prompt = false
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 [push]
   default = current
