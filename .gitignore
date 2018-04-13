@@ -6,6 +6,7 @@
 .ansible-vault.*
 .aws
 .boto
+.code-push.config
 .docker
 .exercism.json
 .gist-vim
