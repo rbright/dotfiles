@@ -1,21 +1,66 @@
 {
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.quickSuggestions": false,
+    "editor.wordWrap": "off"
+  },
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "javascriptreact",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)"
+  ],
+  "editor.codeLens": true,
   "editor.detectIndentation": true,
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code Retina, Menlo, Monaco, monospace",
   "editor.fontSize": 15,
+  "editor.fontWeight": "700",
   "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 5000,
+  "editor.hover.delay": 300,
+  "editor.hover.enabled": true,
+  "editor.insertSpaces": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
-  "editor.parameterHints": false,
+  "editor.parameterHints.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": false,
+    "other": true,
+    "strings": false
+  },
+  "editor.quickSuggestionsDelay": 10,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [80],
-  "extensions.ignoreRecommendations": false,
+  "editor.rulers": [100],
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.wordWrap": "off",
   "emmet.includeLanguages": {
     "javascript": "html"
   },
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 10000,
   "files.exclude": {
@@ -28,84 +73,6 @@
     "**/coverage": true,
     "**/node_modules": true
   },
-  "gitlens.blame.line.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.statusBar.enabled": false,
-  "go.toolsEnvVars": {
-    "GO111MODULE": "on"
-  },
-  "html.format.preserveNewLines": false,
-  "materialTheme.cache.workbench.settings": {
-    "themeColours": "Palenight"
-  },
-  "prettier.eslintIntegration": true,
-  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
-  "python.linting.lintOnTextChange": false,
-  "ruby.lint": {
-    "reek": false,
-    "rubocop": false,
-    "ruby": false
-  },
-  "search.exclude": {
-    "**/android": true,
-    "**/coverage": true,
-    "**/ios": true,
-    "**/node_modules": true,
-    "**/bower_components": true
-  },
-  "sync.anonymousGist": false,
-  "sync.askGistName": false,
-  "sync.autoDownload": true,
-  "sync.autoUpload": true,
-  "sync.forceDownload": false,
-  "sync.host": "",
-  "sync.lastUpload": "2018-08-23T21:12:03.215Z",
-  "sync.lastDownload": "2017-09-22T00:10:32.764Z",
-  "sync.pathPrefix": "",
-  "sync.quietSync": true,
-  "vim.easymotion": true,
-  "vim.enableNeovim": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  "vim.hlsearch": true,
-  "vim.incsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.leader": ",",
-  "vim.otherModesKeyBindingsNonRecursive": [
-    {
-      "before": [":"],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.showCommands",
-          "args": []
-        }
-      ]
-    }
-  ],
-  "vim.useCtrlKeys": true,
-  "vim.useSystemClipboard": true,
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Material Theme Darker High Contrast",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.iconTheme": "eq-material-theme-icons-darker",
-  "workbench.sideBar.location": "left",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.statusBar.visible": true,
-  "window.zoomLevel": 0,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.enabled": false,
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
-  "gitlens.keymap": "alternate",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -116,6 +83,106 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.keymap": "alternate",
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "go.formatTool": "gofmt",
+  "go.lintOnSave": "off",
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  },
+  "html.format.preserveNewLines": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "materialTheme.accent": "Sky",
+  "prettier.eslintIntegration": true,
+  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
+  "python.formatting.provider": "black",
+  "ruby.lint": {
+    "reek": false,
+    "rubocop": false,
+    "ruby": false
+  },
+  "search.exclude": {
+    "**/android": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/ios": true,
+    "**/node_modules": true
+  },
+  "sync.askGistName": false,
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
+  "sync.quietSync": true,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescriptHero.imports.disableImportsSorting": false,
+  "typescriptHero.imports.organizeOnSave": true,
+  "typescriptHero.imports.removeTrailingIndex": false,
+  "vim.easymotion": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.history": 50,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "after": ["<Esc>"],
+      "before": ["j", "j"]
+    }
+  ],
+  "vim.leader": ",",
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vsicons.projectDetection.disableDetect": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 0,
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#84FFFF",
+    "breadcrumb.activeSelectionForeground": "#84FFFF",
+    "editorLineNumber.foreground": "#999999",
+    "editorSuggestWidget.highlightForeground": "#84FFFF",
+    "editorWidget.border": "#84FFFF",
+    "editorWidget.resizeBorder": "#84FFFF",
+    "list.activeSelectionForeground": "#84FFFF",
+    "list.highlightForeground": "#84FFFF",
+    "list.inactiveSelectionForeground": "#84FFFF",
+    "menu.selectionForeground": "#84FFFF",
+    "menubar.selectionForeground": "#84FFFF",
+    "notificationLink.foreground": "#84FFFF",
+    "panelTitle.activeBorder": "#84FFFF",
+    "pickerGroup.foreground": "#84FFFF",
+    "progressBar.background": "#84FFFF",
+    "scrollbarSlider.activeBackground": "#84FFFF50",
+    "settings.headerForeground": "#84FFFF",
+    "settings.modifiedItemIndicator": "#84FFFF",
+    "tab.activeBorder": "#84FFFF",
+    "textLink.foreground": "#84FFFF"
+  },
+  "workbench.colorTheme": "Material Theme Ocean",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.statusBar.visible": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "typescriptHero.imports.multiLineWrapThreshold": 100,
+  "editor.wordWrapColumn": 100,
+  "files.trimFinalNewlines": false,
+  "files.trimTrailingWhitespace": true,
+  "workbench.fontAliasing": "auto",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.editor": "json",
+  "zenMode.hideLineNumbers": false,
+  "search.showLineNumbers": true,
+  "debug.console.fontSize": 15,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontWeight": "700",
+  "terminal.integrated.fontWeightBold": "700",
+  "dash.exactDocset": true
 }
