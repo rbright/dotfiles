@@ -25,9 +25,10 @@ function downloadwarnings() {
 }
 
 # Flush the DNS cache in Mac OS X
-function fd () {
+function flushdns () {
   if [[ `uname` == 'Darwin' ]]; then
-    dscacheutil -flushcache;
+    sudo dscacheutil -flushcache
+    sudo killall -HUP mDNSResponder
   fi
 }
 
