@@ -12,10 +12,15 @@
   gpgsign = true
 [core]
   excludesfile = ~/.gitignore
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  required = true
+  smudge = git-lfs smudge -- %f
 [github]
   user = rbright
 [gpg]
-  program = /usr/local/bin/gpg_wrap
+	program = /usr/local/bin/gpg
 [merge]
   tool = code
 [mergetool]
