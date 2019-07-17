@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 "================
 " General
 "================
+
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
@@ -18,8 +19,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mattn/gist-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'kaicataldo/material.vim'
 Plug 'tomasr/molokai'
-Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/syntastic'
@@ -38,6 +39,7 @@ Plug 'mattn/webapi-vim'
 "================
 " Languages
 "================
+
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': ['python', 'python3'] }
 Plug 'ekalinin/Dockerfile.vim'
@@ -50,7 +52,6 @@ Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-rails'
 Plug 'justinj/vim-react-snippets'
-Plug 'thoughtbot/vim-rspec'
 Plug 'ngmy/vim-rubocop'
 Plug 'vim-ruby/vim-ruby'
 
@@ -290,49 +291,14 @@ au FileType markdown nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 "================
 " neovim
 "================
-let g:python_host_prog = "/usr/local/bin/python2"
+let g:python_host_prog = "/usr/local/bin/python"
 let g:python3_host_prog = "/usr/local/bin/python3"
-
-"================
-" neosnippet
-"================
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" TAB should trigger neosnippet when available
-imap <expr><TAB>
-\ pumvisible() ? "\<C-n>" :
-\ neosnippet#expandable_or_jumpable() ?
-\    neosnippet#mappings#expand_or_jump_impl() : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\    neosnippet#mappings#expand_or_jump_impl() : "\<TAB>"V
 
 "================
 " netrw
 "================
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_liststyle = 3
-
-"================
-" Rails
-"================
-map <leader>r :!ruby %<cr>
-nnoremap <leader>m :Emodel<space>
-nnoremap <leader>c :Econtroller<space>
-nnoremap <leader>sr :Eserializer<space>
-nnoremap <leader>sp :Espec<space>
-nnoremap <leader>v :Eview<space>
-
-"================
-" RSpec
-"================
-let g:rspec_command = "Dispatch rspec {spec}"
-let g:rspec_runner = "os_x_iterm2"
-au FileType ruby map <Leader>t :call RunCurrentSpecFile()<CR>
-au FileType ruby map <Leader>tn :call RunNearestSpec()<CR>
-au FileType ruby map <Leader>tl :call RunLastSpec()<CR>
-au FileType ruby map <Leader>ta :call RunAllSpecs()<CR>
 
 "================
 " Syntastic
@@ -357,9 +323,17 @@ autocmd VimEnter * TagbarOpen
 
 " Colors
 let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
 syntax on
+
+" Material Theme
+let g:material_theme_style = 'ocean'
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+if (has('termguicolors'))
+  set termguicolors
+endif
+colorscheme material
 
 " Fonts
 set gfn=Menlo\ Regular:h15

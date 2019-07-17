@@ -19,7 +19,6 @@ Plug 'mattn/gist-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
-Plug 'Shougo/neosnippet.vim' | Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/syntastic'
@@ -292,21 +291,6 @@ au FileType markdown nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 "================
 let g:python_host_prog = "/usr/local/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3"
-
-"================
-" neosnippet
-"================
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" TAB should trigger neosnippet when available
-imap <expr><TAB>
-\ pumvisible() ? "\<C-n>" :
-\ neosnippet#expandable_or_jumpable() ?
-\    neosnippet#mappings#expand_or_jump_impl() : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\    neosnippet#mappings#expand_or_jump_impl() : "\<TAB>"V
 
 "================
 " netrw
