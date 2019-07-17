@@ -6,4 +6,5 @@
 *.un~
 jsconfig.json
 launch.json
+.unison*
 .vscode
