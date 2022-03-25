@@ -5,7 +5,7 @@ nnoremap ; :
 " PLUGINS
 "================================================================
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 "================
 " General
@@ -15,10 +15,8 @@ Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
-Plug 'rust-lang/rust.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -34,6 +32,19 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-markdown'
 Plug 'rbright/vim-javascript'
 Plug 'elzr/vim-json'
+Plug 'rust-lang/rust.vim'
+
+"================
+" Autocompletion
+"================
+"
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -53,9 +64,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Autocompletion
 "================
 
-if has('nvim')
-  let g:deoplete#enable_at_startup = 1
-endif
+let g:deoplete#enable_at_startup = 1
 
 "================
 " CtrlP
