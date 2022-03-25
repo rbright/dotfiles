@@ -115,7 +115,7 @@ function vim-clean () {
 
 # Update vim plugins
 function vim-update () {
-  vim -c "execute \"PlugUpdate!\" | q | q";
+  vim +PlugUpdate +qall
 }
 
 # Update oh-my-zsh
