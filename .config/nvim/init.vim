@@ -29,9 +29,10 @@ Plug 'mattn/webapi-vim'
 "================
 
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'tpope/vim-markdown'
+Plug 'fatih/vim-go'
 Plug 'rbright/vim-javascript'
 Plug 'elzr/vim-json'
+Plug 'tpope/vim-markdown'
 Plug 'rust-lang/rust.vim'
 
 "================

@@ -102,6 +102,12 @@ function showhiddenfiles () {
   fi
 }
 
+# Stop the running tmuxinator sessions
+function stopwork () {
+  tmux kill-session -t rinsed
+  tmux kill-session -t tomorrow
+}
+
 # Monitor the TCP traffic on the specified port
 # $1 - Integer representing the TCP port to be monitored
 function tcpmonitor () {
