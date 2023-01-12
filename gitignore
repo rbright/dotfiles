@@ -1,9 +1,3 @@
-.DS_Store
-.projections.json
-.pry_history
-*.sublime-project
-*.sublime-workspace
 *.un~
-jsconfig.json
-launch.json
+.DS_Store
 .unison*

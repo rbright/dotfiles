@@ -33,7 +33,7 @@ export TERM="xterm-256color" # tmux colors
 #
 export HOMEBREW_NO_ANALYTICSzs=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
-#export HOMEBREW_CASK_OPTS=--require-sha
+export HOMEBREW_CASK_OPTS=--require-sha
 
 # libsodium
 #
@@ -49,18 +49,15 @@ export CPPFLAGS=-I/usr/local/opt/openssl/include
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-# Solana Tool Suite
-export PATH="/Users/rbright/.local/share/solana/install/active_release/bin:$PATH"
-
 ################################################################
 # SHELL INTEGRATIONS
 ################################################################
 
-# iTerm Shell Integration
+# iTerm
 #
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Add Visual Studio Code (code)
+# Visual Studio Code
 #
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -74,10 +71,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Ruby
-#
-eval "$(rbenv init - zsh)"
-
 ################################################################
 # PACKAGE MANAGERS
 ################################################################
@@ -85,13 +78,3 @@ eval "$(rbenv init - zsh)"
 # Yarn
 #
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-################################################################
-# GOOGLE CLOUD PLATFORM
-################################################################
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/bin/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/bin/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/bin/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/bin/google-cloud-sdk/completion.zsh.inc"; fi
