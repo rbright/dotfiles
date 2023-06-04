@@ -5,18 +5,35 @@
 # oh-my-zsh
 #
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="rbright"
+ZSH_THEME="robbyrussell"
 DISABLE_AUTO_UPDATE="true"
 
 # oh-my-zsh Plugins
 #
-plugins=(docker docker-compose git yarn)
+plugins=(
+  aws
+  azure
+  docker
+  fluxcd
+  gcloud
+  git
+  git-flow
+  github
+  golang
+  helm
+  httpie
+  kubectl
+  nats
+  npm
+  nvm
+  rust
+)
 
 # zsh Configuration
-source $ZSH/oh-my-zsh.sh
-source $HOME/.zsh/aliases
-source $HOME/.zsh/functions
-source $HOME/.zsh/development
+source ${ZSH}/oh-my-zsh.sh
+source ${HOME}/.zsh/aliases
+source ${HOME}/.zsh/functions
+source ${HOME}/.zsh/development
 
 ################################################################
 # SHELL SETTINGS
@@ -46,8 +63,8 @@ export CPPFLAGS=-I/usr/local/opt/openssl/include
 
 # PATH Items
 #
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:${PATH}"
+export PATH="${HOME}/bin:$PATH"
 
 ################################################################
 # SHELL INTEGRATIONS
@@ -59,22 +76,20 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Visual Studio Code
 #
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 ################################################################
-# VERSION MANAGERS
+# LANGUAGE TOOLS
 ################################################################
+
+# Go
+#
+export GOPATH="${HOME}/go"
+export GOROOT="/opt/homebrew/opt/go/libexec"
+export PATH="${PATH}:${GOPATH}/bin:${GOROOT}/bin"
 
 # Node
 #
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-################################################################
-# PACKAGE MANAGERS
-################################################################
-
-# Yarn
-#
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export NVM_DIR="${HOME}/.nvm"
+[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
+[ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion

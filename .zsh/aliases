@@ -11,10 +11,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias sshgen="ssh-keygen -m PEM -t rsa -C"
 
-# CircleCI
-alias ccie="circleci local execute --job"
-alias cciv="circleci config validate"
-
 # Git
 alias gcl="git clone"
 alias ggpl="ggpull"
@@ -40,9 +36,7 @@ alias dcu="docker-compose up"
 alias dcr="docker-compose run --rm"
 
 # Go
-alias gor="go run main.go"
 alias got="go test ./... -v"
-alias gwatch="ginkgo watch ./..."
 
 # Python
 alias python="python3"
@@ -60,36 +54,6 @@ alias pf="pip freeze > requirements.txt"
 alias pv="virtualenv env"
 alias pva="source ./env/bin/activate"
 alias pvd="deactivate"
-
-# Ruby
-alias rb="ruby"
-alias rk="bundle exec rake"
-alias gi="gem install"
-alias giv="gem install -v"
-alias s="spring rspec && testscomplete"
-alias rps="bundle exec rake parallel:spec && testscomplete"
-alias rtest="bundle exec ruby -Itest && testscomplete"
-alias t="rtest && testscomplete"
-alias f="foreman start"
-
-# Bundler
-alias b="bundle"
-alias be="bundle exec"
-alias bi="bundle install"
-alias bl="bundle list"
-alias bp="bundle package"
-alias bu="bundle update"
-
-# Rails
-alias rc="bundle exec rails console"
-alias rg="bundle exec rails generate"
-alias rdbm="bundle exec rake db:migrate"
-alias rdbr="bundle exec rake db:rollback STEP="
-alias ap="bundle exec rake assets:precompile RAILS_ENV=production"
-
-# PostgreSQL
-alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop -m fast"
 
 # tmux
 alias tm="tmuxinator"
