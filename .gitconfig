@@ -20,7 +20,7 @@
 [github]
 	user = rbright
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+  program = /opt/homebrew/bin/gpg
 [init]
 	defaultBranch = main
 [merge]
