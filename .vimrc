@@ -16,6 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 Plug 'rust-lang/rust.vim'
@@ -32,7 +33,7 @@ Plug 'mattn/webapi-vim'
 
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-markdown'
-Plug 'rbright/vim-javascript'
+Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 
 call plug#end()
@@ -85,8 +86,8 @@ let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
 " neovim
 "================
 
-let g:python_host_prog = "/usr/local/bin/python2"
-let g:python3_host_prog = "/usr/local/bin/python3"
+let g:python_host_prog = "/opt/homebrew/bin/python3"
+let g:python3_host_prog = "/opt/homebrew/bin/python3"
 
 "================
 " netrw
