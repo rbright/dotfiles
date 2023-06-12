@@ -5,7 +5,7 @@ nnoremap ; :
 " PLUGINS
 "================================================================
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 "================
 " General
@@ -15,11 +15,9 @@ Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
-Plug 'rust-lang/rust.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -32,9 +30,23 @@ Plug 'mattn/webapi-vim'
 "================
 
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'tpope/vim-markdown'
+Plug 'leafgarland/typescript-vim'
+Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'tpope/vim-markdown'
+Plug 'rust-lang/rust.vim'
+
+"================
+" Autocompletion
+"================
+"
+if has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 
 call plug#end()
 
@@ -54,9 +66,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Autocompletion
 "================
 
-if has('nvim')
-  let g:deoplete#enable_at_startup = 1
-endif
+let g:deoplete#enable_at_startup = 1
 
 "================
 " CtrlP
@@ -81,6 +91,12 @@ let g:delimitMate_expand_space = 1
 let g:delimitMate_smart_quotes = 1
 let g:delimitMate_expand_inside_quotes = 0
 let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
+
+"================
+" Material Theme
+"================
+"
+let g:material_theme_style = "palenight"
 
 "================
 " neovim
@@ -108,12 +124,18 @@ let g:rust_clip_command = 'pbcopy'
 
 " Colors
 let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
+colorscheme material
 syntax on
 
+" For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
+" Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
+" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+if (has('termguicolors'))
+  set termguicolors
+endif
+
 " Fonts
-set gfn=Menlo\ Regular:h15
+set gfn=Fira\ Code\ Retina:h15
 set shellpipe=>
 
 " Convert tabs to spaces
@@ -189,7 +211,6 @@ set wildmode=list:longest
 if has('gui_running')
   set guioptions=aAce
 endif
-
 
 "================================================================
 " MAPPINGS
