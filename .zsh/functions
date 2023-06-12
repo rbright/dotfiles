@@ -17,6 +17,12 @@ function dockerclean () {
   docker images -q --filter "dangling=true" | xargs docker rmi
 }
 
+# Remove Podman images in the "dangling" state
+function podclean () {
+  podman rm `podman ps --no-trunc -aq`
+  podman images -q --filter "dangling=true" | xargs podman rmi
+}
+
 # Disable "Downloaded from Internet warnings" in Mac OS X
 function downloadwarnings() {
   if [[ `uname` == 'Darwin' ]]; then

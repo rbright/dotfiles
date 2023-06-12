@@ -7,8 +7,6 @@ alias psgrep="ps -ax | grep"
 alias strace="dtruss"
 alias tmux="tmux -2"
 alias mux="tmuxinator"
-alias vi="nvim"
-alias vim="nvim"
 alias sshgen="ssh-keygen -m PEM -t rsa -C"
 
 # Git
@@ -38,13 +36,8 @@ alias dcr="docker-compose run --rm"
 # Go
 alias got="go test ./... -v"
 
-# Python
-alias python="python3"
-alias pi="pip install -r requirements.txt"
-alias pf="pip freeze > requirements.txt"
-alias pv="virtualenv env"
-alias pva="source ./env/bin/activate"
-alias pvd="deactivate"
+# Kubernetes
+alias kc="kubectl"
 
 # Python
 alias py="python"
