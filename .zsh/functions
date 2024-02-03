@@ -17,10 +17,9 @@ function dockerclean () {
   docker images -q --filter "dangling=true" | xargs docker rmi
 }
 
-# Remove Podman images in the "dangling" state
-function podclean () {
-  podman rm `podman ps --no-trunc -aq`
-  podman images -q --filter "dangling=true" | xargs podman rmi
+# Clear the cache to fix the iOS Simulator
+function fixiossim () {
+  rm -rf ~/Library/Developer/CoreSimulator/Caches
 }
 
 # Disable "Downloaded from Internet warnings" in Mac OS X
@@ -30,17 +29,12 @@ function downloadwarnings() {
   fi
 }
 
-# Flush the DNS cache in Mac OS X
+# Flush the DNS cache in macOS
 function flushdns () {
   if [[ `uname` == 'Darwin' ]]; then
     sudo dscacheutil -flushcache
     sudo killall -HUP mDNSResponder
   fi
-}
-
-# Flush everything in memcached
-function fm() {
-  echo "flush_all" | nc 127.0.0.1 11211
 }
 
 # Kill all processes using the given directory
@@ -66,17 +60,17 @@ function netscan () {
   ifconfig | grep broadcast; arp -a | grep :
 }
 
-# Open the specified gem in MacVim
-function opengem() {
-  pushd `bundle show $1`
-  vim
-}
-
 # Clear duplicates from the "Open With" menu in OS X.
 function openwithdups() {
   if [[ `uname` == 'Darwin' ]]; then
     /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
   fi
+}
+
+# Remove Podman images in the "dangling" state
+function podclean () {
+  podman rm `podman ps --no-trunc -aq`
+  podman images -q --filter "dangling=true" | xargs podman rmi
 }
 
 # Remove vim undo files from the current directory
@@ -87,15 +81,6 @@ function rmpyc () {
 # Remove vim undo files from the current directory
 function rmundo () {
   find . -name "*.un~" -exec rm -f {} \;
-}
-
-# Show/hide hidden files in Mac OS X
-# $1 - Boolean for showing (true) or hiding (false) hidden files
-function showhiddenfiles () {
-  if [[ `uname` == 'Darwin' ]]; then
-    defaults write com.apple.finder AppleShowAllFiles $1;
-    killall Finder;
-  fi
 }
 
 # Stop the running tmuxinator sessions

@@ -14,20 +14,21 @@ export NVM_COMPLETION=true
 # oh-my-zsh Plugins
 #
 plugins+=(
-  aws
-  azure
+  adb
+  argocd
+  brew
   docker
-  fluxcd
+  gcloud
   git
-  git-flow
   github
   golang
   helm
-  httpie
   kubectl
   nats
+  nmap
   npm
   nvm
+  react-native
   zsh-nvm
 )
 
@@ -49,7 +50,7 @@ export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color" # tmux colors
 
 # Homebrew Security Options
-export HOMEBREW_NO_ANALYTICSzs=1
+export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
 
@@ -95,7 +96,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="/Users/rbright/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

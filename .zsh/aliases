@@ -3,11 +3,11 @@ alias brews='brew list -1'
 alias csvcols="cut -d, -f"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
+alias mux="tmuxinator"
 alias psgrep="ps -ax | grep"
+alias sshgen="ssh-keygen -m PEM -t rsa -C"
 alias strace="dtruss"
 alias tmux="tmux -2"
-alias mux="tmuxinator"
-alias sshgen="ssh-keygen -m PEM -t rsa -C"
 
 # Git
 alias gcl="git clone"
