@@ -20,7 +20,7 @@
 [github]
 	user = rbright
 [gpg]
-  program = /opt/homebrew/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [init]
 	defaultBranch = main
 [merge]
@@ -30,3 +30,5 @@
 	prompt = false
 [push]
 	default = current
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
