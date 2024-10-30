@@ -16,7 +16,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'tomasr/molokai'
 Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-commentary'
@@ -96,7 +95,7 @@ let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
 " Material Theme
 "================
 "
-let g:material_theme_style = "palenight"
+let g:material_theme_style = "ocean"
 
 "================
 " neovim

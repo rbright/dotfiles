@@ -3,17 +3,13 @@
 
 # private files
 *.dashsync
-.ansible-vault.*
 .aws
-.boto
 .docker
-.gist-vim
 .gnupg
 .google_authenticator
 .pgpass
 .ssh
 .tmuxinator
-.vault-token
 .virtualenvs
 .vim/.netrwhist
 .vim/autoload
