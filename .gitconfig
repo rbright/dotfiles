@@ -9,7 +9,7 @@
 [color]
 	ui = auto
 [commit]
-	gpgsign = true
+	gpgSign = true
 [core]
 	excludesfile = ~/.gitignore
 [filter "lfs"]
@@ -21,6 +21,10 @@
 	user = rbright
 [gpg]
 	program = /opt/homebrew/bin/gpg
+	format = openpgp
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = 
 [init]
 	defaultBranch = main
 [merge]
@@ -30,5 +34,5 @@
 	prompt = false
 [push]
 	default = current
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[tag]
+	forceSignAnnotated = false
