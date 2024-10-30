@@ -1,2 +1,7 @@
-. "$HOME/.cargo/env"
-. "$HOME/.rover/env"
+#!/bin/sh
+
+# cargo
+. "${HOME}/.cargo/env"
+
+# rover
+. "${HOME}/.rover/env"

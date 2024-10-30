@@ -6,13 +6,10 @@
 .ansible-vault.*
 .aws
 .boto
-.code-push.config
 .docker
-.exercism.json
 .gist-vim
 .gnupg
 .google_authenticator
-.irssi
 .pgpass
 .ssh
 .tmuxinator
@@ -22,4 +19,3 @@
 .vim/autoload
 .vim/plugged
 .zsh/development
-Sublime Text 3/
