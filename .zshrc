@@ -3,21 +3,16 @@
 ################################################################
 
 # oh-my-zsh
-#
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+export ZSH="${HOME}/.oh-my-zsh"
+ZSH_THEME="amuse"
 DISABLE_AUTO_UPDATE="true"
 
-# nvm
-export NVM_COMPLETION=true
-
 # oh-my-zsh Plugins
-#
-plugins+=(
-  adb
+plugins=(
   argocd
   brew
   docker
+  fzf
   gcloud
   git
   github
@@ -28,15 +23,18 @@ plugins+=(
   nmap
   npm
   nvm
+  pip
+  python
   react-native
+  zoxide
   zsh-nvm
 )
 
 # zsh Configuration
-source ${ZSH}/oh-my-zsh.sh
-source ${HOME}/.zsh/aliases
-source ${HOME}/.zsh/functions
-source ${HOME}/.zsh/development
+source "${ZSH}/oh-my-zsh.sh"
+for file in "${HOME}/.zsh"/{aliases,functions,development}; do
+  [ -r "$file" ] && source "$file"
+done
 
 ################################################################
 # SHELL SETTINGS
@@ -45,60 +43,84 @@ source ${HOME}/.zsh/development
 export EDITOR="vim"
 export GPG_TTY=$(tty)        # fix for Keybase error
 export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color" # tmux colors
 
 # Homebrew Security Options
+export HOMEBREW_CASK_OPTS=--require-sha
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_CASK_OPTS=--require-sha
-
-# libsodium
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 # OpenSSL
-export LDFLAGS=-L/usr/local/opt/openssl/lib
-export CPPFLAGS=-I/usr/local/opt/openssl/include
-
-# PATH Items
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:${PATH}"
-export PATH="${HOME}/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
 
 ################################################################
-# SHELL INTEGRATIONS
-################################################################
-
-# iTerm
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Visual Studio Code
-export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-################################################################
-# LANGUAGE TOOLS
+# DEVELOPMENT TOOLS
 ################################################################
 
 # Android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-export PATH="${PATH}:${ANDROID_HOME}/emulator"
-export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 
 # Go
 export GOPATH="${HOME}/go"
 export GOROOT="/opt/homebrew/opt/go/libexec"
-export PATH="${PATH}:${GOPATH}/bin:${GOROOT}/bin"
 
-# Node
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Google Cloud SDK
+if [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]; then
+    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# Node (nvm)
+export NVM_DIR="${HOME}/.nvm"
+export NVM_COMPLETION=true
+[ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"
+[ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"
 
 # pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+export PNPM_HOME="/Users/rbright/Library/pnpm"
+[ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
+
+################################################################
+# PATH MANAGEMENT
+################################################################
+
+typeset -U path
+path=(
+  # System paths
+  /usr/local/{bin,sbin}
+  $HOME/{bin,.local/bin}
+
+  # Android
+  ${ANDROID_HOME}/{emulator,platform-tools}
+
+  # Go
+  ${GOPATH}/bin
+  ${GOROOT}/bin
+
+  # Node (pnpm)
+  ${PNPM_HOME}
+
+  # Visual Studio Code
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+  # Include existing PATH
+  $path
+)
+
+export PATH
+
+################################################################
+# SHELL INTEGRATION
+################################################################
+
+# iTerm2
+[ -e "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# starship
+eval "$(starship init zsh)"

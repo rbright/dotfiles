@@ -7,30 +7,43 @@ function cd {
 
 # Count the total number of lines in files containing the given extension
 # $1 - File extension
-function countlines () {
+function count-lines () {
   find . -name "*.$1" | xargs wc -l;
 }
 
+# Clear duplicates from the "Open With" menu in OS X.
+function clear-open-with-dups() {
+  if [[ `uname` == 'Darwin' ]]; then
+    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+  fi
+}
+
 # Remove Docker images in the "dangling" state
-function dockerclean () {
+function clean-docker () {
   docker rm `docker ps --no-trunc -aq`
   docker images -q --filter "dangling=true" | xargs docker rmi
 }
 
-# Clear the cache to fix the iOS Simulator
-function fixiossim () {
-  rm -rf ~/Library/Developer/CoreSimulator/Caches
+# Remove Podman images in the "dangling" state
+function clean-podman () {
+  podman rm `podman ps --no-trunc -aq`
+  podman images -q --filter "dangling=true" | xargs podman rmi
 }
 
 # Disable "Downloaded from Internet warnings" in Mac OS X
-function downloadwarnings() {
+function disable-download-warnings() {
   if [[ `uname` == 'Darwin' ]]; then
     defaults write com.apple.LaunchServices LSQuarantine -bool NO
   fi
 }
 
+# Clear the cache to fix the iOS Simulator
+function fix-ios-sim () {
+  rm -rf ~/Library/Developer/CoreSimulator/Caches
+}
+
 # Flush the DNS cache in macOS
-function flushdns () {
+function flush-dns () {
   if [[ `uname` == 'Darwin' ]]; then
     sudo dscacheutil -flushcache
     sudo killall -HUP mDNSResponder
@@ -39,7 +52,7 @@ function flushdns () {
 
 # Kill all processes using the given directory
 # $1 - String representing the directory
-function killdir () {
+function kill-dir () {
   lsof | grep $1 | awk '{print $2}' | xargs kill;
 }
 
@@ -60,19 +73,6 @@ function netscan () {
   ifconfig | grep broadcast; arp -a | grep :
 }
 
-# Clear duplicates from the "Open With" menu in OS X.
-function openwithdups() {
-  if [[ `uname` == 'Darwin' ]]; then
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-  fi
-}
-
-# Remove Podman images in the "dangling" state
-function podclean () {
-  podman rm `podman ps --no-trunc -aq`
-  podman images -q --filter "dangling=true" | xargs podman rmi
-}
-
 # Remove vim undo files from the current directory
 function rmpyc () {
   find . -name "*.pyc" -exec rm -f {} \;
@@ -85,8 +85,7 @@ function rmundo () {
 
 # Stop the running tmuxinator sessions
 function stopwork () {
-  tmux kill-session -t rinsed
-  tmux kill-session -t tomorrow
+  tmux kill-session -t work
 }
 
 # Monitor the TCP traffic on the specified port

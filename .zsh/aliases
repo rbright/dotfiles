@@ -20,8 +20,6 @@ alias grb="git rebase"
 alias gbd="git branch -D"
 alias gpr="git pull-request"
 alias gdpr="git difftool origin/master...origin/$(current_branch)"
-alias gt="gittower"
-alias gts="gittower --status"
 
 # Docker
 alias di="docker images"
@@ -29,9 +27,9 @@ alias db="docker build"
 alias dr="docker run -it --rm"
 alias dt="docker tag"
 alias dp="docker push"
-alias dcb="docker-compose build"
-alias dcu="docker-compose up"
-alias dcr="docker-compose run --rm"
+alias dcb="docker compose build"
+alias dcu="docker compose up"
+alias dcr="docker compose run --rm"
 
 # Go
 alias got="go test ./... -v"
@@ -39,12 +37,16 @@ alias got="go test ./... -v"
 # Kubernetes
 alias kc="kubectl"
 
+# Ollama
+alias ol="ollama run llama3.2:3b"
+
 # Python
 alias python="python3"
 alias py="python"
 alias py3="python3"
-alias pi="pip install -r requirements.txt"
-alias pf="pip freeze > requirements.txt"
+alias pip="pip3"
+alias pir="pip install -r requirements.txt"
+alias pif="pip freeze > requirements.txt"
 alias pv="virtualenv env"
 alias pva="source ./env/bin/activate"
 alias pvd="deactivate"
