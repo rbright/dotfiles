@@ -1,0 +1,114 @@
+add_newline = false
+
+[aws]
+disabled = false
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = 'bold yellow'
+symbol = " "
+
+[aws.region_aliases]
+us-east-1 = 'va'
+us-east-2 = 'oh'
+us-west-1 = 'ca'
+us-west-2 = "or"
+
+[battery]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red)'
+vimcmd_symbol = '[V](bold green)'
+
+[cmake]
+disabled = true
+
+[directory]
+read_only = '🔒'
+read_only_style = 'red'
+
+[gcloud]
+disabled = true
+format = 'on [$symbol$account(@$domain)(\($region\))]($style) '
+style = 'bold blue'
+symbol = " "
+
+[gcloud.region_aliases]
+us-central1 = 'ia'
+us-east1 = 'sc'
+us-east4 = 'va'
+us-east5 = 'oh'
+us-south1 = 'tx'
+us-west1 = 'or'
+us-west2 = 'ca'
+us-west3 = 'ut'
+us-west4 = 'nv'
+
+[git_branch]
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+symbol = " "
+
+[git_commit]
+commit_hash_length = 7
+only_detached = true
+style = 'bold green'
+tag_disabled = true
+
+[git_metrics]
+disabled = false
+format = '([+$added]($added_style)) ([-$deleted]($deleted_style)) '
+
+[git_status]
+disabled = false
+
+[golang]
+style = 'bold cyan'
+symbol = " "
+
+[hostname]
+disabled = true
+
+[kubernetes]
+disabled = false
+format = 'on [󱃾 ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+contexts = [
+  { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+]
+detect_files = ['Tiltfile']
+style = 'bold cyan'
+
+[nats]
+disabled = false
+format = '[$symbol$name]($style)'
+style = 'bold purple'
+symbol = '✉️ '
+
+[nodejs]
+style = 'bold green'
+symbol = '󰎙 '
+
+[package]
+disabled = false
+
+[pulumi]
+disabled = false
+format = 'via [$symbol($username@)$stack]($style) '
+style = 'bold 5'
+symbol = ' '
+
+[python]
+disabled = false
+style = 'bold yellow'
+symbol = ' '
+
+[time]
+disabled = false
+format = '[\[$time\]]($style) '
+style = 'bold yellow'
+time_format = '%T'
+utc_time_offset = 'local'
+
+[rust]
+disabled = false
+style = 'bold red'
+symbol = ' '
