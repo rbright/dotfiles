@@ -20,6 +20,7 @@ function clear-open-with-dups() {
 
 # Remove Docker images in the "dangling" state
 function clean-docker () {
+  docker system prune -a --volumes
   docker rm `docker ps --no-trunc -aq`
   docker images -q --filter "dangling=true" | xargs docker rmi
 }
@@ -81,11 +82,6 @@ function rmpyc () {
 # Remove vim undo files from the current directory
 function rmundo () {
   find . -name "*.un~" -exec rm -f {} \;
-}
-
-# Stop the running tmuxinator sessions
-function stopwork () {
-  tmux kill-session -t work
 }
 
 # Monitor the TCP traffic on the specified port

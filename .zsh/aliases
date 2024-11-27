@@ -1,25 +1,24 @@
-#!/usr/bin/env zsh
+#dev!/usr/bin/env zsh
 alias brews='brew list -1'
 alias csvcols="cut -d, -f"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
-alias mux="tmuxinator"
 alias psgrep="ps -ax | grep"
-alias sshgen="ssh-keygen -m PEM -t rsa -C"
+alias sshgen="ssh-keygen -t ed25519 -C "
 alias strace="dtruss"
 alias tmux="tmux -2"
 
 # Git
 alias gcl="git clone"
 alias ggpl="ggpull"
-alias ggpsh="ggpush"
-alias ggpshf="ggpush --force-with-lease"
+alias ggpsh="ggpush --force-with-lease"
+alias ggpshf="ggpush"
 alias gm="git merge"
 alias gom="git merge --no-ff --no-edit"
 alias grb="git rebase"
 alias gbd="git branch -D"
 alias gpr="git pull-request"
-alias gdpr="git difftool origin/master...origin/$(current_branch)"
+alias gdpr="git difftool origin/main...origin/$(current_branch)"
 
 # Docker
 alias di="docker images"
@@ -42,14 +41,5 @@ alias ol="ollama run llama3.2:3b"
 
 # Python
 alias python="python3"
-alias py="python"
-alias py3="python3"
+alias py="python3"
 alias pip="pip3"
-alias pir="pip install -r requirements.txt"
-alias pif="pip freeze > requirements.txt"
-alias pv="virtualenv env"
-alias pva="source ./env/bin/activate"
-alias pvd="deactivate"
-
-# tmux
-alias tm="tmuxinator"
