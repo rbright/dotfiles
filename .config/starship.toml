@@ -2,7 +2,7 @@ add_newline = false
 
 [aws]
 disabled = false
-format = 'on [$symbol($profile )(\($region\) )]($style)'
+format = '[$symbol($profile )(\($region\) )]($style)'
 style = 'bold yellow'
 symbol = " "
 
@@ -27,9 +27,21 @@ disabled = true
 read_only = '🔒'
 read_only_style = 'red'
 
+[docker_context]
+format = '[$symbol$context]($style) '
+
+[dotnet]
+# Remove project.json to avoid showing for Nx projects
+detect_files = [
+  'global.json',
+  'Directory.Build.props',
+  'Directory.Build.targets',
+  'Packages.props'
+]
+
 [gcloud]
 disabled = true
-format = 'on [$symbol$account(@$domain)(\($region\))]($style) '
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
 style = 'bold blue'
 symbol = " "
 
@@ -45,7 +57,7 @@ us-west3 = 'ut'
 us-west4 = 'nv'
 
 [git_branch]
-format = 'on [$symbol$branch(:$remote_branch)]($style) '
+format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = " "
 
 [git_commit]
@@ -62,15 +74,19 @@ format = '([+$added]($added_style)) ([-$deleted]($deleted_style)) '
 disabled = false
 
 [golang]
+format = '[$symbol($version )]($style)'
 style = 'bold cyan'
 symbol = " "
+
+[helm]
+format = '[$symbol($version )]($style)'
 
 [hostname]
 disabled = true
 
 [kubernetes]
 disabled = false
-format = 'on [󱃾 ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+format = '[󱃾 ($user on )($cluster in )$context \($namespace\)](dimmed green) '
 contexts = [
   { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
 ]
@@ -84,22 +100,35 @@ style = 'bold purple'
 symbol = '✉️ '
 
 [nodejs]
+format = '[$symbol($version )]($style)'
 style = 'bold green'
 symbol = '󰎙 '
 
 [package]
 disabled = false
+format = '[$symbol$version]($style) '
 
 [pulumi]
 disabled = false
-format = 'via [$symbol($username@)$stack]($style) '
+format = '[$symbol($username@)$stack]($style) '
 style = 'bold 5'
 symbol = ' '
 
 [python]
 disabled = false
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 style = 'bold yellow'
 symbol = ' '
+
+[rust]
+disabled = false
+format = '[$symbol($version )]($style)'
+style = 'bold red'
+symbol = ' '
+
+[terraform]
+format = '[$symbol$workspace]($style) '
+symbol = '󱁢 '
 
 [time]
 disabled = false
@@ -107,8 +136,3 @@ format = '[\[$time\]]($style) '
 style = 'bold yellow'
 time_format = '%T'
 utc_time_offset = 'local'
-
-[rust]
-disabled = false
-style = 'bold red'
-symbol = ' '
