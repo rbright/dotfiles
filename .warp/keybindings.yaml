@@ -1,0 +1,6 @@
+---
+"pane_group:add_right": ctrl-a
+"editor_view:move_to_paragraph_start": none
+"pane_group:add_down": ctrl-d
+"editor_view:move_to_line_start": none
+"editor_view:delete": none
