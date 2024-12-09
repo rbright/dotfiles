@@ -1,6 +1,8 @@
 ---
-"pane_group:add_right": ctrl-a
+"editor_view:move_to_line_start": none
+"workspace:move_tab_right": shift-cmd-right
+"workspace:move_tab_left": shift-cmd-left
+"editor_view:delete": none
 "editor_view:move_to_paragraph_start": none
 "pane_group:add_down": ctrl-d
-"editor_view:move_to_line_start": none
-"editor_view:delete": none
+"pane_group:add_right": ctrl-a
