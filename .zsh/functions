@@ -12,10 +12,8 @@ function count-lines () {
 }
 
 # Clear duplicates from the "Open With" menu in OS X.
-function clear-open-with-dups() {
-  if [[ `uname` == 'Darwin' ]]; then
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-  fi
+function clear-open-with-dups () {
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 }
 
 # Remove Docker images in the "dangling" state
@@ -31,13 +29,6 @@ function clean-podman () {
   podman images -q --filter "dangling=true" | xargs podman rmi
 }
 
-# Disable "Downloaded from Internet warnings" in Mac OS X
-function disable-download-warnings() {
-  if [[ `uname` == 'Darwin' ]]; then
-    defaults write com.apple.LaunchServices LSQuarantine -bool NO
-  fi
-}
-
 # Clear the cache to fix the iOS Simulator
 function fix-ios-sim () {
   rm -rf ~/Library/Developer/CoreSimulator/Caches
@@ -45,10 +36,8 @@ function fix-ios-sim () {
 
 # Flush the DNS cache in macOS
 function flush-dns () {
-  if [[ `uname` == 'Darwin' ]]; then
-    sudo dscacheutil -flushcache
-    sudo killall -HUP mDNSResponder
-  fi
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
 }
 
 # Kill all processes using the given directory
