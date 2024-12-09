@@ -4,14 +4,14 @@
 # private files
 *.dashsync
 .aws
+.config/karabiner/automatic_backups
 .docker
 .gnupg
-.google_authenticator
 .pgpass
 .ssh
-.tmuxinator
 .virtualenvs
 .vim/.netrwhist
 .vim/autoload
 .vim/plugged
+.vnc
 .zsh/development
