@@ -247,9 +247,10 @@ brew install tilt
 ################################################################
 
 print -P '%F{blue}Installing cloud infrastructure tools from Homebrew%f'
+brew tap hashicorp/tap
 brew install awscli
 brew install opentofu
-brew install terraform
+brew install hashicorp/tap/terraform
 brew install --cask google-cloud-sdk
 
 ################################################################
@@ -299,9 +300,8 @@ defaults write com.apple.CrashReporter DialogType none
 print -P '%F{blue}Disabling "Downloaded from Internet warnings" in macOS%f'
 defaults write com.apple.LaunchServices LSQuarantine -bool NO
 
-print -P '%F{blue}Enabling key repeat for Visual Studio Code%f'
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-defaults delete -g ApplePressAndHoldEnabled
+print -P '%F{blue}Enabling key repeat for all apps%f'
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 ################################################################
 # COMPLETION
