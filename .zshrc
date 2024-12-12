@@ -9,23 +9,35 @@ DISABLE_AUTO_UPDATE="true"
 
 # oh-my-zsh Plugins
 plugins=(
+  1password
   argocd
+  aws
   brew
   docker
+  docker-compose
   fzf
   gcloud
+  gh
   git
+  git-commit
+  git-lfs
   github
   golang
   helm
   kubectl
   nats
+  ngrok
   nmap
+  node
   npm
   nvm
+  opentofu
   pip
+  poetry
+  postgres
   python
   react-native
+  terraform
   zoxide
   zsh-nvm
 )
@@ -139,3 +151,7 @@ eval "$(pyenv init -)"
 
 # Node (nvm)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
