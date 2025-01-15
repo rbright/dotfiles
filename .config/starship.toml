@@ -86,12 +86,12 @@ disabled = true
 
 [kubernetes]
 disabled = false
-format = '[󱃾 ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+format = '[󱃾 $context \($namespace\)]($style) '
 contexts = [
   { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
 ]
 detect_files = ['Tiltfile']
-style = 'bold cyan'
+style = 'bold blue'
 
 [nats]
 disabled = false
