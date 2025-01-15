@@ -1,6 +1,7 @@
 [user]
 	name = Ryan Bright
-	email = ryan@moonriseconsulting.io
+	email = ryan@moonrise.energy
+	signingkey = C9A419F94D92080A10695284114B3A69F7FAD353
 [alias]
 	amend = commit --amend
 	last = log -1 HEAD
@@ -32,6 +33,8 @@
 [mergetool]
 	keepBackup = false
 	prompt = false
+[oh-my-zsh]
+	git-commit-alias = 69a6359f7cf8978d464573fb7b023ee3cd00181a
 [push]
 	default = current
 [tag]

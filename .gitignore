@@ -4,6 +4,7 @@
 # private files
 *.dashsync
 .aws
+.boto
 .config/karabiner/automatic_backups
 .docker
 .gnupg
