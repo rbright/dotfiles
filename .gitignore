@@ -6,6 +6,8 @@
 .aws
 .boto
 .config/karabiner/automatic_backups
+.config/raycast
+.config/zed/prompts
 .docker
 .gnupg
 .pgpass
