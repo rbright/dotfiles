@@ -22,9 +22,6 @@ xcode-select --install
 print -P '%F{blue}Installing Homebrew%f'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-print -P '%F{blue}Installing Homebrew Cask Versions%f'
-brew tap homebrew/cask-versions
-
 ################################################################
 # GIT
 ################################################################
@@ -251,6 +248,7 @@ brew tap hashicorp/tap
 brew install awscli
 brew install opentofu
 brew install hashicorp/tap/terraform
+brew install tilt-dev/tap/tilt
 brew install --cask google-cloud-sdk
 
 ################################################################
