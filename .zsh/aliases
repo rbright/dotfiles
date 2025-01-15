@@ -17,6 +17,7 @@ alias grb="git rebase"
 alias gbd="git branch -D"
 alias gpr="git pull-request"
 alias gdpr="git difftool origin/main...origin/$(current_branch)"
+alias gt="gittower"
 
 # Docker
 alias di="docker images"
