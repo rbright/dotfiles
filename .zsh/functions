@@ -40,6 +40,16 @@ function flush-dns () {
   sudo killall -HUP mDNSResponder
 }
 
+# Pull all git repositories in the current directory
+function git-pull-all () {
+  find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin main \;
+}
+
+# Remove all git repositories in the current directory
+function git-rm-all () {
+  find . -type d -depth 1 -exec rm -rf {}/.git \;
+}
+
 # Kill all processes using the given directory
 # $1 - String representing the directory
 function kill-dir () {
@@ -71,6 +81,15 @@ function rmpyc () {
 # Remove vim undo files from the current directory
 function rmundo () {
   find . -name "*.un~" -exec rm -f {} \;
+}
+
+# Archive all directories in the current directory
+function tardir () {
+  for directory in `find ${1} -type d -maxdepth 1 -mindepth 1`
+  do
+    tar pczf ${directory}.tar.gz ${directory}
+    rm -rf ${directory}
+  done
 }
 
 # Monitor the TCP traffic on the specified port
