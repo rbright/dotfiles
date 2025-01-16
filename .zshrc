@@ -33,11 +33,11 @@ plugins=(
   nvm
   opentofu
   pip
-  poetry
   postgres
   python
   react-native
   terraform
+  uv
   zoxide
   zsh-nvm
 )
@@ -94,9 +94,6 @@ export NVM_COMPLETION=true
 export PNPM_HOME="/Users/rbright/Library/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
 
-# Python (pyenv)
-export PYENV_ROOT="$HOME/.pyenv"
-
 ################################################################
 # PATH MANAGEMENT
 ################################################################
@@ -120,9 +117,6 @@ path=(
   # Postgres
   "/opt/homebrew/opt/libpq/bin"
 
-  # Python (pyenv)
-  ${PYENV_ROOT}/bin
-
   # Visual Studio Code
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -144,10 +138,6 @@ eval "$(starship init zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
-
-# Python (pyenv)
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
 
 # Node (nvm)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

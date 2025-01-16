@@ -1,4 +1,12 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
+set -euo pipefail
+
+###############################################################################
+# MACOS BOOTSTRAP
+#
+# This script installs all dependencies needed for a new macOS installation.
+# It also sets various macOS configurations.
+###############################################################################
 
 ################################################################
 # INIT
