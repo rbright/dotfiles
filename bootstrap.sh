@@ -71,6 +71,13 @@ brew install btop
 print -P '%F{blue}Installing fzf from Homebrew%f'
 brew install fzf
 
+# ghostty
+# https://ghostty.org/
+#
+# A modern, feature-rich, and cross-platform terminal emulator
+print -P '%F{blue}Installing ghostty from Homebrew%f'
+brew install --cask ghostty
+
 # jq
 # https://github.com/jqlang/jq
 #
@@ -84,6 +91,13 @@ brew install jq
 # Create local TLS certificates
 print -P '%F{blue}Installing mkcert from Homebrew%f'
 brew install mkcert
+
+# nushell
+# https://www.nushell.sh/
+#
+# A modern shell for the GitHub era
+print -P '%F{blue}Installing nushell from Homebrew%f'
+brew install nushell
 
 # starship
 # https://starship.rs/
