@@ -1,0 +1,23 @@
+auto-update = check
+auto-update-channel = stable
+background-opacity = 1.0
+cursor-style = bar
+cursor-style-blink = true
+font-family = FiraCode Nerd Font Mono Ret
+font-feature = "ss01", "ss05", "dlig"
+font-size = 15
+keybind = ctrl+w=new_split:up
+keybind = ctrl+a=new_split:left
+keybind = ctrl+s=new_split:down
+keybind = ctrl+d=new_split:right
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+mouse-hide-while-typing = false
+quick-terminal-position = bottom
+quick-terminal-screen = main
+shell-integration = zsh
+theme = catppuccin-mocha
