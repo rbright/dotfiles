@@ -1,0 +1,31 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {}
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // Pane Navigation
+      "ctrl-w": "pane::SplitUp",
+      "ctrl-a": "pane::SplitLeft",
+      "ctrl-s": "pane::SplitDown",
+      "ctrl-d": "pane::SplitRight",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-q": "pane::CloseAllItems",
+
+      // Terminal
+      "cmd-`": "terminal_panel::ToggleFocus"
+    }
+  }
+]
