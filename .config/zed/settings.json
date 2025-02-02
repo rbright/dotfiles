@@ -4,10 +4,10 @@
     "enabled": true,
     "dock": "right",
     "default_height": 320,
-    "default_width": 640,
+    "default_width": 480,
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet"
+      "model": "claude-3-5-sonnet-latest"
     },
     "inline_alternatives": [
       {
@@ -34,20 +34,19 @@
     "mute_on_join": true,
     "share_on_join": false
   },
+  "chat_panel": {
+    "default_width": 240,
+    "dock": "right",
+    "entry_spacing":"comfortable",
+    "scrollbar": {
+      "show": "always"
+    }
+  },
   "collaboration_panel": {
-    "auto_fold_dirs": true,
-    "auto_reveal_entries": true,
     "button": false,
     "default_width": 240,
     "dock": "left",
     "entry_spacing":"comfortable",
-    "file_icons": true,
-    "folder_icons": true,
-    "git_status": true,
-    "indent_guides": {
-      "show": "always"
-    },
-    "indent_size": 20,
     "scrollbar": {
       "show": "always"
     }
@@ -119,6 +118,11 @@
       "preferred_line_length": 120,
       "tab_size": 2
     },
+    "GraphQL": {
+      "format_on_save": "on",
+      "preferred_line_length": 80,
+      "tab_size": 2
+    },
     "JavaScript": {
       "format_on_save": "on",
       "formatter": {
@@ -153,7 +157,6 @@
     "Markdown": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "preferred_line_length": 120,
       "remove_trailing_whitespace_on_save": false,
       "tab_size": 2
     },
@@ -177,7 +180,12 @@
       "tab_size": 4
     },
     "Shell Script": {
-      "preferred_line_length": 80
+      "preferred_line_length": 80,
+      "tab_size": 2
+    },
+    "SQL": {
+      "preferred_line_length": 80,
+      "tab_size": 4
     },
     "Terraform": {
       "format_on_save": "on",
@@ -254,6 +262,21 @@
     }
   },
   "magnification": 1.0,
+  "notification_panel": {
+    "button": true,
+    "default_width": 240,
+    "dock": "right",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_guides": {
+      "show": "always"
+    },
+    "indent_size": 20,
+    "scrollbar": {
+      "show": null
+    }
+  },
   "outline_panel": {
     "auto_fold_dirs": true,
     "auto_reveal_entries": true,
@@ -330,7 +353,9 @@
         "directories": [".env", "env", ".venv", "venv"]
       }
     },
-    "env": {},
+    "env": {
+      "EDITOR": "zed --wait"
+    },
     "font_family": "FiraCode Nerd Font",
     "font_features": {
       "calt": false
