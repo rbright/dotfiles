@@ -11,18 +11,19 @@ call plug#begin()
 " General
 "================
 
-Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'mattn/webapi-vim'
+Plug 'mileszs/ack.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'mattn/webapi-vim'
+Plug 'vim-scripts/netrw.vim' | Plug 'tpope/vim-vinegar'
 
 "================
 " Languages
@@ -92,12 +93,6 @@ let g:delimitMate_expand_inside_quotes = 0
 let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
 
 "================
-" Material Theme
-"================
-"
-let g:material_theme_style = "ocean"
-
-"================
 " neovim
 "================
 
@@ -123,7 +118,7 @@ let g:rust_clip_command = 'pbcopy'
 
 " Colors
 let g:rehash256 = 1
-colorscheme material
+colorscheme catppuccin_mocha
 syntax on
 
 " For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
