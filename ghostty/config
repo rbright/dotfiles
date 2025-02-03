@@ -1,7 +1,7 @@
 auto-update = check
 auto-update-channel = stable
 background-opacity = 1.0
-cursor-style = bar
+cursor-style = block
 cursor-style-blink = true
 font-family = FiraCode Nerd Font Mono Ret
 font-feature = "ss01", "ss05", "dlig"
@@ -19,5 +19,5 @@ macos-secure-input-indication = true
 mouse-hide-while-typing = false
 quick-terminal-position = bottom
 quick-terminal-screen = main
-shell-integration = zsh
+shell-integration = fish
 theme = catppuccin-mocha

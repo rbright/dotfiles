@@ -52,6 +52,44 @@ print -P '%F{blue}Installing GitHub CLI from Homebrew%f'
 brew install gh
 
 ################################################################
+# FISH SHELL
+################################################################
+
+print -P '%F{blue}Installing Fish shell and plugins%f'
+
+# fish
+# https://fishshell.com/
+#
+# Friendly command line shell for Linux, macOS, and the rest of the family.
+brew install fish
+
+# fisher
+# https://github.com/jorgebucaran/fisher
+#
+# Plugin manager for Fish
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+print -P '%F{green}Installed Fish shell and plugins%f'
+
+fisher install PatrickF1/fzf.fish        # Enhanced fzf integration
+fisher install jorgebucaran/nvm.fish     # NVM alternative for fish
+
+################################################################
+# NUSHELL
+################################################################
+
+print -P '%F{blue}Installing nushell%f'
+
+# nushell
+# https://www.nushell.sh/
+#
+# A modern shell for the GitHub era
+print -P '%F{blue}Installing nushell from Homebrew%f'
+brew install nushell
+
+print -P '%F{green}Installed nushell%f'
+
+################################################################
 # TERMINAL
 ################################################################
 
@@ -91,13 +129,6 @@ brew install jq
 # Create local TLS certificates
 print -P '%F{blue}Installing mkcert from Homebrew%f'
 brew install mkcert
-
-# nushell
-# https://www.nushell.sh/
-#
-# A modern shell for the GitHub era
-print -P '%F{blue}Installing nushell from Homebrew%f'
-brew install nushell
 
 # starship
 # https://starship.rs/
