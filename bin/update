@@ -35,7 +35,7 @@ print -P '%F{green}Updated Homebrew packages%f'
 ################################################################
 
 print -P '%F{blue}Updating oh-my-zsh plugins%f'
-zsh-update
+update-zsh
 
 print -P '%F{green}Updated oh-my-zsh plugins%f'
 
@@ -44,10 +44,10 @@ print -P '%F{green}Updated oh-my-zsh plugins%f'
 ################################################################
 
 print -P '%F{blue}Cleaning up old vim plugins%f'
-vim-clean
+clean-vim
 
 print -P '%F{blue}Updating vim plugins%f'
-vim-update
+update-vim
 
 print -P '%F{green}Updated vim plugins%f'
 

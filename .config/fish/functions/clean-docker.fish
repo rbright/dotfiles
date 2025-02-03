@@ -1,3 +1,4 @@
+# Remove Docker images in the "dangling" state
 function clean-docker
     docker system prune -a --volumes
     docker rm (docker ps --no-trunc -aq)

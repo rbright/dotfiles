@@ -16,6 +16,7 @@ alias gbso='git bisect old'
 alias gbsr='git bisect reset'
 alias gbss='git bisect start'
 alias gbd="git branch --delete"
+alias gco="git checkout"
 alias gcb='git checkout -b'
 alias gcl="git clone"
 alias gc="git commit"

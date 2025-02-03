@@ -44,9 +44,6 @@ plugins=(
 
 # zsh Configuration
 source "${ZSH}/oh-my-zsh.sh"
-for file in "${HOME}/.zsh"/{aliases,functions,development}; do
-  [ -r "$file" ] && source "$file"
-done
 
 ################################################################
 # SHELL SETTINGS
@@ -95,13 +92,15 @@ export PNPM_HOME="/Users/rbright/Library/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
 
 ################################################################
-# PATH MANAGEMENT
+# Path Management
 ################################################################
 
 typeset -U path
 path=(
-  # System paths
-  /usr/local/{bin,sbin}
+  # Homebrew paths
+  /opt/homebrew/{bin,sbin}
+
+  # User paths
   $HOME/{bin,.local/bin}
 
   # Android
@@ -117,21 +116,15 @@ path=(
   # Postgres
   "/opt/homebrew/opt/libpq/bin"
 
-  # Visual Studio Code
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-  # Include existing PATH
+  # Add system PATH
   $path
 )
 
 export PATH
 
-################################################################
-# SHELL INTEGRATION
-################################################################
-
-# iTerm2
-[ -e "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+################################################################################
+# Shell Integration
+################################################################################
 
 # starship
 eval "$(starship init zsh)"

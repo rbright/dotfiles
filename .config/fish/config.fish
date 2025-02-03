@@ -23,16 +23,18 @@ set -x LDFLAGS "-L/usr/local/opt/openssl/lib"
 ################################################################################
 
 # Android
-set -x ANDROID_HOME ~/Library/Android/sdk
+set -x ANDROID_HOME {$HOME}/Library/Android/sdk
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 
 # Go
-set -x GOPATH ~/go
+set -x GOPATH {$HOME}/go
 set -x GOROOT /opt/homebrew/opt/go/libexec
 
 # pnpm
-set -x PNPM_HOME ~/Library/pnpm
-[ -s "{$PNPM_HOME}/pnpm.sh" ] && source "{$PNPM_HOME}/pnpm.sh"
+set -gx PNPM_HOME {$HOME}/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
 
 ################################################################################
 # Path Management
@@ -47,8 +49,8 @@ set -ap fish_user_paths /opt/homebrew/bin
 set -ap fish_user_paths /opt/homebrew/sbin
 
 # User paths
-set -ap fish_user_paths $HOME/bin
-set -ap fish_user_paths $HOME/.local/bin
+set -ap fish_user_paths {$HOME}/bin
+set -ap fish_user_paths {$HOME}/.local/bin
 
 # Android
 set -ap fish_user_paths {$ANDROID_HOME}/emulator
