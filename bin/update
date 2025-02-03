@@ -56,7 +56,7 @@ print -P '%F{green}Updated vim plugins%f'
 ################################################################
 
 print -P '%F{blue}Updating pnpm%f'
-pnpm add -g pnpm
+pnpm self-update
 
 print -P '%F{green}Updated pnpm%f'
 

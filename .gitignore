@@ -7,6 +7,7 @@
 .boto
 .config/karabiner/automatic_backups
 .config/raycast
+.config/zed/conversations
 .config/zed/prompts
 .docker
 .gnupg

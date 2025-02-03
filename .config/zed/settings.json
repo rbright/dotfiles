@@ -234,24 +234,6 @@
     }
   },
   "lsp": {
-    "eslint": {
-      "settings": {
-        "workingDirectory": {
-          "mode": "auto"
-        }
-      }
-    },
-    "pyright": {
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
-        },
-        "python.analysis": {
-          "diagnosticMode": "workspace",
-          "typeCheckingMode": "strict"
-        }
-      }
-    },
     "yaml-language-server": {
       "settings": {
         "yaml": {
