@@ -2,10 +2,15 @@
 function update
     set_color yellow
     echo "Updating macOS packages"
-
     update-homebrew
-    update-vim
+
+    # Update all system packages and tools
+    update-homebrew
     update-pnpm
+    update-vim
+
+    # Update fish completions
+    fish_update_completions
 
     set_color yellow
     echo "Completed macOS package updates"
