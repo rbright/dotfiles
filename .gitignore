@@ -7,12 +7,16 @@
 .boto
 .config/fish/completions
 .config/fish/conf.d/development.fish
+.config/fish/conf.d/fzf.fish
 .config/fish/conf.d/nvm.fish
 .config/fish/functions/__bass.py
+.config/fish/functions/fzf_*.fish
+.config/fish/functions/_fzf_*.fish
 .config/fish/functions/_nvm_*.fish
 .config/fish/functions/bass.fish
 .config/fish/functions/fisher.fish
 .config/fish/functions/nvm.fish
+.config/fish/fish_variables
 .config/karabiner/automatic_backups
 .config/raycast
 .config/zed/conversations
