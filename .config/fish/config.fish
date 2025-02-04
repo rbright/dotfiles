@@ -49,7 +49,6 @@ set -ap fish_user_paths /opt/homebrew/bin
 set -ap fish_user_paths /opt/homebrew/sbin
 
 # User paths
-set -ap fish_user_paths {$HOME}/bin
 set -ap fish_user_paths {$HOME}/.local/bin
 
 # Android

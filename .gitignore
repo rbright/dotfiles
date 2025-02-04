@@ -11,7 +11,6 @@
 .config/fish/functions/_nvm_*.fish
 .config/fish/functions/fisher.fish
 .config/fish/functions/nvm.fish
-.config/fish/fish_variables
 .config/karabiner/automatic_backups
 .config/raycast
 .config/zed/conversations
