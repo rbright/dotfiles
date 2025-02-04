@@ -8,7 +8,9 @@
 .config/fish/completions
 .config/fish/conf.d/development.fish
 .config/fish/conf.d/nvm.fish
+.config/fish/functions/__bass.py
 .config/fish/functions/_nvm_*.fish
+.config/fish/functions/bass.fish
 .config/fish/functions/fisher.fish
 .config/fish/functions/nvm.fish
 .config/karabiner/automatic_backups
