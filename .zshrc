@@ -101,7 +101,7 @@ path=(
   /opt/homebrew/{bin,sbin}
 
   # User paths
-  $HOME/{bin,.local/bin}
+  $HOME/{.local/bin}
 
   # Android
   ${ANDROID_HOME}/{emulator,platform-tools}
