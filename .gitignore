@@ -5,6 +5,7 @@
 *.dashsync
 .aws
 .boto
+.config/btop/btop.log
 .config/fish/completions
 .config/fish/conf.d/development.fish
 .config/fish/conf.d/fzf.fish
