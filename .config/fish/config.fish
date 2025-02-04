@@ -30,6 +30,11 @@ set -x JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 set -x GOPATH {$HOME}/go
 set -x GOROOT /opt/homebrew/opt/go/libexec
 
+# Google Cloud SDK
+if test -f (brew --prefix)/share/google-cloud-sdk/path.fish
+    source (brew --prefix)/share/google-cloud-sdk/path.fish
+end
+
 # pnpm
 set -gx PNPM_HOME {$HOME}/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
