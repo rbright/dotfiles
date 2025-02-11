@@ -90,6 +90,7 @@
   "hard_tabs": false,
   "hover_popover_delay": 300,
   "hover_popover_enabled": true,
+  "icon_theme": "Catppuccin Mocha",
   "inactive_opacity": 1.0,
   "indent_guides": {
     "active_line_width": 1,
