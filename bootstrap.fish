@@ -81,6 +81,7 @@ brew install --cask ghostty
 brew install jq
 brew install mkcert
 brew install starship
+brew install stow
 brew install wget
 brew install woff2
 brew install yq

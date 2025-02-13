@@ -1,5 +1,6 @@
 auto-update = check
 auto-update-channel = stable
+background-blur-radius = 20
 background-opacity = 1.0
 cursor-style = block
 cursor-style-blink = true
@@ -15,9 +16,11 @@ keybind = ctrl+j=goto_split:down
 keybind = ctrl+k=goto_split:up
 keybind = ctrl+l=goto_split:right
 macos-auto-secure-input = true
+macos-option-as-alt = true
 macos-secure-input-indication = true
-mouse-hide-while-typing = false
+mouse-hide-while-typing = true
 quick-terminal-position = bottom
 quick-terminal-screen = main
 shell-integration = fish
 theme = catppuccin-mocha
+window-decoration = true

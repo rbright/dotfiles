@@ -1,34 +1,59 @@
 # vim undo files
+.DS_Store
 *.un~
 
-# private files
-*.dashsync
-.aws
+# aws
+aws
+
+# boto
 .boto
-.config/btop/btop.log
-.config/fish/completions
-.config/fish/conf.d/development.fish
-.config/fish/conf.d/fzf.fish
-.config/fish/conf.d/nvm.fish
-.config/fish/functions/__bass.py
-.config/fish/functions/fzf_*.fish
-.config/fish/functions/_fzf_*.fish
-.config/fish/functions/_nvm_*.fish
-.config/fish/functions/bass.fish
-.config/fish/functions/fisher.fish
-.config/fish/functions/nvm.fish
-.config/fish/fish_variables
-.config/karabiner/automatic_backups
-.config/raycast
-.config/zed/conversations
-.config/zed/prompts
-.docker
-.gnupg
-.pgpass
-.ssh
-.virtualenvs
-.vim/.netrwhist
-.vim/autoload
-.vim/plugged
-.vnc
-.zsh/development
+
+# btop
+btop/.config/btop/btop.log
+
+# dash
+dash
+
+# fish
+fish/.config/fish/completions
+fish/.config/fish/conf.d/development.fish
+fish/.config/fish/conf.d/fzf.fish
+fish/.config/fish/conf.d/nvm.fish
+fish/.config/fish/functions/__bass.py
+fish/.config/fish/functions/fzf_*.fish
+fish/.config/fish/functions/_fzf_*.fish
+fish/.config/fish/functions/_nvm_*.fish
+fish/.config/fish/functions/bass.fish
+fish/.config/fish/functions/fisher.fish
+fish/.config/fish/functions/nvm.fish
+fish/.config/fish/fish_variables
+
+# gnupg
+gnupg/.gnupg
+
+# karibiner
+karibiner/.config/karabiner/automatic_backups
+
+# nushell
+nushell/Library/Application Support/nushell/history.txt
+
+# ssh
+ssh
+
+# tableplus
+tableplus/Library
+
+# vim
+vim/.vim/.netrwhist
+vim/.vim/autoload
+vim/.vim/plugged
+
+# vnc
+vnc/.vnc
+
+# zed
+zed/.config/zed/conversations
+zed/.config/zed/prompts
+
+# zsh
+zsh/.zsh/development

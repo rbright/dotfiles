@@ -1,4 +1,5 @@
 add_newline = false
+palette = "catppuccin_mocha"
 
 [aws]
 disabled = false
