@@ -96,3 +96,6 @@ end
 if type -q terraform
     complete -c terraform -f -a "(terraform completion fish)"
 end
+
+# Windsurf
+fish_add_path /Users/rbright/.codeium/windsurf/bin
