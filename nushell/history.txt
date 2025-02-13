@@ -1,0 +1,23 @@
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | table
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | from json | get corporation_name
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | from json | select corporation_name creation_date formation_date
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where creation_date != null and formation_date != null | <\n>    select corporation_name creation_date formation_date
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where creation_date != null and formation_date == null | <\n>    select corporation_name creation_date formation_date
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where creation_date != null and formation_date == null | <\n>    select corporation_name creation_date formation_date |<\n>    append (echo [[corporation_name creation_date formation_date]; ["Total rows:" $in | length null]])
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where creation_date != null and formation_date == null | <\n>    select corporation_name creation_date formation_date
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where {|filing| <\n>        $filing.associated_entities | length > 0 and <\n>        ($filing.filing_number | str substring 0..2) == "08"<\n>    } | <\n>    select filing_number corporation_name associated_entities | <\n>    flatten associated_entities | <\n>    select filing_number corporation_name associated_entity_name entity_filing_number entity_filing_date
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where { |filing| <\n>        ($filing.associated_entities | length) > 0 and <\n>        ($filing.filing_number | str substring 0..2) == "08"<\n>    } | <\n>    select filing_number corporation_name associated_entities | <\n>    flatten associated_entities | <\n>    select filing_number corporation_name associated_entity_name entity_filing_number entity_filing_date
+python -m texas_corporation_workflow.services.corporation_parser workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    from json | <\n>    where { |filing| <\n>        ($filing.associated_entities | length) > 0 <\n>        and ($filing.filing_number | str substring 0..2) == "08"<\n>    } | <\n>    select filing_number corporation_name associated_entities | <\n>    flatten associated_entities | <\n>    select filing_number corporation_name associated_entity_name entity_filing_number entity_filing_date
+orporation-workflow/sample_data/CW250125.txt | <\n>    lines | <\n>    where { |line| $line starts-with "10" }
+open workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    lines | <\n>    where { |line| $line starts-with "10" }
+open --raw workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    decode iso-8859-1 | <\n>    lines | <\n>    where { |line| $line starts-with "10" }
+open --raw workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    decode iso-8859-1 | <\n>    lines | <\n>    where { |line| $line starts-with "10" } | <\n>    each { |line| {<\n>        filing_number: ($line | str substring 2..12),<\n>        full_line: $line<\n>    }}
+open --raw workflows/texas-corporation-workflow/sample_data/CW250125.txt | <\n>    decode iso-8859-1 | <\n>    lines | <\n>    where { |line| $line starts-with "10" } | <\n>    each { |line| $line | str substring 2..12 } | <\n>    uniq | <\n>    sort
+uptime
+exit
+config nu
+exit
