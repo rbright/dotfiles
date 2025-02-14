@@ -3,7 +3,7 @@
 ################################################################
 
 # oh-my-zsh
-export ZSH="${HOME}/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="amuse"
 DISABLE_AUTO_UPDATE="true"
 
@@ -56,7 +56,7 @@ export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color" # tmux colors
 
 # Homebrew Security Options
-export HOMEBREW_CASK_OPTS=--require-sha
+#export HOMEBREW_CASK_OPTS=--require-sha
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 
@@ -69,11 +69,11 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 ################################################################
 
 # Android
-export ANDROID_HOME="${HOME}/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
 # Go
-export GOPATH="${HOME}/go"
+export GOPATH="$HOME/go"
 export GOROOT="/opt/homebrew/opt/go/libexec"
 
 # Google Cloud SDK
@@ -83,12 +83,12 @@ if [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]; then
 fi
 
 # Node (nvm)
-export NVM_DIR="${HOME}/.nvm"
+export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
-[ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 
 # pnpm
-export PNPM_HOME="/Users/rbright/Library/pnpm"
+export PNPM_HOME="$HOME/.nix-profile/bin/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
 
 ################################################################
@@ -104,14 +104,14 @@ path=(
   $HOME/{.local/bin}
 
   # Android
-  ${ANDROID_HOME}/{emulator,platform-tools}
+  $ANDROID_HOME/{emulator,platform-tools}
 
   # Go
-  ${GOPATH}/bin
-  ${GOROOT}/bin
+  $GOPATH/bin
+  $GOROOT/bin
 
   # Node (pnpm)
-  ${PNPM_HOME}
+  $PNPM_HOME
 
   # Postgres
   "/opt/homebrew/opt/libpq/bin"
