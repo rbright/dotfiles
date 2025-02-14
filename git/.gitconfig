@@ -1,7 +1,7 @@
 [user]
 	name = Ryan Bright
-	email = ryan@moonrise.energy
-	signingkey = C9A419F94D92080A10695284114B3A69F7FAD353
+	email = ryan@moonriseconsulting.io
+	signingkey = 2CE243BB5F68A5367B7B9BAD1ED68BB341126851
 [alias]
 	amend = commit --amend
 	last = log -1 HEAD
@@ -33,7 +33,7 @@
 [github]
 	user = rbright
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	program = /usr/local/bin/gpg
 	format = openpgp
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
