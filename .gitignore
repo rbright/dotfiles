@@ -35,7 +35,7 @@ gnupg/.gnupg
 karibiner/.config/karabiner/automatic_backups
 
 # nushell
-nushell/Library/Application Support/nushell/history.txt
+nushell/Library/Application Support/nushell/history.*
 
 # ssh
 ssh
@@ -56,4 +56,4 @@ zed/.config/zed/conversations
 zed/.config/zed/prompts
 
 # zsh
-zsh/.zsh/development
+zsh/.zsh/development.zsh
