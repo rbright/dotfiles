@@ -36,7 +36,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-markdown'
-Plug 'rust-lang/rust.vim'
 
 "================
 " Autocompletion
@@ -105,12 +104,6 @@ let g:python3_host_prog = "/opt/homebrew/bin/python3"
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_liststyle = 3
-
-"================
-" Rust
-"================
-
-let g:rust_clip_command = 'pbcopy'
 
 "================================================================
 " SETTINGS
