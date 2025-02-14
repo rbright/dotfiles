@@ -21,6 +21,6 @@ macos-secure-input-indication = true
 mouse-hide-while-typing = true
 quick-terminal-position = bottom
 quick-terminal-screen = main
-shell-integration = fish
+shell-integration = zsh
 theme = catppuccin-mocha
 window-decoration = true
