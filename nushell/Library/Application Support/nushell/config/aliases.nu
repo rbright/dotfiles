@@ -4,8 +4,11 @@ alias open = ^open
 
 # General
 alias brews = brew list -1
+alias c = clear
+alias l = ls -la
 alias ln = ln -v
 alias sshgen = ssh-keygen -t ed25519 -C
+alias v = nvim
 
 # Git
 alias g = git
@@ -42,8 +45,6 @@ alias gru = git reset --
 alias grhh = git reset --hard
 alias grhk = git reset --keep
 alias grhs = git reset --soft
-alias gpristine = git reset --hard; git clean --force -dfx
-alias gwipe = git reset --hard; git clean --force -df
 alias grm = git rm
 alias grmc = git rm --cached
 alias gstall = git stash --all
@@ -72,7 +73,7 @@ alias dcr = docker compose run --rm
 alias got = go test ./... -v
 
 # Kubernetes
-alias kc = kubectl
+alias k = kubectl
 
 # Ollama
 alias ol = ollama run llama3.2:3b

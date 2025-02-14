@@ -55,6 +55,9 @@ path=(
   # User paths
   $HOME/{.local/bin}
 
+  # NixOS
+  $HOME/.nix-profile/bin
+
   # Android
   $ANDROID_HOME/{emulator,platform-tools}
 

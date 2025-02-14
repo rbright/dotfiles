@@ -1,0 +1,174 @@
+# Remove Docker images and containers
+def clean-docker [] {
+    docker system prune -a --volumes
+    let containers = (docker ps --no-trunc -aq)
+    if not ($containers | is-empty) {
+        docker rm $containers
+    }
+    let dangling = (docker images -q --filter "dangling=true")
+    if not ($dangling | is-empty) {
+        docker rmi $dangling
+    }
+}
+
+# Clean vim plugins
+def clean-vim [] {
+    nvim -c "execute \"PlugClean!\" | q | q"
+}
+
+# Clear duplicates from macOS "Open With" menu
+def clear-open-with-dups [] {
+    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+}
+
+# Fix iOS Simulator
+def fix-ios-sim [] {
+    rm -rf ($env.HOME | path join "Library" "Developer" "CoreSimulator" "Caches")
+}
+
+# Pull all git repositories in current directory
+def git-pull-all [] {
+    do {
+        for dir in (glob */) {
+            let repo_path = ($dir | str replace -r '/$' '')
+            if ($repo_path | path join ".git" | path exists) {
+                cd $repo_path
+                git pull origin main
+                cd ..
+            }
+        }
+    }
+}
+
+# Remove all git repositories
+def git-rm-all [] {
+    ls -d */ | each { |dir|
+        let git_dir = ($dir.name | path join ".git")
+        if ($git_dir | path exists) {
+            rm -rf $git_dir
+        }
+    }
+}
+
+# Safely reset and clean git repository
+def git-pristine [] {
+    print $"(ansi red)Warning: This will reset all changes and remove untracked files!(ansi reset)"
+    print "Current directory: ($env.PWD)"
+    if (input "Are you sure you want to proceed? [y/N] ") == "y" {
+        git reset --hard
+        print "Removing untracked files..."
+        git clean --force -dfx
+    }
+}
+
+# Safely wipe git changes
+def git-wipe [] {
+    print $"(ansi red)Warning: This will reset all changes and remove untracked files!(ansi reset)"
+    print "Current directory: ($env.PWD)"
+    if (input "Are you sure you want to proceed? [y/N] ") == "y" {
+        git reset --hard
+        print "Removing untracked files..."
+        git clean --force -df
+    }
+}
+
+# Kill processes using directory
+# def kill-dir [dir: string] {
+#     let pids = (^lsof | lines | find $dir | str replace --all '\s+' ' ' | split column ' ' | get column2)
+#     if not ($pids | is-empty) {
+#         kill $pids
+#     }
+# }
+
+# View man pages in vim
+def man [...args] {
+    let page = (^man ...$args | ^col -b)
+    nvim -R -c 'set ft=man nomod nolist' - $page
+}
+
+# Make directory and change into it
+def --env mcd [dir: string] {
+    mkdir $dir
+    cd $dir
+}
+
+# Network scan
+def netscan [] {
+    ifconfig | find "broadcast"
+    arp -a | find ":"
+}
+
+# Remove Python compiled files
+def rmpyc [] {
+    fd -e pyc -x rm -f
+}
+
+# Remove vim undo files
+def rmundo [] {
+    fd -e "un~" -x rm -f
+}
+
+# Archive directories
+def tardir [dir: string] {
+    ls -d $"($dir)/*" | each { |entry|
+        if ($entry.type == "dir") {
+            tar czf $"($entry.name).tar.gz" $entry.name
+            rm -rf $entry.name
+        }
+    }
+}
+
+# Monitor TCP traffic
+def tcpmonitor [interface: string, port: int] {
+    sudo /usr/sbin/tcpdump -ln -A -s1024 -i $interface tcp port $port
+}
+
+# Update Homebrew
+def update-homebrew [] {
+    print $"(ansi blue)Updating the list of available Homebrew packages(ansi reset)"
+    brew update
+
+    print $"(ansi blue)Updating Homebrew packages(ansi reset)"
+    brew upgrade
+
+    print $"(ansi blue)Cleaning up old Homebrew applications(ansi reset)"
+    brew cleanup
+    brew autoremove
+    print $"(ansi green)Updated Homebrew packages(ansi reset)"
+}
+
+# Update nix
+def update-nix [] {
+    print $"(ansi blue)Updating nix(ansi reset)"
+    nixconf
+    nix-channel --update
+    print $"(ansi green)Updated nix(ansi reset)"
+}
+
+# Update pnpm
+def update-pnpm [] {
+    print $"(ansi blue)Updating pnpm(ansi reset)"
+    pnpm self-update
+    print $"(ansi green)Updated pnpm(ansi reset)"
+}
+
+# Update vim plugins
+def update-vim [] {
+    nvim +PlugUpdate +qall
+}
+
+# Update oh-my-zsh
+def update-zsh [] {
+    let original_dir = $env.PWD
+    cd $"($env.HOME)/.oh-my-zsh"
+    git pull origin master
+    cd $original_dir
+}
+
+# Update everything
+def update [] {
+    print $"(ansi yellow)Updating macOS packages(ansi reset)"
+    update-pnpm
+    update-vim
+    print $"(ansi yellow)Completed macOS package updates(ansi reset)"
+}

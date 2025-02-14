@@ -198,11 +198,7 @@ source "~/Library/Application Support/nushell/themes/catppuccin_mocha.nu"
 ################################################################################
 
 source "~/Library/Application Support/nushell/config/aliases.nu"
-
-################################################################################
-# Projects
-################################################################################
-
+source "~/Library/Application Support/nushell/config/functions.nu"
 source "~/Library/Application Support/nushell/config/projects.nu"
 
 ################################################################################
