@@ -72,14 +72,6 @@ def git-wipe [] {
     }
 }
 
-# Kill processes using directory
-# def kill-dir [dir: string] {
-#     let pids = (^lsof | lines | find $dir | str replace --all '\s+' ' ' | split column ' ' | get column2)
-#     if not ($pids | is-empty) {
-#         kill $pids
-#     }
-# }
-
 # View man pages in vim
 def man [...args] {
     let page = (^man ...$args | ^col -b)
@@ -110,11 +102,45 @@ def rmundo [] {
 
 # Archive directories
 def tardir [dir: string] {
-    ls -d $"($dir)/*" | each { |entry|
-        if ($entry.type == "dir") {
-            tar czf $"($entry.name).tar.gz" $entry.name
-            rm -rf $entry.name
+    let target_dir = ($dir | path expand)
+    if not ($target_dir | path exists) {
+        print $"(ansi red)Error: Directory '($dir)' does not exist(ansi reset)"
+        return
+    }
+
+    # Change to target directory first so all operations are relative
+    cd $target_dir
+
+    let dirs = (ls | where type == "dir")
+    if ($dirs | is-empty) {
+        print $"(ansi yellow)No directories found in '($dir)'(ansi reset)"
+        return
+    }
+
+    print $"(ansi yellow)Found the following directories to archive:(ansi reset)"
+    print ""
+    $dirs | select name size modified | table
+    print ""
+
+    if (input $"(ansi yellow)Proceed with archiving? [y/N] (ansi reset)") == "y" {
+        $dirs | each { |entry|
+            let dir_name = $entry.name
+            let archive_name = $"($dir_name).tar.gz"
+            print $"Archiving ($dir_name) to ($archive_name)..."
+
+            try {
+                # Create archive from current directory for relative paths
+                tar czf $archive_name -C . $dir_name
+                if ($archive_name | path exists) {
+                    rm -rf $dir_name
+                    print $"(ansi green)Successfully archived ($dir_name)(ansi reset)"
+                }
+            } catch { |err|
+                print $"(ansi red)Error archiving ($dir_name): ($err.msg)(ansi reset)"
+            }
         }
+    } else {
+        print $"(ansi yellow)Operation cancelled(ansi reset)"
     }
 }
 
