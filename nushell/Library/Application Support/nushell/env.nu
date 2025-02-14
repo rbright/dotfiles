@@ -68,22 +68,43 @@ $env.PNPM_HOME = ($env.PATH | path join ".local/share/pnpm")
 # Path Management
 ################################################################################
 
-use std/util "path add"
+# Start with the existing PATH or system defaults
+$env.PATH = ($env.PATH | default [
+    "/usr/local/bin"
+    "/usr/bin"
+    "/bin"
+    "/usr/sbin"
+    "/sbin"
+])
 
-# Android
-path add ($env.HOME | path join "Library/Android/sdk")
+# Define all paths to add
+let paths_to_add = [
+    # Nix paths
+    ($env.HOME | path join ".nix-profile/bin")
+    "/nix/var/nix/profiles/default/bin"
+    "/run/current-system/sw/bin"
 
-# Go
-path add ($env.HOME | path join "go/bin")
+    # User paths
+    ($env.HOME | path join ".local/bin")
 
-# pnpm
-path add $env.PNPM_HOME
+    # Android SDK
+    ($env.HOME | path join "Library/Android/sdk/emulator")
+    ($env.HOME | path join "Library/Android/sdk/platform-tools")
 
-# NixOS
-path add ($env.HOME | path join ".nix-profile/bin")
+    # Go
+    ($env.HOME | path join "go/bin")
+]
 
-# Remove duplication from the PATH
-$env.PATH = ($env.PATH | uniq)
+# Set up pnpm home
+$env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
+
+# Add all paths that exist to PATH
+$env.PATH = ($paths_to_add
+    | where { |it| $it | path exists }
+    | append $env.PATH
+    | append $env.PNPM_HOME
+    | uniq
+)
 
 ################################################################################
 # Shell Integration
@@ -95,3 +116,5 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 # zoxide
 zoxide init nushell | save -f ~/.zoxide.nu
+
+$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
