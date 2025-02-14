@@ -72,12 +72,6 @@ def git-wipe [] {
     }
 }
 
-# View man pages in vim
-def man [...args] {
-    let page = (^man ...$args | ^col -b)
-    nvim -R -c 'set ft=man nomod nolist' - $page
-}
-
 # Make directory and change into it
 def --env mcd [dir: string] {
     mkdir $dir
@@ -163,21 +157,6 @@ def update-homebrew [] {
     print $"(ansi green)Updated Homebrew packages(ansi reset)"
 }
 
-# Update nix
-def update-nix [] {
-    print $"(ansi blue)Updating nix(ansi reset)"
-    nixconf
-    nix-channel --update
-    print $"(ansi green)Updated nix(ansi reset)"
-}
-
-# Update pnpm
-def update-pnpm [] {
-    print $"(ansi blue)Updating pnpm(ansi reset)"
-    pnpm self-update
-    print $"(ansi green)Updated pnpm(ansi reset)"
-}
-
 # Update vim plugins
 def update-vim [] {
     nvim +PlugUpdate +qall
@@ -186,7 +165,7 @@ def update-vim [] {
 # Update oh-my-zsh
 def update-zsh [] {
     let original_dir = $env.PWD
-    cd $"($env.HOME)/.oh-my-zsh"
+    cd "($env.HOME)/.oh-my-zsh"
     git pull origin master
     cd $original_dir
 }
@@ -194,7 +173,7 @@ def update-zsh [] {
 # Update everything
 def update [] {
     print $"(ansi yellow)Updating macOS packages(ansi reset)"
-    update-pnpm
     update-vim
+    update-zsh
     print $"(ansi yellow)Completed macOS package updates(ansi reset)"
 }
