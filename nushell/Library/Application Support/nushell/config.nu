@@ -182,6 +182,22 @@ $env.config.filesize.unit = 'metric'
 $env.config.filesize.precision = 1
 
 ################################################################################
+# Hooks
+################################################################################
+
+$env.config.hooks.pre_prompt = [
+  # Enable direnv integration
+  {
+    code: "
+      let direnv = (direnv export json | from json)
+      if not ($direnv | is-empty) {
+        $direnv | load-env
+      }
+    "
+  }
+]
+
+################################################################################
 # Themes and Syntax Highlighting
 ################################################################################
 
