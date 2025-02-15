@@ -86,12 +86,32 @@ def netscan [] {
 
 # Remove Python compiled files
 def rmpyc [] {
-    fd -e pyc -x rm -f
+    let current_dir = $env.PWD
+
+    # Handle current directory
+    glob *.pyc | each { |file| rm -f $file }
+
+    # Get all subdirectories including hidden ones
+    ls -a **/* --full-paths | where type == dir | each { |entry|
+        cd $entry.name
+        glob *.pyc | each { |file| rm -f $file }
+        cd $current_dir
+    }
 }
 
 # Remove vim undo files
 def rmundo [] {
-    fd -e "un~" -x rm -f
+    let current_dir = $env.PWD
+
+    # Handle current directory
+    glob *.un~ | each { |file| rm -f $file }
+
+    # Get all subdirectories including hidden ones
+    ls -a **/* --full-paths | where type == dir | each { |entry|
+        cd $entry.name
+        glob *.un~ | each { |file| rm -f $file }
+        cd $current_dir
+    }
 }
 
 # Archive directories
