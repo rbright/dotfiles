@@ -1,5 +1,3 @@
-$env.config.plugins = {}
-
 # Stop inactive plugins
 $env.config.plugin_gc.default.enabled = true
 

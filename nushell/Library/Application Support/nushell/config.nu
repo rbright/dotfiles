@@ -137,7 +137,7 @@ $env.config.display_errors.termination_signal = true
 $env.config.footer_mode = 25
 
 # Round float values to this precision when displaying in structured values
-$env.config.float_precision = 2
+$env.config.float_precision = 4
 
 # Use default table formatting
 $env.config.table.mode = "rounded"
