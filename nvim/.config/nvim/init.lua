@@ -2,8 +2,31 @@
 
 require("config.lazy")
 
+--------------------------------------------------------------------------------
+-- Prerequisite Settings
+--------------------------------------------------------------------------------
+
 -- Configure leader key
 vim.g.mapleader = " "
+
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Enable 24-bit RGB color
+vim.opt.termguicolors = true
+
+-- Set colorscheme
+vim.cmd.colorscheme "catppuccin"
+
+--------------------------------------------------------------------------------
+-- Plugins
+--------------------------------------------------------------------------------
+
+require("catppuccin").setup()
+require("oil").setup()
+require("bufferline").setup()
+require('lualine').setup()
 
 --------------------------------------------------------------------------------
 -- General settings
@@ -114,9 +137,6 @@ vim.opt.swapfile = false
 -- Number of spaces tab counts for
 vim.opt.tabstop = 2
 
--- Enable 24-bit RGB color
-vim.opt.termguicolors = true
-
 -- Maximum width of text being inserted
 vim.opt.textwidth = 79
 
@@ -173,11 +193,10 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "/", "/\\v")
 vim.keymap.set("v", "/", "/\\v")
 
--- Set colorscheme (assuming you'll install catppuccin later)
-vim.cmd.colorscheme("default")
+-- Enable syntax highlighting
 vim.opt.syntax = "on"
 
 -- Set shell
 vim.opt.shell = "/Users/rbright/.nix-profile/bin/nu"
 
-vim.cmd.colorscheme "catppuccin"
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

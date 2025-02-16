@@ -4,9 +4,14 @@ background-blur-radius = 20
 background-opacity = 1.0
 cursor-style = block
 cursor-style-blink = true
-font-family = FiraCode Nerd Font Mono Ret
+font-family = "FiraCode Nerd Font Mono Ret"
+font-family-bold = "FiraCode Nerd Font Mono Ret"
+font-family-italic = "FiraCode Nerd Font Mono Ret"
+font-family-bold-italic = "FiraCode Nerd Font Mono Ret"
 font-feature = "ss01", "ss05", "dlig"
 font-size = 15
+font-thicken = true
+font-thicken-strength = 255
 keybind = ctrl+w=new_split:up
 keybind = ctrl+a=new_split:left
 keybind = ctrl+s=new_split:down
