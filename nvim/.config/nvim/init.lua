@@ -19,14 +19,33 @@ vim.opt.termguicolors = true
 -- Set colorscheme
 vim.cmd.colorscheme "catppuccin"
 
+-- Set shell
+vim.opt.shell = "/Users/rbright/.nix-profile/bin/nu"
+
 --------------------------------------------------------------------------------
 -- Plugins
 --------------------------------------------------------------------------------
 
+-- User Interface
 require("catppuccin").setup()
 require("oil").setup()
 require("bufferline").setup()
 require('lualine').setup()
+require('noice').setup()
+
+-- LSP
+--require('nvim-treesitter').setup()
+--require('nvim-ts-autotag').setup()
+
+-- Editor
+require('flash').toggle()
+require('which-key').setup()
+require('gitsigns').setup()
+require('trouble').setup()
+require('todo-comments').setup()
+
+-- Utilities
+require('fzf-lua').setup()
 
 --------------------------------------------------------------------------------
 -- General settings
@@ -190,13 +209,28 @@ vim.keymap.set("v", "Z", "gq")
 vim.keymap.set("n", "Z", "gqap")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
-vim.keymap.set("n", "/", "/\\v")
-vim.keymap.set("v", "/", "/\\v")
 
 -- Enable syntax highlighting
 vim.opt.syntax = "on"
 
--- Set shell
-vim.opt.shell = "/Users/rbright/.nix-profile/bin/nu"
-
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+--------------------------------------------------------------------------------
+-- todo-comments
+--------------------------------------------------------------------------------
+
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+--------------------------------------------------------------------------------
+-- fzf-lua
+--------------------------------------------------------------------------------
+
+vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>",
+  function() require("fzf-lua").complete_path() end,
+  { silent = true, desc = "Fuzzy complete path" })
