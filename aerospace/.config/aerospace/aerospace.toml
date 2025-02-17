@@ -105,6 +105,18 @@ if.app-name-regex-substring = 'fantastical'
 run = ['layout tiling', 'move-node-to-workspace 5']
 
 #######################################
+# Workspace 6 - Utilities
+#######################################
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'tableplus'
+run = ['layout tiling', 'move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'tower'
+run = ['layout tiling', 'move-node-to-workspace 6']
+
+#######################################
 # Floating Windows
 #######################################
 
