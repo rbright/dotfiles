@@ -9,8 +9,21 @@ vim.keymap.set("n", "<leader>w", ":w!<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 
 -------------------------------------------------------------------------------
--- Splits
+-- Buffers
 -------------------------------------------------------------------------------
+
+-- Leader-b to switch buffer
+vim.keymap.set("n", "<C-D-h>", ":bprev<cr>")
+vim.keymap.set("n", "<C-D-j>", ":bnext<cr>")
+vim.keymap.set("n", "<C-D-k>", ":bprev<cr>")
+vim.keymap.set("n", "<C-D-l>", ":bnext<cr>")
+
+-- Ctrl-q to close a buffer
+vim.keymap.set("n", "<C-q>", ":close<cr>", { noremap = true, silent = true })
+
+-------------------------------------------------------------------------------
+-- Splits
+------------------------------------------------------------------------------
 
 -- Ctrl-Shift + h/j/k/l to split horizontally and vertically
 vim.keymap.set("n", "<C-S-h>", ":vsplit<CR>")
@@ -23,9 +36,6 @@ vim.keymap.set("n", "<C-h>", "<C-W>h")
 vim.keymap.set("n", "<C-j>", "<C-W>j")
 vim.keymap.set("n", "<C-k>", "<C-W>k")
 vim.keymap.set("n", "<C-l>", "<C-W>l")
-
--- Ctrl-q to close a buffer
-vim.keymap.set("n", "<C-q>", ":close<CR>", { noremap = true, silent = true })
 
 -------------------------------------------------------------------------------
 -- Search
