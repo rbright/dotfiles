@@ -1,5 +1,7 @@
 add_newline = false
 palette = "catppuccin_mocha"
+format = """$directory$character"""
+right_format = """$all"""
 
 [aws]
 disabled = false
@@ -25,6 +27,7 @@ vimcmd_symbol = '[V](bold green)'
 disabled = true
 
 [directory]
+disabled = true
 read_only = '🔒'
 read_only_style = 'red'
 
@@ -160,7 +163,7 @@ format = '[$symbol$workspace]($style) '
 symbol = '󱁢 '
 
 [time]
-disabled = false
+disabled = true
 format = '[\[$time\]]($style) '
 style = 'bold yellow'
 time_format = '%T'
