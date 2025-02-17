@@ -9,6 +9,7 @@ alias l = ls -la
 alias ln = ln -v
 alias sshgen = ssh-keygen -t ed25519 -C
 alias v = nvim
+alias vim = nvim
 
 # Git
 alias g = git

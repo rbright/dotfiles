@@ -13,14 +13,6 @@ font-feature = "ss01", "ss05", "dlig"
 font-size = 15
 font-thicken = true
 font-thicken-strength = 255
-keybind = ctrl+w=new_split:up
-keybind = ctrl+a=new_split:left
-keybind = ctrl+s=new_split:down
-keybind = ctrl+d=new_split:right
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+l=goto_split:right
 macos-auto-secure-input = true
 macos-option-as-alt = true
 macos-secure-input-indication = true
