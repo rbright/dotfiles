@@ -2,6 +2,7 @@ auto-update = check
 auto-update-channel = stable
 background-blur-radius = 20
 background-opacity = 1.0
+bold-is-bright = true
 cursor-style = block
 cursor-style-blink = true
 font-family = "FiraCode Nerd Font Mono Ret"
@@ -24,8 +25,12 @@ macos-auto-secure-input = true
 macos-option-as-alt = true
 macos-secure-input-indication = true
 mouse-hide-while-typing = true
+quick-terminal-animation-duration = 0
 quick-terminal-position = bottom
-quick-terminal-screen = main
-shell-integration = zsh
+quick-terminal-screen = mouse
+quick-terminal-space-behavior = move
+shell-integration = detect
 theme = catppuccin-mocha
 window-decoration = true
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
