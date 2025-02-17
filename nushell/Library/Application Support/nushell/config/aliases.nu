@@ -76,6 +76,10 @@ alias got = go test ./... -v
 # Kubernetes
 alias k = kubectl
 
+# Nix
+alias nb = nix run .#build
+alias nbs = nix run .#build-switch
+
 # Ollama
 alias ol = ollama run llama3.2:3b
 
