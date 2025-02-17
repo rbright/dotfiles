@@ -35,6 +35,9 @@ ssh
 # tableplus
 tableplus/Library
 
+# tmux
+tmux/.config/tmux/plugins
+
 # vim
 vim/.vim/.netrwhist
 vim/.vim/autoload
