@@ -27,15 +27,19 @@ require('config.options')
 
 -- User Interface
 require("config.plugins.catppuccin")
+require("config.plugins.snacks")
 require("config.plugins.oil")
 require("config.plugins.bufferline")
 require('config.plugins.lualine')
 require('config.plugins.noice')
 
 -- Editor
-require('config.plugins.which-key')
+-- require('config.plugins.which-key')
 require('config.plugins.trouble')
 require('config.plugins.todo-comments')
+
+-- Treesitter
+require('config.plugins.nvim-ts-autotag')
 
 -- Utilities
 require('config.plugins.fzf-lua')
