@@ -60,12 +60,29 @@ automatically-unhide-macos-hidden-apps = false
 # Workspace 2 - Work
 #######################################
 
+# Android Studio
+[[on-window-detected]]
+if.app-id = 'com.google.android.studio'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Cursor
 [[on-window-detected]]
 if.app-name-regex-substring = 'cursor'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
+# Ghostty
 [[on-window-detected]]
-if.app-name-regex-substring = 'ghostty'
+if.app-id = 'com.mitchellh.ghostty'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Xcode
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Zed
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 #######################################
@@ -80,72 +97,221 @@ run = ['layout tiling', 'move-node-to-workspace 3']
 # Workspace 4 - Messaging
 #######################################
 
+# Discord
 [[on-window-detected]]
-if.app-name-regex-substring = 'mimestream'
+if.app-id = 'com.hnc.Discord'
 run = ['layout tiling', 'move-node-to-workspace 4']
 
+# Mimestream
 [[on-window-detected]]
-if.app-name-regex-substring = 'messages'
+if.app-id = 'com.mimestream.Mimestream'
 run = ['layout tiling', 'move-node-to-workspace 4']
 
+# Slack
 [[on-window-detected]]
-if.app-name-regex-substring = 'slack'
-run = ['layout tiling', 'move-node-to-workspace 4']
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'discord'
+if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['layout tiling', 'move-node-to-workspace 4']
 
 #######################################
 # Workspace 5 - Calendar
 #######################################
 
+# Calendar
 [[on-window-detected]]
-if.app-name-regex-substring = 'fantastical'
+if.app-id = 'com.apple.iCal'
+run = ['layout tiling', 'move-node-to-workspace 5']
+
+# Fantastical
+[[on-window-detected]]
+if.app-id = 'com.flexibits.fantastical2.mac'
 run = ['layout tiling', 'move-node-to-workspace 5']
 
 #######################################
 # Workspace 6 - Utilities
 #######################################
 
+# TablePlus
 [[on-window-detected]]
-if.app-name-regex-substring = 'tableplus'
+if.app-id = 'com.tinyapp.TablePlus'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
+# Tower
 [[on-window-detected]]
-if.app-name-regex-substring = 'tower'
+if.app-id = 'com.fournova.Tower3'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
 #######################################
 # Floating Windows
 #######################################
 
+# 1Password
 [[on-window-detected]]
-if.app-name-regex-substring = '1password'
+if.app-id = 'com.1password.1password'
 run = 'layout floating'
 
+# Activity Monitor
 [[on-window-detected]]
-if.app-name-regex-substring = 'activity monitor'
+if.app-id = 'com.apple.ActivityMonitor'
 run = 'layout floating'
 
+# AirPort Utility
 [[on-window-detected]]
-if.app-name-regex-substring = 'camera'
+if.app-id = 'com.apple.airport.airportutility'
 run = 'layout floating'
 
+# App Store
 [[on-window-detected]]
-if.app-name-regex-substring = 'elgato'
+if.app-id = 'com.apple.AppStore'
 run = 'layout floating'
 
+# Calculator
 [[on-window-detected]]
-if.app-name-regex-substring = 'finder'
+if.app-id = 'com.apple.calculator'
 run = 'layout floating'
 
+# CleanShot X
 [[on-window-detected]]
-if.app-name-regex-substring = 'quicktime'
+if.app-id = 'pl.maketheweb.cleanshotx'
 run = 'layout floating'
 
+# Clock
 [[on-window-detected]]
-if.app-name-regex-substring = 'superwhisper'
+if.app-id = 'com.apple.clock'
+run = 'layout floating'
+
+# Contacts
+[[on-window-detected]]
+if.app-id = 'com.apple.AddressBook'
+run = 'layout floating'
+
+# DaisyDisk
+[[on-window-detected]]
+if.app-id = 'com.daisydiskapp.DaisyDisk'
+run = 'layout floating'
+
+# Dash
+[[on-window-detected]]
+if.app-id = 'com.kapeli.dashdoc'
+run = 'layout floating'
+
+# Dictionary
+[[on-window-detected]]
+if.app-id = 'com.apple.Dictionary'
+run = 'layout floating'
+
+# Docker
+[[on-window-detected]]
+if.app-id = 'com.docker.docker'
+run = 'layout floating'
+
+# Elgato Camera Hub
+[[on-window-detected]]
+if.app-id = 'com.elgato.CameraHub'
+run = 'layout floating'
+
+# FaceTime
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = 'layout floating'
+
+# Find My
+[[on-window-detected]]
+if.app-id = 'com.apple.findmy'
+run = 'layout floating'
+
+# Finder
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+# Font Book
+[[on-window-detected]]
+if.app-id = 'com.apple.FontBook'
+run = 'layout floating'
+
+# Icon Set Creator
+[[on-window-detected]]
+if.app-id = 'com.nicolasmiari.icon-set-creator'
+run = 'layout floating'
+
+# ImageOptim
+[[on-window-detected]]
+if.app-id = 'net.pornel.ImageOptim'
+run = 'layout floating'
+
+# Karabiner-Elements
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
+run = 'layout floating'
+
+# Karabiner-EventViewer
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-EventViewer'
+run = 'layout floating'
+
+# Logitech G Hub
+[[on-window-detected]]
+if.app-id = 'com.logi.ghub'
+run = 'layout floating'
+
+# Loom
+[[on-window-detected]]
+if.app-id = 'com.loom.desktop'
+run = 'layout floating'
+
+# Messages
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['layout floating']
+
+# News
+[[on-window-detected]]
+if.app-id = 'com.apple.news'
+run = ['layout floating']
+
+# OpenVPN Connect
+[[on-window-detected]]
+if.app-id = 'org.openvpn.client.app'
+run = ['layout floating']
+
+# Passwords
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = ['layout floating']
+
+# QuickTime
+[[on-window-detected]]
+if.app-id = 'om.apple.QuickTimePlayerX'
+run = 'layout floating'
+
+# Raycast
+[[on-window-detected]]
+if.app-id = 'com.raycast.macos'
+run = ['layout floating']
+
+# Stocks
+[[on-window-detected]]
+if.app-id = 'com.apple.stocks'
+run = ['layout floating']
+
+# superwhisper
+[[on-window-detected]]
+if.app-id = 'com.superduper.superwhisper'
+run = 'layout floating'
+
+# VNC Viewer
+[[on-window-detected]]
+if.app-id = 'com.realvnc.vncviewer'
+run = 'layout floating'
+
+# Wispr Flow
+[[on-window-detected]]
+if.app-id = 'com.electron.wispr-flow.accessibility-mac-app'
+run = 'layout floating'
+
+# Zoom
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
 run = 'layout floating'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
