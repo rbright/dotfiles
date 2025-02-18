@@ -1,6 +1,8 @@
 return {
-  {
-    'stevearc/conform.nvim',
-    opts = {},
-  }
+	{
+		"stevearc/conform.nvim",
+	},
+	{
+		"nvimtools/none-ls.nvim",
+	},
 }

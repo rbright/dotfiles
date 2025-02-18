@@ -34,12 +34,20 @@ require("config.plugins.lualine")
 require("config.plugins.noice")
 
 -- Editor
--- require('config.plugins.which-key')
 require("config.plugins.trouble")
 require("config.plugins.todo-comments")
+require("config.plugins.which-key")
 
--- Treesitter
+-- Coding
+require("config.plugins.mini-comment")
+require("config.plugins.mini-pairs")
+require("config.plugins.mini-surround")
 require("config.plugins.nvim-ts-autotag")
+require("config.plugins.ts-comments")
+
+-- LSP
+require("config.plugins.mason")
+require("config.plugins.mason-lspconfig")
 
 -- Formatting
 require("config.plugins.conform")
