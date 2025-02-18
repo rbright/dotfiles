@@ -143,4 +143,4 @@ vim.opt.syntax = "on"
 vim.opt.shell = "/Users/rbright/.nix-profile/bin/nu"
 
 -- Set colorscheme
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("catppuccin")

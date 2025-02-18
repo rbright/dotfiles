@@ -1,12 +1,12 @@
-require('nvim-ts-autotag').setup({
-  opts = {
-    -- Automatically close tags
-    enable_close = true,
+require("nvim-ts-autotag").setup({
+	opts = {
+		-- Automatically close tags
+		enable_close = true,
 
-    -- Automatically rename pairs of tags
-    enable_rename = true,
+		-- Automatically rename pairs of tags
+		enable_rename = true,
 
-    -- Don't automatically close tags on slash
-    enable_close_on_slash = false
-  }
+		-- Don't automatically close tags on slash
+		enable_close_on_slash = false,
+	},
 })

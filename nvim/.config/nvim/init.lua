@@ -18,8 +18,8 @@ vim.g.loaded_netrwPlugin = 1
 -- Settings
 --------------------------------------------------------------------------------
 
-require('config.keymaps')
-require('config.options')
+require("config.keymaps")
+require("config.options")
 
 --------------------------------------------------------------------------------
 -- Plugins
@@ -30,16 +30,19 @@ require("config.plugins.catppuccin")
 require("config.plugins.snacks")
 require("config.plugins.oil")
 require("config.plugins.bufferline")
-require('config.plugins.lualine')
-require('config.plugins.noice')
+require("config.plugins.lualine")
+require("config.plugins.noice")
 
 -- Editor
 -- require('config.plugins.which-key')
-require('config.plugins.trouble')
-require('config.plugins.todo-comments')
+require("config.plugins.trouble")
+require("config.plugins.todo-comments")
 
 -- Treesitter
-require('config.plugins.nvim-ts-autotag')
+require("config.plugins.nvim-ts-autotag")
+
+-- Formatting
+require("config.plugins.conform")
 
 -- Utilities
-require('config.plugins.fzf-lua')
+require("config.plugins.fzf-lua")
