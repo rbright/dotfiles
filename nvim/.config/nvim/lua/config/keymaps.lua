@@ -6,7 +6,7 @@
 vim.keymap.set("n", "<leader>w", ":w!<CR>")
 
 -- Leader-q to quit
-vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>q", ":q!<CR>")
 
 -------------------------------------------------------------------------------
 -- Buffers
@@ -19,7 +19,7 @@ vim.keymap.set("n", "<C-D-k>", ":bprev<cr>")
 vim.keymap.set("n", "<C-D-l>", ":bnext<cr>")
 
 -- Ctrl-q to close a buffer
-vim.keymap.set("n", "<C-q>", ":close<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-q>", ":bd<cr>", { noremap = true, silent = true })
 
 -------------------------------------------------------------------------------
 -- Splits

@@ -1,12 +1,17 @@
 require("conform").setup({
 	formatters_by_ft = {
-		javascript = { "prettierd", stop_after_first = true },
+		javascript = { "eslint_d" },
+		javascriptreact = { "eslint_d" },
+		json = { "prettierd" },
 		lua = { "stylua" },
-		python = { "ruff" },
+		python = { "ruff_format" },
+		sql = { "sqlfluff" },
+		typescript = { "eslint_d" },
+		typescriptreact = { "eslint_d" },
 	},
 	format_on_save = {
-		timeout_ms = 500,
 		lsp_format = "fallback",
+		timeout_ms = 500,
 	},
 })
 
