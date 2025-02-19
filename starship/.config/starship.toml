@@ -1,7 +1,5 @@
 add_newline = false
 palette = "catppuccin_mocha"
-format = """$directory$character"""
-right_format = """$all"""
 
 [aws]
 disabled = false
