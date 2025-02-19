@@ -12,7 +12,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -72,7 +72,7 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Ghostty
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if.app-name-regex-substring = 'ghostty'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Xcode
@@ -227,6 +227,11 @@ run = 'layout floating'
 # Font Book
 [[on-window-detected]]
 if.app-id = 'com.apple.FontBook'
+run = 'layout floating'
+
+# Harvest
+[[on-window-detected]]
+if.app-id = 'com.getharvest.harvestxapp'
 run = 'layout floating'
 
 # Icon Set Creator
