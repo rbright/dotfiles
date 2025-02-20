@@ -309,11 +309,6 @@ run = 'layout floating'
 if.app-id = 'com.realvnc.vncviewer'
 run = 'layout floating'
 
-# Wispr Flow
-[[on-window-detected]]
-if.app-id = 'com.electron.wispr-flow.accessibility-mac-app'
-run = 'layout floating'
-
 # Zoom
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
