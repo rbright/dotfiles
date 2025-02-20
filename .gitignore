@@ -29,6 +29,9 @@ nushell/Library/Application Support/nushell/history.*
 nushell/Library/Application Support/nushell/plugin.msgpackz
 nushell/Library/Application Support/nushell/vendor
 
+# raycast
+raycast
+
 # ssh
 ssh
 
