@@ -86,9 +86,15 @@ if.app-id = 'dev.zed.Zed'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 #######################################
-# Workspace 3 - Trading
+# Workspace 3 - Reading / Research
 #######################################
 
+# Calibre
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.calibre'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+# Thinkorswim
 [[on-window-detected]]
 if.app-name-regex-substring = 'thinkorswim'
 run = ['layout tiling', 'move-node-to-workspace 3']
