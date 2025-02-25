@@ -57,7 +57,7 @@ automatically-unhide-macos-hidden-apps = false
 ################################################################################
 
 #######################################
-# Workspace 2 - Work
+# Workspace 2 - Development
 #######################################
 
 # Android Studio
@@ -68,11 +68,6 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 # Cursor
 [[on-window-detected]]
 if.app-name-regex-substring = 'cursor'
-run = ['layout tiling', 'move-node-to-workspace 2']
-
-# Ghostty
-[[on-window-detected]]
-if.app-name-regex-substring = 'ghostty'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Xcode
@@ -133,8 +128,13 @@ if.app-id = 'com.flexibits.fantastical2.mac'
 run = ['layout tiling', 'move-node-to-workspace 5']
 
 #######################################
-# Workspace 6 - Utilities
+# Workspace 6 - Development Utilities
 #######################################
+
+# Ghostty
+[[on-window-detected]]
+if.app-name-regex-substring = 'ghostty'
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 # TablePlus
 [[on-window-detected]]
