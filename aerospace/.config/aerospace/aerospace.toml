@@ -86,7 +86,7 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Calibre
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.calibre'
+if.app-name-regex-substring = 'calibre library'
 run = ['layout tiling', 'move-node-to-workspace 3']
 
 # Thinkorswim
@@ -173,6 +173,11 @@ run = 'layout floating'
 # Calculator
 [[on-window-detected]]
 if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+# Calibre Preferences
+[[on-window-detected]]
+if.app-name-regex-substring = 'calibre - Preferences'
 run = 'layout floating'
 
 # CleanShot X
