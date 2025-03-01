@@ -57,6 +57,15 @@ automatically-unhide-macos-hidden-apps = false
 ################################################################################
 
 #######################################
+# Workspace 1 - General
+#######################################
+
+# Brave Browser
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = ['layout tiling', 'move-node-to-workspace 1']
+
+#######################################
 # Workspace 2 - Development
 #######################################
 
