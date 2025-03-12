@@ -117,6 +117,11 @@ run = ['layout tiling', 'move-node-to-workspace 4']
 if.app-id = 'com.mimestream.Mimestream'
 run = ['layout tiling', 'move-node-to-workspace 4']
 
+# Proton Mail
+[[on-window-detected]]
+if.app-id = 'ch.protonmail.desktop'
+run = ['layout tiling', 'move-node-to-workspace 4']
+
 # Slack
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
