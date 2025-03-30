@@ -65,8 +65,13 @@ automatically-unhide-macos-hidden-apps = false
 if.app-id = 'com.brave.Browser'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
+# Apple Music
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = ['layout tiling', 'move-node-to-workspace 1']
+
 #######################################
-# Workspace 2 - Development
+# Workspace 2 - Development Primary
 #######################################
 
 # Android Studio
@@ -77,6 +82,11 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 # Cursor
 [[on-window-detected]]
 if.app-name-regex-substring = 'cursor'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Visual Studio Code
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Xcode
@@ -90,75 +100,79 @@ if.app-id = 'dev.zed.Zed'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 #######################################
-# Workspace 3 - Reading / Research
+# Workspace 2 - Development Secondary
+#######################################
+
+# TablePlus
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+# Tower
+[[on-window-detected]]
+if.app-id = 'com.fournova.Tower3'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+#######################################
+# Workspace 4 - Reading / Research
 #######################################
 
 # Calibre
 [[on-window-detected]]
 if.app-name-regex-substring = 'calibre library'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 # Thinkorswim
 [[on-window-detected]]
 if.app-name-regex-substring = 'thinkorswim'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 #######################################
-# Workspace 4 - Messaging
+# Workspace 5 - Messaging
 #######################################
 
 # Discord
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Mimestream
 [[on-window-detected]]
 if.app-id = 'com.mimestream.Mimestream'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Proton Mail
 [[on-window-detected]]
 if.app-id = 'ch.protonmail.desktop'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Slack
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 #######################################
-# Workspace 5 - Calendar
+# Workspace 6 - Calendar
 #######################################
 
 # Calendar
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = ['layout tiling', 'move-node-to-workspace 5']
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 # Fantastical
 [[on-window-detected]]
 if.app-id = 'com.flexibits.fantastical2.mac'
-run = ['layout tiling', 'move-node-to-workspace 5']
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 #######################################
-# Workspace 6 - Development Utilities
+# Workspace 7 - Terminal
 #######################################
 
 # Ghostty
 [[on-window-detected]]
 if.app-name-regex-substring = 'ghostty'
-run = ['layout tiling', 'move-node-to-workspace 6']
-
-# TablePlus
-[[on-window-detected]]
-if.app-id = 'com.tinyapp.TablePlus'
-run = ['layout tiling', 'move-node-to-workspace 6']
-
-# Tower
-[[on-window-detected]]
-if.app-id = 'com.fournova.Tower3'
-run = ['layout tiling', 'move-node-to-workspace 6']
+run = ['layout tiling', 'move-node-to-workspace 7']
 
 #######################################
 # Floating Windows
@@ -429,6 +443,7 @@ alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -437,6 +452,7 @@ alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-4 = 'move-node-to-workspace 4'
 alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -466,4 +482,5 @@ backspace = ['close-all-windows-but-current', 'mode main']
 3 = 'main'
 4 = 'main'
 5 = 'main'
-6 = 'secondary'
+6 = 'main'
+7 = 'secondary'
