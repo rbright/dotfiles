@@ -1,7 +1,7 @@
 [user]
 	name = Ryan Bright
 	email = ryan@moonriseconsulting.io
-	signingkey = 2CE243BB5F68A5367B7B9BAD1ED68BB341126851
+	signingkey = CA8A4481E8E7D07C09A88E23DA097DD090986BF5
 [alias]
 	amend = commit --amend
 	last = log -1 HEAD
