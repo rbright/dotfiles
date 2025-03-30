@@ -44,8 +44,8 @@ $env.config.edit_mode = "vi"
 # "sqlite" or "plaintext"
 $env.config.history.file_format = "sqlite"
 
-# Share history between multiple sessions
-$env.config.history.isolation = false
+# Don't share history between multiple sessions
+$env.config.history.isolation = true
 
 # Maximum number of lines kept in history
 $env.config.history.max_size = 100_000
