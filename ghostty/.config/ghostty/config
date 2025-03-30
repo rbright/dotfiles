@@ -25,5 +25,3 @@ quick-terminal-space-behavior = move
 shell-integration = detect
 theme = catppuccin-mocha
 window-decoration = true
-
-keybind = global:cmd+grave_accent=toggle_quick_terminal
