@@ -96,7 +96,7 @@ detect_files = ['Tiltfile']
 style = 'bold blue'
 
 [nats]
-disabled = false
+disabled = true
 format = '[$symbol$name]($style)'
 style = 'bold purple'
 symbol = '✉️ '
