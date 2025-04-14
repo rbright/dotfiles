@@ -172,7 +172,7 @@ run = ['layout tiling', 'move-node-to-workspace 7']
 # Tower
 [[on-window-detected]]
 if.app-id = 'com.fournova.Tower3'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 7']
 
 #######################################
 # Floating Windows
