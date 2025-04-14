@@ -144,7 +144,7 @@ def tardir [dir: string] {
 
             try {
                 # Create archive from current directory for relative paths
-                tar czf $archive_name -C . $dir_name
+                tar -cf - -C . "$dir_name" | xz -9e > "$archive_name.tar.xz"
                 if ($archive_name | path exists) {
                     rm -rf $dir_name
                     print $"(ansi green)Successfully archived ($dir_name)(ansi reset)"
