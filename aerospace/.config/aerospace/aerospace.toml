@@ -62,12 +62,12 @@ automatically-unhide-macos-hidden-apps = false
 
 # Brave Browser
 [[on-window-detected]]
-if.app-id = 'com.brave.Browser'
+if.window-title-regex-substring = 'brave'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Apple Music
 [[on-window-detected]]
-if.app-id = 'com.apple.Music'
+if.window-title-regex-substring = 'music'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 #######################################
@@ -128,12 +128,12 @@ run = ['layout tiling', 'move-node-to-workspace 4']
 
 # Discord
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
+if.app-name-regex-substring = 'discord'
 run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Mimestream
 [[on-window-detected]]
-if.app-id = 'com.mimestream.Mimestream'
+if.app-name-regex-substring = 'mimestream'
 run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Proton Mail
@@ -143,7 +143,7 @@ run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Slack
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
+if.app-name-regex-substring = 'slack'
 run = ['layout tiling', 'move-node-to-workspace 5']
 
 #######################################
@@ -152,12 +152,12 @@ run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Calendar
 [[on-window-detected]]
-if.app-id = 'com.apple.iCal'
+if.app-name-regex-substring = 'calendar'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
 # Fantastical
 [[on-window-detected]]
-if.app-id = 'com.flexibits.fantastical2.mac'
+if.window-title-regex-substring = 'fantastical'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
 #######################################
@@ -171,7 +171,7 @@ run = ['layout tiling', 'move-node-to-workspace 7']
 
 # Tower
 [[on-window-detected]]
-if.app-id = 'com.fournova.Tower3'
+if.app-name-regex-substring = 'tower'
 run = ['layout tiling', 'move-node-to-workspace 7']
 
 #######################################
@@ -180,32 +180,32 @@ run = ['layout tiling', 'move-node-to-workspace 7']
 
 # 1Password
 [[on-window-detected]]
-if.app-id = 'com.1password.1password'
+if.app-name-regex-substring = '1password'
 run = 'layout floating'
 
 # Activity Monitor
 [[on-window-detected]]
-if.app-id = 'com.apple.ActivityMonitor'
+if.app-name-regex-substring = 'activity monitor'
 run = 'layout floating'
 
 # AirPort Utility
 [[on-window-detected]]
-if.app-id = 'com.apple.airport.airportutility'
+if.app-name-regex-substring = 'airport utility'
 run = 'layout floating'
 
 # App Store
 [[on-window-detected]]
-if.app-id = 'com.apple.AppStore'
+if.app-name-regex-substring = 'app store'
 run = 'layout floating'
 
 # Calculator
 [[on-window-detected]]
-if.app-id = 'com.apple.calculator'
+if.app-name-regex-substring = 'calculator'
 run = 'layout floating'
 
 # Calibre Preferences
 [[on-window-detected]]
-if.app-name-regex-substring = 'calibre - Preferences'
+if.app-name-regex-substring = 'calibre - preferences'
 run = 'layout floating'
 
 # CleanShot X
@@ -300,27 +300,27 @@ run = 'layout floating'
 
 # Loom
 [[on-window-detected]]
-if.app-id = 'com.loom.desktop'
+if.window-title-regex-substring = 'loom'
 run = 'layout floating'
 
 # Messages
 [[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
+if.window-title-regex-substring = 'messages'
 run = ['layout floating']
 
 # News
 [[on-window-detected]]
-if.app-id = 'com.apple.news'
+if.window-title-regex-substring = 'news'
 run = ['layout floating']
 
 # OpenVPN Connect
 [[on-window-detected]]
-if.app-id = 'org.openvpn.client.app'
+if.window-title-regex-substring = 'openvpn'
 run = ['layout floating']
 
 # Passwords
 [[on-window-detected]]
-if.app-id = 'com.apple.Passwords'
+if.window-title-regex-substring = 'passwords'
 run = ['layout floating']
 
 # QuickTime
@@ -330,12 +330,12 @@ run = 'layout floating'
 
 # Raycast
 [[on-window-detected]]
-if.app-id = 'com.raycast.macos'
+if.window-title-regex-substring = 'raycast'
 run = ['layout floating']
 
 # Stocks
 [[on-window-detected]]
-if.app-id = 'com.apple.stocks'
+if.window-title-regex-substring = 'stocks'
 run = ['layout floating']
 
 # superwhisper
