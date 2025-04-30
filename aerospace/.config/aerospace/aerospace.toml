@@ -62,12 +62,12 @@ automatically-unhide-macos-hidden-apps = false
 
 # Brave Browser
 [[on-window-detected]]
-if.window-title-regex-substring = 'brave'
+if.app-name-regex-substring = 'brave'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Apple Music
 [[on-window-detected]]
-if.window-title-regex-substring = 'music'
+if.app-name-regex-substring = 'music'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 #######################################
@@ -89,14 +89,19 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 if.app-id = 'com.microsoft.VSCode'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
+# Windsurf
+[[on-window-detected]]
+if.app-name-regex-substring = 'windsurf'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
 # Xcode
 [[on-window-detected]]
-if.app-id = 'com.apple.dt.Xcode'
+if.app-name-regex-substring = 'xcode'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Zed
 [[on-window-detected]]
-if.app-id = 'dev.zed.Zed'
+if.app-name-regex-substring = 'zed'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 #######################################
@@ -157,7 +162,7 @@ run = ['layout tiling', 'move-node-to-workspace 6']
 
 # Fantastical
 [[on-window-detected]]
-if.window-title-regex-substring = 'fantastical'
+if.app-name-regex-substring = 'fantastical'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
 #######################################
@@ -305,22 +310,22 @@ run = 'layout floating'
 
 # Messages
 [[on-window-detected]]
-if.window-title-regex-substring = 'messages'
+if.app-name-regex-substring = 'messages'
 run = ['layout floating']
 
 # News
 [[on-window-detected]]
-if.window-title-regex-substring = 'news'
+if.app-name-regex-substring = 'news'
 run = ['layout floating']
 
 # OpenVPN Connect
 [[on-window-detected]]
-if.window-title-regex-substring = 'openvpn'
+if.app-name-regex-substring = 'openvpn'
 run = ['layout floating']
 
 # Passwords
 [[on-window-detected]]
-if.window-title-regex-substring = 'passwords'
+if.app-name-regex-substring = 'passwords'
 run = ['layout floating']
 
 # QuickTime
@@ -335,7 +340,7 @@ run = ['layout floating']
 
 # Stocks
 [[on-window-detected]]
-if.window-title-regex-substring = 'stocks'
+if.app-name-regex-substring = 'stocks'
 run = ['layout floating']
 
 # superwhisper
@@ -350,7 +355,7 @@ run = 'layout floating'
 
 # Zoom
 [[on-window-detected]]
-if.app-id = 'us.zoom.xos'
+if.app-name-regex-substring = 'zoom'
 run = 'layout floating'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
