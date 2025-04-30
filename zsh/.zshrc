@@ -43,7 +43,7 @@ export NVM_COMPLETION=true
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 
 # pnpm
-export PNPM_HOME="$HOME/.nix-profile/bin/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
 
 ################################################################################
@@ -113,3 +113,6 @@ if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Added by Windsurf
+export PATH="/Users/rbright/.codeium/windsurf/bin:$PATH"
