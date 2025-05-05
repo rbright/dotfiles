@@ -223,4 +223,5 @@ source "~/Library/Application Support/nushell/config/projects.nu"
 # Shell Integration
 ################################################################################
 
+source ~/.cache/carapace/init.nu
 source ~/.zoxide.nu
