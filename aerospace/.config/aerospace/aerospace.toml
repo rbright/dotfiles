@@ -115,6 +115,11 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 # Workspace 2 - Development Tools
 ############################################################
 
+# Console
+[[on-window-detected]]
+if.app-id = 'com.apple.Console'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
 # OpenMTP
 [[on-window-detected]]
 if.app-id = 'io.ganeshrvel.openmtp'
