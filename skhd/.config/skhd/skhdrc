@@ -1,0 +1,29 @@
+# Open Brave
+hyper - b : open -a "/Applications/Brave Browser.app"
+
+# Open Cursor
+hyper - c : open -a "/Applications/Cursor.app"
+
+# Open Fantastical
+hyper - f : open -a  "/Applications/Fantastical.app"
+
+# Open Ghostty
+hyper - g : open -a  "/Applications/Ghostty.app"
+
+# Open Linear
+hyper - l : open -a "/Applications/Linear.app"
+
+# Open Obsidian
+hyper - o : open -a "/Applications/Obsidian.app"
+
+# Open Postman
+hyper - p : open -a "/Applications/Postman.app"
+
+# Open Slack
+hyper - s : open -a  "/Applications/Slack.app"
+
+# Open TablePlus
+hyper - q : open -a  "/Applications/TablePlus.app"
+
+# Open Tower
+hyper - t : open -a  "/Applications/Tower.app"
