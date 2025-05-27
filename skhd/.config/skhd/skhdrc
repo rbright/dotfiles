@@ -10,8 +10,14 @@ hyper - f : open -a  "/Applications/Fantastical.app"
 # Open Ghostty
 hyper - g : open -a  "/Applications/Ghostty.app"
 
+# Open Google Messages
+hyper - m : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Messages.app"
+
 # Open Linear
 hyper - l : open -a "/Applications/Linear.app"
+
+# Open Mimestream
+hyper - e : open -a "/Applications/Mimestream.app"
 
 # Open Obsidian
 hyper - o : open -a "/Applications/Obsidian.app"
