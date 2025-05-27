@@ -1,0 +1,71 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  ##############################################################################
+  # Symbols
+  ##############################################################################
+
+  # Keyboard
+  - trigger: "{hyper}"
+    replace: "◆"
+  - trigger: "{cmd}"
+    replace: "⌘"
+  - trigger: "{ctrl}"
+    replace: "⌃"
+  - trigger: "{fn}"
+    replace: "F"
+  - trigger: "{opt}"
+    replace: "⌥"
+  - trigger: "{shift}"
+    replace: "⇧"
+
+  # Copyright
+  - trigger: "{c}"
+    replace: "©"
+
+  # Registered trademark
+  - trigger: "{r}"
+    replace: "®"
+
+  # Trademark
+  - trigger: "{tm}"
+    replace: "™"
+
+  ##############################################################################
+  # Date
+  ##############################################################################
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  ##############################################################################
+  # URLs
+  ##############################################################################
+
+  # GitHub Profile
+  - trigger: ":gh"
+    replace: "https://github.com/rbright"
+
+  # LinkedIn Profile
+  - trigger: ":li"
+    replace: "https://linkedin.com/in/rbright"
+
+  # Reclaim Schedule
+  - trigger: ":reclaim"
+    replace: "https://app.reclaim.ai/m/ryanbright"
