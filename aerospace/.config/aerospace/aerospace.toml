@@ -56,161 +56,272 @@ automatically-unhide-macos-hidden-apps = false
 # App to Workspace Assignments
 ################################################################################
 
-#######################################
-# Workspace 1 - General
-#######################################
+############################################################
+# Workspace 0 - General
+############################################################
 
 # Brave Browser
 [[on-window-detected]]
-if.app-name-regex-substring = 'brave'
-run = ['layout tiling', 'move-node-to-workspace 1']
+if.app-id = 'com.brave.Browser'
+run = ['layout tiling', 'move-node-to-workspace 0']
+check-further-callbacks = true
 
-# Apple Music
+# Brave Browser - Task Manager
 [[on-window-detected]]
-if.app-name-regex-substring = 'music'
-run = ['layout tiling', 'move-node-to-workspace 1']
+if.window-title-regex-substring = 'task manager'
+run = ['layout floating']
 
-#######################################
-# Workspace 2 - Development #1
-#######################################
+# Photos
+[[on-window-detected]]
+if.app-name-regex-substring = 'photos'
+run = ['layout tiling', 'move-node-to-workspace 0']
+
+############################################################
+# Workspace 1 - Code Editor
+############################################################
 
 # Android Studio
 [[on-window-detected]]
 if.app-id = 'com.google.android.studio'
-run = ['layout tiling', 'move-node-to-workspace 2']
+run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Cursor
 [[on-window-detected]]
 if.app-name-regex-substring = 'cursor'
-run = ['layout tiling', 'move-node-to-workspace 2']
+run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Visual Studio Code
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = ['layout tiling', 'move-node-to-workspace 2']
+if.app-name-regex-substring = 'visual studio code'
+run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Windsurf
 [[on-window-detected]]
 if.app-name-regex-substring = 'windsurf'
-run = ['layout tiling', 'move-node-to-workspace 2']
+run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Xcode
 [[on-window-detected]]
 if.app-name-regex-substring = 'xcode'
-run = ['layout tiling', 'move-node-to-workspace 2']
+run = ['layout tiling', 'move-node-to-workspace 1']
+check-further-callbacks = true
 
 # Zed
 [[on-window-detected]]
 if.app-name-regex-substring = 'zed'
+run = ['layout tiling', 'move-node-to-workspace 1']
+
+############################################################
+# Workspace 2 - Development Tools
+############################################################
+
+# OpenMTP
+[[on-window-detected]]
+if.app-id = 'io.ganeshrvel.openmtp'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
-#######################################
-# Workspace 3 - Development #2
-#######################################
+# Postman
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Proxyman
+[[on-window-detected]]
+if.app-id = 'com.proxyman.NSProxy'
+run = ['layout tiling', 'move-node-to-workspace 2']
+check-further-callbacks = true
 
 # TablePlus
 [[on-window-detected]]
-if.app-name-regex-substring = 'tableplus'
+if.app-id = 'com.tinyapp.TablePlus'
+run = ['layout tiling', 'move-node-to-workspace 2']
+check-further-callbacks = true
+
+############################################################
+# Workspace 3 - Design
+############################################################
+
+# ComfyUI
+[[on-window-detected]]
+if.app-name-regex-substring = 'comfyui'
 run = ['layout tiling', 'move-node-to-workspace 3']
 
-#######################################
-# Workspace 4 - Reading / Research
-#######################################
+# Figma
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+# Pixelmator Pro
+[[on-window-detected]]
+if.app-id = 'com.pixelmatorteam.pixelmator.x'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+############################################################
+# Workspace 4 - Office
+############################################################
 
 # Calibre
 [[on-window-detected]]
-if.app-name-regex-substring = 'calibre library'
+if.app-id = 'net.kovidgoyal.calibre'
 run = ['layout tiling', 'move-node-to-workspace 4']
+check-further-callbacks = true
+
+# Calibre - Preferences
+[[on-window-detected]]
+if.window-title-regex-substring = 'calibre - preferences'
+run = 'layout floating'
+
+# Microsoft Excel
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Excel'
+run = ['layout tiling', 'move-node-to-workspace 4']
+
+# Microsoft Excel - Preferences
+[[on-window-detected]]
+if.window-title-regex-substring = 'excel preferences'
+run = ['layout floating']
+
+# Microsoft Word
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Word'
+run = ['layout tiling', 'move-node-to-workspace 4']
+
+############################################################
+# Workspace 5 - Trading
+############################################################
+
+# Ledger Live
+[[on-window-detected]]
+if.app-id = 'com.ledger.live'
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Thinkorswim
 [[on-window-detected]]
 if.app-name-regex-substring = 'thinkorswim'
-run = ['layout tiling', 'move-node-to-workspace 4']
-
-#######################################
-# Workspace 5 - Messaging
-#######################################
-
-# Discord
-[[on-window-detected]]
-if.app-name-regex-substring = 'discord'
 run = ['layout tiling', 'move-node-to-workspace 5']
+check-further-callbacks = true
+
+# Thinkorswim - Column Set for 'Watchlist'
+[[on-window-detected]]
+if.window-title-regex-substring = "column set for 'watchlist'"
+run = ['layout tiling', 'move-node-to-workspace 5']
+
+############################################################
+# Workspace 6 - Messaging
+############################################################
+
+# Apple Messages / Google Messages
+[[on-window-detected]]
+if.app-name-regex-substring = 'messages'
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 # Mimestream
 [[on-window-detected]]
-if.app-name-regex-substring = 'mimestream'
-run = ['layout tiling', 'move-node-to-workspace 5']
-
-# Proton Mail
-[[on-window-detected]]
-if.app-id = 'ch.protonmail.desktop'
-run = ['layout tiling', 'move-node-to-workspace 5']
+if.app-id = 'com.mimestream.Mimestream'
+run = ['layout tiling', 'move-node-to-workspace 6']
+check-further-callbacks = true
 
 # Slack
 [[on-window-detected]]
-if.app-name-regex-substring = 'slack'
-run = ['layout tiling', 'move-node-to-workspace 5']
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['layout tiling', 'move-node-to-workspace 6']
 
-#######################################
-# Workspace 6 - Calendar
-#######################################
+############################################################
+# Workspace 7 - Projects / Notes / Tasks
+############################################################
+
+# Linear
+[[on-window-detected]]
+if.app-id = 'com.linear'
+run = ['layout tiling', 'move-node-to-workspace 7']
+
+# Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['layout tiling', 'move-node-to-workspace 7']
+
+# Todoist
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
+run = ['layout tiling', 'move-node-to-workspace 7']
+
+############################################################
+# Workspace 8 - Calendar
+############################################################
 
 # Calendar
 [[on-window-detected]]
-if.app-name-regex-substring = 'calendar'
-run = ['layout tiling', 'move-node-to-workspace 6']
+if.app-id = 'com.apple.iCal'
+run = ['layout tiling', 'move-node-to-workspace 8']
 
 # Fantastical
 [[on-window-detected]]
-if.app-name-regex-substring = 'fantastical'
-run = ['layout tiling', 'move-node-to-workspace 6']
+if.app-id = 'com.flexibits.fantastical2.mac'
+run = ['layout tiling', 'move-node-to-workspace 8']
+check-further-callbacks = true
 
-#######################################
-# Workspace 7 - Development #3
-#######################################
+############################################################
+# Workspace 9 - Terminal / Version Control
+############################################################
 
 # Ghostty
 [[on-window-detected]]
-if.app-name-regex-substring = 'ghostty'
-run = ['layout tiling', 'move-node-to-workspace 7']
+if.app-id = 'com.mitchellh.ghostty'
+run = ['layout tiling', 'move-node-to-workspace 9']
 
 # Tower
 [[on-window-detected]]
-if.app-name-regex-substring = 'tower'
-run = ['layout tiling', 'move-node-to-workspace 7']
+if.app-id = 'com.fournova.Tower3'
+run = ['layout tiling', 'move-node-to-workspace 9']
+check-further-callbacks = true
 
-#######################################
+################################################################################
 # Floating Windows
-#######################################
+################################################################################
+
+# General - Settings
+[[on-window-detected]]
+if.window-title-regex-substring = 'settings'
+run = ['layout floating']
+
+# General - Settings - General
+[[on-window-detected]]
+if.window-title-regex-substring = 'general'
+run = ['layout floating']
 
 # 1Password
 [[on-window-detected]]
-if.app-name-regex-substring = '1password'
+if.app-id = 'com.1password.1password'
 run = 'layout floating'
 
 # Activity Monitor
 [[on-window-detected]]
-if.app-name-regex-substring = 'activity monitor'
+if.app-id = 'com.apple.ActivityMonitor'
 run = 'layout floating'
 
 # AirPort Utility
 [[on-window-detected]]
-if.app-name-regex-substring = 'airport utility'
+if.app-id = 'com.apple.airport.airportutility'
 run = 'layout floating'
 
 # App Store
 [[on-window-detected]]
-if.app-name-regex-substring = 'app store'
+if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
+# Apple Music
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'layout floating'
+
+# Balena Etcher
+[[on-window-detected]]
+if.app-id = 'io.balena.etcher'
 run = 'layout floating'
 
 # Calculator
 [[on-window-detected]]
-if.app-name-regex-substring = 'calculator'
-run = 'layout floating'
-
-# Calibre Preferences
-[[on-window-detected]]
-if.app-name-regex-substring = 'calibre - preferences'
+if.app-id = 'com.apple.calculator'
 run = 'layout floating'
 
 # CleanShot X
@@ -298,6 +409,11 @@ run = 'layout floating'
 if.app-id = 'org.pqrs.Karabiner-EventViewer'
 run = 'layout floating'
 
+# LocalSend
+[[on-window-detected]]
+if.app-id = 'org.localsend.localsendApp'
+run = 'layout floating'
+
 # Logitech G Hub
 [[on-window-detected]]
 if.app-id = 'com.logi.ghub'
@@ -305,28 +421,33 @@ run = 'layout floating'
 
 # Loom
 [[on-window-detected]]
-if.window-title-regex-substring = 'loom'
+if.app-id = 'com.loom.desktop'
 run = 'layout floating'
-
-# Messages
-[[on-window-detected]]
-if.app-name-regex-substring = 'messages'
-run = ['layout floating']
 
 # News
 [[on-window-detected]]
-if.app-name-regex-substring = 'news'
-run = ['layout floating']
-
-# OpenVPN Connect
-[[on-window-detected]]
-if.app-name-regex-substring = 'openvpn'
+if.app-id = 'com.apple.news'
 run = ['layout floating']
 
 # Passwords
 [[on-window-detected]]
-if.app-name-regex-substring = 'passwords'
+if.app-id = 'com.apple.Passwords'
 run = ['layout floating']
+
+# Preview
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout floating']
+
+# Proton Pass
+[[on-window-detected]]
+if.app-id = 'me.proton.pass.electron'
+run = 'layout floating'
+
+# Proton VPN
+[[on-window-detected]]
+if.app-id = 'ch.protonvpn.mac'
+run = 'layout floating'
 
 # QuickTime
 [[on-window-detected]]
@@ -335,18 +456,23 @@ run = 'layout floating'
 
 # Raycast
 [[on-window-detected]]
-if.window-title-regex-substring = 'raycast'
+if.app-id = 'com.raycast.macos'
 run = ['layout floating']
 
 # Stocks
 [[on-window-detected]]
-if.app-name-regex-substring = 'stocks'
+if.app-id = 'com.apple.stocks'
 run = ['layout floating']
 
 # superwhisper
 [[on-window-detected]]
 if.app-id = 'com.superduper.superwhisper'
 run = 'layout floating'
+
+# TextEdit
+[[on-window-detected]]
+if.app-id = 'com.apple.TextEdit'
+run = ['layout floating']
 
 # VNC Viewer
 [[on-window-detected]]
@@ -355,7 +481,7 @@ run = 'layout floating'
 
 # Zoom
 [[on-window-detected]]
-if.app-name-regex-substring = 'zoom'
+if.app-id = 'us.zoom.xos'
 run = 'layout floating'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -442,22 +568,28 @@ ctrl-alt-minus = 'resize smart -50'
 ctrl-alt-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
+alt-1 = 'workspace 0'
+alt-2 = 'workspace 1'
+alt-3 = 'workspace 2'
+alt-4 = 'workspace 3'
+alt-5 = 'workspace 4'
+alt-6 = 'workspace 5'
+alt-7 = 'workspace 6'
+alt-8 = 'workspace 7'
+alt-9 = 'workspace 8'
+alt-0 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-1 = 'move-node-to-workspace 0'
+alt-shift-2 = 'move-node-to-workspace 1'
+alt-shift-3 = 'move-node-to-workspace 2'
+alt-shift-4 = 'move-node-to-workspace 3'
+alt-shift-5 = 'move-node-to-workspace 4'
+alt-shift-6 = 'move-node-to-workspace 5'
+alt-shift-7 = 'move-node-to-workspace 6'
+alt-shift-8 = 'move-node-to-workspace 7'
+alt-shift-9 = 'move-node-to-workspace 8'
+alt-shift-0 = 'move-node-to-workspace 9'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -482,10 +614,13 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
+0 = 'main'
 1 = 'main'
 2 = 'main'
 3 = 'main'
 4 = 'main'
 5 = 'main'
 6 = 'main'
-7 = 'secondary'
+7 = 'main'
+8 = 'main'
+9 = 'secondary'
