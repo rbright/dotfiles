@@ -16,33 +16,33 @@ matches:
   ##############################################################################
 
   # Keyboard
-  - trigger: "{hyper}"
+  - trigger: ":hyper"
     replace: "◆"
-  - trigger: "{cmd}"
+  - trigger: ":cmd"
     replace: "⌘"
-  - trigger: "{ctrl}"
+  - trigger: ":ctrl"
     replace: "⌃"
-  - trigger: "{fn}"
+  - trigger: ":fn"
     replace: "F"
-  - trigger: "{opt}"
+  - trigger: ":opt"
     replace: "⌥"
-  - trigger: "{shift}"
+  - trigger: ":shift"
     replace: "⇧"
 
   # Copyright
-  - trigger: "{c}"
+  - trigger: ":copyright"
     replace: "©"
 
   # Registered trademark
-  - trigger: "{r}"
+  - trigger: ":rtrademark"
     replace: "®"
 
   # Trademark
-  - trigger: "{tm}"
+  - trigger: ":trademark"
     replace: "™"
 
   ##############################################################################
-  # Date
+  # Date / Timestamp
   ##############################################################################
 
   # Print the current date
@@ -53,6 +53,14 @@ matches:
         type: date
         params:
           format: "%Y-%m-%d"
+
+  - trigger: ":timestamp"
+    replace: "{{timestamp}}"
+    vars:
+      - name: timestamp
+        type: date
+        params:
+          format: "%Y%m%d%H%M%S"
 
   ##############################################################################
   # URLs
