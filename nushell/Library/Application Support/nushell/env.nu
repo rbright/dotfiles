@@ -86,6 +86,9 @@ let paths_to_add = [
 
     # Go
     ($env.HOME | path join "go/bin")
+
+    # Node.js (npm)
+    ($env.HOME | path join ".npm-global/bin")
 ]
 
 # Set up pnpm home

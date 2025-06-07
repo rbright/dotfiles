@@ -65,7 +65,10 @@ path=(
   $GOPATH/bin
   $GOROOT/bin
 
-  # Node (pnpm)
+  # Node.js (npm)
+  $HOME/.npm-global/bin
+
+  # Node.js (pnpm)
   $PNPM_HOME
 
   # Postgres
@@ -116,3 +119,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Added by Windsurf
 export PATH="/Users/rbright/.codeium/windsurf/bin:$PATH"
+
+. "$HOME/.local/bin/env"
