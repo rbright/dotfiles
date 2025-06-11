@@ -151,6 +151,11 @@ check-further-callbacks = true
 if.app-name-regex-substring = 'comfyui'
 run = ['layout tiling', 'move-node-to-workspace 3']
 
+# Excalidraw
+[[on-window-detected]]
+if.app-name-regex-substring = 'excalidraw'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
 # Figma
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'

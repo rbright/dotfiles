@@ -1,5 +1,7 @@
-# vim undo files
 .DS_Store
+.zcompdump*
+
+# vim undo files
 *.un~
 
 # 1Password
