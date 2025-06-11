@@ -108,8 +108,8 @@ $env.PATH = ($paths_to_add
 
 # Carapace
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
-mkdir ($nu.data-dir | path join "vendor/autoload")
-carapace _carapace nushell | save --force ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
 # Starship
 mkdir ($nu.data-dir | path join "vendor/autoload")
