@@ -1,35 +1,55 @@
-# Open Brave
-hyper - b : open -a "/Applications/Brave Browser.app"
+# Modifiers and literals: https://github.com/koekeishiya/skhd/issues/1
 
-# Open Cursor
-hyper - c : open -a "/Applications/Cursor.app"
+################################################################################
+# Productivity
+################################################################################
+
+# Open Browser
+hyper - b : open -a "/Applications/Brave Browser.app"
 
 # Open Fantastical
 hyper - f : open -a  "/Applications/Fantastical.app"
 
-# Open Ghostty
-hyper - g : open -a  "/Applications/Ghostty.app"
-
-# Open Google Messages
-hyper - m : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Messages.app"
+# Open Todoist
+hyper - t : open -a  "/Applications/Todoist.app"
 
 # Open Linear
 hyper - l : open -a "/Applications/Linear.app"
 
-# Open Mimestream
-hyper - e : open -a "/Applications/Mimestream.app"
-
 # Open Obsidian
 hyper - o : open -a "/Applications/Obsidian.app"
 
-# Open Postman
-hyper - p : open -a "/Applications/Postman.app"
+################################################################################
+# Communication
+################################################################################
+
+# Open Google Messages
+hyper - m : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Messages.app"
+
+# Open Mimestream
+hyper - e : open -a "/Applications/Mimestream.app"
 
 # Open Slack
 hyper - s : open -a  "/Applications/Slack.app"
 
-# Open TablePlus
+################################################################################
+# Development
+################################################################################
+
+# Open Code Editor
+hyper - c : open -a "/Applications/Cursor.app"
+
+# # Open Terminal
+hyper - z : open -a  "/Applications/Ghostty.app"
+
+# Open Git UI
+hyper - g : open -a  "/Applications/Tower.app"
+
+# Open Database UI
 hyper - q : open -a  "/Applications/TablePlus.app"
 
-# Open Tower
-hyper - t : open -a  "/Applications/Tower.app"
+# Open Postman
+hyper - p : open -a "/Applications/Postman.app"
+
+# Open Excalidraw
+hyper - x : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Excalidraw.app"
