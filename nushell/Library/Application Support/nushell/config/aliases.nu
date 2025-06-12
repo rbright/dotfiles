@@ -58,7 +58,7 @@ alias gst = git status
 alias gta = git tag --annotate
 alias gts = git tag --sign
 alias gtv = git tag | sort -V
-alias gt = gittower
+alias tower = gittower
 
 # Docker
 alias di = docker images
