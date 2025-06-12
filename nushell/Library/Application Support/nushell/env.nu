@@ -58,6 +58,23 @@ $env.ENV_CONVERSIONS = {
 }
 
 ################################################################################
+# Development Tools
+################################################################################
+
+# Android SDK
+$env.ANDROID_HOME = ($env.HOME | path join "/Library/Android/sdk")
+$env.JAVA_HOME = "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+
+# Go
+$env.GOPATH = ($env.HOME | path join "go")
+
+# Node.js
+$env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
+
+# XDG
+$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
+
+################################################################################
 # Path Management
 ################################################################################
 
@@ -72,33 +89,35 @@ $env.PATH = ($env.PATH | default [
 
 # Define all paths to add
 let paths_to_add = [
-    # Nix paths
+    # Nix
     ($env.HOME | path join ".nix-profile/bin")
     "/nix/var/nix/profiles/default/bin"
     "/run/current-system/sw/bin"
 
-    # User paths
+    # User
     ($env.HOME | path join ".local/bin")
 
-    # Android SDK
-    ($env.HOME | path join "Library/Android/sdk/emulator")
-    ($env.HOME | path join "Library/Android/sdk/platform-tools")
+    # Homebrew
+    "/opt/homebrew/bin"
+
+    # Android
+    ($env.ANDROID_HOME | path join "emulator")
+    ($env.ANDROID_HOME | path join "platform-tools")
 
     # Go
-    ($env.HOME | path join "go/bin")
+    ($env.GOPATH | path join "bin")
 
-    # Node.js (npm)
+    # Node.js - npm
     ($env.HOME | path join ".npm-global/bin")
-]
 
-# Set up pnpm home
-$env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
+    # Node.js - pnpm
+    $env.PNPM_HOME
+]
 
 # Add all paths that exist to PATH
 $env.PATH = ($paths_to_add
     | where { |it| $it | path exists }
     | append $env.PATH
-    | append $env.PNPM_HOME
     | uniq
 )
 
@@ -117,5 +136,3 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 # zoxide
 zoxide init nushell | save -f ~/.zoxide.nu
-
-$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
