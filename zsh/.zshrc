@@ -14,11 +14,6 @@ source "${ZSH}/oh-my-zsh.sh"
 export EDITOR="$HOME/.nix-profile/bin/nvim"
 export LANG=en_US.UTF-8
 
-# Homebrew Security Options
-# export HOMEBREW_CASK_OPTS=--require-sha
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-
 ################################################################################
 # Development Tools
 ################################################################################
@@ -29,56 +24,53 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
 # Go
 export GOPATH="$HOME/go"
-export GOROOT="/opt/homebrew/opt/go/libexec"
 
-# Google Cloud SDK
-if [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]; then
-    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-fi
-
-# Node (nvm)
-export NVM_DIR="$HOME/.nvm"
-export NVM_COMPLETION=true
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-
-# pnpm
+# Node.js - pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ################################################################################
 # Path Management
 ################################################################################
 
 typeset -U path
+
 path=(
-  # User paths
+  # User
   $HOME/{.local/bin}
 
-  # NixOS
+  # Nix
   $HOME/.nix-profile/bin
+  "/nix/var/nix/profiles/default/bin"
+  "/run/current-system/sw/bin"
+
+  # Homebrew
+  "/opt/homebrew/bin"
 
   # Android
   $ANDROID_HOME/{emulator,platform-tools}
 
   # Go
   $GOPATH/bin
-  $GOROOT/bin
 
-  # Node.js (npm)
+  # Node.js - npm
   $HOME/.npm-global/bin
 
-  # Node.js (pnpm)
+  # Node.js - pnpm
   $PNPM_HOME
-
-  # Postgres
-  "/opt/homebrew/opt/libpq/bin"
 
   # Add system PATH
   $path
 )
 
 export PATH
+
+################################################################################
+# Imports
+################################################################################
 
 # Source all .zsh files in the main zsh directory
 for file in "${HOME}/.zsh"/*.zsh(N); do
@@ -96,18 +88,10 @@ fi
 # Shell Integration
 ################################################################################
 
-# Starship
-eval "$(starship init zsh)"
-
-# zoxide
-eval "$(zoxide init zsh)"
-
-# Node (nvm)
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Terraform
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+# Carapace
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
 
 # Nix
 if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
@@ -115,9 +99,10 @@ if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
   . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
 fi
 
-export XDG_CONFIG_HOME="$HOME/.config"
+# Starship
+eval "$(starship init zsh)"
 
-# Added by Windsurf
-export PATH="/Users/rbright/.codeium/windsurf/bin:$PATH"
+# zoxide
+eval "$(zoxide init zsh)"
 
 . "$HOME/.local/bin/env"
