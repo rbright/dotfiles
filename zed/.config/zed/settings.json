@@ -115,7 +115,6 @@
     "Go": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "inline_completions_disabled_in": ["comment", "string"],
       "preferred_line_length": 120,
       "tab_size": 2
     },

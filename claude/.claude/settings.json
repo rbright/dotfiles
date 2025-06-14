@@ -160,5 +160,8 @@
       "Bash(fdisk:*)",
       "Bash(mkfs:*)"
     ]
+  },
+  "env": {
+    "DISABLE_TELEMETRY": "1"
   }
 }
