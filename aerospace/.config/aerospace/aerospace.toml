@@ -120,6 +120,12 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 if.app-id = 'com.apple.Console'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
+# Cyberduck
+[[on-window-detected]]
+if.app-id = 'ch.sudo.cyberduck'
+run = ['layout tiling', 'move-node-to-workspace 2']
+check-further-callbacks = true
+
 # OpenMTP
 [[on-window-detected]]
 if.app-id = 'io.ganeshrvel.openmtp'
