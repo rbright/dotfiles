@@ -2,6 +2,4 @@
 --ignore=.DS_Store
 --ignore=dash
 --ignore=gnupg
---ignore=raycast/focus-categories
---ignore=raycast/scripts
 --ignore=tableplus/themes

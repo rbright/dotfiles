@@ -1,0 +1,6 @@
+{
+  "default_program": "claude --dangerously-skip-permissions",
+  "auto_yes": true,
+  "daemon_poll_interval": 1000,
+  "branch_prefix": "feature/"
+}

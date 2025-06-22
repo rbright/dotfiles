@@ -16,6 +16,14 @@ aws
 # btop
 btop/.config/btop/btop.log
 
+# claude
+claude/.claude/ide
+
+# claude-squad
+claude/.claude-squad/worktrees
+claude/.claude-squad/*.pid
+claude/.claude-squad/state.json
+
 # dash
 dash
 

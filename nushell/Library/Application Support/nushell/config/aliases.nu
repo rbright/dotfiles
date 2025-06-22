@@ -60,6 +60,9 @@ alias gts = git tag --sign
 alias gtv = git tag | sort -V
 alias tower = gittower
 
+# Claude Code
+alias cs = claude-squad
+
 # Docker
 alias di = docker images
 alias db = docker build
