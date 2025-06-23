@@ -148,6 +148,12 @@ if.app-id = 'com.tinyapp.TablePlus'
 run = ['layout tiling', 'move-node-to-workspace 2']
 check-further-callbacks = true
 
+# Tower
+[[on-window-detected]]
+if.app-id = 'com.fournova.Tower3'
+run = ['layout tiling', 'move-node-to-workspace 2']
+check-further-callbacks = true
+
 ############################################################
 # Workspace 3 - Design
 ############################################################
@@ -284,12 +290,6 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ['layout tiling', 'move-node-to-workspace 9']
-
-# Tower
-[[on-window-detected]]
-if.app-id = 'com.fournova.Tower3'
-run = ['layout tiling', 'move-node-to-workspace 9']
-check-further-callbacks = true
 
 ############################################################
 # Workspace C - Workspaces
