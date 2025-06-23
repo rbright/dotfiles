@@ -62,6 +62,9 @@ alias tower = gittower
 
 # Claude Code
 alias cs = claude-squad
+alias cclive = npx ccusage@latest blocks --live
+alias ccdaily = npx ccusage@latest daily
+alias ccmonthly = npx ccusage@latest monthly
 
 # Docker
 alias di = docker images
