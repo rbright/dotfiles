@@ -18,6 +18,9 @@ btop/.config/btop/btop.log
 
 # claude
 claude/.claude/ide
+claude/.claude/projects
+claude/.claude/statsig
+claude/.claude/todos
 
 # claude-squad
 claude/.claude-squad/worktrees
@@ -34,10 +37,10 @@ gnupg/.gnupg
 karibiner/.config/karabiner/automatic_backups
 
 # nushell
-nushell/Library/Application Support/nushell/config/projects.nu
-nushell/Library/Application Support/nushell/history.*
-nushell/Library/Application Support/nushell/plugin.msgpackz
-nushell/Library/Application Support/nushell/vendor
+nushell/**/config/projects.nu
+nushell/**/history.*
+nushell/**/plugin.msgpackz
+nushell/**/vendor
 
 # raycast
 raycast
