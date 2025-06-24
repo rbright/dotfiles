@@ -59,6 +59,7 @@ alias tower="gittower"
 # Claude Code
 alias cs="claude-squad"
 alias cclive="npx ccusage@latest blocks --live"
+alias ccblocks="npx ccusage@latest blocks"
 alias ccdaily="npx ccusage@latest daily"
 alias ccmonthly="npx ccusage@latest monthly"
 
