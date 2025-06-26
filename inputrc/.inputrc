@@ -1,1 +1,44 @@
+# Vi mode settings
 set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+# Completion settings
+set colored-stats on
+set colored-completion-prefix on
+set completion-ignore-case on
+set completion-prefix-display-length 3
+set mark-symlinked-directories on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set visible-stats on
+
+# History settings
+set history-preserve-point on
+set revert-all-at-newline on
+
+# Miscellaneous settings
+set enable-bracketed-paste on
+set expand-tilde on
+set bell-style none
+
+# Key bindings for both modes
+"\C-p": history-search-backward
+"\C-n": history-search-forward
+"\C-r": reverse-search-history
+
+# Vi insert mode bindings
+set keymap vi-insert
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-w": backward-kill-word
+"\C-k": kill-line
+"\C-u": unix-line-discard
+"\C-l": clear-screen
+
+# Vi command mode bindings
+set keymap vi-command
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-l": clear-screen
