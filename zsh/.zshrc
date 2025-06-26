@@ -43,9 +43,6 @@ export GOPATH="$HOME/go"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
 
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
-
 ################################################################################
 # Path Management
 ################################################################################

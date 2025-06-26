@@ -71,9 +71,6 @@ $env.GOPATH = ($env.HOME | path join "go")
 # Node.js
 $env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
 
-# XDG
-$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
-
 ################################################################################
 # Path Management
 ################################################################################
