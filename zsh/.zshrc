@@ -8,6 +8,20 @@ DISABLE_AUTO_UPDATE="true"
 source "${ZSH}/oh-my-zsh.sh"
 
 ################################################################################
+# Safety & Performance Options
+################################################################################
+
+# History options
+setopt HIST_VERIFY        # Show command with history expansion before running it
+setopt HIST_IGNORE_DUPS   # Don't record duplicate entries
+setopt HIST_IGNORE_SPACE  # Don't record entries starting with a space
+
+# Directory & navigation options
+setopt AUTO_CD            # If command is a directory, cd into it
+setopt CORRECT            # Try to correct misspellings
+setopt EXTENDED_GLOB      # More powerful globbing
+
+################################################################################
 # Settings
 ################################################################################
 
