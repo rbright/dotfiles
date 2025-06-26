@@ -21,4 +21,17 @@ return {
 			require("config.plugins.nvim-cmp").setup()
 		end,
 	},
+	
+	-- Better LSP UI
+	{
+		"nvimdev/lspsaga.nvim",
+		event = "LspAttach",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("config.plugins.lspsaga").setup()
+		end,
+	},
 }

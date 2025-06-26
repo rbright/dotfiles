@@ -1,3 +1,6 @@
+-- Setup nvim-cmp capabilities
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 require("mason-lspconfig").setup({
 	automatic_installation = false,
 	ensure_installed = {
@@ -27,6 +30,7 @@ require("mason-lspconfig").setup({
 })
 
 require("lspconfig").dockerls.setup({
+	capabilities = capabilities,
 	settings = {
 		docker = {
 			languageserver = {
@@ -38,9 +42,12 @@ require("lspconfig").dockerls.setup({
 	},
 })
 
-require("lspconfig").docker_compose_language_service.setup({})
+require("lspconfig").docker_compose_language_service.setup({
+	capabilities = capabilities,
+})
 
 require("lspconfig").lua_ls.setup({
+	capabilities = capabilities,
 	on_init = function(client)
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
@@ -78,6 +85,7 @@ require("lspconfig").lua_ls.setup({
 })
 
 require("lspconfig").pyright.setup({
+	capabilities = capabilities,
 	python = {
 		analysis = {
 			autoSearchPaths = true,
@@ -88,6 +96,7 @@ require("lspconfig").pyright.setup({
 })
 
 require("lspconfig").ruff.setup({
+	capabilities = capabilities,
 	init_options = {
 		settings = {
 			-- Server settings should go here
