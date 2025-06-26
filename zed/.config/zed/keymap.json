@@ -20,10 +20,10 @@
       "ctrl-shift-l": "pane::SplitRight",
 
       // Pane Navigation
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
 
       // Close pane
       "ctrl-q": "pane::CloseAllItems",
@@ -35,7 +35,7 @@
       "cmd-shift-p": "command_palette::Toggle",
 
       // AI Panel
-      "cmd-shift-a": "assistant::ToggleFocus",
+      "cmd-shift-a": "agent::ToggleFocus",
 
       // Terminal
       "cmd-`": "terminal_panel::ToggleFocus"

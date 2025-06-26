@@ -1,5 +1,5 @@
 {
-  "assistant": {
+  "agent": {
     "button": true,
     "enabled": true,
     "dock": "right",
@@ -314,10 +314,10 @@
   },
   "tabs": {
     "activate_on_close": "history",
-    "always_show_close_button": false,
     "close_position": "right",
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
+    "show_close_button": "hover"
   },
   "telemetry": {
     "diagnostics": false,
