@@ -13,19 +13,29 @@
   {
     "context": "Editor",
     "bindings": {
+      // Pane Splitting
+      "ctrl-shift-h": "pane::SplitLeft",
+      "ctrl-shift-j": "pane::SplitDown",
+      "ctrl-shift-k": "pane::SplitUp",
+      "ctrl-shift-l": "pane::SplitRight",
+
       // Pane Navigation
-      "ctrl-w": "pane::SplitUp",
-      "ctrl-a": "pane::SplitLeft",
-      "ctrl-s": "pane::SplitDown",
-      "ctrl-d": "pane::SplitRight",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+
+      // Close pane
       "ctrl-q": "pane::CloseAllItems",
 
+      // File finder
+      "cmd-p": "file_finder::Toggle",
+
+      // Command palette
+      "cmd-shift-p": "command_palette::Toggle",
+
       // AI Panel
-      "ctrl-c": "assistant::ToggleFocus",
+      "cmd-shift-a": "assistant::ToggleFocus",
 
       // Terminal
       "cmd-`": "terminal_panel::ToggleFocus"
