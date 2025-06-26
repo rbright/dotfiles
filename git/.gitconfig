@@ -24,12 +24,21 @@
 [commit]
 	gpgSign = true
 [core]
+	commitGraph = true
 	excludesfile = ~/.gitignore
+	fsmonitor = true
+	untrackedcache = true
+[feature]
+	manyFiles = true
+[fetch]
+	writeCommitGraph = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
 	required = true
 	smudge = git-lfs smudge -- %f
+[gc]
+	writeCommitGraph = true
 [github]
 	user = rbright
 [gpg]
