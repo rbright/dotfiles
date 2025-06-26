@@ -70,3 +70,16 @@ vim.keymap.set("n", ";", ":")
 
 -- Ignore F1
 vim.keymap.set({ "i", "n", "v" }, "<F1>", "<ESC>")
+
+-------------------------------------------------------------------------------
+-- Standard Editor Bindings
+-------------------------------------------------------------------------------
+
+-- Cmd-p for file finder (using Snacks.nvim)
+vim.keymap.set("n", "<D-p>", function() Snacks.picker.files() end, { desc = "Find Files" })
+
+-- Cmd-Shift-p for command palette
+vim.keymap.set("n", "<D-S-p>", ":Snacks picker.commands<CR>", { desc = "Command Palette" })
+
+-- Cmd-` for terminal toggle
+vim.keymap.set("n", "<D-`>", function() Snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
