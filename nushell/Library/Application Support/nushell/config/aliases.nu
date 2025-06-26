@@ -11,6 +11,14 @@ alias sshgen = ssh-keygen -t ed25519 -C
 alias v = nvim
 alias vim = nvim
 
+# Modern CLI Tools
+alias ls = eza
+alias ll = eza -l
+alias la = eza -la
+alias lt = eza --tree
+alias cat = bat
+alias find = fd
+
 # Git
 alias g = git
 alias gbs = git bisect
@@ -46,6 +54,8 @@ alias gru = git reset --
 alias grhh = git reset --hard
 alias grhk = git reset --keep
 alias grhs = git reset --soft
+alias gpristine = git reset --hard; git clean --force -dfx
+alias gwipe = git reset --hard; git clean --force -df
 alias grm = git rm
 alias grmc = git rm --cached
 alias gstall = git stash --all
@@ -61,8 +71,10 @@ alias gtv = git tag | sort -V
 alias tower = gittower
 
 # Claude Code
+alias yolo = claude --dangerously-skip-permissions
 alias cs = claude-squad
 alias cclive = npx ccusage@latest blocks --live
+alias ccblocks = npx ccusage@latest blocks
 alias ccdaily = npx ccusage@latest daily
 alias ccmonthly = npx ccusage@latest monthly
 
@@ -72,6 +84,7 @@ alias db = docker build
 alias dr = docker run -it --rm
 alias dt = docker tag
 alias dp = docker push
+alias dv = docker volume
 alias dcb = docker compose build
 alias dcu = docker compose up
 alias dcr = docker compose run --rm
@@ -85,9 +98,6 @@ alias k = kubectl
 # Nix
 alias nb = nix run .#build
 alias nbs = nix run .#build-switch
-
-# Ollama
-alias ol = ollama run llama3.2:3b
 
 # Python
 alias python = python3

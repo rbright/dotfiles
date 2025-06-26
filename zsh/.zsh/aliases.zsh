@@ -1,9 +1,21 @@
 # General
 alias brews='brew list -1'
+alias c="clear"
+alias l="ls -la"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias psgrep="ps -ax | grep"
 alias sshgen="ssh-keygen -t ed25519 -C"
+alias v="nvim"
+alias vim="nvim"
+
+# Modern CLI Tools
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+alias lt="eza --tree"
+alias cat="bat"
+alias find="fd"
 
 # Git
 alias g="git"
@@ -57,6 +69,7 @@ alias gtv='git tag | sort -V'
 alias tower="gittower"
 
 # Claude Code
+alias yolo="claude --dangerously-skip-permissions"
 alias cs="claude-squad"
 alias cclive="npx ccusage@latest blocks --live"
 alias ccblocks="npx ccusage@latest blocks"
@@ -69,6 +82,7 @@ alias db="docker build"
 alias dr="docker run -it --rm"
 alias dt="docker tag"
 alias dp="docker push"
+alias dv="docker volume"
 alias dcb="docker compose build"
 alias dcu="docker compose up"
 alias dcr="docker compose run --rm"
@@ -77,10 +91,11 @@ alias dcr="docker compose run --rm"
 alias got="go test ./... -v"
 
 # Kubernetes
-alias kc="kubectl"
+alias k="kubectl"
 
-# Ollama
-alias ol="ollama run llama3.2:3b"
+# Nix
+alias nb="nix run .#build"
+alias nbs="nix run .#build-switch"
 
 # Python
 alias python="python3"
