@@ -70,7 +70,6 @@ alias tower = gittower
 
 # Claude Code
 alias yolo = claude --dangerously-skip-permissions
-alias cs = claude-squad
 alias cclive = npx ccusage@latest blocks --live
 alias ccblocks = npx ccusage@latest blocks
 alias ccdaily = npx ccusage@latest daily

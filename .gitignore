@@ -22,11 +22,6 @@ claude/.claude/projects
 claude/.claude/statsig
 claude/.claude/todos
 
-# claude-squad
-claude/.claude-squad/worktrees
-claude/.claude-squad/*.pid
-claude/.claude-squad/state.json
-
 # dash
 dash
 
