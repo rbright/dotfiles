@@ -197,3 +197,21 @@ def update [] {
     update-zsh
     print $"(ansi yellow)Completed macOS package updates(ansi reset)"
 }
+
+# Create Git branch with worktree
+def --env gwt [name: string] {
+    let branch_name = $"feature/($name)"
+    let worktree_path = $"~/worktrees/($name)" | path expand
+    
+    # Create the branch
+    print $"Creating branch: ($branch_name)"
+    git branch $branch_name
+    
+    # Add the worktree
+    print $"Creating worktree at: ($worktree_path)"
+    git worktree add $worktree_path $branch_name
+    
+    # Change to the worktree directory
+    print $"Switching to worktree: ($worktree_path)"
+    cd $worktree_path
+}

@@ -66,6 +66,11 @@ alias gst = git status
 alias gta = git tag --annotate
 alias gts = git tag --sign
 alias gtv = git tag | sort -V
+alias gw = git worktree
+alias gwl = git worktree list
+alias gwa = git worktree add
+alias gwr = git worktree remove
+alias gwrf = git worktree remove --force
 alias tower = gittower
 
 # Claude Code
