@@ -3,7 +3,6 @@ auto-update-channel = stable
 background-blur-radius = 20
 background-opacity = 1.0
 bold-is-bright = true
-command = $HOME/.nix-profile/bin/nu
 cursor-style = block
 cursor-style-blink = true
 font-family = "FiraCode Nerd Font Mono Ret"
