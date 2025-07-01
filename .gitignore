@@ -17,10 +17,10 @@ aws
 btop/.config/btop/btop.log
 
 # claude
-claude/.claude/ide
-claude/.claude/projects
-claude/.claude/statsig
-claude/.claude/todos
+claude/.config/claude/ide
+claude/.config/claude/projects
+claude/.config/claude/statsig
+claude/.config/claude/todos
 
 # dash
 dash
