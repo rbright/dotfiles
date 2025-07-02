@@ -88,11 +88,11 @@ disabled = true
 
 [kubernetes]
 disabled = false
-format = '[󱃾 $context \($namespace\)]($style) '
 contexts = [
   { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
 ]
 detect_files = ['Tiltfile']
+format = '[󱃾 $context \($namespace\)]($style) '
 style = 'bold blue'
 
 [nats]
@@ -180,3 +180,9 @@ format = '[\[$time\]]($style) '
 style = 'bold yellow'
 time_format = '%T'
 utc_time_offset = 'local'
+
+[vagrant]
+disabled = false
+format = '[$symbol($version )]($style)'
+style = 'cyan bold'
+symbol = '⍱ '
