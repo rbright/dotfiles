@@ -162,6 +162,14 @@ format = '[$symbol($version )]($style)'
 style = 'bold red'
 symbol = ' '
 
+[shell]
+disabled = false
+format = '[$indicator]($style) '
+style = 'white bold'
+fish_indicator = '󰈺 '
+nu_indicator = 'nu'
+zsh_indicator = 'zsh'
+
 [terraform]
 format = '[$symbol$workspace]($style) '
 symbol = '󱁢 '
