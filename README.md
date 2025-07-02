@@ -33,6 +33,7 @@ This runs `stow */` which creates symlinks for all configuration directories to 
 | [github](https://cli.github.com/) | GitHub CLI configuration for interacting with GitHub from the terminal |
 | [gnupg](https://gnupg.org/) | GNU Privacy Guard for encryption and signing |
 | [karabiner](https://karabiner-elements.pqrs.org/) | Keyboard customizer for macOS with Vim-style navigation |
+| [macmon](https://github.com/vladkens/macmon) 🦀⚙️ Sudoless performance monitoring for Apple Silicon processors. CPU / GPU / RAM usage, power consumption & temperature 🌡️ |
 | [nushell](https://www.nushell.sh/) | Modern shell written in Rust with structured data pipelines |
 | [nvim](https://neovim.io/) | Hyperextensible Vim-based text editor with Lua configuration |
 | [profile](https://www.gnu.org/software/bash/) | Basic shell profile configuration |
