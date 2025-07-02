@@ -101,6 +101,12 @@ format = '[$symbol$name]($style)'
 style = 'bold purple'
 symbol = '✉️ '
 
+[nix_shell]
+disabled = false
+format = '[$symbol$name]($style)'
+style = 'bold blue'
+symbol = '❄️ '
+
 [nodejs]
 format = '[$symbol($version )]($style)'
 style = 'bold green'
