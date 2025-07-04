@@ -25,7 +25,6 @@ This runs `stow */` which creates symlinks for all configuration directories to 
 | [boto](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) | AWS SDK for Python configuration |
 | [btop](https://github.com/aristocratos/btop) | Terminal-based resource monitor with customizable UI |
 | [carapace](https://carapace.sh/) | Multi-shell completion framework providing completions across shells |
-| [claude](https://claude.ai/code) | Claude Code - Anthropic's official CLI for Claude AI |
 | [curl](https://curl.se/) | Command-line tool for transferring data with URL syntax |
 | [espanso](https://espanso.org/) | Cross-platform text expander for productivity |
 | [ghostty](https://ghostty.org/) | Modern terminal emulator with GPU acceleration |

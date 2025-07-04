@@ -16,12 +16,6 @@ aws
 # btop
 btop/.config/btop/btop.log
 
-# claude
-claude/.config/claude/ide
-claude/.config/claude/projects
-claude/.config/claude/statsig
-claude/.config/claude/todos
-
 # dash
 dash
 
