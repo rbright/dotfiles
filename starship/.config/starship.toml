@@ -16,6 +16,11 @@ us-west-2 = "or"
 [battery]
 disabled = true
 
+[bun]
+format = '[$symbol($version )]($style)'
+style = 'bold red'
+symbol = "🥟 "
+
 [character]
 success_symbol = '[➜](bold green)'
 error_symbol = '[✗](bold red)'
