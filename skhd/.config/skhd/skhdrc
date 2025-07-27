@@ -10,6 +10,9 @@ hyper - b : open -a "/Applications/Brave Browser.app"
 # Open Fantastical
 hyper - f : open -a  "/Applications/Fantastical.app"
 
+# Open Sunsama
+hyper - s : open -a  "/Applications/Sunsama.app"
+
 # Open Todoist
 hyper - t : open -a  "/Applications/Todoist.app"
 
@@ -30,7 +33,7 @@ hyper - m : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Me
 hyper - e : open -a "/Applications/Mimestream.app"
 
 # Open Slack
-hyper - s : open -a  "/Applications/Slack.app"
+hyper - w : open -a  "/Applications/Slack.app"
 
 ################################################################################
 # Development
