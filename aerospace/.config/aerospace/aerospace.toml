@@ -95,11 +95,6 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 if.app-name-regex-substring = 'visual studio code'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
-# Windsurf
-[[on-window-detected]]
-if.app-name-regex-substring = 'windsurf'
-run = ['layout tiling', 'move-node-to-workspace 1']
-
 # Xcode
 [[on-window-detected]]
 if.app-name-regex-substring = 'xcode'
@@ -155,37 +150,13 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 check-further-callbacks = true
 
 ############################################################
-# Workspace 3 - Design
-############################################################
-
-# ComfyUI
-[[on-window-detected]]
-if.app-name-regex-substring = 'comfyui'
-run = ['layout tiling', 'move-node-to-workspace 3']
-
-# Excalidraw
-[[on-window-detected]]
-if.app-name-regex-substring = 'excalidraw'
-run = ['layout tiling', 'move-node-to-workspace 3']
-
-# Figma
-[[on-window-detected]]
-if.app-id = 'com.figma.Desktop'
-run = ['layout tiling', 'move-node-to-workspace 3']
-
-# Pixelmator Pro
-[[on-window-detected]]
-if.app-id = 'com.pixelmatorteam.pixelmator.x'
-run = ['layout tiling', 'move-node-to-workspace 3']
-
-############################################################
-# Workspace 4 - Office
+# Workspace 3 - Notes / Office
 ############################################################
 
 # Calibre
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.calibre'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 check-further-callbacks = true
 
 # Calibre - Preferences
@@ -196,7 +167,7 @@ run = 'layout floating'
 # Microsoft Excel
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Excel'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 
 # Microsoft Excel - Preferences
 [[on-window-detected]]
@@ -206,6 +177,35 @@ run = ['layout floating']
 # Microsoft Word
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Word'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+# Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+############################################################
+# Workspace 4 - Design
+############################################################
+
+# ComfyUI
+[[on-window-detected]]
+if.app-name-regex-substring = 'comfyui'
+run = ['layout tiling', 'move-node-to-workspace 4']
+
+# Excalidraw
+[[on-window-detected]]
+if.app-name-regex-substring = 'excalidraw'
+run = ['layout tiling', 'move-node-to-workspace 4']
+
+# Figma
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = ['layout tiling', 'move-node-to-workspace 4']
+
+# Pixelmator Pro
+[[on-window-detected]]
+if.app-id = 'com.pixelmatorteam.pixelmator.x'
 run = ['layout tiling', 'move-node-to-workspace 4']
 
 ############################################################
@@ -249,7 +249,7 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
 ############################################################
-# Workspace 7 - Projects / Notes / Tasks
+# Workspace 7 - Planning
 ############################################################
 
 # Linear
@@ -257,9 +257,9 @@ run = ['layout tiling', 'move-node-to-workspace 6']
 if.app-id = 'com.linear'
 run = ['layout tiling', 'move-node-to-workspace 7']
 
-# Obsidian
+# Sunsama
 [[on-window-detected]]
-if.app-id = 'md.obsidian'
+if.app-name-regex-substring = 'sunsama'
 run = ['layout tiling', 'move-node-to-workspace 7']
 
 # Todoist
@@ -290,15 +290,6 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ['layout tiling', 'move-node-to-workspace 9']
-
-############################################################
-# Workspace C - Workspaces
-############################################################
-
-# Workspaces
-[[on-window-detected]]
-if.window-title-regex-substring = 'space-'
-run = ['layout tiling', 'move-node-to-workspace C']
 
 ################################################################################
 # Floating Windows
@@ -603,7 +594,6 @@ alt-7 = 'workspace 6'
 alt-8 = 'workspace 7'
 alt-9 = 'workspace 8'
 alt-0 = 'workspace 9'
-alt-minus = 'workspace C'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 0'
@@ -616,7 +606,6 @@ alt-shift-7 = 'move-node-to-workspace 6'
 alt-shift-8 = 'move-node-to-workspace 7'
 alt-shift-9 = 'move-node-to-workspace 8'
 alt-shift-0 = 'move-node-to-workspace 9'
-alt-shift-minus = 'move-node-to-workspace C'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -651,4 +640,3 @@ backspace = ['close-all-windows-but-current', 'mode main']
 7 = 'main'
 8 = 'main'
 9 = 'secondary'
-C = 'secondary'
