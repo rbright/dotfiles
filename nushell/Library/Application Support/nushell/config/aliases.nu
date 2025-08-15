@@ -16,8 +16,6 @@ alias ls = eza
 alias ll = eza -l
 alias la = eza -la
 alias lt = eza --tree
-alias cat = bat
-alias find = fd
 
 # Git
 alias g = git
