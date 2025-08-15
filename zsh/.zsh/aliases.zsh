@@ -1,19 +1,31 @@
 # General
-alias brews='brew list -1'
 alias c="clear"
-alias l="ls -la"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
-alias psgrep="ps -ax | grep"
-alias sshgen="ssh-keygen -t ed25519 -C"
-alias v="nvim"
-alias vim="nvim"
 
-# Modern CLI Tools
+# CLI Tools
 alias ls="eza"
 alias ll="eza -l"
 alias la="eza -la"
 alias lt="eza --tree"
+
+# Claude Code
+alias yolo="claude --dangerously-skip-permissions"
+alias ccl="npx ccusage@latest blocks --live"
+alias ccb="npx ccusage@latest blocks"
+alias ccd="npx ccusage@latest daily"
+alias ccm="npx ccusage@latest monthly"
+
+# Docker
+alias di="docker images"
+alias db="docker build"
+alias dr="docker run -it --rm"
+alias dt="docker tag"
+alias dp="docker push"
+alias dv="docker volume"
+alias dcb="docker compose build"
+alias dcu="docker compose up"
+alias dcr="docker compose run --rm"
 
 # Git
 alias g="git"
@@ -66,29 +78,21 @@ alias gts='git tag --sign'
 alias gtv='git tag | sort -V'
 alias tower="gittower"
 
-# Claude Code
-alias yolo="claude --dangerously-skip-permissions"
-alias cclive="npx ccusage@latest blocks --live"
-alias ccblocks="npx ccusage@latest blocks"
-alias ccdaily="npx ccusage@latest daily"
-alias ccmonthly="npx ccusage@latest monthly"
-
-# Docker
-alias di="docker images"
-alias db="docker build"
-alias dr="docker run -it --rm"
-alias dt="docker tag"
-alias dp="docker push"
-alias dv="docker volume"
-alias dcb="docker compose build"
-alias dcu="docker compose up"
-alias dcr="docker compose run --rm"
-
 # Go
 alias got="go test ./... -v"
 
+# Homebrew
+alias brews="brew list -1"
+
+# Hyperfine
+alias hf="hyperfine"
+
 # Kubernetes
 alias k="kubectl"
+
+# Neovim
+alias v="nvim"
+alias vim="nvim"
 
 # Nix
 alias nb="nix run .#build"
@@ -98,3 +102,6 @@ alias nbs="nix run .#build-switch"
 alias python="python3"
 alias py="python3"
 alias pip="pip3"
+
+# SSH
+alias sshgen="ssh-keygen -t ed25519 -C"
