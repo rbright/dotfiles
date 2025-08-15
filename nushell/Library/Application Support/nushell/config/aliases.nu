@@ -104,6 +104,9 @@ alias vim = nvim
 alias nb = nix run .#build
 alias nbs = nix run .#build-switch
 
+# Procs
+alias p = procs
+
 # Python
 alias python = python3
 alias py = python3
