@@ -102,6 +102,9 @@ fi
 # Shell Integration
 ################################################################################
 
+# Atuin
+eval "$(atuin init zsh)"
+
 # Carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'

@@ -7,6 +7,10 @@
 # 1Password
 1password
 
+# atuin
+atuin/.config/atuin/history.db*
+atuin/.config/atuin/key
+
 # aws
 aws
 

@@ -232,5 +232,11 @@ source "~/Library/Application Support/nushell/config/projects.nu"
 # Shell Integration
 ################################################################################
 
+# Atuin
+source ~/.local/share/atuin/init.nu
+
+# Carapace
 source ~/.cache/carapace/init.nu
+
+# Zoxide
 source ~/.zoxide.nu
