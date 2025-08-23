@@ -112,6 +112,9 @@ let paths_to_add = [
 
     # Node.js - pnpm
     $env.PNPM_HOME
+
+    # opencode
+    ($env.HOME | path join ".opencode/bin")
 ]
 
 # Add all paths that exist to PATH

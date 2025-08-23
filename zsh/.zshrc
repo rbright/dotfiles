@@ -76,6 +76,9 @@ path=(
   # Node.js - pnpm
   $PNPM_HOME
 
+  # opencode
+  $HOME/.opencode/bin
+
   # Add system PATH
   $path
 )

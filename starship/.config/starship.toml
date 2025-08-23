@@ -65,6 +65,7 @@ us-west4 = 'nv'
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold purple'
 symbol = " "
 
 [git_commit]
