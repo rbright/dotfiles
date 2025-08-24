@@ -9,12 +9,15 @@ alias ll="eza -l"
 alias la="eza -la"
 alias lt="eza --tree"
 
-# Claude Code
+# AI Assistant - Claude Code
 alias yolo="claude --dangerously-skip-permissions"
 alias ccl="npx ccusage@latest blocks --live"
 alias ccb="npx ccusage@latest blocks"
 alias ccd="npx ccusage@latest daily"
 alias ccm="npx ccusage@latest monthly"
+
+# AI Assistant - opencode
+alias oc="opencode"
 
 # Docker
 alias di="docker images"
