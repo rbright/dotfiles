@@ -62,7 +62,7 @@ automatically-unhide-macos-hidden-apps = false
 
 # Brave Browser
 [[on-window-detected]]
-if.app-id = 'com.brave.Browser'
+if.window-title-regex-substring = 'brave'
 run = ['layout tiling', 'move-node-to-workspace 0']
 check-further-callbacks = true
 
