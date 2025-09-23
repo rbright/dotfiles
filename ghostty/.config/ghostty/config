@@ -22,5 +22,5 @@ quick-terminal-position = bottom
 quick-terminal-screen = mouse
 quick-terminal-space-behavior = move
 shell-integration = detect
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 window-decoration = true
