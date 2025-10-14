@@ -3,7 +3,6 @@ alias nu-open = open
 alias open = ^open
 
 # General
-alias c = clear
 alias ln = ln -v
 
 # CLI Tools

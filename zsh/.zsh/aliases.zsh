@@ -1,5 +1,4 @@
 # General
-alias c="clear"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 
