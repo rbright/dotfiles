@@ -141,6 +141,25 @@ def --env gwt [name: string] {
 # Networking
 ################################################################################
 
+# List IP addresses for active interfaces
+def ipactive [] {
+    try {
+        ip -j addr
+        | from json
+        | where operstate == "UP"
+        | each { |row|
+            let ifname = $row.ifname
+            $row.addr_info
+            | default []
+            | each { |a| { ifname: $ifname, ip: $a.local } }
+        }
+        | flatten
+        | where ip != null
+    } catch { |err|
+        print $"(ansi red)Error retrieving IP addresses: ($err.msg)(ansi reset)"
+    }
+}
+
 # Network scan
 def netscan [] {
     print $"(ansi blue)Scanning network(ansi reset)"
