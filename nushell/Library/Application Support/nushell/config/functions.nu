@@ -1,87 +1,31 @@
+################################################################################
+# Cleanup
+################################################################################
+
 # Remove Docker images and containers
 def clean-docker [] {
+    print $"(ansi blue)Removing all images and containers(ansi reset)"
     docker system prune -a --volumes
+
     let containers = (docker ps --no-trunc -aq)
     if not ($containers | is-empty) {
+        print $"(ansi blue)Removing containers(ansi reset)"
         docker rm $containers
     }
+
     let dangling = (docker images -q --filter "dangling=true")
     if not ($dangling | is-empty) {
+        print $"(ansi blue)Removing dangling images(ansi reset)"
         docker rmi $dangling
     }
-}
 
-# Clean vim plugins
-def clean-vim [] {
-    nvim -c "execute \"PlugClean!\" | q | q"
+    print $"(ansi green)Removed all images and containers(ansi reset)"
 }
 
 # Clear duplicates from macOS "Open With" menu
 def clear-open-with-dups [] {
     /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-}
-
-# Fix iOS Simulator
-def fix-ios-sim [] {
-    rm -rf ($env.HOME | path join "Library" "Developer" "CoreSimulator" "Caches")
-}
-
-# Pull all git repositories in current directory
-def git-pull-all [] {
-    do {
-        for dir in (glob */) {
-            let repo_path = ($dir | str replace -r '/$' '')
-            if ($repo_path | path join ".git" | path exists) {
-                cd $repo_path
-                git pull origin main
-                cd ..
-            }
-        }
-    }
-}
-
-# Remove all git repositories
-def git-rm-all [] {
-    ls -d */ | each { |dir|
-        let git_dir = ($dir.name | path join ".git")
-        if ($git_dir | path exists) {
-            rm -rf $git_dir
-        }
-    }
-}
-
-# Safely reset and clean git repository
-def git-pristine [] {
-    print $"(ansi red)Warning: This will reset all changes and remove untracked files!(ansi reset)"
-    print "Current directory: ($env.PWD)"
-    if (input "Are you sure you want to proceed? [y/N] ") == "y" {
-        git reset --hard
-        print "Removing untracked files..."
-        git clean --force -dfx
-    }
-}
-
-# Safely wipe git changes
-def git-wipe [] {
-    print $"(ansi red)Warning: This will reset all changes and remove untracked files!(ansi reset)"
-    print "Current directory: ($env.PWD)"
-    if (input "Are you sure you want to proceed? [y/N] ") == "y" {
-        git reset --hard
-        print "Removing untracked files..."
-        git clean --force -df
-    }
-}
-
-# Make directory and change into it
-def --env mcd [dir: string] {
-    mkdir $dir
-    cd $dir
-}
-
-# Network scan
-def netscan [] {
-    ifconfig | find "broadcast"
-    arp -a | find ":"
+    print $"(ansi green)Cleared duplicates from macOS 'Open With' menu(ansi reset)"
 }
 
 # Remove Python compiled files
@@ -89,7 +33,7 @@ def rmpyc [] {
     let current_dir = $env.PWD
 
     # Handle current directory
-    glob *.pyc | each { |file| rm -f $file }
+    glob *.pyc | each { |file|rm -f $file }
 
     # Get all subdirectories including hidden ones
     ls -a **/* --full-paths | where type == dir | each { |entry|
@@ -97,6 +41,8 @@ def rmpyc [] {
         glob *.pyc | each { |file| rm -f $file }
         cd $current_dir
     }
+
+    print $"(ansi green)Removed Python compiled files(ansi reset)"
 }
 
 # Remove vim undo files
@@ -112,6 +58,155 @@ def rmundo [] {
         glob *.un~ | each { |file| rm -f $file }
         cd $current_dir
     }
+
+    print $"(ansi green)Removed vim undo files(ansi reset)"
+}
+
+################################################################################
+# Git
+################################################################################
+
+# Pull all git repositories in current directory
+def git-pull-all [] {
+    do {
+        print $"(ansi blue)Pulling all git repositories in current directory(ansi reset)"
+        for dir in (glob */) {
+            let repo_path = ($dir | str replace -r '/$' '')
+            if ($repo_path | path join ".git" | path exists) {
+                cd $repo_path
+                print $"(ansi blue)Pulling ($repo_path)(ansi reset)"
+                git pull origin main
+                cd ..
+            }
+        }
+    }
+}
+
+# Remove all git repositories
+def git-rm-all [] {
+    ls -d */ | each { |dir|
+        let git_dir = ($dir.name | path join ".git")
+        if ($git_dir | path exists) {
+            print $"(ansi yellow)Removing ($git_dir)(ansi reset)"
+            rm -rf $git_dir
+        }
+    }
+
+    print $"(ansi green)Removed all git repositories(ansi reset)"
+}
+
+# Safely reset and clean git repository
+def git-pristine [] {
+    print $"(ansi red)Warning: This will reset all changes and remove untracked files!(ansi reset)"
+    print "Current directory: ($env.PWD)"
+    if (input "Are you sure you want to proceed? [y/N] ") == "y" {
+        git reset --hard
+        print "Removing untracked files..."
+        git clean --force -dfx
+        print $"(ansi green)Reset and cleaned git repository(ansi reset)"
+    }
+}
+
+# Safely wipe git changes
+def git-wipe [] {
+    print $"(ansi red)Warning: This will reset all changes and remove untracked files!(ansi reset)"
+    print "Current directory: ($env.PWD)"
+    if (input "Are you sure you want to proceed? [y/N] ") == "y" {
+        git reset --hard
+        print "Removing untracked files..."
+        git clean --force -df
+        print $"(ansi green)Wiped git changes(ansi reset)"
+    }
+}
+
+# Create Git branch with worktree
+def --env gwt [name: string] {
+    let branch_name = $"feature/($name)"
+    let worktree_path = $"~/worktrees/($name)" | path expand
+
+    # Create the branch
+    print $"(ansi blue)Creating branch: ($branch_name)(ansi reset)"
+    git branch $branch_name
+
+    # Add the worktree
+    print $"(ansi blue)Creating worktree at: ($worktree_path)(ansi reset)"
+    git worktree add $worktree_path $branch_name
+
+    # Change to the worktree directory
+    print $"(ansi blue)Switching to worktree: ($worktree_path)(ansi reset)"
+    cd $worktree_path
+}
+
+################################################################################
+# Networking
+################################################################################
+
+# Network scan
+def netscan [] {
+    print $"(ansi blue)Scanning network(ansi reset)"
+    ifconfig | find "broadcast"
+    arp -a | find ":"
+}
+
+################################################################################
+# Updates
+################################################################################
+
+# Clean vim plugins
+def clean-vim [] {
+    nvim -c "execute \"PlugClean!\" | q | q"
+    print $"(ansi green)Cleaned vim plugins(ansi reset)"
+}
+
+# Update Homebrew
+def update-homebrew [] {
+    print $"(ansi blue)Updating the list of available Homebrew packages(ansi reset)"
+    brew update
+
+    print $"(ansi blue)Updating Homebrew packages(ansi reset)"
+    brew upgrade
+
+    print $"(ansi blue)Cleaning up old Homebrew applications(ansi reset)"
+    brew cleanup
+    brew autoremove
+    print $"(ansi green)Updated Homebrew packages(ansi reset)"
+}
+
+# Update vim plugins
+def update-vim [] {
+    nvim +PlugUpdate +qall
+}
+
+# Update oh-my-zsh
+def update-zsh [] {
+    let original_dir = $env.PWD
+    cd "($env.HOME)/.oh-my-zsh"
+    git pull origin master
+    cd $original_dir
+}
+
+# Update everything
+def update [] {
+    print $"(ansi blue)Updating macOS packages(ansi reset)"
+    update-vim
+    update-zsh
+    print $"(ansi green)Completed macOS package updates(ansi reset)"
+}
+
+################################################################################
+# Miscellaneous
+################################################################################
+
+# Make directory and change into it
+def --env mcd [dir: string] {
+    mkdir $dir
+    cd $dir
+}
+
+# Fix iOS Simulator
+def fix-ios-sim [] {
+    rm -rf ($env.HOME | path join "Library" "Developer" "CoreSimulator" "Caches")
+    print $"(ansi green)Fixed iOS Simulator(ansi reset)"
 }
 
 # Archive directories
@@ -156,62 +251,4 @@ def tardir [dir: string] {
     } else {
         print $"(ansi yellow)Operation cancelled(ansi reset)"
     }
-}
-
-# Monitor TCP traffic
-def tcpmonitor [interface: string, port: int] {
-    sudo /usr/sbin/tcpdump -ln -A -s1024 -i $interface tcp port $port
-}
-
-# Update Homebrew
-def update-homebrew [] {
-    print $"(ansi blue)Updating the list of available Homebrew packages(ansi reset)"
-    brew update
-
-    print $"(ansi blue)Updating Homebrew packages(ansi reset)"
-    brew upgrade
-
-    print $"(ansi blue)Cleaning up old Homebrew applications(ansi reset)"
-    brew cleanup
-    brew autoremove
-    print $"(ansi green)Updated Homebrew packages(ansi reset)"
-}
-
-# Update vim plugins
-def update-vim [] {
-    nvim +PlugUpdate +qall
-}
-
-# Update oh-my-zsh
-def update-zsh [] {
-    let original_dir = $env.PWD
-    cd "($env.HOME)/.oh-my-zsh"
-    git pull origin master
-    cd $original_dir
-}
-
-# Update everything
-def update [] {
-    print $"(ansi yellow)Updating macOS packages(ansi reset)"
-    update-vim
-    update-zsh
-    print $"(ansi yellow)Completed macOS package updates(ansi reset)"
-}
-
-# Create Git branch with worktree
-def --env gwt [name: string] {
-    let branch_name = $"feature/($name)"
-    let worktree_path = $"~/worktrees/($name)" | path expand
-    
-    # Create the branch
-    print $"Creating branch: ($branch_name)"
-    git branch $branch_name
-    
-    # Add the worktree
-    print $"Creating worktree at: ($worktree_path)"
-    git worktree add $worktree_path $branch_name
-    
-    # Change to the worktree directory
-    print $"Switching to worktree: ($worktree_path)"
-    cd $worktree_path
 }
