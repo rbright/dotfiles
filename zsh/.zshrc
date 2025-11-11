@@ -42,6 +42,9 @@ export CLAUDE_CONFIG_DIR="$HOME/.config/claude"
 # Go
 export GOPATH="$HOME/go"
 
+# Node.js - bun
+export BUN_INSTALL="$HOME/.bun"
+
 # Node.js - pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 [ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
@@ -69,6 +72,9 @@ path=(
 
   # Go
   $GOPATH/bin
+
+  # Node.js - bun
+  $BUN_INSTALL/bin
 
   # Node.js - npm
   $HOME/.npm-global/bin
@@ -126,3 +132,9 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 . "$HOME/.local/bin/env"
+# bun completions
+[ -s "/Users/rbright/.bun/_bun" ] && source "/Users/rbright/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

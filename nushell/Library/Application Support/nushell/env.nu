@@ -71,7 +71,10 @@ $env.CLAUDE_CONFIG_DIR = ($env.HOME | path join '.config/claude')
 # Go
 $env.GOPATH = ($env.HOME | path join "go")
 
-# Node.js
+# Node.js - bun
+$env.BUN_INSTALL = ($env.HOME | path join ".bun/bin")
+
+# Node.js - pnpm
 $env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
 
 ################################################################################
@@ -93,6 +96,9 @@ let paths_to_add = [
     ($env.HOME | path join ".nix-profile/bin")
     "/nix/var/nix/profiles/default/bin"
     "/run/current-system/sw/bin"
+
+    # Node.js - bun
+    $env.BUN_INSTALL
 
     # User
     ($env.HOME | path join ".local/bin")
