@@ -74,9 +74,6 @@ $env.GOPATH = ($env.HOME | path join "go")
 # Node.js - bun
 $env.BUN_INSTALL = ($env.HOME | path join ".bun/bin")
 
-# Node.js - pnpm
-$env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
-
 ################################################################################
 # Path Management
 ################################################################################
@@ -115,9 +112,6 @@ let paths_to_add = [
 
     # Node.js - npm
     ($env.HOME | path join ".npm-global/bin")
-
-    # Node.js - pnpm
-    $env.PNPM_HOME
 
     # opencode
     ($env.HOME | path join ".opencode/bin")

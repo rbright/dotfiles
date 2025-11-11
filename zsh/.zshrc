@@ -45,10 +45,6 @@ export GOPATH="$HOME/go"
 # Node.js - bun
 export BUN_INSTALL="$HOME/.bun"
 
-# Node.js - pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-[ -s "$PNPM_HOME/pnpm.sh" ] && source "$PNPM_HOME/pnpm.sh"
-
 ################################################################################
 # Path Management
 ################################################################################
@@ -78,9 +74,6 @@ path=(
 
   # Node.js - npm
   $HOME/.npm-global/bin
-
-  # Node.js - pnpm
-  $PNPM_HOME
 
   # opencode
   $HOME/.opencode/bin
