@@ -46,6 +46,7 @@ tableplus/Library
 
 # tmux
 tmux/.config/tmux/plugins
+tmux/.config/tmux/sessions
 
 # vnc
 vnc/.vnc

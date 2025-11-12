@@ -271,3 +271,27 @@ def tardir [dir: string] {
         print $"(ansi yellow)Operation cancelled(ansi reset)"
     }
 }
+
+################################################################################
+# Work Sessions
+################################################################################
+
+# Start the Moonrise tmux workspace
+def start-work [] {
+    if (tmux has-session -t moonrise | complete | get exit_code) == 0 {
+        tmux attach -t moonrise
+    } else {
+        tmux new-session -d
+        tmux source-file ~/.config/tmux/sessions/moonrise.tmux
+    }
+}
+
+# Stop the Moonrise tmux workspace
+def stop-work [] {
+    if (tmux has-session -t moonrise | complete | get exit_code) == 0 {
+        tmux kill-session -t moonrise
+        print "✅ tmux session 'moonrise' stopped"
+    } else {
+        print "⚠️  no tmux session named 'moonrise' running"
+    }
+}
