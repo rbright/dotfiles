@@ -70,3 +70,5 @@
 	default = current
 [tag]
 	forceSignAnnotated = false
+[coderabbit]
+	machineId = cli/dc417dcb4f52453c9497fb0bcb39b4c9

@@ -14,7 +14,7 @@
       "provider": "zed.dev",
         "model": "gpt-4o"
       }
-    ],
+    ]
   },
   "auto_update": true,
   "autosave": {
@@ -23,7 +23,7 @@
     }
   },
   "base_keymap": "VSCode",
-  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_features": {
     "liga": true
   },
@@ -337,7 +337,7 @@
     "env": {
       "EDITOR": "zed --wait"
     },
-    "font_family": "FiraCode Nerd Font",
+    "font_family": "JetBrainsMono Nerd Font",
     "font_features": {
       "calt": false
     },
