@@ -72,7 +72,7 @@ $env.CLAUDE_CONFIG_DIR = ($env.HOME | path join '.config/claude')
 $env.GOPATH = ($env.HOME | path join "go")
 
 # Node.js - bun
-$env.BUN_INSTALL = ($env.HOME | path join ".bun/bin")
+$env.BUN_INSTALL = ($env.HOME | path join ".bun")
 
 ################################################################################
 # Path Management
@@ -95,7 +95,7 @@ let paths_to_add = [
     "/run/current-system/sw/bin"
 
     # Node.js - bun
-    $env.BUN_INSTALL
+    ($env.BUN_INSTALL | path join "bin")
 
     # User
     ($env.HOME | path join ".local/bin")
