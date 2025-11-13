@@ -116,3 +116,6 @@ alias pip = pip3
 
 # SSH
 alias sshgen = ssh-keygen -t ed25519 -C
+
+# Tailscale
+alias tailscale = /Applications/Tailscale.app/Contents/MacOS/Tailscale
