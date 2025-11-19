@@ -7,8 +7,8 @@
 # Open Browser
 hyper - b : open -a "/Applications/Brave Browser.app"
 
-# Open Fantastical
-hyper - f : open -a  "/Applications/Fantastical.app"
+# Open Calendar
+hyper - f : open -a  "/Applications/Calendar.app"
 
 # Open Sunsama
 hyper - s : open -a  "/Applications/Sunsama.app"
