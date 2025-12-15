@@ -237,6 +237,11 @@ run = ['layout tiling', 'move-node-to-workspace 5']
 if.app-name-regex-substring = 'messages'
 run = ['layout tiling', 'move-node-to-workspace 6']
 
+# Discord
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['layout tiling', 'move-node-to-workspace 6']
+
 # Mimestream
 [[on-window-detected]]
 if.app-id = 'com.mimestream.Mimestream'
