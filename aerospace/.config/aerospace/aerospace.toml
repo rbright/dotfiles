@@ -292,15 +292,10 @@ run = ['layout tiling', 'move-node-to-workspace 7']
 [[on-window-detected]]
 if.app-name-regex-substring = 'calendar'
 run = ['layout tiling', 'move-node-to-workspace 8']
-
-# Fantastical
-[[on-window-detected]]
-if.app-name-regex-substring = 'fantastical'
-run = ['layout tiling', 'move-node-to-workspace 8']
 check-further-callbacks = true
 
 ############################################################
-# Workspace 9 - Terminal / Version Control
+# Workspace 9 - Terminal
 ############################################################
 
 # Ghostty

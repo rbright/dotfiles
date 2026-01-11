@@ -5,22 +5,22 @@
 ################################################################################
 
 # Open Browser
-hyper - b : open -a "/Applications/Brave Browser.app"
+hyper - b : open -b com.brave.Browser
 
-# Open Fantastical
-hyper - f : open -a  "/Applications/Fantastical.app"
+# Open Calendar
+hyper - f : open -b com.apple.iCal
 
 # Open Sunsama
-hyper - s : open -a  "/Applications/Sunsama.app"
+hyper - s : open -b com.sunsama.native-app
 
 # Open Todoist
-hyper - t : open -a  "/Applications/Todoist.app"
+hyper - t : open -b com.todoist.mac.Todoist
 
 # Open Linear
-hyper - l : open -a "/Applications/Linear.app"
+hyper - l : open -b com.linear
 
 # Open Obsidian
-hyper - o : open -a "/Applications/Obsidian.app"
+hyper - o : open -b md.obsidian
 
 ################################################################################
 # Communication
@@ -30,10 +30,10 @@ hyper - o : open -a "/Applications/Obsidian.app"
 hyper - m : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Messages.app"
 
 # Open Mimestream
-hyper - e : open -a "/Applications/Mimestream.app"
+hyper - e : open -b com.mimestream.Mimestream
 
 # Open Slack
-hyper - w : open -a  "/Applications/Slack.app"
+hyper - w : open -b com.tinyspeck.slackmacgap
 
 ################################################################################
 # Development
@@ -43,16 +43,16 @@ hyper - w : open -a  "/Applications/Slack.app"
 hyper - c : open -a "/Applications/Cursor.app"
 
 # # Open Terminal
-hyper - z : open -a  "/Applications/Ghostty.app"
+hyper - z : open -b com.mitchellh.ghostty
 
 # Open Git UI
-hyper - g : open -a  "/Applications/Tower.app"
+hyper - g : open -b com.fournova.Tower3
 
 # Open Database UI
-hyper - q : open -a  "/Applications/TablePlus.app"
+hyper - q : open -b com.tinyapp.TablePlus
 
 # Open Postman
-hyper - p : open -a "/Applications/Postman.app"
+hyper - p : open -b  com.postmanlabs.mac
 
 # Open Excalidraw
 hyper - x : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Excalidraw.app"
