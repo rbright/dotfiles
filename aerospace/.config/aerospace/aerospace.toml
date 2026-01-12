@@ -191,6 +191,11 @@ check-further-callbacks = true
 if.window-title-regex-substring = 'word preferences'
 run = ['layout floating']
 
+# Notion
+[[on-window-detected]]
+if.app-name-regex-substring = 'notion'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
 # Obsidian
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
