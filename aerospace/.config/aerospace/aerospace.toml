@@ -97,7 +97,7 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Visual Studio Code
 [[on-window-detected]]
-if.app-name-regex-substring = 'visual studio code'
+if.app-id = 'com.microsoft.VSCode'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Xcode

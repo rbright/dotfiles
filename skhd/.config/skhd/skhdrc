@@ -40,7 +40,7 @@ hyper - w : open -b com.tinyspeck.slackmacgap
 ################################################################################
 
 # Open Code Editor
-hyper - c : open -a "/Applications/Cursor.app"
+hyper - c : open -a "/Applications/Visual Studio Code.app"
 
 # # Open Terminal
 hyper - z : open -b com.mitchellh.ghostty
