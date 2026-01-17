@@ -4,6 +4,10 @@
 # vim undo files
 *.un~
 
+# AI agents
+PLAN.md
+SESSION.md
+
 # 1Password
 1password
 
