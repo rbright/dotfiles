@@ -40,5 +40,29 @@
       // Terminal
       "cmd-`": "terminal_panel::ToggleFocus"
     }
+  },
+  {
+    "context": "GitCommit > Editor",
+    "bindings": {
+      "ctrl-alt-cmd-g": "git::GenerateCommitMessage"
+    }
+  },
+  {
+    "context": "CommitEditor > Editor",
+    "bindings": {
+      "ctrl-alt-cmd-g": "git::GenerateCommitMessage"
+    }
+  },
+  {
+    "context": "CommitEditor > Editor",
+    "bindings": {
+      "alt-tab": null
+    }
+  },
+  {
+    "context": "GitCommit > Editor",
+    "bindings": {
+      "alt-tab": null
+    }
   }
 ]
