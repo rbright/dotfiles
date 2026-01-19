@@ -45,9 +45,6 @@ hyper - c : open -a "/Applications/Visual Studio Code.app"
 # # Open Terminal
 hyper - z : open -b com.mitchellh.ghostty
 
-# Open Git UI
-hyper - g : open -b com.fournova.Tower3
-
 # Open Database UI
 hyper - q : open -b com.tinyapp.TablePlus
 
