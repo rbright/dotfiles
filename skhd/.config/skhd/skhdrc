@@ -42,14 +42,14 @@ hyper - w : open -b com.tinyspeck.slackmacgap
 # Open Code Editor
 hyper - c : open -a "/Applications/Visual Studio Code.app"
 
-# # Open Terminal
+# Open Terminal
 hyper - z : open -b com.mitchellh.ghostty
+
+# Open Conductor
+hyper - x : open -b com.conductor.app
 
 # Open Database UI
 hyper - q : open -b com.tinyapp.TablePlus
 
 # Open Postman
 hyper - p : open -b  com.postmanlabs.mac
-
-# Open Excalidraw
-hyper - x : open -a "/Users/rbright/Applications/Brave Browser Apps.localized/Excalidraw.app"
