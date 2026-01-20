@@ -115,6 +115,11 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 # Workspace 2 - Code Editor (Secondary)
 ############################################################
 
+# Conductor
+[[on-window-detected]]
+if.app-name-regex-substring = 'conductor'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
 ############################################################
 # Workspace 3 - Development Tools
 ############################################################
