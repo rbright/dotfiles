@@ -45,8 +45,8 @@ hyper - c : open -a "/Applications/Visual Studio Code.app"
 # Open Terminal
 hyper - z : open -b com.mitchellh.ghostty
 
-# Open Conductor
-hyper - x : open -b com.conductor.app
+# Open Codex Monitor
+hyper - x : open -b com.dimillian.codexmonitor
 
 # Open Database UI
 hyper - q : open -b com.tinyapp.TablePlus

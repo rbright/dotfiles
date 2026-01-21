@@ -115,6 +115,11 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 # Workspace 2 - Code Editor (Secondary)
 ############################################################
 
+# Codex Monitor
+[[on-window-detected]]
+if.app-name-regex-substring = 'codexmonitor'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
 # Conductor
 [[on-window-detected]]
 if.app-name-regex-substring = 'conductor'
