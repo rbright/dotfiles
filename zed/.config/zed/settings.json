@@ -58,16 +58,28 @@
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
   "file_scan_exclusions": [
+    "**/__pycache__",
+    "**/.bun-cache",
+    "**/.bun-tmp",
+    "**/.coverage",
+    "**/.direnv",
     "**/.DS_Store",
     "**/.git",
     "**/.hg",
+    "**/.husky/_",
     "**/.jj",
-    "**/.map.js",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.storybook",
     "**/.svn",
     "**/.venv",
+    "**/build",
+    "**/cassettes",
     "**/coverage",
     "**/dist",
-    "**/node_modules"
+    "**/node_modules",
+    "**/reports",
+    "**/.map.js"
   ],
   "file_types": {
     "Dockerfile": [
