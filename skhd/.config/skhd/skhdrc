@@ -35,18 +35,24 @@ hyper - e : open -b com.mimestream.Mimestream
 # Open Slack
 hyper - w : open -b com.tinyspeck.slackmacgap
 
+# Open Discord
+hyper - d : open -b  com.hnc.Discord
+
 ################################################################################
 # Development
 ################################################################################
 
-# Open Code Editor
-hyper - c : open -a "/Applications/Visual Studio Code.app"
-
 # Open Terminal
 hyper - z : open -b com.mitchellh.ghostty
 
-# Open Codex Monitor
+# Open Agent Monitor
 hyper - x : open -b com.dimillian.codexmonitor
+
+# Open Code Editor (Primary)
+hyper - c : open -b dev.zed.Zed
+
+# Open Code Editor (Secondary)
+hyper - v : open -a "/Applications/Visual Studio Code.app"
 
 # Open Database UI
 hyper - q : open -b com.tinyapp.TablePlus
