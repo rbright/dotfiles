@@ -82,7 +82,7 @@ if.app-name-regex-substring = 'photos'
 run = ['layout tiling', 'move-node-to-workspace 0']
 
 ############################################################
-# Workspace 1 - Code Editor
+# Workspace 1 - Code Editor (Primary)
 ############################################################
 
 # Android Studio
@@ -93,11 +93,6 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 # Cursor
 [[on-window-detected]]
 if.app-name-regex-substring = 'cursor'
-run = ['layout tiling', 'move-node-to-workspace 1']
-
-# Visual Studio Code
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 # Xcode
@@ -123,6 +118,11 @@ run = ['layout tiling', 'move-node-to-workspace 2']
 # Conductor
 [[on-window-detected]]
 if.app-name-regex-substring = 'conductor'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Visual Studio Code
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
 run = ['layout tiling', 'move-node-to-workspace 2']
 
 ############################################################
