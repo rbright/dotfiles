@@ -212,7 +212,8 @@
       "language_servers": [
         "ruff",
         "pyrefly",
-        "!basepyright"
+        "!pyright",
+        "!pylsp"
       ],
       "preferred_line_length": 120,
       "tab_size": 4,
