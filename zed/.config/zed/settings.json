@@ -91,6 +91,18 @@
       "**/templates/**/*.tpl",
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml"
+    ],
+    "JSONC": [
+      "**/.vscode/**/*.json",
+      "**/.zed/**/*.json",
+    ],
+    "Shell Script": [
+      "**/.curlrc",
+      "**/.env.*",
+      "**/.inputrc",
+      "**/skhdrc",
+      "**/tmux.conf",
+      "**/*.tmux",
     ]
   },
   "format_on_save": "off",
