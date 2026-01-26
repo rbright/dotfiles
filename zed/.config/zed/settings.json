@@ -2,16 +2,32 @@
   "agent": {
     "agents_panel_dock": "left",
     "button": true,
+    "commit_message_model": {
+      "model": "gpt-5.2",
+      "provider": "zed.dev"
+    },
+    "default_model": {
+      "model": "gpt-5.2",
+      "provider": "zed.dev"
+    },
+    "default_view": "thread",
     "default_width": 360,
     "dock": "left",
     "enable_feedback": true,
     "enabled": true,
+    "expand_terminal_card": true,
+    "inline_alternatives": [],
     "inline_assistant_model": {
       "model": "gpt-5.2",
       "provider": "zed.dev"
     },
     "model_parameters": [],
-    "play_sound_when_agent_done": true
+    "play_sound_when_agent_done": true,
+    "thread_summary_model": {
+      "model": "gpt-5.2",
+      "provider": "zed.dev"
+    },
+    "use_modifier_to_send": true,
   },
   "audio": {
     "experimental.legacy_audio_compatible": false
@@ -55,8 +71,24 @@
       "enabled": true
     }
   },
+  "edit_predictions": {
+    "disabled_globs": [
+      "**/.aws",
+      "**/.env*",
+      "**/.gnupg",
+      "**/.ssh",
+      "**/.vnc",
+      "**/ssh",
+      "**/projects.nu",
+      "**/projects.zsh"
+    ],
+    "mode": "subtle"
+  },
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
   "file_scan_exclusions": [
     "**/__pycache__",
     "**/.bun-cache",
