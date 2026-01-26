@@ -105,7 +105,7 @@
       "**/*.tmux",
     ]
   },
-  "format_on_save": "off",
+  "format_on_save": "on",
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
@@ -247,7 +247,7 @@
         "enabled": true
       },
       "language_servers": [
-        "pyrefly",
+        // "pyrefly",
         "ruff",
         "!basedpyright",
         "!pyright",
@@ -369,7 +369,27 @@
     },
     "ruff": {
       "initialization_options": {
-        "settings": {}
+        "settings": {
+          "codeAction": {
+            "disableRuleComment": {
+              "enable": false
+            },
+            "fixViolation": {
+              "enable": false
+            }
+          },
+          "configurationPreference": "filesystemFirst",
+          "fixAll": true,
+          "format": {
+            "backend": "uv",
+            "preview": true
+          },
+          "lint": {
+            "enable": false
+          },
+          "organizeImports": true,
+          "showSyntaxErrors": true
+        }
       }
     },
     "rust-analyzer": {
