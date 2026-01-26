@@ -159,13 +159,18 @@
     },
     "GraphQL": {
       "format_on_save": "on",
+      "formatter": "language_server",
       "preferred_line_length": 80,
       "tab_size": 2
     },
     "HCL": {
       "format_on_save": "on",
+      "formatter": "language_server",
       "preferred_line_length": 80,
       "tab_size": 2
+    },
+    "HTML": {
+      "format_on_save": "on",
     },
     "JSON": {
       "code_actions_on_format": {
@@ -175,7 +180,7 @@
       "formatter": "language_server",
       "preferred_line_length": 80,
       "prettier": {
-        "allowed": true
+        "allowed": false
       },
       "tab_size": 2
     },
@@ -196,8 +201,11 @@
         "source.fixAll.eslint": true
       },
       "format_on_save": "on",
-      "formatter": [],
+      "formatter": "language_server",
       "preferred_line_length": 120,
+      "prettier": {
+        "allowed": false
+      },
       "tab_size": 2
     },
     "Just": {
@@ -222,11 +230,16 @@
     },
     "Nix": {
       "format_on_save": "on",
+      "formatter": "language_server",
       "preferred_line_length": 80,
       "tab_size": 2
     },
     "Python": {
       "auto_indent": true,
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": true
+      },
       "colorize_brackets": true,
       "format_on_save": "on",
       "formatter": "language_server",
@@ -234,8 +247,9 @@
         "enabled": true
       },
       "language_servers": [
-        "ruff",
         "pyrefly",
+        "ruff",
+        "!basedpyright",
         "!pyright",
         "!pylsp"
       ],
@@ -262,13 +276,13 @@
     "Shell Script": {
       "formatter": {
         "external": {
+          "command": "shfmt",
           "arguments": [
             "--filename",
             "{buffer_path}",
             "--indent",
             "2"
-          ],
-          "command": "shfmt"
+          ]
         }
       },
       "hard_tabs": false,
@@ -286,6 +300,9 @@
       },
       "format_on_save": "on",
       "formatter": "language_server",
+      "prettier": {
+        "allowed": false
+      },
       "tab_size": 2
     },
     "Terraform": {
@@ -305,7 +322,11 @@
         "source.fixAll.eslint": true
       },
       "format_on_save": "on",
-      "formatter": [],
+      "formatter": "language_server",
+      "language_servers": [
+        "vtsls",
+        "eslint"
+      ],
       "prettier": {
         "allowed": false
       },
@@ -344,6 +365,11 @@
           "lsp"
         ],
         "path": ".venv/bin/pyrefly"
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {}
       }
     },
     "rust-analyzer": {
@@ -395,6 +421,20 @@
           "includeInlayPropertyDeclarationTypeHints": true,
           "includeInlayVariableTypeHints": true,
           "includeInlayVariableTypeHintsWhenTypeMatchesName": true
+        }
+      }
+    },
+    "vscode-html-language-server": {
+      "settings": {
+        "html": {
+          "format": {
+            // Indent under <html> and <head> (default: false)
+            "indentInnerHtml": true,
+            // Disable formatting inside <svg> or <script>
+            "contentUnformatted": "svg,script",
+            // Add an extra newline before <div> and <p>
+            "extraLiners": "div,p"
+          }
         }
       }
     },
@@ -462,6 +502,7 @@
           "format": {
             "singleQuote": true
           },
+          "schemas": {},
           "validate": true
         }
       }
