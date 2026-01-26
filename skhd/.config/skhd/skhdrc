@@ -56,6 +56,3 @@ hyper - v : open -a "/Applications/Visual Studio Code.app"
 
 # Open Database UI
 hyper - q : open -b com.tinyapp.TablePlus
-
-# Open Postman
-hyper - p : open -b  com.postmanlabs.mac
