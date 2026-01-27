@@ -82,7 +82,7 @@
       "**/projects.nu",
       "**/projects.zsh"
     ],
-    "mode": "subtle"
+    "mode": "eager"
   },
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
@@ -210,6 +210,9 @@
       },
       "format_on_save": "on",
       "formatter": "language_server",
+      "language_servers": [
+        "eslint"
+      ],
       "preferred_line_length": 80,
       "prettier": {
         "allowed": false

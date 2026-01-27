@@ -8,7 +8,19 @@
 [
   {
     "context": "Workspace",
-    "bindings": {}
+    "bindings": {
+      // Editor
+      "ctrl-`": "editor::ToggleFocus",
+      // File Finder
+      "cmd-p": "file_finder::Toggle",
+      // Terminal
+      "cmd-`": "terminal_panel::Toggle",
+      // Agent Panel
+      "cmd-shift-a": "agent::ToggleFocus",
+      // Git
+      "ctrl-shift-g": "git_panel::ToggleFocus",
+      "cmd-alt-p": "git::Worktree",
+    }
   },
   {
     "context": "Editor",
@@ -18,45 +30,20 @@
       "ctrl-shift-j": "pane::SplitDown",
       "ctrl-shift-k": "pane::SplitUp",
       "ctrl-shift-l": "pane::SplitRight",
-
       // Pane Navigation
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-l": "workspace::ActivatePaneRight",
-
-      // Close pane
+      // Close Pane
       "ctrl-q": "pane::CloseAllItems",
-
-      // File finder
-      "cmd-p": "file_finder::Toggle",
-
-      // Command palette
-      "cmd-shift-p": "command_palette::Toggle",
-
-      // AI Panel
-      "cmd-shift-a": "agent::ToggleFocus",
-
-      // Terminal
-      "cmd-`": "terminal_panel::ToggleFocus"
-    }
-  },
-  {
-    "context": "GitCommit > Editor",
-    "bindings": {
-      "ctrl-alt-cmd-g": "git::GenerateCommitMessage"
     }
   },
   {
     "context": "CommitEditor > Editor",
     "bindings": {
+      "alt-tab": null,
       "ctrl-alt-cmd-g": "git::GenerateCommitMessage"
-    }
-  },
-  {
-    "context": "CommitEditor > Editor",
-    "bindings": {
-      "alt-tab": null
     }
   },
   {
