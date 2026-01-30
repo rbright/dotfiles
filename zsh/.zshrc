@@ -107,6 +107,9 @@ fi
 # Atuin
 eval "$(atuin init zsh)"
 
+# bun
+[ -s "/Users/rbright/.bun/_bun" ] && source "/Users/rbright/.bun/_bun"
+
 # Carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
@@ -125,17 +128,3 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 . "$HOME/.local/bin/env"
-# bun completions
-[ -s "/Users/rbright/.bun/_bun" ] && source "/Users/rbright/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/.bun/bin"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/.bun/bin"
-export PATH="$BUN_INSTALL/bin:$PATH"
