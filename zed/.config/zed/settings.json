@@ -282,7 +282,7 @@
         "enabled": true
       },
       "language_servers": [
-        // "pyrefly",
+        "ty",
         "ruff",
         "!basedpyright",
         "!pyright",
@@ -392,14 +392,6 @@
             "enable": true
           }
         }
-      }
-    },
-    "pyrefly": {
-      "binary": {
-        "arguments": [
-          "lsp"
-        ],
-        "path": ".venv/bin/pyrefly"
       }
     },
     "ruff": {
