@@ -265,7 +265,19 @@
     },
     "Nix": {
       "format_on_save": "on",
-      "formatter": "language_server",
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+          "arguments": [
+            "--quiet",
+            "--"
+          ]
+        }
+      },
+      "language_servers": [
+        "nixd",
+        "!nil"
+      ],
       "preferred_line_length": 80,
       "tab_size": 2
     },
@@ -391,6 +403,13 @@
           "validate": {
             "enable": true
           }
+        }
+      }
+    },
+    "nixd": {
+      "settings": {
+        "diagnostic": {
+          "suppress": []
         }
       }
     },
