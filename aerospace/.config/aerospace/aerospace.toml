@@ -303,9 +303,9 @@ check-further-callbacks = true
 # Workspace 9 - Terminal
 ############################################################
 
-# Codex Monitor
+# Codex
 [[on-window-detected]]
-if.app-name-regex-substring = 'codexmonitor'
+if.app-name-regex-substring = 'codex'
 run = ['layout tiling', 'move-node-to-workspace 9']
 
 # Conductor
