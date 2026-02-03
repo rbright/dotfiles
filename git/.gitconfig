@@ -72,3 +72,9 @@
 	forceSignAnnotated = false
 [coderabbit]
 	machineId = cli/dc417dcb4f52453c9497fb0bcb39b4c9
+[credential "https://github.com"]
+	helper = 
+	helper = !/Users/rbright/.nix-profile/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/Users/rbright/.nix-profile/bin/gh auth git-credential
