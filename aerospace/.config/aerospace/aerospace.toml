@@ -110,6 +110,16 @@ run = ['layout tiling', 'move-node-to-workspace 1']
 # Workspace 2 - Code Editor (Secondary)
 ############################################################
 
+# Codex
+[[on-window-detected]]
+if.app-name-regex-substring = 'codex'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Conductor
+[[on-window-detected]]
+if.app-name-regex-substring = 'conductor'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
 # Visual Studio Code
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
@@ -302,16 +312,6 @@ check-further-callbacks = true
 ############################################################
 # Workspace 9 - Terminal
 ############################################################
-
-# Codex
-[[on-window-detected]]
-if.app-name-regex-substring = 'codex'
-run = ['layout tiling', 'move-node-to-workspace 9']
-
-# Conductor
-[[on-window-detected]]
-if.app-name-regex-substring = 'conductor'
-run = ['layout tiling', 'move-node-to-workspace 9']
 
 # Ghostty
 [[on-window-detected]]
