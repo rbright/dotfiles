@@ -65,9 +65,6 @@ $env.ENV_CONVERSIONS = {
 $env.ANDROID_HOME = ($env.HOME | path join "Library/Android/sdk")
 $env.JAVA_HOME = "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
-# Claude Code
-$env.CLAUDE_CONFIG_DIR = ($env.HOME | path join '.config/claude')
-
 # Go
 $env.GOPATH = ($env.HOME | path join "go")
 

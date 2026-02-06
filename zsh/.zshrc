@@ -36,9 +36,6 @@ export LANG=en_US.UTF-8
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
-# Claude Code
-export CLAUDE_CONFIG_DIR="$HOME/.config/claude"
-
 # Go
 export GOPATH="$HOME/go"
 
