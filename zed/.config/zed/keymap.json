@@ -40,6 +40,12 @@
     }
   },
   {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-cmd-p": null
+    }
+  },
+  {
     "context": "CommitEditor > Editor",
     "bindings": {
       "alt-tab": null,

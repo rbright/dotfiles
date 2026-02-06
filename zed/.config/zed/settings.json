@@ -27,7 +27,7 @@
       "model": "gpt-5.2",
       "provider": "zed.dev"
     },
-    "use_modifier_to_send": true,
+    "use_modifier_to_send": true
   },
   "audio": {
     "experimental.legacy_audio_compatible": false
@@ -82,13 +82,11 @@
       "**/projects.nu",
       "**/projects.zsh"
     ],
-    "mode": "eager"
+    "mode": "eager",
+    "provider": "zed"
   },
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   "file_scan_exclusions": [
     "**/__pycache__",
     "**/.bun-cache",
@@ -126,7 +124,7 @@
     ],
     "JSONC": [
       "**/.vscode/**/*.json",
-      "**/.zed/**/*.json",
+      "**/.zed/**/*.json"
     ],
     "Shell Script": [
       "**/.curlrc",
@@ -134,7 +132,7 @@
       "**/.inputrc",
       "**/skhdrc",
       "**/tmux.conf",
-      "**/*.tmux",
+      "**/*.tmux"
     ]
   },
   "format_on_save": "on",
@@ -202,7 +200,7 @@
       "tab_size": 2
     },
     "HTML": {
-      "format_on_save": "on",
+      "format_on_save": "on"
     },
     "JSON": {
       "code_actions_on_format": {
@@ -267,11 +265,11 @@
       "format_on_save": "on",
       "formatter": {
         "external": {
-          "command": "nixfmt",
           "arguments": [
             "--quiet",
             "--"
-          ]
+          ],
+          "command": "nixfmt"
         }
       },
       "language_servers": [
@@ -284,8 +282,8 @@
     "Python": {
       "auto_indent": true,
       "code_actions_on_format": {
-        "source.organizeImports.ruff": true,
-        "source.fixAll.ruff": true
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true
       },
       "colorize_brackets": true,
       "format_on_save": "on",
@@ -323,13 +321,13 @@
     "Shell Script": {
       "formatter": {
         "external": {
-          "command": "shfmt",
           "arguments": [
             "--filename",
             "{buffer_path}",
             "--indent",
             "2"
-          ]
+          ],
+          "command": "shfmt"
         }
       },
       "hard_tabs": false,
@@ -494,12 +492,12 @@
       "settings": {
         "html": {
           "format": {
-            // Indent under <html> and <head> (default: false)
-            "indentInnerHtml": true,
             // Disable formatting inside <svg> or <script>
             "contentUnformatted": "svg,script",
             // Add an extra newline before <div> and <p>
-            "extraLiners": "div,p"
+            "extraLiners": "div,p",
+            // Indent under <html> and <head> (default: false)
+            "indentInnerHtml": true
           }
         }
       }
@@ -629,6 +627,7 @@
   "show_call_status_icon": true,
   "show_completion_documentation": true,
   "show_completions_on_input": true,
+  "show_edit_predictions": true,
   "show_whitespaces": "all",
   "soft_wrap": "none",
   "tab_bar": {
