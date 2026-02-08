@@ -43,7 +43,7 @@ hyper - d : open -b  com.hnc.Discord
 ################################################################################
 
 # Open Terminal
-hyper - z : open -b com.mitchellh.ghostty
+hyper - z : open -b com.github.wez.wezterm
 
 # Open Agent Monitor
 hyper - x : open -b com.dimillian.codexmonitor

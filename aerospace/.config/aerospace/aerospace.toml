@@ -318,6 +318,11 @@ run = ['layout tiling', 'move-node-to-workspace 8']
 if.app-name-regex-substring = 'ghostty'
 run = ['layout tiling', 'move-node-to-workspace 9']
 
+# WezTerm
+[[on-window-detected]]
+if.app-name-regex-substring = 'wezterm'
+run = ['layout tiling', 'move-node-to-workspace 9']
+
 ################################################################################
 # Floating Windows
 ################################################################################
