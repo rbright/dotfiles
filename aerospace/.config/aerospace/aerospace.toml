@@ -107,95 +107,76 @@ if.app-name-regex-substring = 'zed'
 run = ['layout tiling', 'move-node-to-workspace 1']
 
 ############################################################
-# Workspace 2 - Code Editor (Secondary)
-############################################################
-
-# Codex
-[[on-window-detected]]
-if.app-name-regex-substring = 'codex'
-run = ['layout tiling', 'move-node-to-workspace 2']
-
-# Conductor
-[[on-window-detected]]
-if.app-name-regex-substring = 'conductor'
-run = ['layout tiling', 'move-node-to-workspace 2']
-
-# Visual Studio Code
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = ['layout tiling', 'move-node-to-workspace 2']
-
-############################################################
-# Workspace 3 - Development Tools
+# Workspace 2 - Development Tools
 ############################################################
 
 # ComfyUI
 [[on-window-detected]]
 if.app-name-regex-substring = 'comfyui'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Console
 [[on-window-detected]]
 if.app-id = 'com.apple.Console'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Cyberduck
 [[on-window-detected]]
 if.app-name-regex-substring = 'cyberduck'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 check-further-callbacks = true
 
 # Excalidraw
 [[on-window-detected]]
 if.app-name-regex-substring = 'excalidraw'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Figma
 [[on-window-detected]]
 if.app-name-regex-substring = 'figma'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # OpenMTP
 [[on-window-detected]]
 if.app-name-regex-substring = 'openmtp'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Pixelmator Pro
 [[on-window-detected]]
 if.app-name-regex-substring = 'pixelmator'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Postman
 [[on-window-detected]]
 if.app-name-regex-substring = 'postman'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 # Proxyman
 [[on-window-detected]]
 if.app-name-regex-substring = 'proxyman'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 check-further-callbacks = true
 
 # TablePlus
 [[on-window-detected]]
 if.app-name-regex-substring = 'tableplus'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 check-further-callbacks = true
 
 # Tower
 [[on-window-detected]]
 if.app-name-regex-substring = 'tower'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = ['layout tiling', 'move-node-to-workspace 2']
 check-further-callbacks = true
 
 ############################################################
-# Workspace 4 - Notes / Office
+# Workspace 3 - Notes / Office
 ############################################################
 
 # Calibre
 [[on-window-detected]]
 if.app-name-regex-substring = 'calibre'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 check-further-callbacks = true
 
 # Calibre - Preferences
@@ -206,7 +187,7 @@ run = 'layout floating'
 # Microsoft Excel
 [[on-window-detected]]
 if.app-name-regex-substring = 'excel'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 check-further-callbacks = true
 
 # Microsoft Excel - Preferences
@@ -217,7 +198,7 @@ run = 'layout floating'
 # Microsoft Word
 [[on-window-detected]]
 if.app-name-regex-substring = 'word'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 check-further-callbacks = true
 
 # Microsoft Word - Preferences
@@ -228,86 +209,105 @@ run = 'layout floating'
 # Notion
 [[on-window-detected]]
 if.app-name-regex-substring = 'notion'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 
 # Obsidian
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['layout tiling', 'move-node-to-workspace 4']
+run = ['layout tiling', 'move-node-to-workspace 3']
 
 ############################################################
-# Workspace 6 - Planning
+# Workspace 4 - Planning
 ############################################################
 
 # Linear
 [[on-window-detected]]
 if.app-name-regex-substring = 'linear'
-run = ['layout tiling', 'move-node-to-workspace 5']
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 # Sunsama
 [[on-window-detected]]
 if.app-name-regex-substring = 'sunsama'
-run = ['layout tiling', 'move-node-to-workspace 5']
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 # Todoist
 [[on-window-detected]]
 if.app-name-regex-substring = 'todoist'
-run = ['layout tiling', 'move-node-to-workspace 5']
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 ############################################################
-# Workspace 6 - Trading
+# Workspace 5 - Trading
 ############################################################
 
 # Ledger Live
 [[on-window-detected]]
 if.app-name-regex-substring = 'ledger live'
-run = ['layout tiling', 'move-node-to-workspace 6']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 # Thinkorswim
 [[on-window-detected]]
 if.app-name-regex-substring = 'thinkorswim'
-run = ['layout tiling', 'move-node-to-workspace 6']
+run = ['layout tiling', 'move-node-to-workspace 5']
 check-further-callbacks = true
 
 # Thinkorswim - Column Set for 'Watchlist'
 [[on-window-detected]]
 if.window-title-regex-substring = "column set for 'watchlist'"
-run = ['layout tiling', 'move-node-to-workspace 6']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 ############################################################
-# Workspace 7 - Messaging
+# Workspace 6 - Messaging
 ############################################################
 
 # Apple Messages / Google Messages
 [[on-window-detected]]
 if.app-name-regex-substring = 'messages'
-run = ['layout tiling', 'move-node-to-workspace 7']
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 # Discord
 [[on-window-detected]]
 if.app-name-regex-substring = 'discord'
-run = ['layout tiling', 'move-node-to-workspace 7']
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 # Mimestream
 [[on-window-detected]]
 if.app-name-regex-substring = 'mimestream'
-run = ['layout tiling', 'move-node-to-workspace 7']
+run = ['layout tiling', 'move-node-to-workspace 6']
 check-further-callbacks = true
 
 # Slack
 [[on-window-detected]]
 if.app-name-regex-substring = 'slack'
-run = ['layout tiling', 'move-node-to-workspace 7']
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 ############################################################
-# Workspace 8 - Calendar
+# Workspace 7 - Calendar
 ############################################################
 
 # Calendar
 [[on-window-detected]]
 if.app-name-regex-substring = 'calendar'
-run = ['layout tiling', 'move-node-to-workspace 8']
+run = ['layout tiling', 'move-node-to-workspace 7']
 check-further-callbacks = true
+
+############################################################
+# Workspace 8 - Agent Monitor
+############################################################
+
+# Codex
+[[on-window-detected]]
+if.app-name-regex-substring = 'codex'
+run = ['layout tiling', 'move-node-to-workspace 8']
+
+# Conductor
+[[on-window-detected]]
+if.app-name-regex-substring = 'conductor'
+run = ['layout tiling', 'move-node-to-workspace 8']
+
+# Visual Studio Code
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['layout tiling', 'move-node-to-workspace 8']
 
 ############################################################
 # Workspace 9 - Terminal
@@ -670,5 +670,5 @@ backspace = ['close-all-windows-but-current', 'mode main']
 5 = 'main'
 6 = 'main'
 7 = 'main'
-8 = 'main'
+8 = 'secondary'
 9 = 'secondary'
