@@ -1,0 +1,55 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="tab-bar" {
+                hide_swap_layout_indication true
+            }
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="status-bar" {
+                classic true
+            }
+        }
+    }
+
+    tab name="agents" focus=true split_direction="horizontal" {
+        pane split_direction="vertical" {
+            pane name="agent-01"
+            pane name="agent-02"
+            pane name="agent-03"
+            pane name="agent-04"
+        }
+        pane split_direction="vertical" {
+            pane name="agent-05"
+            pane name="agent-06"
+            pane name="agent-07"
+            pane name="agent-08"
+        }
+    }
+
+    tab name="o11y" split_direction="horizontal" {
+        pane split_direction="vertical" {
+            pane name="o11y-local" command="zsh" {
+                args "-lc" "htop"
+            }
+            pane name="o11y-remote-00" command="zsh" {
+                args "-lc" "TERM=xterm-256color ssh -t moonrise-00 htop"
+            }
+            pane name="o11y-remote-01" command="zsh" {
+                args "-lc" "TERM=xterm-256color ssh -t moonrise-01 htop"
+            }
+            pane name="o11y-remote-02" command="zsh" {
+                args "-lc" "TERM=xterm-256color ssh -t moonrise-02 htop"
+            }
+        }
+        pane split_direction="vertical" {
+            pane name="docker" command="zsh" {
+                args "-lc" "docker stats"
+            }
+            pane
+            pane
+            pane
+        }
+    }
+}

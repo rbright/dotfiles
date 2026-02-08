@@ -276,22 +276,48 @@ def tardir [dir: string] {
 # Work Sessions
 ################################################################################
 
-# Start the Moonrise tmux workspace
-def start-work [] {
-    if (tmux has-session -t moonrise | complete | get exit_code) == 0 {
-        tmux attach -t moonrise
-    } else {
-        tmux new-session -d
-        tmux source-file ~/.config/tmux/sessions/moonrise.tmux
+def work-session-name [] { "moonrise-live" }
+
+def "work up" [] {
+    if (which zellij | is-empty) {
+        print $"(ansi red)zellij is not available on PATH(ansi reset)"
+        return
     }
+
+    # Always recreate so layout/config changes are deterministic.
+    zellij delete-session --force (work-session-name) | ignore
+    print $"(ansi blue)Starting session: (work-session-name)(ansi reset)"
+    zellij attach -c (work-session-name) options --default-layout moonrise --auto-layout false --session-serialization false --disable-session-metadata true
 }
 
-# Stop the Moonrise tmux workspace
-def stop-work [] {
-    if (tmux has-session -t moonrise | complete | get exit_code) == 0 {
-        tmux kill-session -t moonrise
-        print "✅ tmux session 'moonrise' stopped"
-    } else {
-        print "⚠️  no tmux session named 'moonrise' running"
+def "work reset" [] {
+    if (which zellij | is-empty) {
+        print $"(ansi red)zellij is not available on PATH(ansi reset)"
+        return
     }
+
+    work up
 }
+
+def "work down" [] {
+    if (which zellij | is-empty) {
+        print $"(ansi red)zellij is not available on PATH(ansi reset)"
+        return
+    }
+
+    zellij delete-session --force (work-session-name) | ignore
+}
+
+def "work ls" [] {
+    zellij ls --no-formatting
+    | lines
+    | where ($it | str starts-with (work-session-name))
+}
+
+def "work attach" [name: string] {
+    zellij attach -c $name
+}
+
+# Compatibility wrappers during tmux -> zellij migration.
+def start-work [] { work up }
+def stop-work [] { work down }
