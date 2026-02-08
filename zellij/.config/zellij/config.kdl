@@ -1,0 +1,42 @@
+default_shell "nu"
+default_layout "compact"
+default_mode "normal"
+
+auto_layout false
+copy_clipboard "system"
+copy_on_select true
+disable_session_metadata true
+mouse_mode true
+on_force_close "detach"
+pane_frames true
+scroll_buffer_size 50000
+session_serialization false
+theme "catppuccin-mocha"
+
+themes {
+  catppuccin-mocha {
+    fg 205 214 244
+    bg 30 30 46
+    red 243 139 168
+    green 166 227 161
+    yellow 249 226 175
+    blue 137 180 250
+    magenta 245 194 231
+    orange 250 179 135
+    cyan 148 226 213
+    black 69 71 90
+    white 186 194 222
+  }
+}
+
+keybinds {
+  shared_except "locked" {
+    bind "Alt h" { MoveFocus "Left"; }
+    bind "Alt j" { MoveFocus "Down"; }
+    bind "Alt k" { MoveFocus "Up"; }
+    bind "Alt l" { MoveFocus "Right"; }
+    bind "Alt Shift j" { NewPane "Down"; }
+    bind "Alt Shift l" { NewPane "Right"; }
+    bind "Alt q" { CloseFocus; }
+  }
+}
