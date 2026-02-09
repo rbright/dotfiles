@@ -42,6 +42,8 @@ config.window_decorations = "RESIZE"
 config.keys = {
   -- Preserve Meta+Enter for terminal apps instead of WezTerm's default Alt+Enter fullscreen behavior.
   { key = "Enter", mods = "ALT", action = wezterm.action.SendString("\x1b\r") },
+  -- Match macOS-style "delete previous word" muscle memory in terminal apps.
+  { key = "Backspace", mods = "CMD", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },
 }
 
 return config
