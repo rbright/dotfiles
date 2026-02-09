@@ -21,6 +21,7 @@ else
   config.default_prog = { "/bin/zsh", "-l" }
 end
 
+config.alternate_buffer_wheel_scroll_speed = 1
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font_with_fallback({
   "JetBrainsMono Nerd Font Mono",

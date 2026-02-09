@@ -40,12 +40,4 @@ keybinds {
     bind "Alt q" { CloseFocus; }
     bind "Alt s" { SwitchToMode "Scroll"; }
   }
-  normal {
-    bind "Left" { MoveFocus "Left"; }
-    bind "Down" { MoveFocus "Down"; }
-    bind "Up" { MoveFocus "Up"; }
-    bind "Right" { MoveFocus "Right"; }
-    bind "PageUp" { PageScrollUp; }
-    bind "PageDown" { PageScrollDown; }
-  }
 }
