@@ -16,30 +16,30 @@ layout {
     tab name="agents" focus=true split_direction="horizontal" {
         pane split_direction="vertical" {
             pane name="agent-01" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-01 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-01 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
             pane name="agent-02" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-02 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-02 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
             pane name="agent-03" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-03 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-03 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
           pane name="agent-04" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-04 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-04 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
         }
         pane split_direction="vertical" {
             pane name="agent-05" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-05 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-05 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
             pane name="agent-06" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-06 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-06 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
             pane name="agent-07" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-07 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-07 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
             pane name="agent-08" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-08 options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-08 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
             }
         }
     }

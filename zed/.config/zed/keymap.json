@@ -18,7 +18,7 @@
       // Agent Panel
       "cmd-shift-a": "agent::ToggleFocus",
       // Git
-      "ctrl-shift-g": "git_panel::ToggleFocus",
+      "ctrl-alt-cmd-shift-g": "git_panel::ToggleFocus",
       "cmd-alt-p": "git::Worktree",
     }
   },
@@ -48,14 +48,25 @@
   {
     "context": "CommitEditor > Editor",
     "bindings": {
-      "alt-tab": null,
-      "ctrl-alt-cmd-g": "git::GenerateCommitMessage"
+      "alt-tab": null
     }
   },
   {
     "context": "GitCommit > Editor",
     "bindings": {
       "alt-tab": null
+    }
+  },
+  {
+    "context": "(GitPanel && ChangesList)",
+    "bindings": {
+      "ctrl-s": "git::StageFile"
+    }
+  },
+  {
+    "context": "CommitEditor > Editor",
+    "bindings": {
+      "cmd-shift-g": "git::GenerateCommitMessage"
     }
   }
 ]

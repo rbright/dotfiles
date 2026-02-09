@@ -40,7 +40,7 @@ work_ensure_agent_sessions() {
     fi
 
     zellij attach -b "$session" options \
-      --default-shell /bin/zsh \
+      --default-shell nu \
       --default-layout agent \
       --pane-frames false \
       --auto-layout false \
@@ -94,7 +94,7 @@ work() {
       local session
       session="$(work_agent_session_name "$1")" || return 1
       zellij attach -c "$session" options \
-        --default-shell /bin/zsh \
+        --default-shell nu \
         --default-layout agent \
         --pane-frames false \
         --auto-layout false \
