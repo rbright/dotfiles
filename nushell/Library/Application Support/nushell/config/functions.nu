@@ -276,13 +276,49 @@ def tardir [dir: string] {
 # Work Sessions
 ################################################################################
 
-def work-session-name [] { "moonrise-live" }
+def work-session-name [] { "moonrise" }
+
+def work-agent-session-name [agent: int] {
+    if $agent < 1 or $agent > 8 {
+        error make { msg: "Agent number must be in range 1..8" }
+    }
+
+    $"agent-(($agent | into string | fill -a r -w 2 -c '0'))"
+}
+
+def work-agent-sessions [] {
+    1..8 | each { |agent| work-agent-session-name $agent }
+}
+
+def work-managed-sessions [] {
+    (work-agent-sessions) | append (work-session-name)
+}
+
+def work-existing-session-names [] {
+    zellij ls --no-formatting
+    | lines
+    | each { |line| $line | split row " " | first }
+}
+
+def work-ensure-agent-sessions [] {
+    let existing = (work-existing-session-names)
+
+    for session in (work-agent-sessions) {
+        if ($existing | any { |name| $name == $session }) {
+            continue
+        }
+
+        zellij attach -b $session options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true | ignore
+    }
+}
 
 def "work up" [] {
     if (which zellij | is-empty) {
         print $"(ansi red)zellij is not available on PATH(ansi reset)"
         return
     }
+
+    work-ensure-agent-sessions
 
     # Always recreate so layout/config changes are deterministic.
     zellij delete-session --force (work-session-name) | ignore
@@ -296,6 +332,7 @@ def "work reset" [] {
         return
     }
 
+    work down
     work up
 }
 
@@ -305,17 +342,34 @@ def "work down" [] {
         return
     }
 
-    zellij delete-session --force (work-session-name) | ignore
+    for session in (work-managed-sessions) {
+        zellij delete-session --force $session | ignore
+    }
 }
 
 def "work ls" [] {
+    let managed = (work-managed-sessions)
+
     zellij ls --no-formatting
     | lines
-    | where ($it | str starts-with (work-session-name))
+    | where { |line|
+        let name = ($line | split row " " | first)
+        $managed | any { |session| $session == $name }
+    }
 }
 
 def "work attach" [name: string] {
     zellij attach -c $name
+}
+
+def "work agent" [agent: int] {
+    if (which zellij | is-empty) {
+        print $"(ansi red)zellij is not available on PATH(ansi reset)"
+        return
+    }
+
+    let session = (work-agent-session-name $agent)
+    zellij attach -c $session options --default-shell /bin/zsh --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true
 }
 
 # Compatibility wrappers during tmux -> zellij migration.
