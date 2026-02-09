@@ -1,9 +1,10 @@
 layout {
-    default_tab_template {
-        children
-    }
-
-    tab name="agent" focus=true {
-        pane
+    tab name="~" focus=true {
+        pane size=1 borderless=true {
+            plugin location="tab-bar" {
+                hide_swap_layout_indication true
+            }
+        }
+        pane focus=true
     }
 }

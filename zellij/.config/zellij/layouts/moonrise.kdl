@@ -15,52 +15,52 @@ layout {
 
     tab name="agents" focus=true split_direction="horizontal" {
         pane split_direction="vertical" {
-            pane name="agent-01" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-01 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-01" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-01 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
-            pane name="agent-02" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-02 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-02" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-02 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
-            pane name="agent-03" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-03 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-03" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-03 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
-          pane name="agent-04" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-04 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-04" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-04 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
         }
         pane split_direction="vertical" {
-            pane name="agent-05" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-05 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-05" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-05 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
-            pane name="agent-06" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-06 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-06" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-06 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
-            pane name="agent-07" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-07 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-07" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-07 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
-            pane name="agent-08" command="zsh" {
-                args "-lc" "env -u ZELLIJ zellij attach -c agent-08 options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true"
+            pane name="agent-08" borderless=true command="zsh" {
+                args "-lc" "env -u ZELLIJ zellij attach -c agent-08 options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true"
             }
         }
     }
 
     tab name="o11y" split_direction="horizontal" {
         pane split_direction="vertical" {
-            pane name="o11y-local" command="zsh" {
+            pane name="htop-local" command="zsh" {
                 args "-lc" "htop"
             }
-            pane name="o11y-remote-00" command="zsh" {
+            pane name="htop-moonrise-00" command="zsh" {
                 args "-lc" "TERM=xterm-256color ssh -t moonrise-00 htop"
             }
-            pane name="o11y-remote-01" command="zsh" {
+            pane name="htop-moonrise-01" command="zsh" {
                 args "-lc" "TERM=xterm-256color ssh -t moonrise-01 htop"
             }
-            pane name="o11y-remote-02" command="zsh" {
+            pane name="htop-moonrise-02" command="zsh" {
                 args "-lc" "TERM=xterm-256color ssh -t moonrise-02 htop"
             }
         }
         pane split_direction="vertical" {
-            pane name="docker" command="zsh" {
+            pane name="docker-stats" command="zsh" {
                 args "-lc" "docker stats"
             }
             pane

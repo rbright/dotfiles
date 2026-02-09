@@ -308,7 +308,7 @@ def work-ensure-agent-sessions [] {
             continue
         }
 
-        zellij attach -b $session options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true | ignore
+        zellij attach -b $session options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true | ignore
     }
 }
 
@@ -369,7 +369,7 @@ def "work agent" [agent: int] {
     }
 
     let session = (work-agent-session-name $agent)
-    zellij attach -c $session options --default-shell nu --default-layout agent --pane-frames false --auto-layout false --session-serialization false --disable-session-metadata true
+    zellij attach -c $session options --default-shell nu --default-layout agent --pane-frames true --auto-layout false --session-serialization false --disable-session-metadata true
 }
 
 # Compatibility wrappers during tmux -> zellij migration.

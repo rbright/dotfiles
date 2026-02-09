@@ -92,8 +92,12 @@ $env.config.completions.quick = true
 # Enable bracketed paste mode
 $env.config.bracketed_paste = true
 
-# Show current directory and running command in the terminal tab/window title
-$env.config.shell_integration.osc2 = true
+# Show current directory and running command in the terminal tab/window title.
+# Disable in managed agent sessions so zellij tab names are controlled by our
+# explicit `rename-tab` hook (basename / "~").
+$env.config.shell_integration.osc2 = (
+  not (($env | get -o ZELLIJ_SESSION_NAME | default "") =~ '^agent-[0-9]{2}$')
+)
 
 # Report the current directory to the terminal using OSC 7.
 # This is useful when spawning new tabs in the same directory.
@@ -205,6 +209,31 @@ $env.config.hooks.pre_prompt = [
     if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
       $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
     }
+  }
+  # Keep work-agent pane titles deterministic:
+  # home -> "~", otherwise cwd basename.
+  { ||
+    let session = ($env | get -o ZELLIJ_SESSION_NAME | default "")
+    if not ($session =~ '^agent-[0-9]{2}$') {
+      return
+    }
+    if (which zellij | is-empty) {
+      return
+    }
+
+    let cwd = (pwd | path expand)
+    let home = ($nu.home-path | path expand)
+    let basename = ($cwd | path basename)
+    let title = (
+      if $cwd == $home {
+        "~"
+      } else if ($basename | str length) > 0 {
+        $basename
+      } else {
+        "~"
+      }
+    )
+    do -i { zellij action rename-tab $title | ignore }
   }
 ]
 

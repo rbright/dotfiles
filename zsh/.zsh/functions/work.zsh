@@ -42,7 +42,7 @@ work_ensure_agent_sessions() {
     zellij attach -b "$session" options \
       --default-shell nu \
       --default-layout agent \
-      --pane-frames false \
+      --pane-frames true \
       --auto-layout false \
       --session-serialization false \
       --disable-session-metadata true >/dev/null 2>&1 || true
@@ -96,7 +96,7 @@ work() {
       zellij attach -c "$session" options \
         --default-shell nu \
         --default-layout agent \
-        --pane-frames false \
+        --pane-frames true \
         --auto-layout false \
         --session-serialization false \
         --disable-session-metadata true
@@ -114,6 +114,46 @@ EOF
       ;;
   esac
 }
+
+work_agent_managed_session_p() {
+  [[ "$ZELLIJ_SESSION_NAME" == agent-0[1-8] ]]
+}
+
+work_agent_pane_title() {
+  local cwd="${PWD:A}"
+  local home="${HOME:A}"
+  if [[ "$cwd" == "$home" ]]; then
+    print "~"
+    return
+  fi
+
+  local base="${PWD:t}"
+  if [[ -n "$base" ]]; then
+    print "$base"
+  else
+    print "~"
+  fi
+}
+
+work_agent_refresh_pane_title() {
+  work_agent_managed_session_p || return 0
+  command -v zellij >/dev/null 2>&1 || return 0
+
+  local title
+  title="$(work_agent_pane_title)"
+  zellij action rename-tab "$title" >/dev/null 2>&1 || true
+}
+
+if [[ -o interactive ]]; then
+  autoload -Uz add-zsh-hook
+  if ! typeset -f _work_agent_precmd >/dev/null 2>&1; then
+    _work_agent_precmd() { work_agent_refresh_pane_title; }
+    _work_agent_chpwd() { work_agent_refresh_pane_title; }
+    add-zsh-hook precmd _work_agent_precmd
+    add-zsh-hook chpwd _work_agent_chpwd
+  fi
+  work_agent_refresh_pane_title
+fi
 
 start-work() { work up "$@"; }
 stop-work() { work down "$@"; }

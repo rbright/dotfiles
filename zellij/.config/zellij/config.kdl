@@ -14,6 +14,11 @@ session_serialization false
 show_release_notes false
 show_startup_tips false
 theme "catppuccin-mocha"
+ui {
+  pane_frames {
+    hide_session_name true
+  }
+}
 
 themes {
   catppuccin-mocha {
