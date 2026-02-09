@@ -42,8 +42,10 @@ This runs `stow */` which creates symlinks for all configuration directories to 
 | [tableplus](https://tableplus.com/) | Database GUI client with custom Catppuccin theme |
 | [tmux](https://tmux.github.io/) | Terminal multiplexer with Vim-style navigation and session persistence |
 | [vnc](https://www.realvnc.com/) | Virtual Network Computing configuration for remote desktop |
+| [wezterm](https://wezfurlong.org/wezterm/) | GPU-accelerated terminal emulator and multiplexer frontend |
 | [xcode](https://developer.apple.com/xcode/) | Apple's IDE with custom Catppuccin Mocha color theme |
 | [zed](https://zed.dev/) | High-performance code editor built for collaboration |
+| [zellij](https://zellij.dev/) | Terminal workspace and session manager |
 | [zsh](https://www.zsh.org/) | Z shell with Oh My Zsh framework and extensive customizations |
 
 ## 🎨 Theme
