@@ -1,6 +1,6 @@
 auto-update = check
 auto-update-channel = stable
-command = nu
+command = zsh
 shell-integration = detect
 shell-integration-features = ssh-terminfo
 

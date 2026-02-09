@@ -87,6 +87,9 @@
   },
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
+  "file_finder": {
+    "include_ignored": "all"
+  },
   "file_scan_exclusions": [
     "**/__pycache__",
     "**/.bun-cache",
@@ -624,6 +627,9 @@
     "diagnostics": "all",
     "git_diff": false,
     "search_results": true
+  },
+  "search": {
+    "include_ignored": true
   },
   "show_call_status_icon": true,
   "show_completion_documentation": true,
