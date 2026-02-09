@@ -124,7 +124,8 @@
     ],
     "JSONC": [
       "**/.vscode/**/*.json",
-      "**/.zed/**/*.json"
+      "**/.zed/**/*.json",
+      "**/*.hujson",
     ],
     "Shell Script": [
       "**/.curlrc",

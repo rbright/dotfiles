@@ -40,6 +40,9 @@ config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
 
 config.keys = {
+  -- Force explicit macOS clipboard bindings in case defaults are shadowed.
+  { key = "c", mods = "CMD", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
+  { key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },
   -- Preserve Meta+Enter for terminal apps instead of WezTerm's default Alt+Enter fullscreen behavior.
   { key = "Enter", mods = "ALT", action = wezterm.action.SendString("\x1b\r") },
   -- Match macOS-style "delete previous word" muscle memory in terminal apps.
