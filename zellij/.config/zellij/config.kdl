@@ -31,12 +31,21 @@ themes {
 
 keybinds {
   shared_except "locked" {
-    bind "Alt h" { MoveFocus "Left"; }
-    bind "Alt j" { MoveFocus "Down"; }
-    bind "Alt k" { MoveFocus "Up"; }
-    bind "Alt l" { MoveFocus "Right"; }
+    bind "Alt [" { GoToPreviousTab; }
+    bind "Alt ]" { GoToNextTab; }
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
     bind "Alt Shift j" { NewPane "Down"; }
     bind "Alt Shift l" { NewPane "Right"; }
     bind "Alt q" { CloseFocus; }
+    bind "Alt s" { SwitchToMode "Scroll"; }
+  }
+  normal {
+    bind "Left" { MoveFocus "Left"; }
+    bind "Down" { MoveFocus "Down"; }
+    bind "Up" { MoveFocus "Up"; }
+    bind "Right" { MoveFocus "Right"; }
+    bind "PageUp" { PageScrollUp; }
+    bind "PageDown" { PageScrollDown; }
   }
 }

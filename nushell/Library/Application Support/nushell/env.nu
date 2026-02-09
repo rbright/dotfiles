@@ -19,8 +19,8 @@ $env.EDITOR = "nvim"
 # Show "nu" in the prompt
 $env.PROMPT_COMMAND = "nu"
 
-# Show the date and time in the right prompt
-$env.PROMPT_COMMAND_RIGHT = {|| date now | format date "%d-%a %r" }
+# Keep right prompt empty
+$env.PROMPT_COMMAND_RIGHT = {|| "" }
 
 ################################################################################
 # Prompt Indicators

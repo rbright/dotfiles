@@ -31,8 +31,16 @@ config.harfbuzz_features = { "ss01", "ss05", "dlig" }
 config.default_cursor_style = "BlinkingBlock"
 config.hide_mouse_cursor_when_typing = true
 config.scrollback_lines = 50000
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = false
 config.tab_bar_at_bottom = false
+config.use_dead_keys = false
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
+
+config.keys = {
+  -- Preserve Meta+Enter for terminal apps instead of WezTerm's default Alt+Enter fullscreen behavior.
+  { key = "Enter", mods = "ALT", action = wezterm.action.SendString("\x1b\r") },
+}
 
 return config
