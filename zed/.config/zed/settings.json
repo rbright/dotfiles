@@ -637,6 +637,53 @@
   "show_edit_predictions": true,
   "show_whitespaces": "all",
   "soft_wrap": "none",
+  "ssh_connections": [
+    {
+      "args": [],
+      "host": "moonrise-00",
+      "projects": [
+        {
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
+    },
+    {
+      "args": [],
+      "host": "moonrise-01",
+      "projects": [
+        {
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
+    },
+    {
+      "args": [],
+      "host": "moonrise-02",
+      "projects": [
+        {
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
+    },
+    {
+      "args": [],
+      "host": "reachy",
+      "nickname": "Reachy Mini",
+      "projects": [
+        {
+          "paths": [
+            "/home/pollen"
+          ]
+        }
+      ]
+    }
+  ],
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false,
