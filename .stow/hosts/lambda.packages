@@ -1,0 +1,32 @@
+# Host: lambda (MacBook Pro)
+#
+# One package per line. Blank lines and # comments are allowed.
+
+# Shared CLI/editor packages
+atuin
+btop
+carapace
+curl
+git
+github
+ghostty
+neovim
+profile
+readline
+starship
+tmux
+wezterm
+zed
+zellij
+zsh
+
+# macOS-only app locations
+aerospace
+espanso
+karibiner
+macmon
+nushell
+procs
+skhd
+tableplus
+xcode
