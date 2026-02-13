@@ -115,4 +115,6 @@ alias pip="pip3"
 alias sshgen="ssh-keygen -t ed25519 -C"
 
 # Tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+if [[ "$OSTYPE" == darwin* ]] && [ -x "/Applications/Tailscale.app/Contents/MacOS/Tailscale" ]; then
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+fi

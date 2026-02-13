@@ -28,13 +28,20 @@ setopt EXTENDED_GLOB      # More powerful globbing
 export EDITOR="$HOME/.nix-profile/bin/nvim"
 export LANG=en_US.UTF-8
 
+is_darwin=false
+if [[ "$OSTYPE" == darwin* ]]; then
+  is_darwin=true
+fi
+
 ################################################################################
 # Development Tools
 ################################################################################
 
-# Android
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+# Android + Java (macOS only)
+if "$is_darwin"; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+fi
 
 # Go
 export GOPATH="$HOME/go"
@@ -57,12 +64,6 @@ path=(
   "/nix/var/nix/profiles/default/bin"
   "/run/current-system/sw/bin"
 
-  # Homebrew
-  "/opt/homebrew/bin"
-
-  # Android
-  $ANDROID_HOME/{emulator,platform-tools}
-
   # Go
   $GOPATH/bin
 
@@ -78,6 +79,14 @@ path=(
   # Add system PATH
   $path
 )
+
+if "$is_darwin"; then
+  # Homebrew + Android tools are macOS-specific.
+  path+=(
+    "/opt/homebrew/bin"
+    $ANDROID_HOME/{emulator,platform-tools}
+  )
+fi
 
 export PATH
 
@@ -105,7 +114,7 @@ fi
 eval "$(atuin init zsh)"
 
 # bun
-[ -s "/Users/rbright/.bun/_bun" ] && source "/Users/rbright/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
@@ -124,4 +133,6 @@ eval "$(starship init zsh)"
 # zoxide
 eval "$(zoxide init zsh)"
 
-. "$HOME/.local/bin/env"
+if [ -f "$HOME/.local/bin/env" ]; then
+  . "$HOME/.local/bin/env"
+fi
