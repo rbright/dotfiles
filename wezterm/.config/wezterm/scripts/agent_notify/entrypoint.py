@@ -4,7 +4,7 @@ import sys
 
 from agent_notify.agents import claude, codex
 from agent_notify.context import build_context
-from agent_notify.notify import log_notification, notify_macos, title_from_cwd
+from agent_notify.notify import dispatch_notifications, log_notification
 from agent_notify.types import HookContext, Notification
 
 
@@ -29,5 +29,5 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     log_notification(notification)
-    notify_macos(title_from_cwd(notification.cwd), notification.message)
+    dispatch_notifications(notification)
     return 0

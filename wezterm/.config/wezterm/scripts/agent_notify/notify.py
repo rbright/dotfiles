@@ -4,11 +4,13 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 from agent_notify.types import Notification
 
+BELL = "\a"
 SENDER_BUNDLE_ID = "com.github.wez.wezterm"
 MESSAGE_LIMIT = 800
 
@@ -82,3 +84,26 @@ def notify_macos(title: str, message: str) -> None:
         )
     except OSError:
         pass
+
+
+def _env_enabled(name: str, default: bool = True) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
+def notify_terminal_bell() -> None:
+    try:
+        sys.stdout.write(BELL)
+        sys.stdout.flush()
+    except OSError:
+        pass
+
+
+def dispatch_notifications(notification: Notification) -> None:
+    title = title_from_cwd(notification.cwd)
+    if _env_enabled("AGENT_NOTIFY_MACOS", default=True):
+        notify_macos(title, notification.message)
+    if _env_enabled("AGENT_NOTIFY_BELL", default=True):
+        notify_terminal_bell()
