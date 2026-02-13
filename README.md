@@ -9,13 +9,54 @@ This repository contains my personal dotfiles managed with [GNU Stow](https://ww
 
 ## 🚀 Installation
 
-To install all dotfiles, use the following command from the repository root:
+Install dotfiles for a specific host:
 
 ```bash
-just install
+just install lambda
+just install omega
 ```
 
-This runs `stow */` which creates symlinks for all configuration directories to your home directory.
+`just install` always requires an explicit host. Supported hosts:
+- `lambda` (MacBook Pro)
+- `omega` (Desktop Workstation / NixOS)
+
+Dry-run host install operations:
+
+```bash
+STOW_FLAGS="-nv" just install lambda
+STOW_FLAGS="-nv" just install omega
+```
+
+## 🧭 Host Packages
+
+Host definitions live in `.stow/hosts/*.packages`, one package per line. Blank
+lines and `#` comments are allowed.
+
+This repository intentionally keeps only two hosts:
+
+```bash
+lambda.packages
+omega.packages
+```
+
+Usage examples:
+
+```bash
+just install lambda
+just install omega
+```
+
+## 🌍 Cross-OS Path Strategy
+
+When config paths differ by OS (for example `~/Library/...` on macOS vs
+`~/.config/...` on Linux), use this approach:
+
+1. Keep truly shared configs in shared packages.
+2. Split path-specific configs into OS-specific packages (for example
+   `nushell-macos` and `nushell-linux`).
+3. Select the correct package in each host file (`.stow/hosts/*.packages`).
+4. Keep machine-only secrets/keys out of shared host files unless explicitly
+   intended.
 
 ## 📦 Packages
 
@@ -34,7 +75,7 @@ This runs `stow */` which creates symlinks for all configuration directories to 
 | [karabiner](https://karabiner-elements.pqrs.org/) | Keyboard customizer for macOS with Vim-style navigation |
 | [macmon](https://github.com/vladkens/macmon) 🦀⚙️ Sudoless performance monitoring for Apple Silicon processors. CPU / GPU / RAM usage, power consumption & temperature 🌡️ |
 | [nushell](https://www.nushell.sh/) | Modern shell written in Rust with structured data pipelines |
-| [nvim](https://neovim.io/) | Hyperextensible Vim-based text editor with Lua configuration |
+| [neovim](https://neovim.io/) | Hyperextensible Vim-based text editor with Lua configuration |
 | [profile](https://www.gnu.org/software/bash/) | Basic shell profile configuration |
 | [readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File.html) | GNU Readline configuration for command-line editing |
 | [skhd](https://github.com/koekeishiya/skhd) | Simple hotkey daemon for macOS system-wide shortcuts |
