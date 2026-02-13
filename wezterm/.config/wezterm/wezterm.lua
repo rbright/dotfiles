@@ -22,7 +22,7 @@ end
 if file_exists(nu_bin) then
   config.default_prog = { nu_bin }
 else
-  config.default_prog = { "/bin/zsh", "-l" }
+  config.default_prog = { "zsh", "-l" }
 end
 
 config.alternate_buffer_wheel_scroll_speed = 1
