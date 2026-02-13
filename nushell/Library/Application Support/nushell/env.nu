@@ -89,6 +89,7 @@ let paths_to_add = [
     # Nix
     ($env.HOME | path join ".nix-profile/bin")
     "/nix/var/nix/profiles/default/bin"
+    "/run/wrappers/bin"
     "/run/current-system/sw/bin"
 
     # Node.js - bun

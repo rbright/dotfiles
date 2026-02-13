@@ -53,6 +53,7 @@ path=(
   # Nix
   $HOME/.nix-profile/bin
   "/nix/var/nix/profiles/default/bin"
+  "/run/wrappers/bin"
   "/run/current-system/sw/bin"
 
   # Go
