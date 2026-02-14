@@ -28,6 +28,20 @@ STOW_FLAGS="-nv" just install lambda
 STOW_FLAGS="-nv" just install omega
 ```
 
+Remove (unstow) dotfiles for a specific host:
+
+```bash
+just uninstall lambda
+just uninstall omega
+```
+
+Dry-run host uninstall operations:
+
+```bash
+STOW_FLAGS="-nv" just uninstall lambda
+STOW_FLAGS="-nv" just uninstall omega
+```
+
 ## 🧭 Host Packages
 
 Host definitions live in `.stow/hosts/*.packages`, one package per line. Blank
