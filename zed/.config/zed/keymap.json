@@ -13,6 +13,14 @@
       "ctrl-`": "editor::ToggleFocus",
       // File Finder
       "cmd-p": "file_finder::Toggle",
+      // Recent projects/files picker
+      "alt-cmd-o": ["projects::OpenRecent", { "create_new_window": false }],
+      // Close active item / close window
+      "cmd-w": "pane::CloseActiveItem",
+      "cmd-shift-w": "workspace::CloseWindow",
+      // Tab Navigation (macOS style)
+      "cmd-shift-[": "pane::ActivatePrevItem",
+      "cmd-shift-]": "pane::ActivateNextItem",
       // Terminal
       "cmd-`": "terminal_panel::Toggle",
       // Agent Panel
@@ -25,18 +33,21 @@
   {
     "context": "Editor",
     "bindings": {
+      // Select All
+      "cmd-a": "editor::SelectAll",
+      // Pane Splitting (macOS style)
+      "cmd-\\": "pane::SplitRight",
+      "cmd-shift-\\": "pane::SplitDown",
       // Pane Splitting
-      "ctrl-shift-h": "pane::SplitLeft",
-      "ctrl-shift-j": "pane::SplitDown",
-      "ctrl-shift-k": "pane::SplitUp",
-      "ctrl-shift-l": "pane::SplitRight",
+      "cmd-shift-h": "pane::SplitLeft",
+      "cmd-shift-j": "pane::SplitDown",
+      "cmd-shift-k": "pane::SplitUp",
+      "cmd-shift-l": "pane::SplitRight",
       // Pane Navigation
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      // Close Pane
-      "ctrl-q": "pane::CloseAllItems",
+      "cmd-h": "workspace::ActivatePaneLeft",
+      "cmd-j": "workspace::ActivatePaneDown",
+      "cmd-k": "workspace::ActivatePaneUp",
+      "cmd-l": "workspace::ActivatePaneRight",
     }
   },
   {
@@ -60,7 +71,7 @@
   {
     "context": "(GitPanel && ChangesList)",
     "bindings": {
-      "ctrl-s": "git::StageFile"
+      "cmd-s": "git::StageFile"
     }
   },
   {
