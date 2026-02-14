@@ -1,5 +1,6 @@
 -- Setup nvim-cmp capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local uv = vim.uv or vim.loop
 
 require("mason-lspconfig").setup({
 	automatic_installation = false,
@@ -14,22 +15,18 @@ require("mason-lspconfig").setup({
 		"helm_ls",
 		"html",
 		"jsonls",
-		"kotlin_language_server",
 		"lua_ls",
 		"marksman",
 		"nil_ls",
 		"pyright",
-		"ruff",
 		"sqls",
 		"tailwindcss",
 		"taplo",
-		"terraformls",
-		"tflint",
 		"yamlls",
 	},
 })
 
-require("lspconfig").dockerls.setup({
+vim.lsp.config("dockerls", {
 	capabilities = capabilities,
 	settings = {
 		docker = {
@@ -42,19 +39,16 @@ require("lspconfig").dockerls.setup({
 	},
 })
 
-require("lspconfig").docker_compose_language_service.setup({
+vim.lsp.config("docker_compose_language_service", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	on_init = function(client)
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
-			if
-				path ~= vim.fn.stdpath("config")
-				and (vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc"))
-			then
+			if path ~= vim.fn.stdpath("config") and (uv.fs_stat(path .. "/.luarc.json") or uv.fs_stat(path .. "/.luarc.jsonc")) then
 				return
 			end
 		end
@@ -84,18 +78,20 @@ require("lspconfig").lua_ls.setup({
 	},
 })
 
-require("lspconfig").pyright.setup({
+vim.lsp.config("pyright", {
 	capabilities = capabilities,
-	python = {
-		analysis = {
-			autoSearchPaths = true,
-			diagnosticMode = "openFilesOnly",
-			useLibraryCodeForTypes = true,
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "openFilesOnly",
+				useLibraryCodeForTypes = true,
+			},
 		},
 	},
 })
 
-require("lspconfig").ruff.setup({
+vim.lsp.config("ruff", {
 	capabilities = capabilities,
 	init_options = {
 		settings = {
@@ -103,3 +99,21 @@ require("lspconfig").ruff.setup({
 		},
 	},
 })
+
+-- Use Nix-managed `ruff` directly instead of Mason's Python-based installer.
+if vim.fn.executable("ruff") == 1 then
+	vim.lsp.enable("ruff")
+end
+
+-- Prefer system binaries for these language servers to avoid Mason unzip failures.
+if vim.fn.executable("terraform-ls") == 1 then
+	vim.lsp.enable("terraformls")
+end
+
+if vim.fn.executable("tflint") == 1 then
+	vim.lsp.enable("tflint")
+end
+
+if vim.fn.executable("kotlin-language-server") == 1 then
+	vim.lsp.enable("kotlin_language_server")
+end

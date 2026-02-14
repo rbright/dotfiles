@@ -1,7 +1,8 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		version = false,
+		-- Pin pre-v1 API until config is migrated from `configs.setup`.
+		version = "v0.10.0",
 		build = ":TSUpdate",
 		event = { "VeryLazy" },
 

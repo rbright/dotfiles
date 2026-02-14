@@ -1,6 +1,4 @@
 # Host: lambda (MacBook Pro)
-#
-# One package per line. Blank lines and # comments are allowed.
 
 # Shared CLI/editor packages
 atuin
