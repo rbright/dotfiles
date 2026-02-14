@@ -1,20 +1,4 @@
 # Host: omega (Desktop Workstation / NixOS)
-#
-# One package per line. Blank lines and # comments are allowed.
 
-# Shared CLI/editor packages
-atuin
-btop
-carapace
-curl
-git
-github
 neovim
-profile
-readline
-starship
-tmux
-wezterm
 zed
-zellij
-zsh

@@ -1,7 +1,4 @@
 require("mason").setup({
-	ensure_installed = {
-		"hadolint",
-	},
 	ui = {
 		icons = {
 			package_installed = "✓",

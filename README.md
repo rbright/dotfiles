@@ -61,6 +61,9 @@ just install lambda
 just install omega
 ```
 
+`omega.packages` is intentionally scoped to `zed` and `neovim` only. Other
+NixOS dotfiles for `omega` are managed in `/home/rbright/Projects/nixos-config`.
+
 ## 🌍 Cross-OS Path Strategy
 
 When config paths differ by OS (for example `~/Library/...` on macOS vs
