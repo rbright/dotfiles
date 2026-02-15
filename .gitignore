@@ -1,28 +1,36 @@
-**/__pycache__
+# macOS
 **/.DS_Store
 **/.zcompdump*
+
+# Python
+**/__pycache__
 **/*.pyc
-**/*.un~
 
 # AI agents
 PLAN.md
 SESSION.md
 
-# 1Password
-1password
+# Projects
+**/projects.nu
+**/projects.zsh
 
 # atuin
-atuin/.config/atuin/history.db*
-atuin/.config/atuin/key
+**/.config/atuin/**
+!**/.config/atuin/config.toml
+**/.local/share/atuin/**
+!**/.local/share/atuin/init.nu
+
+# 1password
+1password
 
 # aws
 aws
 
 # boto
-.boto
+boto
 
 # btop
-btop/.config/btop/btop.log
+**/.config/btop/btop.log
 
 # dash
 dash
@@ -31,7 +39,7 @@ dash
 gnupg/.gnupg
 
 # karibiner
-karibiner/.config/karabiner/automatic_backups
+**/.config/karabiner/automatic_backups
 
 # nushell
 nushell/**/config/projects.nu
@@ -49,15 +57,15 @@ ssh
 tableplus/Library
 
 # tmux
-tmux/.config/tmux/plugins
-tmux/.config/tmux/sessions
+**/.config/tmux/plugins
+**/.config/tmux/sessions
+
+# vim
+**/*.un~
 
 # vnc
-vnc/.vnc
+**/.vnc
 
 # zed
-zed/.config/zed/conversations
-zed/.config/zed/prompts
-
-# zsh
-zsh/.zsh/projects.zsh
+**/.config/zed/conversations
+**/.config/zed/prompts
