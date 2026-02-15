@@ -38,7 +38,7 @@
       "milliseconds": 1000
     }
   },
-  "base_keymap": "Cursor",
+  "base_keymap": "VSCode",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_features": {
     "calt": false,
