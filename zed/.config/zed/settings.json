@@ -127,6 +127,7 @@
     ],
     "JSONC": [
       "**/.vscode/**/*.json",
+      "**/.config/waybar/**/config",
       "**/.zed/**/*.json",
       "**/*.hujson",
     ],
