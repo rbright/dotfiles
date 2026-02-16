@@ -21,31 +21,9 @@ just install omega
 - `lambda` (MacBook Pro)
 - `omega` (Desktop Workstation / NixOS)
 
-Dry-run host install operations:
-
-```bash
-STOW_FLAGS="-nv" just install lambda
-STOW_FLAGS="-nv" just install omega
-```
-
-Remove (unstow) dotfiles for a specific host:
-
-```bash
-just uninstall lambda
-just uninstall omega
-```
-
-Dry-run host uninstall operations:
-
-```bash
-STOW_FLAGS="-nv" just uninstall lambda
-STOW_FLAGS="-nv" just uninstall omega
-```
-
 ## 🧭 Host Packages
 
-Host definitions live in `.stow/hosts/*.packages`, one package per line. Blank
-lines and `#` comments are allowed.
+Host definitions live in `.stow/hosts/*.packages`, one package per line. Blank lines and `#` comments are allowed.
 
 This repository intentionally keeps only two hosts:
 
@@ -54,27 +32,14 @@ lambda.packages
 omega.packages
 ```
 
-Usage examples:
-
-```bash
-just install lambda
-just install omega
-```
-
-`omega.packages` is intentionally scoped to `zed` and `neovim` only. Other
-NixOS dotfiles for `omega` are managed in `/home/rbright/Projects/nixos-config`.
-
 ## 🌍 Cross-OS Path Strategy
 
-When config paths differ by OS (for example `~/Library/...` on macOS vs
-`~/.config/...` on Linux), use this approach:
+When config paths differ by OS (for example `~/Library/...` on macOS vs `~/.config/...` on Linux), use this approach:
 
 1. Keep truly shared configs in shared packages.
-2. Split path-specific configs into OS-specific packages (for example
-   `nushell-macos` and `nushell-linux`).
+2. Split path-specific configs into OS-specific packages (for example `nushell-macos` and `nushell-linux`).
 3. Select the correct package in each host file (`.stow/hosts/*.packages`).
-4. Keep machine-only secrets/keys out of shared host files unless explicitly
-   intended.
+4. Keep machine-only secrets/keys out of shared host files unless explicitly intended.
 
 ## 📦 Packages
 
