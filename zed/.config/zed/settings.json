@@ -112,6 +112,7 @@
     "**/dist",
     "**/node_modules",
     "**/reports",
+    "**/result",
     "**/.map.js"
   ],
   "file_types": {
