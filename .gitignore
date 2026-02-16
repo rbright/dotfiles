@@ -32,9 +32,6 @@ boto
 # btop
 **/.config/btop/btop.log
 
-# dash
-dash
-
 # gnupg
 gnupg/.gnupg
 
@@ -42,7 +39,6 @@ gnupg/.gnupg
 **/.config/karabiner/automatic_backups
 
 # nushell
-nushell/**/config/projects.nu
 nushell/**/history.*
 nushell/**/plugin.msgpackz
 nushell/**/vendor
