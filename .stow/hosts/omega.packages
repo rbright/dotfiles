@@ -1,4 +1,8 @@
 # Host: omega (Desktop Workstation / NixOS)
 
+aws
+boto
 neovim
+ssh
+vnc
 zed
