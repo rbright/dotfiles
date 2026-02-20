@@ -121,8 +121,8 @@
     "context": "os == linux > Editor",
     "bindings": {
       // Copy / Paste
-      "super-c": "editor::Copy",
-      "super-v": "editor::Paste",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
       // Select All
       "ctrl-a": "editor::SelectAll",
       // Pane Navigation
@@ -140,8 +140,8 @@
   {
     "context": "os == linux > Terminal",
     "bindings": {
-      "super-c": "terminal::Copy",
-      "super-v": "terminal::Paste"
+      "ctrl-shift-c": "terminal::Copy",
+      "ctrl-shift-v": "terminal::Paste"
     }
   },
   {
