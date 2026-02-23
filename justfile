@@ -1,4 +1,4 @@
-# Use bash with strict error checking
+z`# Use bash with strict error checking
 set shell := ["bash", "-euo", "pipefail", "-c"]
 
 # Allow passing arguments to recipes

@@ -1,29 +1,10 @@
 # Host: lambda (MacBook Pro)
 
 # Shared CLI/editor packages
-atuin
-carapace
-curl
-git
-github
-ghostty
 neovim
-profile
-readline
-starship
-tmux
-wezterm
+vnc
 zed
-zellij
-zsh
 
 # macOS-only app locations
-aerospace
-espanso
-karibiner
-macmon
 nushell
-procs
-skhd
 tableplus
-xcode
