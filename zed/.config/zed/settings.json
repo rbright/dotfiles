@@ -3,11 +3,11 @@
     "agents_panel_dock": "left",
     "button": true,
     "commit_message_model": {
-      "model": "gpt-5.2",
+      "model": "gpt-5.3-codex",
       "provider": "zed.dev"
     },
     "default_model": {
-      "model": "gpt-5.2",
+      "model": "gpt-5.3-codex",
       "provider": "zed.dev"
     },
     "default_view": "thread",
@@ -18,13 +18,13 @@
     "expand_terminal_card": true,
     "inline_alternatives": [],
     "inline_assistant_model": {
-      "model": "gpt-5.2",
+      "model": "gpt-5.3-codex",
       "provider": "zed.dev"
     },
     "model_parameters": [],
     "play_sound_when_agent_done": true,
     "thread_summary_model": {
-      "model": "gpt-5.2",
+      "model": "gpt-5.3-codex",
       "provider": "zed.dev"
     },
     "use_modifier_to_send": true
@@ -125,6 +125,9 @@
       "**/templates/**/*.tpl",
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml"
+    ],
+    "INI": [
+      "**/hypr/**/*.conf"
     ],
     "JSONC": [
       "**/.vscode/**/*.json",

@@ -10,14 +10,25 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-alt-super-p": "git::Worktree",
+      "ctrl-alt-p": "git::Worktree",
+      // Project Picker
+      "ctrl-alt-o": [
+        "projects::OpenRecent",
+        {
+          "create_new_window": true
+        }
+      ],
       "ctrl-alt-super-o": [
         "projects::OpenRemote",
         {
-          "from_existing_connection": false,
-          "create_new_window": false
+          "create_new_window": false,
+          "from_existing_connection": false
         }
       ],
+      // Panels
+      "ctrl-shift-g": "git_panel::ToggleFocus",
+      "ctrl-shift-b": "outline_panel::ToggleFocus",
+      "ctrl-`": "terminal_panel::Toggle"
     }
   },
   {
@@ -26,19 +37,9 @@
       "ctrl-k ctrl-w": "workspace::CloseAllItemsAndPanes",
       // File Finder
       "ctrl-p": "file_finder::Toggle",
-      // Project Picker
-      "ctrl-alt-o": [
-        "projects::OpenRecent",
-        {
-          "create_new_window": true
-        }
-      ],
       // Panels
       "ctrl-?": "agent::ToggleFocus",
-      "ctrl-shift-g": "git_panel::ToggleFocus",
-      "ctrl-shift-b": "outline_panel::ToggleFocus",
       "ctrl-shift-e": "project_panel::ToggleFocus",
-      "ctrl-`": "terminal_panel::Toggle"
     }
   },
   {
@@ -46,21 +47,11 @@
     "bindings": {
       "cmd-k cmd-w": "workspace::CloseAllItemsAndPanes",
       "cmd-shift-w": "workspace::CloseWindow",
-      // Editor
-      "ctrl-`": "editor::ToggleFocus",
       // File Finder
       "cmd-p": "file_finder::Toggle",
-      // Project Picker
-      "alt-cmd-o": [
-        "projects::OpenRecent",
-        {
-          "create_new_window": false
-        }
-      ],
       // Panels
-      "cmd-shift-a": "agent::ToggleFocus",
-      "ctrl-alt-cmd-shift-g": "git_panel::ToggleFocus",
-      "cmd-`": "terminal_panel::Toggle"
+      "cmd-?": "agent::ToggleFocus",
+      "cmd-shift-e": "project_panel::ToggleFocus"
     }
   },
   // Pane
@@ -107,24 +98,7 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-i": null
-    }
-  },
-  {
-    "context": "Editor && mode == full",
-    "bindings": {
-      "ctrl-shift-o": "outline::Toggle",
-      "ctrl-g": "go_to_line::Toggle",
-    },
-  },
-  {
-    "context": "os == linux > Editor",
-    "bindings": {
-      // Copy / Paste
-      "ctrl-c": "editor::Copy",
-      "ctrl-v": "editor::Paste",
-      // Select All
-      "ctrl-a": "editor::SelectAll",
+      "ctrl-shift-i": null,
       // Pane Navigation
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
@@ -138,67 +112,45 @@
     }
   },
   {
-    "context": "os == linux > Terminal",
+    "context": "Editor && mode == full",
     "bindings": {
-      "ctrl-shift-c": "terminal::Copy",
-      "ctrl-shift-v": "terminal::Paste"
+      "ctrl-shift-o": "outline::Toggle",
+      "ctrl-g": "go_to_line::Toggle",
+    },
+  },
+  {
+    "context": "os == linux > Editor",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
+      "ctrl-a": "editor::SelectAll",
     }
   },
   {
     "context": "os == macos > Editor",
     "bindings": {
-      // Select All
       "cmd-a": "editor::SelectAll",
-      // Pane Navigation
-      "cmd-h": "workspace::ActivatePaneLeft",
-      "cmd-j": "workspace::ActivatePaneDown",
-      "cmd-k": "workspace::ActivatePaneUp",
-      "cmd-l": "workspace::ActivatePaneRight",
-      // Pane Splitting
-      "cmd-shift-h": "pane::SplitLeft",
-      "cmd-shift-j": "pane::SplitDown",
-      "cmd-shift-k": "pane::SplitUp",
-      "cmd-shift-l": "pane::SplitRight"
     }
   },
   // AgentPanel
   {
-    "context": "os == macos > AgentPanel",
+    "context": "AgentPanel",
     "bindings": {
       "alt-cmd-p": null
     }
   },
   // Git Panel
   {
-    "context": "os == macos > (GitPanel && ChangesList)",
+    "context": "GitPanel && ChangesList",
     "bindings": {
-      "cmd-s": "git::StageFile",
-      "cmd-shift-g": "git::GenerateCommitMessage"
-    }
-  },
-  {
-    "context": "os == linux > (GitPanel && ChangesList)",
-    "bindings": {
-      "ctrl-s": "git::StageFile",
       "ctrl-shift-g": "git::GenerateCommitMessage"
     }
   },
   {
     "context": "CommitEditor > Editor",
     "bindings": {
-      "alt-tab": null
-    }
-  },
-  {
-    "context": "os == linux > (CommitEditor > Editor)",
-    "bindings": {
+      "alt-tab": null,
       "ctrl-shift-g": "git::GenerateCommitMessage"
-    }
-  },
-  {
-    "context": "os == macos > (CommitEditor > Editor)",
-    "bindings": {
-      "cmd-shift-g": "git::GenerateCommitMessage"
     }
   },
   {
@@ -206,5 +158,13 @@
     "bindings": {
       "alt-tab": null
     }
-  }
+  },
+  // Terminal
+  {
+    "context": "os == linux > Terminal",
+    "bindings": {
+      "ctrl-shift-c": "terminal::Copy",
+      "ctrl-shift-v": "terminal::Paste"
+    }
+  },
 ]
