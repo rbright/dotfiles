@@ -39,13 +39,13 @@
     }
   },
   "base_keymap": "VSCode",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "TX-02",
   "buffer_font_features": {
     "calt": false,
     "liga": false
   },
   "buffer_font_size": 15,
-  "buffer_font_weight": 700,
+  "buffer_font_weight": 650.0,
   "buffer_line_height": "standard",
   "calls": {
     "mute_on_join": true,
@@ -266,7 +266,6 @@
     },
     "Markdown": {
       "format_on_save": "on",
-      "formatter": "prettier",
       "remove_trailing_whitespace_on_save": true,
       "tab_size": 2
     },
@@ -644,8 +643,8 @@
   "soft_wrap": "none",
   "ssh_connections": [
     {
-      "args": [],
       "host": "moonrise-00",
+      "args": [],
       "projects": [
         {
           "paths": [
@@ -655,8 +654,8 @@
       ]
     },
     {
-      "args": [],
       "host": "moonrise-01",
+      "args": [],
       "projects": [
         {
           "paths": [
@@ -666,27 +665,32 @@
       ]
     },
     {
-      "args": [],
       "host": "moonrise-02",
+      "args": [],
       "projects": [
         {
           "paths": [
             "/home/rbright"
           ]
+        },
+        {
+          "paths": [
+            "/home/rbright/Projects/fourpillar/platform"
+          ]
         }
       ]
     },
     {
-      "args": [],
       "host": "reachy",
-      "nickname": "Reachy Mini",
+      "args": [],
       "projects": [
         {
           "paths": [
             "/home/pollen"
           ]
         }
-      ]
+      ],
+      "nickname": "Reachy Mini"
     }
   ],
   "tab_bar": {
