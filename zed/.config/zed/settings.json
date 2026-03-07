@@ -30,7 +30,7 @@
     "use_modifier_to_send": true
   },
   "agent_buffer_font_size": 15,
-  "agent_ui_font_size": 14,
+  "agent_ui_font_size": 15,
   "audio": {
     "experimental.legacy_audio_compatible": false
   },
@@ -221,12 +221,12 @@
     },
     "JSON": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.oxlint": true
       },
       "format_on_save": "on",
       "formatter": "language_server",
       "language_servers": [
-        "eslint"
+        "oxlint"
       ],
       "preferred_line_length": 80,
       "prettier": {
@@ -236,10 +236,13 @@
     },
     "JSONC": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.oxlint": true
       },
       "format_on_save": "on",
       "formatter": "language_server",
+      "language_servers": [
+        "oxlint"
+      ],
       "preferred_line_length": 80,
       "prettier": {
         "allowed": false
@@ -248,10 +251,13 @@
     },
     "JavaScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.oxlint": true
       },
       "format_on_save": "on",
       "formatter": "language_server",
+      "language_servers": [
+        "oxlint"
+      ],
       "preferred_line_length": 120,
       "prettier": {
         "allowed": false
@@ -357,10 +363,13 @@
     },
     "TSX": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.oxlint": true
       },
       "format_on_save": "on",
       "formatter": "language_server",
+      "language_servers": [
+        "oxlint"
+      ],
       "prettier": {
         "allowed": false
       },
@@ -380,13 +389,13 @@
     },
     "TypeScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.oxlint": true
       },
       "format_on_save": "on",
       "formatter": "language_server",
       "language_servers": [
         "vtsls",
-        "eslint"
+        "oxlint"
       ],
       "prettier": {
         "allowed": false
@@ -776,7 +785,7 @@
     "dlig": true,
     "ss04": true
   },
-  "ui_font_size": 14,
+  "ui_font_size": 15,
   "unnecessary_code_fade": 0.5,
   "use_autoclose": true,
   "vim_mode": true
