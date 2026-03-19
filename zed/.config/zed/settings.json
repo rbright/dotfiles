@@ -115,7 +115,6 @@
     "**/.svn",
     "**/.venv",
     "**/build",
-    "**/cassettes",
     "**/coverage",
     "**/dist",
     "**/node_modules",
