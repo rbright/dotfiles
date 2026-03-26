@@ -1,85 +1,113 @@
--------------------------------------------------------------------------------
--- File Management
--------------------------------------------------------------------------------
+local map = vim.keymap.set
 
--- Leader-w to save
-vim.keymap.set("n", "<leader>w", ":w!<CR>")
+local function zed_picker(picker, opts)
+  return function()
+    opts = opts or {}
+    if type(picker) == "function" then
+      picker(opts)
+      return
+    end
+    Snacks.picker[picker](opts)
+  end
+end
 
--- Leader-q to quit
-vim.keymap.set("n", "<leader>q", ":q!<CR>")
+local function split(direction)
+  return function()
+    if direction == "left" then
+      vim.cmd.vsplit()
+      vim.cmd.wincmd("h")
+    elseif direction == "right" then
+      vim.cmd.vsplit()
+      vim.cmd.wincmd("l")
+    elseif direction == "up" then
+      vim.cmd.split()
+      vim.cmd.wincmd("k")
+    else
+      vim.cmd.split()
+      vim.cmd.wincmd("j")
+    end
+  end
+end
 
--------------------------------------------------------------------------------
--- Buffers
--------------------------------------------------------------------------------
+local function goto_line()
+  vim.ui.input({ prompt = "Go to line: " }, function(input)
+    if not input or input == "" then
+      return
+    end
 
--- Leader-b to switch buffer
-vim.keymap.set("n", "<C-D-h>", ":bprev<cr>")
-vim.keymap.set("n", "<C-D-j>", ":bnext<cr>")
-vim.keymap.set("n", "<C-D-k>", ":bprev<cr>")
-vim.keymap.set("n", "<C-D-l>", ":bnext<cr>")
+    local line = tonumber(input)
+    if line then
+      vim.api.nvim_win_set_cursor(0, { line, 0 })
+    end
+  end)
+end
 
--- Ctrl-q to close a buffer
-vim.keymap.set("n", "<C-q>", ":bd<cr>", { noremap = true, silent = true })
+map({ "n", "i", "v" }, "<F1>", "<Nop>", { silent = true })
+map("i", "jj", "<Esc>", { desc = "Exit insert mode" })
+map("n", ";", ":")
 
--------------------------------------------------------------------------------
--- Splits
-------------------------------------------------------------------------------
+map({ "n", "i", "v" }, "<C-s>", function()
+  vim.cmd.write()
+end, { desc = "Save file" })
+map("n", "<leader>w", function()
+  vim.cmd.write()
+end, { desc = "Save file" })
+map("n", "<leader>q", function()
+  vim.cmd.quit()
+end, { desc = "Quit window" })
+map("n", "<C-q>", function()
+  Snacks.bufdelete()
+end, { desc = "Close buffer" })
 
--- Ctrl-Shift + h/j/k/l to split horizontally and vertically
-vim.keymap.set("n", "<C-S-h>", ":vsplit<CR>")
-vim.keymap.set("n", "<C-S-j>", ":split<CR>")
-vim.keymap.set("n", "<C-S-k>", ":split<CR>")
-vim.keymap.set("n", "<C-S-l>", ":vsplit<CR>")
+map("n", "<C-p>", zed_picker("smart"), { desc = "Find files" })
+map("n", "<D-p>", zed_picker("smart"), { desc = "Find files" })
+map("n", "<leader>p", zed_picker("commands", { layout = { preset = "vscode" } }), { desc = "Command palette" })
+map("n", "<D-S-p>", zed_picker("commands", { layout = { preset = "vscode" } }), { desc = "Command palette" })
+map("n", "<M-p>", zed_picker("commands", { layout = { preset = "vscode" } }), { desc = "Command palette" })
+map("n", "<M-e>", function()
+  Snacks.explorer()
+end, { desc = "Project explorer" })
+map("n", "<leader>e", function()
+  Snacks.explorer()
+end, { desc = "Project explorer" })
+map("n", "<M-b>", zed_picker("lsp_symbols", { layout = { preset = "right" } }), { desc = "Outline" })
+map("n", "<leader>co", zed_picker("lsp_symbols", { layout = { preset = "right" } }), { desc = "Outline" })
+map("n", "<M-g>", zed_picker("git_status", { layout = { preset = "right" } }), { desc = "Git status" })
+map("n", "<leader>gs", zed_picker("git_status", { layout = { preset = "right" } }), { desc = "Git status" })
+map("n", "<C-M-o>", zed_picker("recent"), { desc = "Open recent" })
 
--- Ctrl + h/j/k/l to navigate between splits
-vim.keymap.set("n", "<C-h>", "<C-W>h")
-vim.keymap.set("n", "<C-j>", "<C-W>j")
-vim.keymap.set("n", "<C-k>", "<C-W>k")
-vim.keymap.set("n", "<C-l>", "<C-W>l")
+map("n", "<C-g>", goto_line, { desc = "Go to line" })
+map("n", "<leader>o", zed_picker("lsp_symbols", { layout = { preset = "right" } }), { desc = "Document symbols" })
 
--------------------------------------------------------------------------------
--- Search
--------------------------------------------------------------------------------
+map("n", "<C-h>", "<C-w>h", { desc = "Focus left pane" })
+map("n", "<C-j>", "<C-w>j", { desc = "Focus lower pane" })
+map("n", "<C-k>", "<C-w>k", { desc = "Focus upper pane" })
+map("n", "<C-l>", "<C-w>l", { desc = "Focus right pane" })
 
-vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", { silent = true })
+map("n", "<M-h>", split("left"), { desc = "Split left" })
+map("n", "<M-j>", split("down"), { desc = "Split down" })
+map("n", "<M-k>", split("up"), { desc = "Split up" })
+map("n", "<M-l>", split("right"), { desc = "Split right" })
 
--------------------------------------------------------------------------------
--- Editing
--------------------------------------------------------------------------------
+map("n", "<leader>/", function()
+  vim.cmd.nohlsearch()
+end, { desc = "Clear search highlights" })
+map("v", "<", "<gv", { desc = "Indent left" })
+map("v", ">", ">gv", { desc = "Indent right" })
+map("n", "Q", "@q", { desc = "Replay q macro" })
 
---- Q to execute the recorded macro
-vim.keymap.set("n", "Q", "@q")
-
--- Z to format the current paragraph or selection
-vim.keymap.set("v", "Z", "gq")
-vim.keymap.set("n", "Z", "gqap")
-
--- Reselect visual block after indent
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
-
--------------------------------------------------------------------------------
--- Miscellaneous
--------------------------------------------------------------------------------
-
--- Remap ESC to jj for faster mode switches
-vim.keymap.set("i", "jj", "<ESC>")
-
--- Remap ; to : for faster commands
-vim.keymap.set("n", ";", ":")
-
--- Ignore F1
-vim.keymap.set({ "i", "n", "v" }, "<F1>", "<ESC>")
-
--------------------------------------------------------------------------------
--- Standard Editor Bindings
--------------------------------------------------------------------------------
-
--- Cmd-p for file finder (using Snacks.nvim)
-vim.keymap.set("n", "<D-p>", function() Snacks.picker.files() end, { desc = "Find Files" })
-
--- Cmd-Shift-p for command palette
-vim.keymap.set("n", "<D-S-p>", ":Snacks picker.commands<CR>", { desc = "Command Palette" })
-
--- Cmd-` for terminal toggle
-vim.keymap.set("n", "<D-`>", function() Snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
+map("n", "<C-/>", function()
+  Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.35 } })
+end, { desc = "Toggle terminal" })
+map("n", "<C-_>", function()
+  Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.35 } })
+end, { desc = "Toggle terminal" })
+map("t", "<C-/>", function()
+  Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.35 } })
+end, { desc = "Toggle terminal" })
+map("t", "<C-_>", function()
+  Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.35 } })
+end, { desc = "Toggle terminal" })
+map("n", "<D-`>", function()
+  Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.35 } })
+end, { desc = "Toggle terminal" })
