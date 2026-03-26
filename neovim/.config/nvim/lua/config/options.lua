@@ -7,6 +7,30 @@ local function first_executable(...)
   end
 end
 
+local function has_env(name)
+  return vim.env[name] and vim.env[name] ~= ""
+end
+
+local function configure_clipboard()
+  local needs_osc52 = has_env("SSH_TTY")
+    or has_env("SSH_CONNECTION")
+    or has_env("TMUX")
+    or (
+      not has_env("WAYLAND_DISPLAY")
+      and not has_env("DISPLAY")
+      and vim.fn.exepath("pbcopy") == ""
+      and vim.fn.exepath("win32yank.exe") == ""
+      and vim.fn.exepath("clip.exe") == ""
+      and vim.fn.exepath("termux-clipboard-set") == ""
+    )
+
+  if needs_osc52 then
+    vim.g.clipboard = "osc52"
+  end
+
+  vim.opt.clipboard:append("unnamedplus")
+end
+
 vim.opt.termguicolors = true
 vim.opt.winborder = "rounded"
 
@@ -75,7 +99,8 @@ vim.opt.updatetime = 200
 vim.opt.wildignore = { "*.bak", "*.class", "*.pyc", "*.swp" }
 vim.opt.wildmode = { "longest", "full" }
 vim.opt.wrap = false
-vim.opt.clipboard:append("unnamedplus")
+
+configure_clipboard()
 
 local shell = first_executable("bash", "zsh", "sh")
 if shell then

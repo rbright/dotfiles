@@ -18,7 +18,7 @@ nvim-check:
     @echo "==> stylua"
     fd -e lua . neovim/.config/nvim -x stylua --check {}
     @echo "==> headless startup"
-    XDG_CONFIG_HOME="{{nvim_config_home}}" nvim --headless '+qa'
+    GOTELEMETRY=off XDG_CONFIG_HOME="{{nvim_config_home}}" nvim --headless '+qa'
     @echo "==> diff whitespace"
     git diff --check
 

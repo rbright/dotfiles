@@ -34,6 +34,18 @@ local function preferred_python_server()
   return nil
 end
 
+local function preferred_nix_server()
+  if has("nixd") then
+    return "nixd"
+  end
+
+  if has("nil") then
+    return "nil_ls"
+  end
+
+  return nil
+end
+
 M.servers = {
   bashls = {},
   dockerls = {
@@ -47,8 +59,11 @@ M.servers = {
       },
     },
   },
-  docker_compose_language_service = {},
+  -- Keep Dockerfile support, but skip the dedicated docker-compose server for now.
+  -- It adds noisy health warnings for specialized YAML sub-filetypes and is not
+  -- part of the core Zed-parity workflow.
   gopls = {
+    filetypes = { "go", "gomod" },
     settings = {
       gopls = {
         analyses = {
@@ -73,7 +88,8 @@ M.servers = {
     },
   },
   graphql = {},
-  helm_ls = {},
+  -- Skip the dedicated Helm server for now. The specialized Helm filetypes are
+  -- noisy in health output and are outside the current daily-driver baseline.
   html = {
     settings = {
       html = {
@@ -134,8 +150,11 @@ M.servers = {
       },
     },
   },
-  marksman = {},
+  marksman = {
+    filetypes = { "markdown" },
+  },
   nixd = {},
+  nil_ls = {},
   oxlint = {
     settings = {
       fixKind = "safe_fix",
@@ -214,9 +233,12 @@ M.servers = {
     },
   },
   sqls = {},
-  tailwindcss = {},
+  tailwindcss = {
+    filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
+  },
   taplo = {},
   terraformls = {
+    filetypes = { "terraform" },
     init_options = {
       experimentalFeatures = {
         prefillRequiredFields = true,
@@ -226,6 +248,7 @@ M.servers = {
   tflint = {},
   ty = {},
   vtsls = {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
     settings = {
       javascript = {
         inlayHints = {
@@ -268,6 +291,7 @@ M.servers = {
     },
   },
   yamlls = {
+    filetypes = { "yaml" },
     settings = {
       yaml = {
         format = {
@@ -284,15 +308,13 @@ M.servers = {
 M.mason_servers = {
   "bashls",
   "dockerls",
-  "docker_compose_language_service",
   "gopls",
   "graphql",
-  "helm_ls",
   "html",
   "jsonls",
   "lua_ls",
   "marksman",
-  "nixd",
+  "nil_ls",
   "oxlint",
   "pyright",
   "ruff",
@@ -322,15 +344,12 @@ function M.setup()
   for _, server in ipairs({
     "bashls",
     "dockerls",
-    "docker_compose_language_service",
     "gopls",
     "graphql",
-    "helm_ls",
     "html",
     "jsonls",
     "lua_ls",
     "marksman",
-    "nixd",
     "ruff",
     "rust_analyzer",
     "sqls",
@@ -349,6 +368,11 @@ function M.setup()
   local python_server = preferred_python_server()
   if python_server then
     enable(python_server)
+  end
+
+  local nix_server = preferred_nix_server()
+  if nix_server then
+    enable(nix_server)
   end
 
   if has("oxlint") then

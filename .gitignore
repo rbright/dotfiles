@@ -59,6 +59,9 @@ tableplus/Library
 # vim
 **/*.un~
 
+# neovim generated state
+neovim/.config/go/
+
 # vnc
 **/.vnc
 

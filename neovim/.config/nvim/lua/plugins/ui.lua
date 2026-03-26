@@ -14,7 +14,7 @@ return {
   },
   {
     "folke/snacks.nvim",
-    priority = 900,
+    priority = 1000,
     lazy = false,
     keys = {
       {
