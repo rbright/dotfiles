@@ -1,5 +1,6 @@
-require("nvim-lint").setup({
-	linters_by_ft = {
-		dockerfile = { "hadolint" },
-	},
-})
+local lint = require("lint")
+
+lint.linters_by_ft = {
+  dockerfile = { "hadolint" },
+  terraform = { "tflint" },
+}

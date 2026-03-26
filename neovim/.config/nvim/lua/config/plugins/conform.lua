@@ -1,24 +1,17 @@
 require("conform").setup({
-	formatters_by_ft = {
-		javascript = { "eslint_d" },
-		javascriptreact = { "eslint_d" },
-		json = { "prettierd" },
-		lua = { "stylua" },
-		python = { "ruff_format" },
-		sql = { "sqlfluff" },
-		typescript = { "eslint_d" },
-		typescriptreact = { "eslint_d" },
-	},
-	format_on_save = {
-		lsp_format = "fallback",
-		timeout_ms = 500,
-	},
-})
-
--- Format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
+  -- Stay close to Zed's formatter choices:
+  -- - JS/TS/JSON/TOML/Python/Go/Rust prefer language-server formatting
+  -- - Nix uses nixfmt
+  -- - YAML/Markdown/CSS still use prettierd
+  -- - Shell uses shfmt
+  formatters_by_ft = {
+    css = { "prettierd" },
+    markdown = { "prettierd" },
+    nix = { "nixfmt" },
+    sh = { "shfmt" },
+    sql = { "sqlfluff" },
+    yaml = { "prettierd" },
+    zsh = { "shfmt" },
+  },
+  format_on_save = nil,
 })

@@ -1,8 +1,9 @@
 return {
-	{
-		"stevearc/conform.nvim",
-	},
-	{
-		"nvimtools/none-ls.nvim",
-	},
+  {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    config = function()
+      require("config.plugins.conform")
+    end,
+  },
 }
