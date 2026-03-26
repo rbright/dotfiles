@@ -1,14 +1,26 @@
-z`# Use bash with strict error checking
+# Use bash with strict error checking
 set shell := ["bash", "-euo", "pipefail", "-c"]
 
 # Allow passing arguments to recipes
 set positional-arguments
 
 hosts_dir := ".stow/hosts"
+nvim_config_home := "neovim/.config"
 
 # Show available recipes with their descriptions
 default:
     @just --list
+
+# Validate the Neovim dotfiles package.
+nvim-check:
+    @echo "==> stow dry-run"
+    stow -nv neovim
+    @echo "==> stylua"
+    fd -e lua . neovim/.config/nvim -x stylua --check {}
+    @echo "==> headless startup"
+    XDG_CONFIG_HOME="{{nvim_config_home}}" nvim --headless '+qa'
+    @echo "==> diff whitespace"
+    git diff --check
 
 # Install dotfiles for one host.
 # Known hosts: lambda, omega
