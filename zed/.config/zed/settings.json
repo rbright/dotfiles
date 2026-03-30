@@ -2,11 +2,11 @@
   "agent": {
     "button": true,
     "commit_message_model": {
-      "model": "gpt-5.3-codex",
+      "model": "gpt-5.4",
       "provider": "zed.dev"
     },
     "default_model": {
-      "model": "gpt-5.3-codex",
+      "model": "gpt-5.4",
       "provider": "zed.dev"
     },
     "default_view": "thread",
@@ -17,14 +17,14 @@
     "expand_terminal_card": true,
     "inline_alternatives": [],
     "inline_assistant_model": {
-      "model": "gpt-5.3-codex",
+      "model": "gpt-5.4",
       "provider": "zed.dev"
     },
     "model_parameters": [],
     "play_sound_when_agent_done": true,
     "show_turn_stats": true,
     "thread_summary_model": {
-      "model": "gpt-5.3-codex",
+      "model": "gpt-5.4",
       "provider": "zed.dev"
     },
     "use_modifier_to_send": true
