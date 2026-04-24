@@ -44,7 +44,7 @@
   "buffer_font_fallbacks": [
     "JetBrainsMono Nerd Font Mono"
   ],
-  "buffer_font_family": "TX-02",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_features": {
     "calt": true,
     "dlig": true,
@@ -750,7 +750,7 @@
     "font_fallbacks": [
       "JetBrainsMono Nerd Font Mono"
     ],
-    "font_family": "TX-02",
+    "font_family": "JetBrainsMono Nerd Font Mono",
     "font_features": {
       "calt": true,
       "dlig": true,
@@ -778,7 +778,7 @@
   "ui_font_fallbacks": [
     "JetBrainsMono Nerd Font Mono"
   ],
-  "ui_font_family": "TX-02",
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "ui_font_features": {
     "calt": true,
     "dlig": true,
