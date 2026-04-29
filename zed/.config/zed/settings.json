@@ -21,7 +21,7 @@
       "provider": "zed.dev"
     },
     "model_parameters": [],
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "show_turn_stats": true,
     "thread_summary_model": {
       "model": "gpt-5.4",
@@ -29,8 +29,20 @@
     },
     "use_modifier_to_send": true
   },
-  "agent_buffer_font_size": 15,
-  "agent_ui_font_size": 15,
+  "agent_buffer_font_size": 19.0,
+  "agent_servers": {
+    "hermes-agent": {
+      "type": "custom",
+      "command": "hermes",
+      "args": [
+        "acp"
+      ]
+    },
+    "pi-acp": {
+      "type": "registry"
+    }
+  },
+  "agent_ui_font_size": 19.0,
   "audio": {
     "experimental.legacy_audio_compatible": false
   },
@@ -44,14 +56,16 @@
   "buffer_font_fallbacks": [
     "JetBrainsMono Nerd Font Mono"
   ],
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "TX-02",
   "buffer_font_features": {
     "calt": true,
     "dlig": true,
     "ss04": true
   },
-  "buffer_font_size": 15,
-  "buffer_line_height": "standard",
+  "buffer_font_size": 19.0,
+  "buffer_line_height": {
+    "custom": 1.350000023841858
+  },
   "calls": {
     "mute_on_join": true,
     "share_on_join": false
@@ -301,7 +315,7 @@
       "tab_size": 2
     },
     "Python": {
-      "auto_indent": true,
+      "auto_indent": "syntax_aware",
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
         "source.organizeImports.ruff": true
@@ -656,7 +670,7 @@
   "show_completions_on_input": true,
   "show_edit_predictions": true,
   "show_whitespaces": "all",
-  "soft_wrap": "none",
+  "soft_wrap": "editor_width",
   "ssh_connections": [
     {
       "args": [],
@@ -687,11 +701,6 @@
         {
           "paths": [
             "/home/rbright"
-          ]
-        },
-        {
-          "paths": [
-            "/home/rbright/Projects/fourpillar/platform"
           ]
         }
       ]
@@ -750,13 +759,13 @@
     "font_fallbacks": [
       "JetBrainsMono Nerd Font Mono"
     ],
-    "font_family": "JetBrainsMono Nerd Font Mono",
+    "font_family": "TX-02",
     "font_features": {
       "calt": true,
       "dlig": true,
       "ss04": true
     },
-    "font_size": 15,
+    "font_size": 19.0,
     "line_height": "standard",
     "option_as_meta": false,
     "scrollbar": {
@@ -778,13 +787,13 @@
   "ui_font_fallbacks": [
     "JetBrainsMono Nerd Font Mono"
   ],
-  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_family": "TX-02",
   "ui_font_features": {
     "calt": true,
     "dlig": true,
     "ss04": true
   },
-  "ui_font_size": 15,
+  "ui_font_size": 19.0,
   "unnecessary_code_fade": 0.5,
   "use_autoclose": true,
   "vim_mode": true
