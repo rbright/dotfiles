@@ -2,11 +2,11 @@
   "agent": {
     "button": true,
     "commit_message_model": {
-      "model": "gpt-5.4",
+      "model": "gpt-5.4-mini",
       "provider": "zed.dev"
     },
     "default_model": {
-      "model": "gpt-5.4",
+      "model": "gpt-5.5",
       "provider": "zed.dev"
     },
     "default_view": "thread",
@@ -17,32 +17,18 @@
     "expand_terminal_card": true,
     "inline_alternatives": [],
     "inline_assistant_model": {
-      "model": "gpt-5.4",
+      "model": "gpt-5.4-mini",
       "provider": "zed.dev"
     },
     "model_parameters": [],
     "play_sound_when_agent_done": "always",
     "show_turn_stats": true,
     "thread_summary_model": {
-      "model": "gpt-5.4",
+      "model": "gpt-5.4-mini",
       "provider": "zed.dev"
     },
     "use_modifier_to_send": true
   },
-  "agent_buffer_font_size": 19.0,
-  "agent_servers": {
-    "hermes-agent": {
-      "type": "custom",
-      "command": "hermes",
-      "args": [
-        "acp"
-      ]
-    },
-    "pi-acp": {
-      "type": "registry"
-    }
-  },
-  "agent_ui_font_size": 19.0,
   "audio": {
     "experimental.legacy_audio_compatible": false
   },
@@ -62,9 +48,8 @@
     "dlig": true,
     "ss04": true
   },
-  "buffer_font_size": 19.0,
   "buffer_line_height": {
-    "custom": 1.350000023841858
+    "custom": 1.35
   },
   "calls": {
     "mute_on_join": true,
@@ -736,6 +721,7 @@
     "metrics": false
   },
   "terminal": {
+    "font_weight": 400.0,
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
     "button": false,
@@ -765,8 +751,9 @@
       "dlig": true,
       "ss04": true
     },
-    "font_size": 19.0,
-    "line_height": "standard",
+    "line_height": {
+      "custom": 1.35
+    },
     "option_as_meta": false,
     "scrollbar": {
       "show": null
@@ -793,8 +780,42 @@
     "dlig": true,
     "ss04": true
   },
-  "ui_font_size": 19.0,
   "unnecessary_code_fade": 0.5,
   "use_autoclose": true,
-  "vim_mode": true
+  "vim_mode": true,
+  "linux": {
+    "agent_buffer_font_size": 19.0,
+    "agent_servers": {
+      "hermes-agent": {
+        "type": "custom",
+        "command": "hermes",
+        "args": [
+          "acp"
+        ]
+      },
+      "pi-acp": {
+        "type": "registry"
+      }
+    },
+    "agent_ui_font_size": 19.0,
+    "buffer_font_size": 19.0,
+    "terminal": {
+      "font_size": 19.0
+    },
+    "ui_font_size": 19.0,
+  },
+  "macos": {
+    "agent_buffer_font_size": 15.0,
+    "agent_servers": {
+      "pi-acp": {
+        "type": "registry"
+      }
+    },
+    "agent_ui_font_size": 15.0,
+    "buffer_font_size": 15.0,
+    "terminal": {
+      "font_size": 15.0
+    },
+    "ui_font_size": 15.0,
+  }
 }
