@@ -57,7 +57,7 @@
   },
   "collaboration_panel": {
     "button": false,
-    "default_width": 240,
+    "default_width": 360,
     "dock": "left"
   },
   "confirm_quit": false,
@@ -162,7 +162,7 @@
   "git_panel": {
     "button": true,
     "collapse_untracked_diff": false,
-    "default_width": 240,
+    "default_width": 360,
     "dock": "right",
     "scrollbar": {
       "show": "never"
@@ -597,14 +597,14 @@
   },
   "notification_panel": {
     "button": true,
-    "default_width": 240,
+    "default_width": 360,
     "dock": "right"
   },
   "outline_panel": {
     "auto_fold_dirs": true,
     "auto_reveal_entries": true,
     "button": true,
-    "default_width": 240,
+    "default_width": 360,
     "dock": "right",
     "expand_outlines_with_depth": null,
     "file_icons": true,
@@ -622,7 +622,7 @@
     "auto_fold_dirs": true,
     "auto_reveal_entries": true,
     "button": true,
-    "default_width": 240,
+    "default_width": 360,
     "dock": "right",
     "entry_spacing": "standard",
     "file_icons": true,
