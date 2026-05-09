@@ -14,7 +14,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function(args)
     local filetype = vim.bo[args.buf].filetype
 
-    if vim.tbl_contains({ "javascript", "javascriptreact", "typescript", "typescriptreact" }, filetype) then
+    if vim.bo[args.buf].modifiable and not vim.bo[args.buf].binary then
+      local view = vim.fn.winsaveview()
+      vim.cmd([[silent! keeppatterns %s/\s\+$//e]])
+      vim.fn.winrestview(view)
+    end
+
+    if
+      vim.tbl_contains({ "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc" }, filetype)
+    then
       for _, client in ipairs(vim.lsp.get_clients({ bufnr = args.buf, name = "oxlint" })) do
         client:request_sync("workspace/executeCommand", {
           command = "oxc.fixAll",

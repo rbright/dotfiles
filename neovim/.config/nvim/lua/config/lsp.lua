@@ -153,9 +153,16 @@ M.servers = {
   marksman = {
     filetypes = { "markdown" },
   },
-  nixd = {},
+  nixd = {
+    settings = {
+      diagnostic = {
+        suppress = {},
+      },
+    },
+  },
   nil_ls = {},
   oxlint = {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc" },
     settings = {
       fixKind = "safe_fix",
     },
@@ -186,13 +193,17 @@ M.servers = {
             enable = false,
           },
           fixViolation = {
-            enable = true,
+            enable = false,
           },
         },
         configurationPreference = "filesystemFirst",
         fixAll = true,
         format = {
+          backend = "uv",
           preview = true,
+        },
+        lint = {
+          enable = false,
         },
         organizeImports = true,
         showSyntaxErrors = true,
@@ -235,6 +246,21 @@ M.servers = {
   sqls = {},
   tailwindcss = {
     filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
+    settings = {
+      experimental = {
+        classRegex = {
+          "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+          "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+          "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+          "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+          "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+          "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+          "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+          "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+          "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]",
+        },
+      },
+    },
   },
   taplo = {},
   terraformls = {
@@ -299,6 +325,7 @@ M.servers = {
           singleQuote = true,
         },
         keyOrdering = false,
+        schemas = {},
         validate = true,
       },
     },
@@ -315,7 +342,6 @@ M.mason_servers = {
   "lua_ls",
   "marksman",
   "nil_ls",
-  "oxlint",
   "pyright",
   "ruff",
   "rust_analyzer",
@@ -324,16 +350,20 @@ M.mason_servers = {
   "taplo",
   "terraformls",
   "tflint",
-  "ty",
   "vtsls",
   "yamlls",
 }
 
 M.mason_tools = {
+  "hadolint",
+  "nixfmt",
+  "oxlint",
   "prettierd",
   "shfmt",
   "shellcheck",
+  "sqlfluff",
   "stylua",
+  "ty",
 }
 
 function M.setup()

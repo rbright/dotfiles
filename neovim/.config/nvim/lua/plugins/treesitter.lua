@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     build = ":TSUpdate",
     lazy = false,
     dependencies = {
@@ -64,7 +65,6 @@ return {
         "ssh_config",
         "starlark",
         "svelte",
-        "swift",
         "toml",
         "tsx",
         "typescript",
