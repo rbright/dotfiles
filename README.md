@@ -13,22 +13,25 @@ Install dotfiles for a specific host:
 
 ```bash
 just install lambda
+just install lilith
 just install omega
 ```
 
 `just install` always requires an explicit host. Supported hosts:
 
 - `lambda` (MacBook Pro)
+- `lilith` (Linux workstation)
 - `omega` (Desktop Workstation / NixOS)
 
 ## 🧭 Host Packages
 
 Host definitions live in `.stow/hosts/*.packages`, one package per line. Blank lines and `#` comments are allowed.
 
-This repository intentionally keeps only two hosts:
+This repository intentionally keeps only these hosts:
 
 ```bash
 lambda.packages
+lilith.packages
 omega.packages
 ```
 
