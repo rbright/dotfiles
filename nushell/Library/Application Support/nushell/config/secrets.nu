@@ -1,0 +1,1 @@
+/nix/store/2x8vk2m19n9v5nw7mgqjasrvy4bahafr-home-manager-files/Library/Application Support/nushell/config/secrets.nu
