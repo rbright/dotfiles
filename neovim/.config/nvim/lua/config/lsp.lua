@@ -356,7 +356,6 @@ M.mason_servers = {
 
 M.mason_tools = {
   "hadolint",
-  "nixfmt",
   "oxlint",
   "prettierd",
   "shfmt",
