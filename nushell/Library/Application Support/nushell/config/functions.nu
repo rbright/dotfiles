@@ -1,1 +1,1 @@
-/nix/store/2x8vk2m19n9v5nw7mgqjasrvy4bahafr-home-manager-files/Library/Application Support/nushell/config/functions.nu
+/nix/store/885il64r0kn7057vmn3c0anqfqb55cnz-home-manager-files/Library/Application Support/nushell/config/functions.nu
