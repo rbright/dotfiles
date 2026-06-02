@@ -698,8 +698,29 @@
   "soft_wrap": "none",
   "ssh_connections": [
     {
+      "host": "omega",
       "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/rbright"
+          ]
+        },
+        {
+          "paths": [
+            "/home/rbright/Projects/assistant-agents"
+          ]
+        },
+        {
+          "paths": [
+            "/home/rbright/Projects/nixos-config"
+          ]
+        }
+      ]
+    },
+    {
       "host": "moonrise-00",
+      "args": [],
       "projects": [
         {
           "paths": [
@@ -709,8 +730,8 @@
       ]
     },
     {
-      "args": [],
       "host": "moonrise-01",
+      "args": [],
       "projects": [
         {
           "paths": [
@@ -720,8 +741,8 @@
       ]
     },
     {
-      "args": [],
       "host": "moonrise-02",
+      "args": [],
       "projects": [
         {
           "paths": [
@@ -731,16 +752,16 @@
       ]
     },
     {
-      "args": [],
       "host": "reachy",
-      "nickname": "Reachy Mini",
+      "args": [],
       "projects": [
         {
           "paths": [
             "/home/pollen"
           ]
         }
-      ]
+      ],
+      "nickname": "Reachy Mini"
     }
   ],
   "tab_bar": {
