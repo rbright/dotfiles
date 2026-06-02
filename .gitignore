@@ -6,45 +6,11 @@
 **/__pycache__
 **/*.pyc
 
-# AI agents
-PLAN.md
-SESSION.md
-
-# Projects
-**/projects.nu
-**/projects.zsh
-
-# atuin
-**/.config/atuin/**
-!**/.config/atuin/config.toml
-**/.local/share/atuin/**
-!**/.local/share/atuin/init.nu
-
 # 1password
 1password
 
-# aws
-aws
-
-# boto
-boto
-
-# btop
-**/.config/btop/btop.log
-
-# gnupg
-gnupg/.gnupg
-
-# karibiner
-**/.config/karabiner/automatic_backups
-
-# nushell
-nushell/**/history.*
-nushell/**/plugin.msgpackz
-nushell/**/vendor
-
-# raycast
-raycast
+# neovim
+neovim/.config/go/
 
 # ssh
 ssh
@@ -52,19 +18,13 @@ ssh
 # tableplus
 tableplus/Library
 
-# tmux
-**/.config/tmux/plugins
-**/.config/tmux/sessions
-
 # vim
 **/*.un~
-
-# neovim generated state
-neovim/.config/go/
 
 # vnc
 **/.vnc
 
 # zed
+**/.config/zed/context-mode
 **/.config/zed/conversations
 **/.config/zed/prompts
