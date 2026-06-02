@@ -1,1 +1,0 @@
-/nix/store/885il64r0kn7057vmn3c0anqfqb55cnz-home-manager-files/Library/Application Support/nushell/env.nu
