@@ -167,4 +167,10 @@
       "ctrl-shift-v": "terminal::Paste"
     }
   },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      ":": "command_palette::Toggle"
+    }
+  }
 ]

@@ -2,12 +2,12 @@
   "agent": {
     "button": true,
     "commit_message_model": {
-      "model": "gpt-5.4-mini",
-      "provider": "zed.dev"
+      "provider": "zed.dev",
+      "model": "gemini-3-flash",
     },
     "default_model": {
+      "provider": "openai-subscribed",
       "model": "gpt-5.5",
-      "provider": "zed.dev"
     },
     "default_view": "thread",
     "default_width": 360,
@@ -15,86 +15,106 @@
     "enable_feedback": false,
     "enabled": true,
     "expand_terminal_card": true,
+    "favorite_models": [
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.5",
+        "enable_thinking": true,
+        "effort": "medium",
+      },
+      {
+        "provider": "zed.dev",
+        "model": "claude-sonnet-4-6",
+        "enable_thinking": true,
+        "effort": "high",
+      },
+      {
+        "provider": "zed.dev",
+        "model": "claude-haiku-4-5",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "zed.dev",
+        "model": "gemini-3-flash",
+        "enable_thinking": true,
+        "effort": "HIGH",
+      },
+    ],
     "inline_alternatives": [],
     "inline_assistant_model": {
-      "model": "gpt-5.4-mini",
-      "provider": "zed.dev"
+      "provider": "zed.dev",
+      "model": "gemini-3-flash",
     },
     "max_content_width": 640.0,
     "model_parameters": [],
     "play_sound_when_agent_done": "always",
     "show_turn_stats": true,
     "thread_summary_model": {
-      "model": "gpt-5.4-mini",
-      "provider": "zed.dev"
+      "provider": "zed.dev",
+      "model": "gemini-3-flash",
     },
     "tool_permissions": {
       "default": "allow",
       "tools": {
         "copy_path": {
-          "default": "allow"
+          "default": "allow",
         },
         "create_directory": {
-          "default": "allow"
+          "default": "allow",
         },
         "delete_path": {
-          "default": "allow"
+          "default": "allow",
         },
         "edit_file": {
-          "default": "allow"
+          "default": "allow",
         },
         "fetch": {
-          "default": "allow"
+          "default": "allow",
         },
         "move_path": {
-          "default": "allow"
+          "default": "allow",
         },
         "restore_file_from_disk": {
-          "default": "allow"
+          "default": "allow",
         },
         "save_file": {
-          "default": "allow"
+          "default": "allow",
         },
         "search_web": {
-          "default": "allow"
+          "default": "allow",
         },
         "terminal": {
-          "default": "allow"
-        }
-      }
+          "default": "allow",
+        },
+      },
     },
-    "use_modifier_to_send": true
-  },
-  "audio": {
-    "experimental.legacy_audio_compatible": false
+    "use_modifier_to_send": true,
   },
   "auto_update": false,
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "base_keymap": "VSCode",
-  "buffer_font_fallbacks": [
-    "JetBrainsMono Nerd Font Mono"
-  ],
+  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font Mono"],
   "buffer_font_family": "TX-02",
   "buffer_font_features": {
     "calt": true,
     "dlig": true,
-    "ss04": true
+    "ss04": true,
   },
   "buffer_line_height": {
-    "custom": 1.35
+    "custom": 1.35,
   },
   "calls": {
     "mute_on_join": true,
-    "share_on_join": false
+    "share_on_join": false,
   },
   "collaboration_panel": {
     "button": false,
     "default_width": 360,
-    "dock": "left"
+    "dock": "left",
   },
   "confirm_quit": false,
   "cursor_shape": "bar",
@@ -104,14 +124,15 @@
     "inline": {
       "enabled": true,
       "max_severity": null,
-      "update_debounce_ms": 150
+      "update_debounce_ms": 150,
     },
     "lsp_pull_diagnostics": {
       "debounce_ms": 50,
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "edit_predictions": {
+    "allow_data_collection": "no",
     "disabled_globs": [
       "**/.aws",
       "**/.env*",
@@ -120,18 +141,18 @@
       "**/.vnc",
       "**/ssh",
       "**/projects.nu",
-      "**/projects.zsh"
+      "**/projects.zsh",
     ],
     "mode": "eager",
     "provider": "zed",
     "sweep": {
-      "privacy_mode": true
-    }
+      "privacy_mode": true,
+    },
   },
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
   "file_finder": {
-    "include_ignored": "all"
+    "include_ignored": "all",
   },
   "file_scan_exclusions": [
     "**/__pycache__",
@@ -155,27 +176,23 @@
     "**/node_modules",
     "**/reports",
     "**/result",
-    "**/.map.js"
+    "**/.map.js",
   ],
   "file_types": {
-    "Dockerfile": [
-      "Dockerfile*"
-    ],
+    "Dockerfile": ["Dockerfile*"],
     "Helm": [
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml",
       "**/templates/**/*.tpl",
       "**/templates/**/*.yaml",
-      "**/templates/**/*.yml"
+      "**/templates/**/*.yml",
     ],
-    "INI": [
-      "**/hypr/**/*.conf"
-    ],
+    "INI": ["**/hypr/**/*.conf"],
     "JSONC": [
       "**/.vscode/**/*.json",
       "**/.config/waybar/**/config",
       "**/.zed/**/*.json",
-      "**/*.hujson"
+      "**/*.hujson",
     ],
     "Shell Script": [
       "**/.curlrc",
@@ -183,8 +200,8 @@
       "**/.inputrc",
       "**/skhdrc",
       "**/tmux.conf",
-      "**/*.tmux"
-    ]
+      "**/*.tmux",
+    ],
   },
   "format_on_save": "on",
   "git": {
@@ -192,8 +209,8 @@
     "inline_blame": {
       "delay_ms": 300,
       "enabled": true,
-      "show_commit_summary": true
-    }
+      "show_commit_summary": true,
+    },
   },
   "git_panel": {
     "button": true,
@@ -201,11 +218,11 @@
     "default_width": 360,
     "dock": "right",
     "scrollbar": {
-      "show": "never"
+      "show": "never",
     },
     "sort_by_path": false,
     "status_style": "icon",
-    "tree_view": true
+    "tree_view": true,
   },
   "hard_tabs": false,
   "hover_popover_delay": 300,
@@ -216,7 +233,7 @@
     "background_coloring": "disabled",
     "coloring": "indent_aware",
     "enabled": true,
-    "line_width": 1
+    "line_width": 1,
   },
   "inlay_hints": {
     "edit_debounce_ms": 700,
@@ -226,77 +243,71 @@
     "show_other_hints": true,
     "show_parameter_hints": true,
     "show_type_hints": true,
-    "show_value_hints": true
+    "show_value_hints": true,
   },
   "journal": {
-    "hour_format": "hour24"
+    "hour_format": "hour24",
   },
   "languages": {
     "Go": {
       "format_on_save": "on",
       "formatter": "language_server",
       "preferred_line_length": 120,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "GraphQL": {
       "format_on_save": "on",
       "formatter": "language_server",
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "HCL": {
       "format_on_save": "on",
       "formatter": "language_server",
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "HTML": {
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "JSON": {
       "code_actions_on_format": {
-        "source.fixAll.oxlint": true
+        "source.fixAll.oxlint": true,
       },
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "oxlint"
-      ],
+      "language_servers": ["oxlint"],
       "preferred_line_length": 80,
       "prettier": {
-        "allowed": false
+        "allowed": false,
       },
-      "tab_size": 2
+      "tab_size": 2,
     },
     "JSONC": {
       "code_actions_on_format": {
-        "source.fixAll.oxlint": true
+        "source.fixAll.oxlint": true,
       },
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "oxlint"
-      ],
+      "language_servers": ["oxlint"],
       "preferred_line_length": 80,
       "prettier": {
-        "allowed": false
+        "allowed": false,
       },
-      "tab_size": 2
+      "tab_size": 2,
     },
     "JavaScript": {
       "code_actions_on_format": {
-        "source.fixAll.oxlint": true
+        "source.fixAll.oxlint": true,
       },
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "oxlint"
-      ],
+      "language_servers": ["oxlint"],
       "preferred_line_length": 120,
       "prettier": {
-        "allowed": false
+        "allowed": false,
       },
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Just": {
       "format_on_save": "on",
@@ -304,210 +315,188 @@
         "external": {
           "arguments": [
             "-lc",
-            "set -euo pipefail; tmp=\"$(mktemp)\"; cat >\"$tmp\"; just --justfile \"$tmp\" --dump; rm -f \"$tmp\""
+            "set -euo pipefail; tmp=\"$(mktemp)\"; cat >\"$tmp\"; just --justfile \"$tmp\" --dump; rm -f \"$tmp\"",
           ],
-          "command": "bash"
-        }
+          "command": "bash",
+        },
       },
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Markdown": {
       "format_on_save": "on",
       "remove_trailing_whitespace_on_save": true,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Nix": {
       "format_on_save": "on",
       "formatter": {
         "external": {
-          "arguments": [
-            "--quiet",
-            "--"
-          ],
-          "command": "nixfmt"
-        }
+          "arguments": ["--quiet", "--"],
+          "command": "nixfmt",
+        },
       },
-      "language_servers": [
-        "nixd",
-        "!nil"
-      ],
+      "language_servers": ["nixd", "!nil"],
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Python": {
       "auto_indent": "syntax_aware",
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
-        "source.organizeImports.ruff": true
+        "source.organizeImports.ruff": true,
       },
       "colorize_brackets": true,
       "format_on_save": "on",
       "formatter": "language_server",
       "indent_guides": {
-        "enabled": true
+        "enabled": true,
       },
-      "language_servers": [
-        "ty",
-        "ruff",
-        "!basedpyright",
-        "!pyright",
-        "!pylsp"
-      ],
+      "language_servers": ["ty", "ruff", "!basedpyright", "!pyright", "!pylsp"],
       "preferred_line_length": 120,
       "tab_size": 4,
-      "use_autoclose": true
+      "use_autoclose": true,
     },
     "Rust": {
       "format_on_save": "on",
       "formatter": "language_server",
       "preferred_line_length": 120,
-      "tab_size": 4
+      "tab_size": 4,
     },
     "SQL": {
       "format_on_save": "on",
       "formatter": {
         "external": {
-          "command": "uv run sqlfluff format"
-        }
+          "command": "uv run sqlfluff format",
+        },
       },
       "preferred_line_length": 80,
-      "tab_size": 4
+      "tab_size": 4,
     },
     "Shell Script": {
       "formatter": {
         "external": {
-          "arguments": [
-            "--filename",
-            "{buffer_path}",
-            "--indent",
-            "2"
-          ],
-          "command": "shfmt"
-        }
+          "arguments": ["--filename", "{buffer_path}", "--indent", "2"],
+          "command": "shfmt",
+        },
       },
       "hard_tabs": false,
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TOML": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TSX": {
       "code_actions_on_format": {
-        "source.fixAll.oxlint": true
+        "source.fixAll.oxlint": true,
       },
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "oxlint"
-      ],
+      "language_servers": ["oxlint"],
       "prettier": {
-        "allowed": false
+        "allowed": false,
       },
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Terraform": {
       "format_on_save": "on",
       "formatter": "language_server",
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Terraform Vars": {
       "format_on_save": "on",
       "formatter": "language_server",
       "preferred_line_length": 80,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TypeScript": {
       "code_actions_on_format": {
-        "source.fixAll.oxlint": true
+        "source.fixAll.oxlint": true,
       },
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "vtsls",
-        "oxlint"
-      ],
+      "language_servers": ["vtsls", "oxlint"],
       "prettier": {
-        "allowed": false
+        "allowed": false,
       },
-      "tab_size": 2
+      "tab_size": 2,
     },
     "XML": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "tab_size": 2
+      "tab_size": 2,
     },
     "YAML": {
       "format_on_save": "on",
       "formatter": "prettier",
-      "tab_size": 2
-    }
+      "tab_size": 2,
+    },
   },
   "lsp": {
     "json-language-server": {
       "initialization_options": {
-        "provideFormatter": true
+        "provideFormatter": true,
       },
       "settings": {
         "json": {
           "format": {
-            "enable": true
+            "enable": true,
           },
           "validate": {
-            "enable": true
-          }
-        }
-      }
+            "enable": true,
+          },
+        },
+      },
     },
     "nixd": {
       "settings": {
         "diagnostic": {
-          "suppress": []
-        }
-      }
+          "suppress": [],
+        },
+      },
     },
     "ruff": {
       "initialization_options": {
         "settings": {
           "codeAction": {
             "disableRuleComment": {
-              "enable": false
+              "enable": false,
             },
             "fixViolation": {
-              "enable": false
-            }
+              "enable": false,
+            },
           },
           "configurationPreference": "filesystemFirst",
           "fixAll": true,
           "format": {
             "backend": "uv",
-            "preview": true
+            "preview": true,
           },
           "lint": {
-            "enable": false
+            "enable": false,
           },
           "organizeImports": true,
-          "showSyntaxErrors": true
-        }
-      }
+          "showSyntaxErrors": true,
+        },
+      },
     },
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {
           "closureReturnTypeHints": {
-            "enable": "always"
+            "enable": "always",
           },
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
-            "useParameterNames": true
+            "useParameterNames": true,
           },
-          "maxLength": null
-        }
-      }
+          "maxLength": null,
+        },
+      },
     },
     "tailwindcss-language-server": {
       "settings": {
@@ -521,17 +510,17 @@
             "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
             "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
             "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
-            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]"
-          ]
-        }
-      }
+            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]",
+          ],
+        },
+      },
     },
     "terraform-ls": {
       "initialization_options": {
         "experimentalFeatures": {
-          "prefillRequiredFields": true
-        }
-      }
+          "prefillRequiredFields": true,
+        },
+      },
     },
     "typescript-language-server": {
       "initialization_options": {
@@ -543,9 +532,9 @@
           "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
           "includeInlayPropertyDeclarationTypeHints": true,
           "includeInlayVariableTypeHints": true,
-          "includeInlayVariableTypeHintsWhenTypeMatchesName": true
-        }
-      }
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+        },
+      },
     },
     "vscode-html-language-server": {
       "settings": {
@@ -556,85 +545,85 @@
             // Add an extra newline before <div> and <p>
             "extraLiners": "div,p",
             // Indent under <html> and <head> (default: false)
-            "indentInnerHtml": true
-          }
-        }
-      }
+            "indentInnerHtml": true,
+          },
+        },
+      },
     },
     "vtsls": {
       "settings": {
         "javascript": {
           "inlayHints": {
             "enumMemberValues": {
-              "enabled": true
+              "enabled": true,
             },
             "functionLikeReturnTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "parameterNames": {
               "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
+              "suppressWhenArgumentMatchesName": false,
             },
             "parameterTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "propertyDeclarationTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "variableTypes": {
               "enabled": true,
-              "suppressWhenTypeMatchesName": true
-            }
+              "suppressWhenTypeMatchesName": true,
+            },
           },
           "tsserver": {
-            "maxTsServerMemory": 16184
-          }
+            "maxTsServerMemory": 16184,
+          },
         },
         "typescript": {
           "inlayHints": {
             "enumMemberValues": {
-              "enabled": true
+              "enabled": true,
             },
             "functionLikeReturnTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "parameterNames": {
               "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
+              "suppressWhenArgumentMatchesName": false,
             },
             "parameterTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "propertyDeclarationTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "variableTypes": {
               "enabled": true,
-              "suppressWhenTypeMatchesName": true
-            }
+              "suppressWhenTypeMatchesName": true,
+            },
           },
           "tsserver": {
-            "maxTsServerMemory": 16184
-          }
-        }
-      }
+            "maxTsServerMemory": 16184,
+          },
+        },
+      },
     },
     "yaml-language-server": {
       "settings": {
         "yaml": {
           "format": {
-            "singleQuote": true
+            "singleQuote": true,
           },
           "schemas": {},
-          "validate": true
-        }
-      }
-    }
+          "validate": true,
+        },
+      },
+    },
   },
   "notification_panel": {
     "button": true,
     "default_width": 360,
-    "dock": "right"
+    "dock": "right",
   },
   "outline_panel": {
     "auto_fold_dirs": true,
@@ -647,33 +636,34 @@
     "folder_icons": true,
     "git_status": true,
     "indent_guides": {
-      "show": "always"
+      "show": "always",
     },
     "indent_size": 20,
     "scrollbar": {
-      "show": "never"
-    }
+      "show": "never",
+    },
   },
   "project_panel": {
     "auto_fold_dirs": true,
     "auto_reveal_entries": true,
     "button": true,
     "default_width": 360,
+    "diagnostic_badges": true,
     "dock": "right",
     "entry_spacing": "standard",
     "file_icons": true,
     "folder_icons": true,
     "git_status": true,
     "indent_guides": {
-      "show": "always"
+      "show": "always",
     },
     "indent_size": 20,
     "scrollbar": {
-      "show": "never"
+      "show": "never",
     },
     "show_diagnostics": "all",
     "sort_mode": "directories_first",
-    "starts_open": true
+    "starts_open": true,
   },
   "proxy": "",
   "relative_line_numbers": "enabled",
@@ -682,13 +672,13 @@
   "scrollbar": {
     "diagnostics": "all",
     "git_diff": false,
-    "search_results": true
+    "search_results": true,
   },
   "search": {
-    "include_ignored": true
+    "include_ignored": true,
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "show_call_status_icon": true,
   "show_completion_documentation": true,
@@ -702,72 +692,61 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/rbright"
-          ]
+          "paths": ["/home/rbright"],
         },
         {
-          "paths": [
-            "/home/rbright/Projects/assistant-agents"
-          ]
+          "paths": ["/home/rbright/Projects/assistant-agents"],
         },
         {
-          "paths": [
-            "/home/rbright/Projects/nixos-config"
-          ]
-        }
-      ]
+          "paths": ["/home/rbright/Projects/nixos-config"],
+        },
+      ],
     },
     {
       "host": "moonrise-00",
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/rbright"
-          ]
-        }
-      ]
+          "paths": ["/home/rbright"],
+        },
+      ],
     },
     {
       "host": "moonrise-01",
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/rbright"
-          ]
-        }
-      ]
+          "paths": ["/home/rbright"],
+        },
+      ],
     },
     {
       "host": "moonrise-02",
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/rbright"
-          ]
-        }
-      ]
+          "paths": ["/home/rbright"],
+        },
+      ],
     },
     {
       "host": "reachy",
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/pollen"
-          ]
-        }
+          "paths": ["/home/pollen"],
+        },
       ],
-      "nickname": "Reachy Mini"
-    }
+      "nickname": "Reachy Mini",
+    },
   ],
+  "status_bar": {
+    "show_active_file": false,
+  },
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "activate_on_close": "history",
@@ -775,71 +754,62 @@
     "file_icons": true,
     "git_status": true,
     "show_close_button": "hover",
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "terminal": {
     "font_weight": 400.0,
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
     "button": false,
-    "copy_on_select": false,
+    "copy_on_select": true,
     "cursor_shape": "block",
     "detect_venv": {
       "on": {
         "activate_script": "default",
-        "directories": [
-          ".env",
-          "env",
-          ".venv",
-          "venv"
-        ]
-      }
+        "directories": [".env", "env", ".venv", "venv"],
+      },
     },
     "dock": "bottom",
     "env": {
-      "EDITOR": "zed --wait"
+      "EDITOR": "zed --wait",
     },
-    "font_fallbacks": [
-      "JetBrainsMono Nerd Font Mono"
-    ],
+    "font_fallbacks": ["JetBrainsMono Nerd Font Mono"],
     "font_family": "TX-02",
     "font_features": {
       "calt": true,
       "dlig": true,
-      "ss04": true
+      "ss04": true,
     },
     "line_height": {
-      "custom": 1.35
+      "custom": 1.35,
     },
-    "option_as_meta": false,
+    "option_as_meta": true,
     "scrollbar": {
-      "show": null
+      "show": null,
     },
     "shell": {
-      "program": "nu"
+      "program": "nu",
     },
     "toolbar": {
-      "breadcrumbs": true
+      "breadcrumbs": true,
     },
-    "working_directory": "current_project_directory"
+    "working_directory": "current_project_directory",
   },
   "theme": "Catppuccin Mocha",
   "toolbar": {
     "breadcrumbs": true,
-    "quick_actions": false
+    "quick_actions": false,
   },
-  "ui_font_fallbacks": [
-    "JetBrainsMono Nerd Font Mono"
-  ],
+  "ui_font_fallbacks": ["JetBrainsMono Nerd Font Mono"],
   "ui_font_family": "TX-02",
   "ui_font_features": {
     "calt": true,
     "dlig": true,
-    "ss04": true
+    "ss04": true,
   },
   "unnecessary_code_fade": 0.5,
   "use_autoclose": true,
@@ -850,18 +820,16 @@
       "hermes-agent": {
         "type": "custom",
         "command": "hermes",
-        "args": [
-          "acp"
-        ]
+        "args": ["acp"],
       },
       "pi-acp": {
-        "type": "registry"
-      }
+        "type": "registry",
+      },
     },
     "agent_ui_font_size": 19.0,
     "buffer_font_size": 19.0,
     "terminal": {
-      "font_size": 19.0
+      "font_size": 19.0,
     },
     "ui_font_size": 19.0,
   },
@@ -869,14 +837,14 @@
     "agent_buffer_font_size": 15.0,
     "agent_servers": {
       "pi-acp": {
-        "type": "registry"
-      }
+        "type": "registry",
+      },
     },
     "agent_ui_font_size": 15.0,
     "buffer_font_size": 15.0,
     "terminal": {
-      "font_size": 15.0
+      "font_size": 15.0,
     },
     "ui_font_size": 15.0,
-  }
+  },
 }
