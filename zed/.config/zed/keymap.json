@@ -18,13 +18,6 @@
           "create_new_window": true
         }
       ],
-      "ctrl-alt-super-o": [
-        "projects::OpenRemote",
-        {
-          "create_new_window": false,
-          "from_existing_connection": false
-        }
-      ],
       // Panels
       "ctrl-shift-g": "git_panel::ToggleFocus",
       "ctrl-shift-b": "outline_panel::ToggleFocus",
@@ -49,6 +42,13 @@
       "cmd-shift-w": "workspace::CloseWindow",
       // File Finder
       "cmd-p": "file_finder::Toggle",
+      "ctrl-alt-super-o": [
+        "projects::OpenRemote",
+        {
+          "create_new_window": false,
+          "from_existing_connection": false
+        }
+      ],
       // Panels
       "cmd-?": "agent::ToggleFocus",
       "cmd-shift-e": "project_panel::ToggleFocus"
