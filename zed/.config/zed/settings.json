@@ -156,6 +156,7 @@
   },
   "file_scan_exclusions": [
     "**/__pycache__",
+    "**/.agents/sessions",
     "**/.bun-cache",
     "**/.bun-tmp",
     "**/.coverage",
@@ -173,9 +174,10 @@
     "**/build",
     "**/coverage",
     "**/dist",
+    "**/mutants.out",
     "**/node_modules",
-    "**/reports",
     "**/result",
+    "**/target",
     "**/.map.js",
   ],
   "file_types": {
@@ -692,53 +694,93 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/home/rbright"],
+          "paths": [
+            "/home/rbright/Projects/4pillarfunding/infrastructure"
+          ]
         },
         {
-          "paths": ["/home/rbright/Projects/assistant-agents"],
+          "paths": [
+            "/home/rbright/Projects/4pillarfunding/platform"
+          ]
         },
         {
-          "paths": ["/home/rbright/Projects/nixos-config"],
+          "paths": [
+            "/home/rbright/Projects/agent-golf/monorepo"
+          ]
         },
-      ],
+        {
+          "paths": [
+            "/home/rbright/Projects/assistant-agents"
+          ]
+        },
+        {
+          "paths": [
+            "/home/rbright/Projects/moonrise-labs/lumen"
+          ]
+        },
+        {
+          "paths": [
+            "/home/rbright/Projects/nixos-config"
+          ]
+        }
+      ]
     },
     {
       "host": "moonrise-00",
       "args": [],
       "projects": [
         {
-          "paths": ["/home/rbright"],
-        },
-      ],
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
     },
     {
       "host": "moonrise-01",
       "args": [],
       "projects": [
         {
-          "paths": ["/home/rbright"],
-        },
-      ],
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
     },
     {
       "host": "moonrise-02",
       "args": [],
       "projects": [
         {
-          "paths": ["/home/rbright"],
-        },
-      ],
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "moonrise-03",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/rbright"
+          ]
+        }
+      ]
     },
     {
       "host": "reachy",
       "args": [],
       "projects": [
         {
-          "paths": ["/home/pollen"],
-        },
+          "paths": [
+            "/home/pollen"
+          ]
+        }
       ],
-      "nickname": "Reachy Mini",
-    },
+      "nickname": "Reachy Mini"
+    }
   ],
   "status_bar": {
     "show_active_file": false,
