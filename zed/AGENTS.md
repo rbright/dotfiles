@@ -46,6 +46,10 @@ Run these before hand-off:
 If any check is skipped, state exactly what was skipped, why, and the command to
 run.
 
+See also `.agents/skills/validation-shortcuts/` for the repo-wide validation
+baseline; the Zed-specific checks above complement it.
+
+
 ## Safety
 
 - Do not add secrets or machine-specific credentials.
