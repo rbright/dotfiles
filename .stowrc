@@ -3,3 +3,4 @@
 --ignore=dash
 --ignore=gnupg
 --ignore=tableplus/themes
+--ignore=zed/AGENTS.md
